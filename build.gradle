@@ -1,0 +1,40 @@
+apply from: 'libraries.gradle'
+
+subprojects {
+    buildscript {
+        repositories {
+            maven { setUrl("https://repo.gradle.org/gradle/repo") }
+        }
+
+        dependencies {
+            classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
+        }
+    }
+
+    repositories {
+        mavenLocal()
+        jcenter()
+        mavenCentral()
+        maven { setUrl("https://repo.gradle.org/gradle/repo") }
+    }
+
+    apply plugin: "java"
+    apply plugin: "jacoco"
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    test {
+        testLogging {
+            exceptionFormat = 'full'
+        }
+    }
+
+    jacocoTestReport {
+        group = "Reporting"
+        reports {
+            xml.enabled true
+            csv.enabled false
+        }
+    }
+}
