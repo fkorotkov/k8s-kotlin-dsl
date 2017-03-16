@@ -1,6 +1,7 @@
 allprojects {
     ext {
         versions = [
+                guava            : '21.0',
                 kotlin           : '1.1.0-rc-91',
                 kubernetes_model : '1.0.67',
         ]

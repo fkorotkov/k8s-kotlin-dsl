@@ -1,0 +1,17 @@
+apply plugin: "application"
+apply plugin: "kotlin"
+
+mainClassName = "com.fkorotkov.kubernetes.GeneratorKt"
+
+run {
+    args "${project(":kubernetes:dsl").projectDir}/src/main/kotlin-gen/", "com.fkorotkov.kubernetes"
+}
+
+dependencies {
+    compile project(":generator")
+
+    compile("org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}")
+    compile("org.jetbrains.kotlin:kotlin-reflect:${versions.kotlin}")
+
+    compile("io.fabric8:kubernetes-model:${versions.kubernetes_model}")
+}
