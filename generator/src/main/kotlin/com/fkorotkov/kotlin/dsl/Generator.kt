@@ -24,7 +24,9 @@ object Generator {
       }
     }.filterNot {
       excludePackages.contains(it.java.`package`.name)
-    }.flatMap { subClazz ->
+    }
+
+    allClasses.flatMap { subClazz ->
       subClazz.memberProperties.mapNotNull {
         it as? KMutableProperty<*>
       }.filter {
@@ -38,9 +40,7 @@ object Generator {
       property.javaField?.declaringClass?.kotlin?.let{ it to property }
     }.distinctBy { (clazz, property) ->
       "${clazz.qualifiedName}#${property.name}"
-    }
-
-    allClasses.groupBy { (_, property) ->
+    }.groupBy { (_, property) ->
       property.name
     }.forEach { propertyName, clazzToProperties ->
       BuilderGenerator.generateBuildersForPropertyFile(
@@ -50,11 +50,12 @@ object Generator {
         clazzToProperties.sortedBy { it.first.simpleName }
       )
     }
+
     ClassBuilderGenerator.generateClassBuilders(
       outputFolder,
       outputPackage,
       "ClassBuilders.kt",
-      allClasses.map { it.first }.distinctBy { it.qualifiedName }
+      allClasses
     )
   }
 }

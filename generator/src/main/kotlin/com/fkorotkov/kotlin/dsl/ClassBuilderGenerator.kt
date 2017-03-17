@@ -19,7 +19,7 @@ object ClassBuilderGenerator {
     val destinationFile = File(destinationFolder, outputFileName)
     destinationFile.createNewFile()
 
-    destinationFile.writeText(generateBuilders(allClasses, outputPackage))
+    destinationFile.writeText(generateBuilders(allClasses.filterNot { it.isAbstract }, outputPackage))
   }
 
   private fun generateBuilders(allClasses: List<KClass<*>>, outputPackage: String): String {
