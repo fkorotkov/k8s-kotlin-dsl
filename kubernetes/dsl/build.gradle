@@ -1,4 +1,22 @@
 apply plugin: "kotlin"
+apply plugin: "maven-publish"
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId 'com.fkorotkov'
+            artifactId 'kubernetes-dsl'
+            version '0.1'
+            from components.java
+            artifact sourceJar
+        }
+    }
+}
+
+task sourceJar(type: Jar) {
+    from sourceSets.main.allSource
+    classifier "sources"
+}
 
 sourceSets {
     main {
