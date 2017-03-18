@@ -31,4 +31,7 @@ dependencies {
     compile("org.jetbrains.kotlin:kotlin-reflect:${versions.kotlin}")
 
     compile("io.fabric8:kubernetes-model:${versions.kubernetes_model}")
+
+    testCompile("junit:junit:${versions.junit}")
+    testCompile("org.jetbrains.kotlin:kotlin-test-junit:${versions.kotlin}")
 }
