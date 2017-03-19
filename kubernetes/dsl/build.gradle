@@ -2,6 +2,10 @@ apply plugin: "com.jfrog.bintray"
 apply plugin: "kotlin"
 apply plugin: "maven-publish"
 
+ext {
+    current_k8s_dsl_version = '0.2'
+}
+
 buildscript {
     repositories {
         jcenter()
@@ -22,7 +26,7 @@ bintray {
         licenses = ['MIT']
         vcsUrl = 'git@github.com:fkorotkov/k8s-kotlin-dsl.git'
         version {
-            name = '0.1'
+            name = current_k8s_dsl_version
             desc = 'Kotlin DSL for Kubernetes'
             released  = new Date()
         }
@@ -34,7 +38,7 @@ publishing {
         maven(MavenPublication) {
             groupId 'com.fkorotkov'
             artifactId 'kubernetes-dsl'
-            version '0.1'
+            version current_k8s_dsl_version
             from components.java
             artifact sourceJar
         }
