@@ -1,0 +1,23 @@
+language: java
+sudo: false
+jdk:
+  - oraclejdk8
+
+env:
+  global:
+    # Key for bintray deploys: BINTRAY_API_KEY
+    secure: ffzCx81F8PyqwBYPeZ77hVveqjupgPmGSCV3jrhfYeNUehMYYUpCKbGh7ZtpqEANKDJnJq3gaBoecDIv/nuU4nFR+MVGDY2BxXiB81eh2LQF/HGY6CRStR/XGwrNDGnUqabeQ1XL2qzi9kxltTIwaAn6EwK5b5nz6n5SSSfCJSQyMDUUtG2all2ateruAam9aHcrYunbxqAC/9QO7QNcgMooRyV63FhatIe2UJtLBjK/Ni1X6lVMrMgSBOfhGyE+2YDPMGr1D00psrONWHQbXj7XkbCHw67BSwilmQr4sLwGr7foTeVbXwje2juaQv6A01WNU469qbYTM/XIZHwto5ZdA3do77bvtfJhZo3UCfDq05W/TZrBRJP65+P7rK0lRS81k4kMvFZYukMcxJga/l0KbZ5cJ3BlwPtK+Pvp4/R02TNrFoENBmd8BzrJ15IIt9DRnersRtEuCLr35weEgwRI/95Taf3CsErw4Grv38YpzasoI3VxUewy2TrKlvepdN/9EVh9IGPaD8YRGk0H/3xbqIRFyg5bjHsQKB+o0EHLMmhPhfq9QX+kT6dpuzjIJzk+pUQzZBXXatcoopqaFLkjkDcEzyl69paWmvulCHkNdkTTas0TI/QwgwV6p2YK18BSnDzOS/6NIC0j2XsbPJLxNcORaulqA2dHCGWV2W0=
+
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+
+script: |-
+ set -e
+ ./gradlew check
+ [[ ! -z ${TRAVIS_TAG+x} ]] || ./gradlew :kubernetes:dsl:bintrayUpload
