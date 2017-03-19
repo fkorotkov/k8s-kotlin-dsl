@@ -1,0 +1,13 @@
+apply plugin: "application"
+apply plugin: "kotlin"
+
+mainClassName = "ExampleKt"
+
+dependencies {
+    compile project(":kubernetes:dsl")
+
+    compile("org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}")
+    compile("org.jetbrains.kotlin:kotlin-reflect:${versions.kotlin}")
+
+    compile("io.fabric8:kubernetes-client:${versions.kubernetes_client}")
+}
