@@ -20,4 +20,4 @@ cache:
 script: |-
  set -e
  ./gradlew check
- [[ ! -z ${TRAVIS_TAG+x} ]] || ./gradlew :kubernetes:dsl:bintrayUpload
+ [[ -z ${TRAVIS_TAG+x} ]] || ./gradlew :kubernetes:dsl:bintrayUpload
