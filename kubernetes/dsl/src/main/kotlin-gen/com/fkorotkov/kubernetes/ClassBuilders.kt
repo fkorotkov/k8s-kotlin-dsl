@@ -213,7 +213,7 @@ import io.fabric8.kubernetes.api.model.extensions.ThirdPartyResource
 import io.fabric8.kubernetes.api.model.extensions.ThirdPartyResourceList
 
 
-fun aWSElasticBlockStoreVolumeSource(block : AWSElasticBlockStoreVolumeSource.() -> Unit = {}): AWSElasticBlockStoreVolumeSource {
+fun awsElasticBlockStoreVolumeSource(block : AWSElasticBlockStoreVolumeSource.() -> Unit = {}): AWSElasticBlockStoreVolumeSource {
   val instance = AWSElasticBlockStoreVolumeSource()
   instance.block()
   return instance
@@ -570,14 +570,14 @@ fun execAction(block : ExecAction.() -> Unit = {}): ExecAction {
 }
 
 
-fun fCVolumeSource(block : FCVolumeSource.() -> Unit = {}): FCVolumeSource {
+fun fcVolumeSource(block : FCVolumeSource.() -> Unit = {}): FCVolumeSource {
   val instance = FCVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun fSGroupStrategyOptions(block : FSGroupStrategyOptions.() -> Unit = {}): FSGroupStrategyOptions {
+fun fsGroupStrategyOptions(block : FSGroupStrategyOptions.() -> Unit = {}): FSGroupStrategyOptions {
   val instance = FSGroupStrategyOptions()
   instance.block()
   return instance
@@ -598,7 +598,7 @@ fun flockerVolumeSource(block : FlockerVolumeSource.() -> Unit = {}): FlockerVol
 }
 
 
-fun gCEPersistentDiskVolumeSource(block : GCEPersistentDiskVolumeSource.() -> Unit = {}): GCEPersistentDiskVolumeSource {
+fun gcePersistentDiskVolumeSource(block : GCEPersistentDiskVolumeSource.() -> Unit = {}): GCEPersistentDiskVolumeSource {
   val instance = GCEPersistentDiskVolumeSource()
   instance.block()
   return instance
@@ -619,14 +619,14 @@ fun glusterfsVolumeSource(block : GlusterfsVolumeSource.() -> Unit = {}): Gluste
 }
 
 
-fun hTTPGetAction(block : HTTPGetAction.() -> Unit = {}): HTTPGetAction {
+fun httpGetAction(block : HTTPGetAction.() -> Unit = {}): HTTPGetAction {
   val instance = HTTPGetAction()
   instance.block()
   return instance
 }
 
 
-fun hTTPHeader(block : HTTPHeader.() -> Unit = {}): HTTPHeader {
+fun httpHeader(block : HTTPHeader.() -> Unit = {}): HTTPHeader {
   val instance = HTTPHeader()
   instance.block()
   return instance
@@ -647,14 +647,14 @@ fun hostPathVolumeSource(block : HostPathVolumeSource.() -> Unit = {}): HostPath
 }
 
 
-fun iDRange(block : IDRange.() -> Unit = {}): IDRange {
+fun idRange(block : IDRange.() -> Unit = {}): IDRange {
   val instance = IDRange()
   instance.block()
   return instance
 }
 
 
-fun iSCSIVolumeSource(block : ISCSIVolumeSource.() -> Unit = {}): ISCSIVolumeSource {
+fun iscsiVolumeSource(block : ISCSIVolumeSource.() -> Unit = {}): ISCSIVolumeSource {
   val instance = ISCSIVolumeSource()
   instance.block()
   return instance
@@ -794,7 +794,7 @@ fun localObjectReference(block : LocalObjectReference.() -> Unit = {}): LocalObj
 }
 
 
-fun nFSVolumeSource(block : NFSVolumeSource.() -> Unit = {}): NFSVolumeSource {
+fun nfsVolumeSource(block : NFSVolumeSource.() -> Unit = {}): NFSVolumeSource {
   val instance = NFSVolumeSource()
   instance.block()
   return instance
@@ -1109,7 +1109,7 @@ fun quobyteVolumeSource(block : QuobyteVolumeSource.() -> Unit = {}): QuobyteVol
 }
 
 
-fun rBDVolumeSource(block : RBDVolumeSource.() -> Unit = {}): RBDVolumeSource {
+fun rbdVolumeSource(block : RBDVolumeSource.() -> Unit = {}): RBDVolumeSource {
   val instance = RBDVolumeSource()
   instance.block()
   return instance
@@ -1207,14 +1207,14 @@ fun runAsUserStrategyOptions(block : RunAsUserStrategyOptions.() -> Unit = {}): 
 }
 
 
-fun sELinuxContextStrategyOptions(block : SELinuxContextStrategyOptions.() -> Unit = {}): SELinuxContextStrategyOptions {
+fun seLinuxContextStrategyOptions(block : SELinuxContextStrategyOptions.() -> Unit = {}): SELinuxContextStrategyOptions {
   val instance = SELinuxContextStrategyOptions()
   instance.block()
   return instance
 }
 
 
-fun sELinuxOptions(block : SELinuxOptions.() -> Unit = {}): SELinuxOptions {
+fun seLinuxOptions(block : SELinuxOptions.() -> Unit = {}): SELinuxOptions {
   val instance = SELinuxOptions()
   instance.block()
   return instance
@@ -1347,7 +1347,7 @@ fun supplementalGroupsStrategyOptions(block : SupplementalGroupsStrategyOptions.
 }
 
 
-fun tCPSocketAction(block : TCPSocketAction.() -> Unit = {}): TCPSocketAction {
+fun tcpSocketAction(block : TCPSocketAction.() -> Unit = {}): TCPSocketAction {
   val instance = TCPSocketAction()
   instance.block()
   return instance
@@ -1382,14 +1382,14 @@ fun watchEvent(block : WatchEvent.() -> Unit = {}): WatchEvent {
 }
 
 
-fun aPIVersion(block : APIVersion.() -> Unit = {}): APIVersion {
+fun apiVersion(block : APIVersion.() -> Unit = {}): APIVersion {
   val instance = APIVersion()
   instance.block()
   return instance
 }
 
 
-fun cPUTargetUtilization(block : CPUTargetUtilization.() -> Unit = {}): CPUTargetUtilization {
+fun cpuTargetUtilization(block : CPUTargetUtilization.() -> Unit = {}): CPUTargetUtilization {
   val instance = CPUTargetUtilization()
   instance.block()
   return instance
@@ -1473,14 +1473,14 @@ fun deploymentStrategy(block : DeploymentStrategy.() -> Unit = {}): DeploymentSt
 }
 
 
-fun hTTPIngressPath(block : HTTPIngressPath.() -> Unit = {}): HTTPIngressPath {
+fun httpIngressPath(block : HTTPIngressPath.() -> Unit = {}): HTTPIngressPath {
   val instance = HTTPIngressPath()
   instance.block()
   return instance
 }
 
 
-fun hTTPIngressRuleValue(block : HTTPIngressRuleValue.() -> Unit = {}): HTTPIngressRuleValue {
+fun httpIngressRuleValue(block : HTTPIngressRuleValue.() -> Unit = {}): HTTPIngressRuleValue {
   val instance = HTTPIngressRuleValue()
   instance.block()
   return instance

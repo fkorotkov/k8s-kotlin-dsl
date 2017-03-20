@@ -19,19 +19,19 @@ object BuilderGenerator {
     val destinationFile = File(destinationFolder, outputFileName)
     destinationFile.createNewFile()
 
-    val allCalsses = clazzToProperties.flatMap { (clazz, property) ->
+    val allClasses = clazzToProperties.flatMap { (clazz, property) ->
       listOf(clazz, property.returnType.classifier as KClass<*>)
     }
 
-    destinationFile.writeText(generateBuilders(allCalsses, clazzToProperties, outputPackage))
+    destinationFile.writeText(generateBuilders(allClasses, clazzToProperties, outputPackage))
   }
 
-  private fun generateBuilders(allCalsses: List<KClass<*>>, clazzToProperties: List<Pair<KClass<*>, KMutableProperty<*>>>, outputPackage: String): String {
+  private fun generateBuilders(allClasses: List<KClass<*>>, clazzToProperties: List<Pair<KClass<*>, KMutableProperty<*>>>, outputPackage: String): String {
     return """// GENERATED
 package $outputPackage
 
 ${
-allCalsses.map { it.qualifiedName }.toSet().map { "import $it" }.sorted().joinToString("\n")
+allClasses.map { it.qualifiedName }.toSet().map { "import $it" }.sorted().joinToString("\n")
 }
 
 ${
