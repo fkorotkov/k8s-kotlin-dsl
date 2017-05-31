@@ -194,6 +194,12 @@ import io.fabric8.kubernetes.api.model.extensions.IngressRule
 import io.fabric8.kubernetes.api.model.extensions.IngressSpec
 import io.fabric8.kubernetes.api.model.extensions.IngressStatus
 import io.fabric8.kubernetes.api.model.extensions.IngressTLS
+import io.fabric8.kubernetes.api.model.extensions.NetworkPolicy
+import io.fabric8.kubernetes.api.model.extensions.NetworkPolicyIngressRule
+import io.fabric8.kubernetes.api.model.extensions.NetworkPolicyList
+import io.fabric8.kubernetes.api.model.extensions.NetworkPolicyPeer
+import io.fabric8.kubernetes.api.model.extensions.NetworkPolicyPort
+import io.fabric8.kubernetes.api.model.extensions.NetworkPolicySpec
 import io.fabric8.kubernetes.api.model.extensions.ReplicaSet
 import io.fabric8.kubernetes.api.model.extensions.ReplicaSetCondition
 import io.fabric8.kubernetes.api.model.extensions.ReplicaSetList
@@ -1559,6 +1565,48 @@ fun ingressStatus(block : IngressStatus.() -> Unit = {}): IngressStatus {
 
 fun ingressTLS(block : IngressTLS.() -> Unit = {}): IngressTLS {
   val instance = IngressTLS()
+  instance.block()
+  return instance
+}
+
+
+fun networkPolicy(block : NetworkPolicy.() -> Unit = {}): NetworkPolicy {
+  val instance = NetworkPolicy()
+  instance.block()
+  return instance
+}
+
+
+fun networkPolicyIngressRule(block : NetworkPolicyIngressRule.() -> Unit = {}): NetworkPolicyIngressRule {
+  val instance = NetworkPolicyIngressRule()
+  instance.block()
+  return instance
+}
+
+
+fun networkPolicyList(block : NetworkPolicyList.() -> Unit = {}): NetworkPolicyList {
+  val instance = NetworkPolicyList()
+  instance.block()
+  return instance
+}
+
+
+fun networkPolicyPeer(block : NetworkPolicyPeer.() -> Unit = {}): NetworkPolicyPeer {
+  val instance = NetworkPolicyPeer()
+  instance.block()
+  return instance
+}
+
+
+fun networkPolicyPort(block : NetworkPolicyPort.() -> Unit = {}): NetworkPolicyPort {
+  val instance = NetworkPolicyPort()
+  instance.block()
+  return instance
+}
+
+
+fun networkPolicySpec(block : NetworkPolicySpec.() -> Unit = {}): NetworkPolicySpec {
+  val instance = NetworkPolicySpec()
   instance.block()
   return instance
 }

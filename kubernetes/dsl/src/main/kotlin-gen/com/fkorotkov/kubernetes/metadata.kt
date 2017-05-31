@@ -56,6 +56,8 @@ import io.fabric8.kubernetes.api.model.extensions.HorizontalPodAutoscaler
 import io.fabric8.kubernetes.api.model.extensions.HorizontalPodAutoscalerList
 import io.fabric8.kubernetes.api.model.extensions.Ingress
 import io.fabric8.kubernetes.api.model.extensions.IngressList
+import io.fabric8.kubernetes.api.model.extensions.NetworkPolicy
+import io.fabric8.kubernetes.api.model.extensions.NetworkPolicyList
 import io.fabric8.kubernetes.api.model.extensions.ReplicaSet
 import io.fabric8.kubernetes.api.model.extensions.ReplicaSetList
 import io.fabric8.kubernetes.api.model.extensions.Scale
@@ -300,6 +302,24 @@ fun  Namespace.`metadata`(block: ObjectMeta.() -> Unit = {}) {
 
 
 fun  NamespaceList.`metadata`(block: ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  NetworkPolicy.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  NetworkPolicyList.`metadata`(block: ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = ListMeta()
   }

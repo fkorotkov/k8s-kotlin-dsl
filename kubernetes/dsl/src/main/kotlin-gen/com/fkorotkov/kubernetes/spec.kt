@@ -33,6 +33,8 @@ import io.fabric8.kubernetes.api.model.extensions.HorizontalPodAutoscaler
 import io.fabric8.kubernetes.api.model.extensions.HorizontalPodAutoscalerSpec
 import io.fabric8.kubernetes.api.model.extensions.Ingress
 import io.fabric8.kubernetes.api.model.extensions.IngressSpec
+import io.fabric8.kubernetes.api.model.extensions.NetworkPolicy
+import io.fabric8.kubernetes.api.model.extensions.NetworkPolicySpec
 import io.fabric8.kubernetes.api.model.extensions.ReplicaSet
 import io.fabric8.kubernetes.api.model.extensions.ReplicaSetSpec
 import io.fabric8.kubernetes.api.model.extensions.Scale
@@ -116,6 +118,15 @@ fun  LimitRange.`spec`(block: LimitRangeSpec.() -> Unit = {}) {
 fun  Namespace.`spec`(block: NamespaceSpec.() -> Unit = {}) {
   if(this.`spec` == null) {
     this.`spec` = NamespaceSpec()
+  }
+
+  this.`spec`.block()
+}
+
+
+fun  NetworkPolicy.`spec`(block: NetworkPolicySpec.() -> Unit = {}) {
+  if(this.`spec` == null) {
+    this.`spec` = NetworkPolicySpec()
   }
 
   this.`spec`.block()
