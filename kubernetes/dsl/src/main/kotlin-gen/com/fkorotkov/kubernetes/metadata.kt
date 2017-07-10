@@ -14,6 +14,8 @@ import io.fabric8.kubernetes.api.model.Endpoints
 import io.fabric8.kubernetes.api.model.EndpointsList
 import io.fabric8.kubernetes.api.model.Event
 import io.fabric8.kubernetes.api.model.EventList
+import io.fabric8.kubernetes.api.model.HorizontalPodAutoscaler
+import io.fabric8.kubernetes.api.model.HorizontalPodAutoscalerList
 import io.fabric8.kubernetes.api.model.Job
 import io.fabric8.kubernetes.api.model.JobList
 import io.fabric8.kubernetes.api.model.JobTemplateSpec
@@ -48,12 +50,12 @@ import io.fabric8.kubernetes.api.model.ServiceAccountList
 import io.fabric8.kubernetes.api.model.ServiceList
 import io.fabric8.kubernetes.api.model.Status
 import io.fabric8.kubernetes.api.model.Volume
+import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinition
+import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinitionList
 import io.fabric8.kubernetes.api.model.extensions.DaemonSet
 import io.fabric8.kubernetes.api.model.extensions.DaemonSetList
 import io.fabric8.kubernetes.api.model.extensions.Deployment
 import io.fabric8.kubernetes.api.model.extensions.DeploymentList
-import io.fabric8.kubernetes.api.model.extensions.HorizontalPodAutoscaler
-import io.fabric8.kubernetes.api.model.extensions.HorizontalPodAutoscalerList
 import io.fabric8.kubernetes.api.model.extensions.Ingress
 import io.fabric8.kubernetes.api.model.extensions.IngressList
 import io.fabric8.kubernetes.api.model.extensions.NetworkPolicy
@@ -131,6 +133,24 @@ fun  CronJob.`metadata`(block: ObjectMeta.() -> Unit = {}) {
 
 
 fun  CronJobList.`metadata`(block: ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  CustomResourceDefinition.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  CustomResourceDefinitionList.`metadata`(block: ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = ListMeta()
   }

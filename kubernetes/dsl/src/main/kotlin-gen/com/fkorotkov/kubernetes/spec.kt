@@ -3,6 +3,8 @@ package com.fkorotkov.kubernetes
 
 import io.fabric8.kubernetes.api.model.CronJob
 import io.fabric8.kubernetes.api.model.CronJobSpec
+import io.fabric8.kubernetes.api.model.HorizontalPodAutoscaler
+import io.fabric8.kubernetes.api.model.HorizontalPodAutoscalerSpec
 import io.fabric8.kubernetes.api.model.Job
 import io.fabric8.kubernetes.api.model.JobSpec
 import io.fabric8.kubernetes.api.model.JobTemplateSpec
@@ -25,12 +27,12 @@ import io.fabric8.kubernetes.api.model.ResourceQuota
 import io.fabric8.kubernetes.api.model.ResourceQuotaSpec
 import io.fabric8.kubernetes.api.model.Service
 import io.fabric8.kubernetes.api.model.ServiceSpec
+import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinition
+import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinitionSpec
 import io.fabric8.kubernetes.api.model.extensions.DaemonSet
 import io.fabric8.kubernetes.api.model.extensions.DaemonSetSpec
 import io.fabric8.kubernetes.api.model.extensions.Deployment
 import io.fabric8.kubernetes.api.model.extensions.DeploymentSpec
-import io.fabric8.kubernetes.api.model.extensions.HorizontalPodAutoscaler
-import io.fabric8.kubernetes.api.model.extensions.HorizontalPodAutoscalerSpec
 import io.fabric8.kubernetes.api.model.extensions.Ingress
 import io.fabric8.kubernetes.api.model.extensions.IngressSpec
 import io.fabric8.kubernetes.api.model.extensions.NetworkPolicy
@@ -46,6 +48,15 @@ import io.fabric8.kubernetes.api.model.extensions.StatefulSetSpec
 fun  CronJob.`spec`(block: CronJobSpec.() -> Unit = {}) {
   if(this.`spec` == null) {
     this.`spec` = CronJobSpec()
+  }
+
+  this.`spec`.block()
+}
+
+
+fun  CustomResourceDefinition.`spec`(block: CustomResourceDefinitionSpec.() -> Unit = {}) {
+  if(this.`spec` == null) {
+    this.`spec` = CustomResourceDefinitionSpec()
   }
 
   this.`spec`.block()

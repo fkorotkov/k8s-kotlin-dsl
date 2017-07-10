@@ -34,6 +34,7 @@ import io.fabric8.kubernetes.api.model.CronJob
 import io.fabric8.kubernetes.api.model.CronJobList
 import io.fabric8.kubernetes.api.model.CronJobSpec
 import io.fabric8.kubernetes.api.model.CronJobStatus
+import io.fabric8.kubernetes.api.model.CrossVersionObjectReference
 import io.fabric8.kubernetes.api.model.DaemonEndpoint
 import io.fabric8.kubernetes.api.model.DeleteOptions
 import io.fabric8.kubernetes.api.model.DeprecatedDownwardAPIVolumeFile
@@ -62,6 +63,10 @@ import io.fabric8.kubernetes.api.model.GlusterfsVolumeSource
 import io.fabric8.kubernetes.api.model.HTTPGetAction
 import io.fabric8.kubernetes.api.model.HTTPHeader
 import io.fabric8.kubernetes.api.model.Handler
+import io.fabric8.kubernetes.api.model.HorizontalPodAutoscaler
+import io.fabric8.kubernetes.api.model.HorizontalPodAutoscalerList
+import io.fabric8.kubernetes.api.model.HorizontalPodAutoscalerSpec
+import io.fabric8.kubernetes.api.model.HorizontalPodAutoscalerStatus
 import io.fabric8.kubernetes.api.model.HostPathVolumeSource
 import io.fabric8.kubernetes.api.model.IDRange
 import io.fabric8.kubernetes.api.model.ISCSIVolumeSource
@@ -164,12 +169,19 @@ import io.fabric8.kubernetes.api.model.StatusCause
 import io.fabric8.kubernetes.api.model.StatusDetails
 import io.fabric8.kubernetes.api.model.SupplementalGroupsStrategyOptions
 import io.fabric8.kubernetes.api.model.TCPSocketAction
+import io.fabric8.kubernetes.api.model.Time
+import io.fabric8.kubernetes.api.model.Toleration
 import io.fabric8.kubernetes.api.model.Volume
 import io.fabric8.kubernetes.api.model.VolumeMount
 import io.fabric8.kubernetes.api.model.VsphereVirtualDiskVolumeSource
 import io.fabric8.kubernetes.api.model.WatchEvent
+import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinition
+import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinitionCondition
+import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinitionList
+import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinitionNames
+import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinitionSpec
+import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinitionStatus
 import io.fabric8.kubernetes.api.model.extensions.APIVersion
-import io.fabric8.kubernetes.api.model.extensions.CPUTargetUtilization
 import io.fabric8.kubernetes.api.model.extensions.DaemonSet
 import io.fabric8.kubernetes.api.model.extensions.DaemonSetList
 import io.fabric8.kubernetes.api.model.extensions.DaemonSetSpec
@@ -183,10 +195,6 @@ import io.fabric8.kubernetes.api.model.extensions.DeploymentStatus
 import io.fabric8.kubernetes.api.model.extensions.DeploymentStrategy
 import io.fabric8.kubernetes.api.model.extensions.HTTPIngressPath
 import io.fabric8.kubernetes.api.model.extensions.HTTPIngressRuleValue
-import io.fabric8.kubernetes.api.model.extensions.HorizontalPodAutoscaler
-import io.fabric8.kubernetes.api.model.extensions.HorizontalPodAutoscalerList
-import io.fabric8.kubernetes.api.model.extensions.HorizontalPodAutoscalerSpec
-import io.fabric8.kubernetes.api.model.extensions.HorizontalPodAutoscalerStatus
 import io.fabric8.kubernetes.api.model.extensions.Ingress
 import io.fabric8.kubernetes.api.model.extensions.IngressBackend
 import io.fabric8.kubernetes.api.model.extensions.IngressList
@@ -214,7 +222,6 @@ import io.fabric8.kubernetes.api.model.extensions.StatefulSet
 import io.fabric8.kubernetes.api.model.extensions.StatefulSetList
 import io.fabric8.kubernetes.api.model.extensions.StatefulSetSpec
 import io.fabric8.kubernetes.api.model.extensions.StatefulSetStatus
-import io.fabric8.kubernetes.api.model.extensions.SubresourceReference
 import io.fabric8.kubernetes.api.model.extensions.ThirdPartyResource
 import io.fabric8.kubernetes.api.model.extensions.ThirdPartyResourceList
 
@@ -450,6 +457,13 @@ fun cronJobStatus(block : CronJobStatus.() -> Unit = {}): CronJobStatus {
 }
 
 
+fun crossVersionObjectReference(block : CrossVersionObjectReference.() -> Unit = {}): CrossVersionObjectReference {
+  val instance = CrossVersionObjectReference()
+  instance.block()
+  return instance
+}
+
+
 fun daemonEndpoint(block : DaemonEndpoint.() -> Unit = {}): DaemonEndpoint {
   val instance = DaemonEndpoint()
   instance.block()
@@ -641,6 +655,34 @@ fun httpHeader(block : HTTPHeader.() -> Unit = {}): HTTPHeader {
 
 fun handler(block : Handler.() -> Unit = {}): Handler {
   val instance = Handler()
+  instance.block()
+  return instance
+}
+
+
+fun horizontalPodAutoscaler(block : HorizontalPodAutoscaler.() -> Unit = {}): HorizontalPodAutoscaler {
+  val instance = HorizontalPodAutoscaler()
+  instance.block()
+  return instance
+}
+
+
+fun horizontalPodAutoscalerList(block : HorizontalPodAutoscalerList.() -> Unit = {}): HorizontalPodAutoscalerList {
+  val instance = HorizontalPodAutoscalerList()
+  instance.block()
+  return instance
+}
+
+
+fun horizontalPodAutoscalerSpec(block : HorizontalPodAutoscalerSpec.() -> Unit = {}): HorizontalPodAutoscalerSpec {
+  val instance = HorizontalPodAutoscalerSpec()
+  instance.block()
+  return instance
+}
+
+
+fun horizontalPodAutoscalerStatus(block : HorizontalPodAutoscalerStatus.() -> Unit = {}): HorizontalPodAutoscalerStatus {
+  val instance = HorizontalPodAutoscalerStatus()
   instance.block()
   return instance
 }
@@ -1360,6 +1402,20 @@ fun tcpSocketAction(block : TCPSocketAction.() -> Unit = {}): TCPSocketAction {
 }
 
 
+fun time(block : Time.() -> Unit = {}): Time {
+  val instance = Time()
+  instance.block()
+  return instance
+}
+
+
+fun toleration(block : Toleration.() -> Unit = {}): Toleration {
+  val instance = Toleration()
+  instance.block()
+  return instance
+}
+
+
 fun volume(block : Volume.() -> Unit = {}): Volume {
   val instance = Volume()
   instance.block()
@@ -1388,15 +1444,50 @@ fun watchEvent(block : WatchEvent.() -> Unit = {}): WatchEvent {
 }
 
 
-fun apiVersion(block : APIVersion.() -> Unit = {}): APIVersion {
-  val instance = APIVersion()
+fun customResourceDefinition(block : CustomResourceDefinition.() -> Unit = {}): CustomResourceDefinition {
+  val instance = CustomResourceDefinition()
   instance.block()
   return instance
 }
 
 
-fun cpuTargetUtilization(block : CPUTargetUtilization.() -> Unit = {}): CPUTargetUtilization {
-  val instance = CPUTargetUtilization()
+fun customResourceDefinitionCondition(block : CustomResourceDefinitionCondition.() -> Unit = {}): CustomResourceDefinitionCondition {
+  val instance = CustomResourceDefinitionCondition()
+  instance.block()
+  return instance
+}
+
+
+fun customResourceDefinitionList(block : CustomResourceDefinitionList.() -> Unit = {}): CustomResourceDefinitionList {
+  val instance = CustomResourceDefinitionList()
+  instance.block()
+  return instance
+}
+
+
+fun customResourceDefinitionNames(block : CustomResourceDefinitionNames.() -> Unit = {}): CustomResourceDefinitionNames {
+  val instance = CustomResourceDefinitionNames()
+  instance.block()
+  return instance
+}
+
+
+fun customResourceDefinitionSpec(block : CustomResourceDefinitionSpec.() -> Unit = {}): CustomResourceDefinitionSpec {
+  val instance = CustomResourceDefinitionSpec()
+  instance.block()
+  return instance
+}
+
+
+fun customResourceDefinitionStatus(block : CustomResourceDefinitionStatus.() -> Unit = {}): CustomResourceDefinitionStatus {
+  val instance = CustomResourceDefinitionStatus()
+  instance.block()
+  return instance
+}
+
+
+fun apiVersion(block : APIVersion.() -> Unit = {}): APIVersion {
+  val instance = APIVersion()
   instance.block()
   return instance
 }
@@ -1488,34 +1579,6 @@ fun httpIngressPath(block : HTTPIngressPath.() -> Unit = {}): HTTPIngressPath {
 
 fun httpIngressRuleValue(block : HTTPIngressRuleValue.() -> Unit = {}): HTTPIngressRuleValue {
   val instance = HTTPIngressRuleValue()
-  instance.block()
-  return instance
-}
-
-
-fun horizontalPodAutoscaler(block : HorizontalPodAutoscaler.() -> Unit = {}): HorizontalPodAutoscaler {
-  val instance = HorizontalPodAutoscaler()
-  instance.block()
-  return instance
-}
-
-
-fun horizontalPodAutoscalerList(block : HorizontalPodAutoscalerList.() -> Unit = {}): HorizontalPodAutoscalerList {
-  val instance = HorizontalPodAutoscalerList()
-  instance.block()
-  return instance
-}
-
-
-fun horizontalPodAutoscalerSpec(block : HorizontalPodAutoscalerSpec.() -> Unit = {}): HorizontalPodAutoscalerSpec {
-  val instance = HorizontalPodAutoscalerSpec()
-  instance.block()
-  return instance
-}
-
-
-fun horizontalPodAutoscalerStatus(block : HorizontalPodAutoscalerStatus.() -> Unit = {}): HorizontalPodAutoscalerStatus {
-  val instance = HorizontalPodAutoscalerStatus()
   instance.block()
   return instance
 }
@@ -1705,13 +1768,6 @@ fun statefulSetSpec(block : StatefulSetSpec.() -> Unit = {}): StatefulSetSpec {
 
 fun statefulSetStatus(block : StatefulSetStatus.() -> Unit = {}): StatefulSetStatus {
   val instance = StatefulSetStatus()
-  instance.block()
-  return instance
-}
-
-
-fun subresourceReference(block : SubresourceReference.() -> Unit = {}): SubresourceReference {
-  val instance = SubresourceReference()
   instance.block()
   return instance
 }

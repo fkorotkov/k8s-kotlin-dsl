@@ -3,6 +3,8 @@ package com.fkorotkov.kubernetes
 
 import io.fabric8.kubernetes.api.model.CronJob
 import io.fabric8.kubernetes.api.model.CronJobStatus
+import io.fabric8.kubernetes.api.model.HorizontalPodAutoscaler
+import io.fabric8.kubernetes.api.model.HorizontalPodAutoscalerStatus
 import io.fabric8.kubernetes.api.model.Job
 import io.fabric8.kubernetes.api.model.JobStatus
 import io.fabric8.kubernetes.api.model.Namespace
@@ -21,12 +23,12 @@ import io.fabric8.kubernetes.api.model.ResourceQuota
 import io.fabric8.kubernetes.api.model.ResourceQuotaStatus
 import io.fabric8.kubernetes.api.model.Service
 import io.fabric8.kubernetes.api.model.ServiceStatus
+import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinition
+import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinitionStatus
 import io.fabric8.kubernetes.api.model.extensions.DaemonSet
 import io.fabric8.kubernetes.api.model.extensions.DaemonSetStatus
 import io.fabric8.kubernetes.api.model.extensions.Deployment
 import io.fabric8.kubernetes.api.model.extensions.DeploymentStatus
-import io.fabric8.kubernetes.api.model.extensions.HorizontalPodAutoscaler
-import io.fabric8.kubernetes.api.model.extensions.HorizontalPodAutoscalerStatus
 import io.fabric8.kubernetes.api.model.extensions.Ingress
 import io.fabric8.kubernetes.api.model.extensions.IngressStatus
 import io.fabric8.kubernetes.api.model.extensions.ReplicaSet
@@ -40,6 +42,15 @@ import io.fabric8.kubernetes.api.model.extensions.StatefulSetStatus
 fun  CronJob.`status`(block: CronJobStatus.() -> Unit = {}) {
   if(this.`status` == null) {
     this.`status` = CronJobStatus()
+  }
+
+  this.`status`.block()
+}
+
+
+fun  CustomResourceDefinition.`status`(block: CustomResourceDefinitionStatus.() -> Unit = {}) {
+  if(this.`status` == null) {
+    this.`status` = CustomResourceDefinitionStatus()
   }
 
   this.`status`.block()
