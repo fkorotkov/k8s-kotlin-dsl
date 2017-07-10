@@ -1,0 +1,59 @@
+{
+  "libraries": [
+    {
+      "group": "com.fkorotkov",
+      "name": "gradle-libraries-plugin",
+      "version": "0.1"
+    },
+    {
+      "group": "com.google.guava",
+      "name": "guava",
+      "version": "22.0"
+    },
+    {
+      "group": "com.jfrog.bintray.gradle",
+      "name": "gradle-bintray-plugin",
+      "version": "1.7.3"
+    },
+    {
+      "group": "io.fabric8",
+      "name": "kubernetes-client",
+      "version": "2.3.1"
+    },
+    {
+      "group": "io.fabric8",
+      "name": "kubernetes-model",
+      "version": "1.0.73"
+    },
+    {
+      "group": "junit",
+      "name": "junit",
+      "version": "4.12"
+    },
+    {
+      "group": "org.jetbrains.kotlin",
+      "name": "kotlin-annotation-processing",
+      "version": "1.1.2-5"
+    },
+    {
+      "group": "org.jetbrains.kotlin",
+      "name": "kotlin-gradle-plugin",
+      "version": "1.1.2-5"
+    },
+    {
+      "group": "org.jetbrains.kotlin",
+      "name": "kotlin-reflect",
+      "version": "1.1.2-5"
+    },
+    {
+      "group": "org.jetbrains.kotlin",
+      "name": "kotlin-stdlib",
+      "version": "1.1.2-5"
+    },
+    {
+      "group": "org.jetbrains.kotlin",
+      "name": "kotlin-test-junit",
+      "version": "1.1.2-5"
+    }
+  ]
+}

@@ -1,4 +1,27 @@
-apply from: 'libraries.gradle'
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.fkorotkov:gradle-libraries-plugin:0.1'
+    }
+}
+
+apply plugin: 'com.fkorotkov.libraries'
+
+updateLibraries.resolutionStrategy = {
+    componentSelection { rules ->
+        rules.all { ComponentSelection selection ->
+            boolean rejected = ['dev', 'eap', 'M1'].any { qualifier ->
+                selection.candidate.version ==~ /(?i).*[.-]${qualifier}[.\d-]*/
+            }
+            if (rejected) {
+                selection.reject('dev version')
+            }
+        }
+    }
+}
 
 subprojects {
     buildscript {
@@ -7,7 +30,7 @@ subprojects {
         }
 
         dependencies {
-            classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
+            classpath libraries['org.jetbrains.kotlin:kotlin-gradle-plugin']
         }
     }
 
@@ -18,6 +41,7 @@ subprojects {
         maven { setUrl("https://repo.gradle.org/gradle/repo") }
     }
 
+    apply plugin: 'com.fkorotkov.libraries'
     apply plugin: "java"
     apply plugin: "jacoco"
 

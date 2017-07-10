@@ -1,8 +1,8 @@
 apply plugin: "kotlin"
 
 dependencies {
-    compile("org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}")
-    compile("org.jetbrains.kotlin:kotlin-reflect:${versions.kotlin}")
+    compile libraries['org.jetbrains.kotlin:kotlin-stdlib']
+    compile libraries['org.jetbrains.kotlin:kotlin-reflect']
 
-    compile("com.google.guava:guava:${versions.guava}")
+    compile libraries['com.google.guava:guava']
 }

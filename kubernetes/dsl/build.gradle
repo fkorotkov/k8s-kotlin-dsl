@@ -11,7 +11,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:${versions.bintray}"
+        classpath libraries['com.jfrog.bintray.gradle:gradle-bintray-plugin']
     }
 }
 
@@ -59,11 +59,11 @@ sourceSets {
 }
 
 dependencies {
-    compile("org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}")
-    compile("org.jetbrains.kotlin:kotlin-reflect:${versions.kotlin}")
+    compile libraries['org.jetbrains.kotlin:kotlin-stdlib']
+    compile libraries['org.jetbrains.kotlin:kotlin-reflect']
 
-    compile("io.fabric8:kubernetes-model:${versions.kubernetes_model}")
+    compile libraries['io.fabric8:kubernetes-model']
 
-    testCompile("junit:junit:${versions.junit}")
-    testCompile("org.jetbrains.kotlin:kotlin-test-junit:${versions.kotlin}")
+    testCompile libraries['junit:junit']
+    testCompile libraries['org.jetbrains.kotlin:kotlin-test-junit']
 }

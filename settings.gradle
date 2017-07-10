@@ -1,4 +1,4 @@
-rootProject.name = 'k8s-kotlin-dsl./gr'
+rootProject.name = 'k8s-kotlin-dsl'
 
 import static groovy.io.FileType.DIRECTORIES
 

@@ -6,8 +6,8 @@ mainClassName = "ExampleKt"
 dependencies {
     compile project(":kubernetes:dsl")
 
-    compile("org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}")
-    compile("org.jetbrains.kotlin:kotlin-reflect:${versions.kotlin}")
+    compile libraries['org.jetbrains.kotlin:kotlin-stdlib']
+    compile libraries['org.jetbrains.kotlin:kotlin-reflect']
 
-    compile("io.fabric8:kubernetes-client:${versions.kubernetes_client}")
+    compile libraries['io.fabric8:kubernetes-client']
 }
