@@ -15,7 +15,7 @@ jobs:
           - v1-dependencies-{{ checksum "dependencies.json" }}
           - v1-dependencies-
 
-      - run: gradle check
+      - run: ./gradlew check
 
       - save_cache:
           paths:
