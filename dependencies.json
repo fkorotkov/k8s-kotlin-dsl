@@ -8,7 +8,7 @@
     {
       "group": "com.google.guava",
       "name": "guava",
-      "version": "22.0"
+      "version": "23.0"
     },
     {
       "group": "com.jfrog.bintray.gradle",
@@ -18,12 +18,12 @@
     {
       "group": "io.fabric8",
       "name": "kubernetes-client",
-      "version": "2.5.2"
+      "version": "2.5.9"
     },
     {
       "group": "io.fabric8",
       "name": "kubernetes-model",
-      "version": "1.0.78"
+      "version": "1.1.2"
     },
     {
       "group": "junit",
