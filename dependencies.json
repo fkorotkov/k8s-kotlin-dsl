@@ -18,7 +18,7 @@
     {
       "group": "io.fabric8",
       "name": "kubernetes-client",
-      "version": "2.5.9"
+      "version": "2.6.1"
     },
     {
       "group": "io.fabric8",
