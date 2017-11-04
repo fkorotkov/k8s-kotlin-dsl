@@ -2,7 +2,6 @@ package com.fkorotkov.kotlin.dsl
 
 import com.fkorotkov.kotlin.util.ClassUtil
 import java.io.File
-import java.util.*
 import kotlin.reflect.KClass
 import kotlin.reflect.KMutableProperty
 import kotlin.reflect.full.isSubclassOf
@@ -14,7 +13,7 @@ object Generator {
     clazz: KClass<*>,
     outputFolder: File,
     outputPackage: String,
-    excludePackages: Set<String> = emptySet()
+    excludePackagesPrefixes: Set<String> = emptySet()
   ) {
     val allClasses = ClassUtil.findAllClassesOnClasspath().filter {
       try {
@@ -22,8 +21,8 @@ object Generator {
       } catch(e: Throwable) {
         false
       }
-    }.filterNot {
-      excludePackages.contains(it.java.`package`.name)
+    }.filterNot { subClazz ->
+      excludePackagesPrefixes.any { subClazz.java.`package`.name.startsWith(it) }
     }
 
     allClasses.flatMap { subClazz ->

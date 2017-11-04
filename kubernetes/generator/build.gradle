@@ -4,7 +4,7 @@ apply plugin: "kotlin"
 mainClassName = "com.fkorotkov.kubernetes.GeneratorKt"
 
 run {
-    args "${project(":kubernetes:dsl").projectDir}/src/main/kotlin-gen/", "com.fkorotkov.kubernetes"
+    args "${project(":kubernetes:dsl").projectDir}/src/main/kotlin-gen/"
 }
 
 dependencies {

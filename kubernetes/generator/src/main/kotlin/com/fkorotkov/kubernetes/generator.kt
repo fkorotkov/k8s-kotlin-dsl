@@ -6,7 +6,6 @@ import java.io.File
 
 fun main(args: Array<String>) {
   val outputFolder = File(args[0])
-  val outputPackage = args[1]
 
   if (outputFolder.exists()) {
     outputFolder.deleteRecursively()
@@ -14,7 +13,13 @@ fun main(args: Array<String>) {
   Generator.generate(
     KubernetesResource::class,
     outputFolder,
-    outputPackage,
-    setOf("io.fabric8.openshift.api.model")
+    "com.fkorotkov.kubernetes",
+    setOf("io.fabric8.openshift")
+  )
+  Generator.generate(
+    KubernetesResource::class,
+    outputFolder,
+    "com.fkorotkov.openshift",
+    setOf("io.fabric8.kubernetes")
   )
 }
