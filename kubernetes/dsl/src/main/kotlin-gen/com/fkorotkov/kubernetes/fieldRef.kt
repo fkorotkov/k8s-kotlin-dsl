@@ -1,19 +1,9 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.DeprecatedDownwardAPIVolumeFile
 import io.fabric8.kubernetes.api.model.DownwardAPIVolumeFile
 import io.fabric8.kubernetes.api.model.EnvVarSource
 import io.fabric8.kubernetes.api.model.ObjectFieldSelector
-
-
-fun  DeprecatedDownwardAPIVolumeFile.`fieldRef`(block: ObjectFieldSelector.() -> Unit = {}) {
-  if(this.`fieldRef` == null) {
-    this.`fieldRef` = ObjectFieldSelector()
-  }
-
-  this.`fieldRef`.block()
-}
 
 
 fun  DownwardAPIVolumeFile.`fieldRef`(block: ObjectFieldSelector.() -> Unit = {}) {

@@ -9,7 +9,6 @@ import io.fabric8.kubernetes.api.model.ConfigMap
 import io.fabric8.kubernetes.api.model.ConfigMapList
 import io.fabric8.kubernetes.api.model.CronJob
 import io.fabric8.kubernetes.api.model.CronJobList
-import io.fabric8.kubernetes.api.model.DeprecatedDownwardAPIVolumeSource
 import io.fabric8.kubernetes.api.model.Endpoints
 import io.fabric8.kubernetes.api.model.EndpointsList
 import io.fabric8.kubernetes.api.model.Event
@@ -42,16 +41,16 @@ import io.fabric8.kubernetes.api.model.ResourceQuota
 import io.fabric8.kubernetes.api.model.ResourceQuotaList
 import io.fabric8.kubernetes.api.model.Secret
 import io.fabric8.kubernetes.api.model.SecretList
-import io.fabric8.kubernetes.api.model.SecurityContextConstraints
-import io.fabric8.kubernetes.api.model.SecurityContextConstraintsList
 import io.fabric8.kubernetes.api.model.Service
 import io.fabric8.kubernetes.api.model.ServiceAccount
 import io.fabric8.kubernetes.api.model.ServiceAccountList
 import io.fabric8.kubernetes.api.model.ServiceList
 import io.fabric8.kubernetes.api.model.Status
-import io.fabric8.kubernetes.api.model.Volume
+import io.fabric8.kubernetes.api.model.StorageClass
+import io.fabric8.kubernetes.api.model.StorageClassList
 import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinition
 import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinitionList
+import io.fabric8.kubernetes.api.model.authentication.TokenReview
 import io.fabric8.kubernetes.api.model.extensions.DaemonSet
 import io.fabric8.kubernetes.api.model.extensions.DaemonSetList
 import io.fabric8.kubernetes.api.model.extensions.Deployment
@@ -528,24 +527,6 @@ fun  SecretList.`metadata`(block: ListMeta.() -> Unit = {}) {
 }
 
 
-fun  SecurityContextConstraints.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  SecurityContextConstraintsList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
 fun  Service.`metadata`(block: ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = ObjectMeta()
@@ -609,6 +590,24 @@ fun  Status.`metadata`(block: ListMeta.() -> Unit = {}) {
 }
 
 
+fun  StorageClass.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  StorageClassList.`metadata`(block: ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
 fun  ThirdPartyResource.`metadata`(block: ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = ObjectMeta()
@@ -627,9 +626,9 @@ fun  ThirdPartyResourceList.`metadata`(block: ListMeta.() -> Unit = {}) {
 }
 
 
-fun  Volume.`metadata`(block: DeprecatedDownwardAPIVolumeSource.() -> Unit = {}) {
+fun  TokenReview.`metadata`(block: ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = DeprecatedDownwardAPIVolumeSource()
+    this.`metadata` = ObjectMeta()
   }
 
   this.`metadata`.block()

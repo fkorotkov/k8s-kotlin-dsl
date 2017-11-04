@@ -25,6 +25,8 @@ import io.fabric8.kubernetes.api.model.Service
 import io.fabric8.kubernetes.api.model.ServiceStatus
 import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinition
 import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinitionStatus
+import io.fabric8.kubernetes.api.model.authentication.TokenReview
+import io.fabric8.kubernetes.api.model.authentication.TokenReviewStatus
 import io.fabric8.kubernetes.api.model.extensions.DaemonSet
 import io.fabric8.kubernetes.api.model.extensions.DaemonSetStatus
 import io.fabric8.kubernetes.api.model.extensions.Deployment
@@ -195,6 +197,15 @@ fun  Service.`status`(block: ServiceStatus.() -> Unit = {}) {
 fun  StatefulSet.`status`(block: StatefulSetStatus.() -> Unit = {}) {
   if(this.`status` == null) {
     this.`status` = StatefulSetStatus()
+  }
+
+  this.`status`.block()
+}
+
+
+fun  TokenReview.`status`(block: TokenReviewStatus.() -> Unit = {}) {
+  if(this.`status` == null) {
+    this.`status` = TokenReviewStatus()
   }
 
   this.`status`.block()

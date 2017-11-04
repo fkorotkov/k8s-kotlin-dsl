@@ -29,6 +29,8 @@ import io.fabric8.kubernetes.api.model.Service
 import io.fabric8.kubernetes.api.model.ServiceSpec
 import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinition
 import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinitionSpec
+import io.fabric8.kubernetes.api.model.authentication.TokenReview
+import io.fabric8.kubernetes.api.model.authentication.TokenReviewSpec
 import io.fabric8.kubernetes.api.model.extensions.DaemonSet
 import io.fabric8.kubernetes.api.model.extensions.DaemonSetSpec
 import io.fabric8.kubernetes.api.model.extensions.Deployment
@@ -237,6 +239,15 @@ fun  Service.`spec`(block: ServiceSpec.() -> Unit = {}) {
 fun  StatefulSet.`spec`(block: StatefulSetSpec.() -> Unit = {}) {
   if(this.`spec` == null) {
     this.`spec` = StatefulSetSpec()
+  }
+
+  this.`spec`.block()
+}
+
+
+fun  TokenReview.`spec`(block: TokenReviewSpec.() -> Unit = {}) {
+  if(this.`spec` == null) {
+    this.`spec` = TokenReviewSpec()
   }
 
   this.`spec`.block()
