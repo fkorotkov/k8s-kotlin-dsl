@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/fkorotkov/k8s-kotlin-dsl.svg?branch=master)](https://travis-ci.org/fkorotkov/k8s-kotlin-dsl)
 [![Download](https://api.bintray.com/packages/fkorotkov/maven/k8s-kotlin-dsl/images/download.svg) ](https://bintray.com/fkorotkov/maven/k8s-kotlin-dsl/_latestVersion)
 
-[Kotlin](https://kotlinlang.org) DSL for [Kubernetes](https://kubernetes.io/) on top of [fabric8 models](https://github.com/fabric8io/kubernetes-model).
+[Kotlin](https://kotlinlang.org) DSL for [Kubernetes](https://kubernetes.io/) and [Openshift Container Platform](https://www.openshift.com/container-platform/) on top of [fabric8 models](https://github.com/fabric8io/kubernetes-model).
 
 ![screencast](demo.gif)
 
