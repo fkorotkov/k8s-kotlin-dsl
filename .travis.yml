@@ -21,6 +21,6 @@ script: ./gradlew check
 
 deploy:
   provider: script
-  script: ./gradlew :kubernetes:dsl:bintrayUpload
+  script: ./gradlew :kubernetes:dsl:bintrayUpload --info
   on:
     tags: true
