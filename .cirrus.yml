@@ -9,3 +9,10 @@ check_task:
     - rm -rf ~/.gradle/caches/$GRADLE_VERSION/
     - rm -f ~/.gradle/caches/user-id.txt
     - find ~/.gradle/caches/ -name "*.lock" -type f -delete
+
+deploy_task:
+  only_if: $CIRRUS_TAG != ''
+  depends_on: check
+  environment:
+    BINTRAY_API_KEY: ENCRYPTED[d86059880472037e15bb3ab28eb47726b84ff6d0dd5a0a8a40476dfc3aaa3e11ff34644a9df6c77c3036cca63d82ac54]
+  deploy_script: gradle :kubernetes:dsl:bintrayUpload --info
