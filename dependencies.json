@@ -8,7 +8,7 @@
     {
       "group": "com.google.guava",
       "name": "guava",
-      "version": "23.6-jre"
+      "version": "24.0-jre"
     },
     {
       "group": "com.jfrog.bintray.gradle",
@@ -18,12 +18,12 @@
     {
       "group": "io.fabric8",
       "name": "kubernetes-client",
-      "version": "3.1.7"
+      "version": "3.1.8"
     },
     {
       "group": "io.fabric8",
       "name": "kubernetes-model",
-      "version": "2.0.4"
+      "version": "2.0.8"
     },
     {
       "group": "junit",
@@ -38,22 +38,22 @@
     {
       "group": "org.jetbrains.kotlin",
       "name": "kotlin-gradle-plugin",
-      "version": "1.2.10"
+      "version": "1.2.30"
     },
     {
       "group": "org.jetbrains.kotlin",
       "name": "kotlin-reflect",
-      "version": "1.2.10"
+      "version": "1.2.30"
     },
     {
       "group": "org.jetbrains.kotlin",
       "name": "kotlin-stdlib",
-      "version": "1.2.10"
+      "version": "1.2.30"
     },
     {
       "group": "org.jetbrains.kotlin",
       "name": "kotlin-test-junit",
-      "version": "1.2.10"
+      "version": "1.2.30"
     }
   ]
 }

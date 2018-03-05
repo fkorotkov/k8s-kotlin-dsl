@@ -51,6 +51,8 @@ import io.fabric8.kubernetes.api.model.StorageClassList
 import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinition
 import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinitionList
 import io.fabric8.kubernetes.api.model.authentication.TokenReview
+import io.fabric8.kubernetes.api.model.authorization.LocalSubjectAccessReview
+import io.fabric8.kubernetes.api.model.authorization.SubjectAccessReview
 import io.fabric8.kubernetes.api.model.extensions.DaemonSet
 import io.fabric8.kubernetes.api.model.extensions.DaemonSetList
 import io.fabric8.kubernetes.api.model.extensions.Deployment
@@ -59,6 +61,8 @@ import io.fabric8.kubernetes.api.model.extensions.Ingress
 import io.fabric8.kubernetes.api.model.extensions.IngressList
 import io.fabric8.kubernetes.api.model.extensions.NetworkPolicy
 import io.fabric8.kubernetes.api.model.extensions.NetworkPolicyList
+import io.fabric8.kubernetes.api.model.extensions.PodSecurityPolicy
+import io.fabric8.kubernetes.api.model.extensions.PodSecurityPolicyList
 import io.fabric8.kubernetes.api.model.extensions.ReplicaSet
 import io.fabric8.kubernetes.api.model.extensions.ReplicaSetList
 import io.fabric8.kubernetes.api.model.extensions.Scale
@@ -66,6 +70,8 @@ import io.fabric8.kubernetes.api.model.extensions.StatefulSet
 import io.fabric8.kubernetes.api.model.extensions.StatefulSetList
 import io.fabric8.kubernetes.api.model.extensions.ThirdPartyResource
 import io.fabric8.kubernetes.api.model.extensions.ThirdPartyResourceList
+import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudget
+import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetList
 
 
 fun  BaseKubernetesList.`metadata`(block: ListMeta.() -> Unit = {}) {
@@ -311,6 +317,15 @@ fun  LimitRangeList.`metadata`(block: ListMeta.() -> Unit = {}) {
 }
 
 
+fun  LocalSubjectAccessReview.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
 fun  Namespace.`metadata`(block: ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = ObjectMeta()
@@ -410,7 +425,43 @@ fun  Pod.`metadata`(block: ObjectMeta.() -> Unit = {}) {
 }
 
 
+fun  PodDisruptionBudget.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  PodDisruptionBudgetList.`metadata`(block: ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
 fun  PodList.`metadata`(block: ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  PodSecurityPolicy.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  PodSecurityPolicyList.`metadata`(block: ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = ListMeta()
   }
@@ -602,6 +653,15 @@ fun  StorageClass.`metadata`(block: ObjectMeta.() -> Unit = {}) {
 fun  StorageClassList.`metadata`(block: ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  SubjectAccessReview.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ObjectMeta()
   }
 
   this.`metadata`.block()

@@ -31,6 +31,9 @@ import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinition
 import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinitionSpec
 import io.fabric8.kubernetes.api.model.authentication.TokenReview
 import io.fabric8.kubernetes.api.model.authentication.TokenReviewSpec
+import io.fabric8.kubernetes.api.model.authorization.LocalSubjectAccessReview
+import io.fabric8.kubernetes.api.model.authorization.SubjectAccessReview
+import io.fabric8.kubernetes.api.model.authorization.SubjectAccessReviewSpec
 import io.fabric8.kubernetes.api.model.extensions.DaemonSet
 import io.fabric8.kubernetes.api.model.extensions.DaemonSetSpec
 import io.fabric8.kubernetes.api.model.extensions.Deployment
@@ -39,12 +42,16 @@ import io.fabric8.kubernetes.api.model.extensions.Ingress
 import io.fabric8.kubernetes.api.model.extensions.IngressSpec
 import io.fabric8.kubernetes.api.model.extensions.NetworkPolicy
 import io.fabric8.kubernetes.api.model.extensions.NetworkPolicySpec
+import io.fabric8.kubernetes.api.model.extensions.PodSecurityPolicy
+import io.fabric8.kubernetes.api.model.extensions.PodSecurityPolicySpec
 import io.fabric8.kubernetes.api.model.extensions.ReplicaSet
 import io.fabric8.kubernetes.api.model.extensions.ReplicaSetSpec
 import io.fabric8.kubernetes.api.model.extensions.Scale
 import io.fabric8.kubernetes.api.model.extensions.ScaleSpec
 import io.fabric8.kubernetes.api.model.extensions.StatefulSet
 import io.fabric8.kubernetes.api.model.extensions.StatefulSetSpec
+import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudget
+import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetSpec
 
 
 fun  CronJob.`spec`(block: CronJobSpec.() -> Unit = {}) {
@@ -128,6 +135,15 @@ fun  LimitRange.`spec`(block: LimitRangeSpec.() -> Unit = {}) {
 }
 
 
+fun  LocalSubjectAccessReview.`spec`(block: SubjectAccessReviewSpec.() -> Unit = {}) {
+  if(this.`spec` == null) {
+    this.`spec` = SubjectAccessReviewSpec()
+  }
+
+  this.`spec`.block()
+}
+
+
 fun  Namespace.`spec`(block: NamespaceSpec.() -> Unit = {}) {
   if(this.`spec` == null) {
     this.`spec` = NamespaceSpec()
@@ -176,6 +192,24 @@ fun  PersistentVolumeClaim.`spec`(block: PersistentVolumeClaimSpec.() -> Unit = 
 fun  Pod.`spec`(block: PodSpec.() -> Unit = {}) {
   if(this.`spec` == null) {
     this.`spec` = PodSpec()
+  }
+
+  this.`spec`.block()
+}
+
+
+fun  PodDisruptionBudget.`spec`(block: PodDisruptionBudgetSpec.() -> Unit = {}) {
+  if(this.`spec` == null) {
+    this.`spec` = PodDisruptionBudgetSpec()
+  }
+
+  this.`spec`.block()
+}
+
+
+fun  PodSecurityPolicy.`spec`(block: PodSecurityPolicySpec.() -> Unit = {}) {
+  if(this.`spec` == null) {
+    this.`spec` = PodSecurityPolicySpec()
   }
 
   this.`spec`.block()
@@ -239,6 +273,15 @@ fun  Service.`spec`(block: ServiceSpec.() -> Unit = {}) {
 fun  StatefulSet.`spec`(block: StatefulSetSpec.() -> Unit = {}) {
   if(this.`spec` == null) {
     this.`spec` = StatefulSetSpec()
+  }
+
+  this.`spec`.block()
+}
+
+
+fun  SubjectAccessReview.`spec`(block: SubjectAccessReviewSpec.() -> Unit = {}) {
+  if(this.`spec` == null) {
+    this.`spec` = SubjectAccessReviewSpec()
   }
 
   this.`spec`.block()

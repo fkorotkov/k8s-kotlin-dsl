@@ -204,6 +204,12 @@ import io.fabric8.kubernetes.api.model.authentication.TokenReview
 import io.fabric8.kubernetes.api.model.authentication.TokenReviewSpec
 import io.fabric8.kubernetes.api.model.authentication.TokenReviewStatus
 import io.fabric8.kubernetes.api.model.authentication.UserInfo
+import io.fabric8.kubernetes.api.model.authorization.LocalSubjectAccessReview
+import io.fabric8.kubernetes.api.model.authorization.NonResourceAttributes
+import io.fabric8.kubernetes.api.model.authorization.ResourceAttributes
+import io.fabric8.kubernetes.api.model.authorization.SubjectAccessReview
+import io.fabric8.kubernetes.api.model.authorization.SubjectAccessReviewSpec
+import io.fabric8.kubernetes.api.model.authorization.SubjectAccessReviewStatus
 import io.fabric8.kubernetes.api.model.extensions.APIVersion
 import io.fabric8.kubernetes.api.model.extensions.DaemonSet
 import io.fabric8.kubernetes.api.model.extensions.DaemonSetList
@@ -217,8 +223,11 @@ import io.fabric8.kubernetes.api.model.extensions.DeploymentRollback
 import io.fabric8.kubernetes.api.model.extensions.DeploymentSpec
 import io.fabric8.kubernetes.api.model.extensions.DeploymentStatus
 import io.fabric8.kubernetes.api.model.extensions.DeploymentStrategy
+import io.fabric8.kubernetes.api.model.extensions.FSGroupStrategyOptions
 import io.fabric8.kubernetes.api.model.extensions.HTTPIngressPath
 import io.fabric8.kubernetes.api.model.extensions.HTTPIngressRuleValue
+import io.fabric8.kubernetes.api.model.extensions.HostPortRange
+import io.fabric8.kubernetes.api.model.extensions.IDRange
 import io.fabric8.kubernetes.api.model.extensions.Ingress
 import io.fabric8.kubernetes.api.model.extensions.IngressBackend
 import io.fabric8.kubernetes.api.model.extensions.IngressList
@@ -226,12 +235,16 @@ import io.fabric8.kubernetes.api.model.extensions.IngressRule
 import io.fabric8.kubernetes.api.model.extensions.IngressSpec
 import io.fabric8.kubernetes.api.model.extensions.IngressStatus
 import io.fabric8.kubernetes.api.model.extensions.IngressTLS
+import io.fabric8.kubernetes.api.model.extensions.KubernetesRunAsUserStrategyOptions
 import io.fabric8.kubernetes.api.model.extensions.NetworkPolicy
 import io.fabric8.kubernetes.api.model.extensions.NetworkPolicyIngressRule
 import io.fabric8.kubernetes.api.model.extensions.NetworkPolicyList
 import io.fabric8.kubernetes.api.model.extensions.NetworkPolicyPeer
 import io.fabric8.kubernetes.api.model.extensions.NetworkPolicyPort
 import io.fabric8.kubernetes.api.model.extensions.NetworkPolicySpec
+import io.fabric8.kubernetes.api.model.extensions.PodSecurityPolicy
+import io.fabric8.kubernetes.api.model.extensions.PodSecurityPolicyList
+import io.fabric8.kubernetes.api.model.extensions.PodSecurityPolicySpec
 import io.fabric8.kubernetes.api.model.extensions.ReplicaSet
 import io.fabric8.kubernetes.api.model.extensions.ReplicaSetCondition
 import io.fabric8.kubernetes.api.model.extensions.ReplicaSetList
@@ -241,6 +254,7 @@ import io.fabric8.kubernetes.api.model.extensions.RollbackConfig
 import io.fabric8.kubernetes.api.model.extensions.RollingUpdateDaemonSet
 import io.fabric8.kubernetes.api.model.extensions.RollingUpdateDeployment
 import io.fabric8.kubernetes.api.model.extensions.RollingUpdateStatefulSetStrategy
+import io.fabric8.kubernetes.api.model.extensions.SELinuxStrategyOptions
 import io.fabric8.kubernetes.api.model.extensions.Scale
 import io.fabric8.kubernetes.api.model.extensions.ScaleSpec
 import io.fabric8.kubernetes.api.model.extensions.ScaleStatus
@@ -249,8 +263,13 @@ import io.fabric8.kubernetes.api.model.extensions.StatefulSetList
 import io.fabric8.kubernetes.api.model.extensions.StatefulSetSpec
 import io.fabric8.kubernetes.api.model.extensions.StatefulSetStatus
 import io.fabric8.kubernetes.api.model.extensions.StatefulSetUpdateStrategy
+import io.fabric8.kubernetes.api.model.extensions.SupplementalGroupsStrategyOptions
 import io.fabric8.kubernetes.api.model.extensions.ThirdPartyResource
 import io.fabric8.kubernetes.api.model.extensions.ThirdPartyResourceList
+import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudget
+import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetList
+import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetSpec
+import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetStatus
 
 
 fun awsElasticBlockStoreVolumeSource(block : AWSElasticBlockStoreVolumeSource.() -> Unit = {}): AWSElasticBlockStoreVolumeSource {
@@ -1674,6 +1693,48 @@ fun userInfo(block : UserInfo.() -> Unit = {}): UserInfo {
 }
 
 
+fun localSubjectAccessReview(block : LocalSubjectAccessReview.() -> Unit = {}): LocalSubjectAccessReview {
+  val instance = LocalSubjectAccessReview()
+  instance.block()
+  return instance
+}
+
+
+fun nonResourceAttributes(block : NonResourceAttributes.() -> Unit = {}): NonResourceAttributes {
+  val instance = NonResourceAttributes()
+  instance.block()
+  return instance
+}
+
+
+fun resourceAttributes(block : ResourceAttributes.() -> Unit = {}): ResourceAttributes {
+  val instance = ResourceAttributes()
+  instance.block()
+  return instance
+}
+
+
+fun subjectAccessReview(block : SubjectAccessReview.() -> Unit = {}): SubjectAccessReview {
+  val instance = SubjectAccessReview()
+  instance.block()
+  return instance
+}
+
+
+fun subjectAccessReviewSpec(block : SubjectAccessReviewSpec.() -> Unit = {}): SubjectAccessReviewSpec {
+  val instance = SubjectAccessReviewSpec()
+  instance.block()
+  return instance
+}
+
+
+fun subjectAccessReviewStatus(block : SubjectAccessReviewStatus.() -> Unit = {}): SubjectAccessReviewStatus {
+  val instance = SubjectAccessReviewStatus()
+  instance.block()
+  return instance
+}
+
+
 fun apiVersion(block : APIVersion.() -> Unit = {}): APIVersion {
   val instance = APIVersion()
   instance.block()
@@ -1765,6 +1826,13 @@ fun deploymentStrategy(block : DeploymentStrategy.() -> Unit = {}): DeploymentSt
 }
 
 
+fun fsGroupStrategyOptions(block : FSGroupStrategyOptions.() -> Unit = {}): FSGroupStrategyOptions {
+  val instance = FSGroupStrategyOptions()
+  instance.block()
+  return instance
+}
+
+
 fun httpIngressPath(block : HTTPIngressPath.() -> Unit = {}): HTTPIngressPath {
   val instance = HTTPIngressPath()
   instance.block()
@@ -1774,6 +1842,20 @@ fun httpIngressPath(block : HTTPIngressPath.() -> Unit = {}): HTTPIngressPath {
 
 fun httpIngressRuleValue(block : HTTPIngressRuleValue.() -> Unit = {}): HTTPIngressRuleValue {
   val instance = HTTPIngressRuleValue()
+  instance.block()
+  return instance
+}
+
+
+fun hostPortRange(block : HostPortRange.() -> Unit = {}): HostPortRange {
+  val instance = HostPortRange()
+  instance.block()
+  return instance
+}
+
+
+fun idRange(block : IDRange.() -> Unit = {}): IDRange {
+  val instance = IDRange()
   instance.block()
   return instance
 }
@@ -1828,6 +1910,13 @@ fun ingressTLS(block : IngressTLS.() -> Unit = {}): IngressTLS {
 }
 
 
+fun kubernetesRunAsUserStrategyOptions(block : KubernetesRunAsUserStrategyOptions.() -> Unit = {}): KubernetesRunAsUserStrategyOptions {
+  val instance = KubernetesRunAsUserStrategyOptions()
+  instance.block()
+  return instance
+}
+
+
 fun networkPolicy(block : NetworkPolicy.() -> Unit = {}): NetworkPolicy {
   val instance = NetworkPolicy()
   instance.block()
@@ -1865,6 +1954,27 @@ fun networkPolicyPort(block : NetworkPolicyPort.() -> Unit = {}): NetworkPolicyP
 
 fun networkPolicySpec(block : NetworkPolicySpec.() -> Unit = {}): NetworkPolicySpec {
   val instance = NetworkPolicySpec()
+  instance.block()
+  return instance
+}
+
+
+fun podSecurityPolicy(block : PodSecurityPolicy.() -> Unit = {}): PodSecurityPolicy {
+  val instance = PodSecurityPolicy()
+  instance.block()
+  return instance
+}
+
+
+fun podSecurityPolicyList(block : PodSecurityPolicyList.() -> Unit = {}): PodSecurityPolicyList {
+  val instance = PodSecurityPolicyList()
+  instance.block()
+  return instance
+}
+
+
+fun podSecurityPolicySpec(block : PodSecurityPolicySpec.() -> Unit = {}): PodSecurityPolicySpec {
+  val instance = PodSecurityPolicySpec()
   instance.block()
   return instance
 }
@@ -1933,6 +2043,13 @@ fun rollingUpdateStatefulSetStrategy(block : RollingUpdateStatefulSetStrategy.()
 }
 
 
+fun seLinuxStrategyOptions(block : SELinuxStrategyOptions.() -> Unit = {}): SELinuxStrategyOptions {
+  val instance = SELinuxStrategyOptions()
+  instance.block()
+  return instance
+}
+
+
 fun scale(block : Scale.() -> Unit = {}): Scale {
   val instance = Scale()
   instance.block()
@@ -1989,6 +2106,13 @@ fun statefulSetUpdateStrategy(block : StatefulSetUpdateStrategy.() -> Unit = {})
 }
 
 
+fun supplementalGroupsStrategyOptions(block : SupplementalGroupsStrategyOptions.() -> Unit = {}): SupplementalGroupsStrategyOptions {
+  val instance = SupplementalGroupsStrategyOptions()
+  instance.block()
+  return instance
+}
+
+
 fun thirdPartyResource(block : ThirdPartyResource.() -> Unit = {}): ThirdPartyResource {
   val instance = ThirdPartyResource()
   instance.block()
@@ -1998,6 +2122,34 @@ fun thirdPartyResource(block : ThirdPartyResource.() -> Unit = {}): ThirdPartyRe
 
 fun thirdPartyResourceList(block : ThirdPartyResourceList.() -> Unit = {}): ThirdPartyResourceList {
   val instance = ThirdPartyResourceList()
+  instance.block()
+  return instance
+}
+
+
+fun podDisruptionBudget(block : PodDisruptionBudget.() -> Unit = {}): PodDisruptionBudget {
+  val instance = PodDisruptionBudget()
+  instance.block()
+  return instance
+}
+
+
+fun podDisruptionBudgetList(block : PodDisruptionBudgetList.() -> Unit = {}): PodDisruptionBudgetList {
+  val instance = PodDisruptionBudgetList()
+  instance.block()
+  return instance
+}
+
+
+fun podDisruptionBudgetSpec(block : PodDisruptionBudgetSpec.() -> Unit = {}): PodDisruptionBudgetSpec {
+  val instance = PodDisruptionBudgetSpec()
+  instance.block()
+  return instance
+}
+
+
+fun podDisruptionBudgetStatus(block : PodDisruptionBudgetStatus.() -> Unit = {}): PodDisruptionBudgetStatus {
+  val instance = PodDisruptionBudgetStatus()
   instance.block()
   return instance
 }

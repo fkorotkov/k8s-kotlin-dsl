@@ -27,6 +27,9 @@ import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinition
 import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinitionStatus
 import io.fabric8.kubernetes.api.model.authentication.TokenReview
 import io.fabric8.kubernetes.api.model.authentication.TokenReviewStatus
+import io.fabric8.kubernetes.api.model.authorization.LocalSubjectAccessReview
+import io.fabric8.kubernetes.api.model.authorization.SubjectAccessReview
+import io.fabric8.kubernetes.api.model.authorization.SubjectAccessReviewStatus
 import io.fabric8.kubernetes.api.model.extensions.DaemonSet
 import io.fabric8.kubernetes.api.model.extensions.DaemonSetStatus
 import io.fabric8.kubernetes.api.model.extensions.Deployment
@@ -39,6 +42,8 @@ import io.fabric8.kubernetes.api.model.extensions.Scale
 import io.fabric8.kubernetes.api.model.extensions.ScaleStatus
 import io.fabric8.kubernetes.api.model.extensions.StatefulSet
 import io.fabric8.kubernetes.api.model.extensions.StatefulSetStatus
+import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudget
+import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetStatus
 
 
 fun  CronJob.`status`(block: CronJobStatus.() -> Unit = {}) {
@@ -104,6 +109,15 @@ fun  Job.`status`(block: JobStatus.() -> Unit = {}) {
 }
 
 
+fun  LocalSubjectAccessReview.`status`(block: SubjectAccessReviewStatus.() -> Unit = {}) {
+  if(this.`status` == null) {
+    this.`status` = SubjectAccessReviewStatus()
+  }
+
+  this.`status`.block()
+}
+
+
 fun  Namespace.`status`(block: NamespaceStatus.() -> Unit = {}) {
   if(this.`status` == null) {
     this.`status` = NamespaceStatus()
@@ -143,6 +157,15 @@ fun  PersistentVolumeClaim.`status`(block: PersistentVolumeClaimStatus.() -> Uni
 fun  Pod.`status`(block: PodStatus.() -> Unit = {}) {
   if(this.`status` == null) {
     this.`status` = PodStatus()
+  }
+
+  this.`status`.block()
+}
+
+
+fun  PodDisruptionBudget.`status`(block: PodDisruptionBudgetStatus.() -> Unit = {}) {
+  if(this.`status` == null) {
+    this.`status` = PodDisruptionBudgetStatus()
   }
 
   this.`status`.block()
@@ -197,6 +220,15 @@ fun  Service.`status`(block: ServiceStatus.() -> Unit = {}) {
 fun  StatefulSet.`status`(block: StatefulSetStatus.() -> Unit = {}) {
   if(this.`status` == null) {
     this.`status` = StatefulSetStatus()
+  }
+
+  this.`status`.block()
+}
+
+
+fun  SubjectAccessReview.`status`(block: SubjectAccessReviewStatus.() -> Unit = {}) {
+  if(this.`status` == null) {
+    this.`status` = SubjectAccessReviewStatus()
   }
 
   this.`status`.block()
