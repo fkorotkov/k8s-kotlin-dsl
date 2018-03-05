@@ -1,5 +1,5 @@
 container:
-  image: gradle:4.4.1-jdk8
+  image: gradle:jdk8
 
 check_task:
   gradle_cache:
