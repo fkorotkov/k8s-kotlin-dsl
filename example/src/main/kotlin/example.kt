@@ -6,7 +6,7 @@ import io.fabric8.kubernetes.client.DefaultKubernetesClient
 fun main(args: Array<String>) {
   val client = DefaultKubernetesClient().inNamespace("default")
   client.extensions().ingresses().createOrReplace(
-    ingress {
+    newIngress {
       metadata {
         name = "example-ingress"
       }

@@ -8,7 +8,7 @@ class SimpleCompilationTest {
   @Test
   fun testService() {
     val serviceName = "test"
-    val myService = service {
+    val myService = newService {
       metadata {
         name = serviceName
         labels = mapOf(
@@ -19,12 +19,12 @@ class SimpleCompilationTest {
       spec {
         type = "NodePort"
         ports = listOf(
-          servicePort {
+          newServicePort {
             name = "http"
             port = 8080
             targetPort = IntOrString(8080)
           },
-          servicePort {
+          newServicePort {
             name = "grcp"
             port = 8239
             targetPort = IntOrString(8239)
