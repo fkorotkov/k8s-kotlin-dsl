@@ -150,1029 +150,1029 @@ import io.fabric8.openshift.api.model.UserRestriction
 import io.fabric8.openshift.api.model.WebHookTrigger
 
 
-fun binaryBuildSource(block : BinaryBuildSource.() -> Unit = {}): BinaryBuildSource {
+fun newBinaryBuildSource(block : BinaryBuildSource.() -> Unit = {}): BinaryBuildSource {
   val instance = BinaryBuildSource()
   instance.block()
   return instance
 }
 
 
-fun bitbucketWebHookCause(block : BitbucketWebHookCause.() -> Unit = {}): BitbucketWebHookCause {
+fun newBitbucketWebHookCause(block : BitbucketWebHookCause.() -> Unit = {}): BitbucketWebHookCause {
   val instance = BitbucketWebHookCause()
   instance.block()
   return instance
 }
 
 
-fun build(block : Build.() -> Unit = {}): Build {
+fun newBuild(block : Build.() -> Unit = {}): Build {
   val instance = Build()
   instance.block()
   return instance
 }
 
 
-fun buildConfig(block : BuildConfig.() -> Unit = {}): BuildConfig {
+fun newBuildConfig(block : BuildConfig.() -> Unit = {}): BuildConfig {
   val instance = BuildConfig()
   instance.block()
   return instance
 }
 
 
-fun buildConfigList(block : BuildConfigList.() -> Unit = {}): BuildConfigList {
+fun newBuildConfigList(block : BuildConfigList.() -> Unit = {}): BuildConfigList {
   val instance = BuildConfigList()
   instance.block()
   return instance
 }
 
 
-fun buildConfigSpec(block : BuildConfigSpec.() -> Unit = {}): BuildConfigSpec {
+fun newBuildConfigSpec(block : BuildConfigSpec.() -> Unit = {}): BuildConfigSpec {
   val instance = BuildConfigSpec()
   instance.block()
   return instance
 }
 
 
-fun buildConfigStatus(block : BuildConfigStatus.() -> Unit = {}): BuildConfigStatus {
+fun newBuildConfigStatus(block : BuildConfigStatus.() -> Unit = {}): BuildConfigStatus {
   val instance = BuildConfigStatus()
   instance.block()
   return instance
 }
 
 
-fun buildList(block : BuildList.() -> Unit = {}): BuildList {
+fun newBuildList(block : BuildList.() -> Unit = {}): BuildList {
   val instance = BuildList()
   instance.block()
   return instance
 }
 
 
-fun buildOutput(block : BuildOutput.() -> Unit = {}): BuildOutput {
+fun newBuildOutput(block : BuildOutput.() -> Unit = {}): BuildOutput {
   val instance = BuildOutput()
   instance.block()
   return instance
 }
 
 
-fun buildPostCommitSpec(block : BuildPostCommitSpec.() -> Unit = {}): BuildPostCommitSpec {
+fun newBuildPostCommitSpec(block : BuildPostCommitSpec.() -> Unit = {}): BuildPostCommitSpec {
   val instance = BuildPostCommitSpec()
   instance.block()
   return instance
 }
 
 
-fun buildRequest(block : BuildRequest.() -> Unit = {}): BuildRequest {
+fun newBuildRequest(block : BuildRequest.() -> Unit = {}): BuildRequest {
   val instance = BuildRequest()
   instance.block()
   return instance
 }
 
 
-fun buildSource(block : BuildSource.() -> Unit = {}): BuildSource {
+fun newBuildSource(block : BuildSource.() -> Unit = {}): BuildSource {
   val instance = BuildSource()
   instance.block()
   return instance
 }
 
 
-fun buildSpec(block : BuildSpec.() -> Unit = {}): BuildSpec {
+fun newBuildSpec(block : BuildSpec.() -> Unit = {}): BuildSpec {
   val instance = BuildSpec()
   instance.block()
   return instance
 }
 
 
-fun buildStatus(block : BuildStatus.() -> Unit = {}): BuildStatus {
+fun newBuildStatus(block : BuildStatus.() -> Unit = {}): BuildStatus {
   val instance = BuildStatus()
   instance.block()
   return instance
 }
 
 
-fun buildStatusOutput(block : BuildStatusOutput.() -> Unit = {}): BuildStatusOutput {
+fun newBuildStatusOutput(block : BuildStatusOutput.() -> Unit = {}): BuildStatusOutput {
   val instance = BuildStatusOutput()
   instance.block()
   return instance
 }
 
 
-fun buildStatusOutputTo(block : BuildStatusOutputTo.() -> Unit = {}): BuildStatusOutputTo {
+fun newBuildStatusOutputTo(block : BuildStatusOutputTo.() -> Unit = {}): BuildStatusOutputTo {
   val instance = BuildStatusOutputTo()
   instance.block()
   return instance
 }
 
 
-fun buildStrategy(block : BuildStrategy.() -> Unit = {}): BuildStrategy {
+fun newBuildStrategy(block : BuildStrategy.() -> Unit = {}): BuildStrategy {
   val instance = BuildStrategy()
   instance.block()
   return instance
 }
 
 
-fun buildTriggerCause(block : BuildTriggerCause.() -> Unit = {}): BuildTriggerCause {
+fun newBuildTriggerCause(block : BuildTriggerCause.() -> Unit = {}): BuildTriggerCause {
   val instance = BuildTriggerCause()
   instance.block()
   return instance
 }
 
 
-fun buildTriggerPolicy(block : BuildTriggerPolicy.() -> Unit = {}): BuildTriggerPolicy {
+fun newBuildTriggerPolicy(block : BuildTriggerPolicy.() -> Unit = {}): BuildTriggerPolicy {
   val instance = BuildTriggerPolicy()
   instance.block()
   return instance
 }
 
 
-fun clusterPolicy(block : ClusterPolicy.() -> Unit = {}): ClusterPolicy {
+fun newClusterPolicy(block : ClusterPolicy.() -> Unit = {}): ClusterPolicy {
   val instance = ClusterPolicy()
   instance.block()
   return instance
 }
 
 
-fun clusterPolicyBinding(block : ClusterPolicyBinding.() -> Unit = {}): ClusterPolicyBinding {
+fun newClusterPolicyBinding(block : ClusterPolicyBinding.() -> Unit = {}): ClusterPolicyBinding {
   val instance = ClusterPolicyBinding()
   instance.block()
   return instance
 }
 
 
-fun clusterPolicyBindingList(block : ClusterPolicyBindingList.() -> Unit = {}): ClusterPolicyBindingList {
+fun newClusterPolicyBindingList(block : ClusterPolicyBindingList.() -> Unit = {}): ClusterPolicyBindingList {
   val instance = ClusterPolicyBindingList()
   instance.block()
   return instance
 }
 
 
-fun clusterPolicyList(block : ClusterPolicyList.() -> Unit = {}): ClusterPolicyList {
+fun newClusterPolicyList(block : ClusterPolicyList.() -> Unit = {}): ClusterPolicyList {
   val instance = ClusterPolicyList()
   instance.block()
   return instance
 }
 
 
-fun clusterRole(block : ClusterRole.() -> Unit = {}): ClusterRole {
+fun newClusterRole(block : ClusterRole.() -> Unit = {}): ClusterRole {
   val instance = ClusterRole()
   instance.block()
   return instance
 }
 
 
-fun clusterRoleBinding(block : ClusterRoleBinding.() -> Unit = {}): ClusterRoleBinding {
+fun newClusterRoleBinding(block : ClusterRoleBinding.() -> Unit = {}): ClusterRoleBinding {
   val instance = ClusterRoleBinding()
   instance.block()
   return instance
 }
 
 
-fun clusterRoleBindingList(block : ClusterRoleBindingList.() -> Unit = {}): ClusterRoleBindingList {
+fun newClusterRoleBindingList(block : ClusterRoleBindingList.() -> Unit = {}): ClusterRoleBindingList {
   val instance = ClusterRoleBindingList()
   instance.block()
   return instance
 }
 
 
-fun clusterRoleScopeRestriction(block : ClusterRoleScopeRestriction.() -> Unit = {}): ClusterRoleScopeRestriction {
+fun newClusterRoleScopeRestriction(block : ClusterRoleScopeRestriction.() -> Unit = {}): ClusterRoleScopeRestriction {
   val instance = ClusterRoleScopeRestriction()
   instance.block()
   return instance
 }
 
 
-fun customBuildStrategy(block : CustomBuildStrategy.() -> Unit = {}): CustomBuildStrategy {
+fun newCustomBuildStrategy(block : CustomBuildStrategy.() -> Unit = {}): CustomBuildStrategy {
   val instance = CustomBuildStrategy()
   instance.block()
   return instance
 }
 
 
-fun customDeploymentStrategyParams(block : CustomDeploymentStrategyParams.() -> Unit = {}): CustomDeploymentStrategyParams {
+fun newCustomDeploymentStrategyParams(block : CustomDeploymentStrategyParams.() -> Unit = {}): CustomDeploymentStrategyParams {
   val instance = CustomDeploymentStrategyParams()
   instance.block()
   return instance
 }
 
 
-fun deploymentCause(block : DeploymentCause.() -> Unit = {}): DeploymentCause {
+fun newDeploymentCause(block : DeploymentCause.() -> Unit = {}): DeploymentCause {
   val instance = DeploymentCause()
   instance.block()
   return instance
 }
 
 
-fun deploymentCauseImageTrigger(block : DeploymentCauseImageTrigger.() -> Unit = {}): DeploymentCauseImageTrigger {
+fun newDeploymentCauseImageTrigger(block : DeploymentCauseImageTrigger.() -> Unit = {}): DeploymentCauseImageTrigger {
   val instance = DeploymentCauseImageTrigger()
   instance.block()
   return instance
 }
 
 
-fun deploymentCondition(block : DeploymentCondition.() -> Unit = {}): DeploymentCondition {
+fun newDeploymentCondition(block : DeploymentCondition.() -> Unit = {}): DeploymentCondition {
   val instance = DeploymentCondition()
   instance.block()
   return instance
 }
 
 
-fun deploymentConfig(block : DeploymentConfig.() -> Unit = {}): DeploymentConfig {
+fun newDeploymentConfig(block : DeploymentConfig.() -> Unit = {}): DeploymentConfig {
   val instance = DeploymentConfig()
   instance.block()
   return instance
 }
 
 
-fun deploymentConfigList(block : DeploymentConfigList.() -> Unit = {}): DeploymentConfigList {
+fun newDeploymentConfigList(block : DeploymentConfigList.() -> Unit = {}): DeploymentConfigList {
   val instance = DeploymentConfigList()
   instance.block()
   return instance
 }
 
 
-fun deploymentConfigSpec(block : DeploymentConfigSpec.() -> Unit = {}): DeploymentConfigSpec {
+fun newDeploymentConfigSpec(block : DeploymentConfigSpec.() -> Unit = {}): DeploymentConfigSpec {
   val instance = DeploymentConfigSpec()
   instance.block()
   return instance
 }
 
 
-fun deploymentConfigStatus(block : DeploymentConfigStatus.() -> Unit = {}): DeploymentConfigStatus {
+fun newDeploymentConfigStatus(block : DeploymentConfigStatus.() -> Unit = {}): DeploymentConfigStatus {
   val instance = DeploymentConfigStatus()
   instance.block()
   return instance
 }
 
 
-fun deploymentDetails(block : DeploymentDetails.() -> Unit = {}): DeploymentDetails {
+fun newDeploymentDetails(block : DeploymentDetails.() -> Unit = {}): DeploymentDetails {
   val instance = DeploymentDetails()
   instance.block()
   return instance
 }
 
 
-fun deploymentStrategy(block : DeploymentStrategy.() -> Unit = {}): DeploymentStrategy {
+fun newDeploymentStrategy(block : DeploymentStrategy.() -> Unit = {}): DeploymentStrategy {
   val instance = DeploymentStrategy()
   instance.block()
   return instance
 }
 
 
-fun deploymentTriggerImageChangeParams(block : DeploymentTriggerImageChangeParams.() -> Unit = {}): DeploymentTriggerImageChangeParams {
+fun newDeploymentTriggerImageChangeParams(block : DeploymentTriggerImageChangeParams.() -> Unit = {}): DeploymentTriggerImageChangeParams {
   val instance = DeploymentTriggerImageChangeParams()
   instance.block()
   return instance
 }
 
 
-fun deploymentTriggerPolicy(block : DeploymentTriggerPolicy.() -> Unit = {}): DeploymentTriggerPolicy {
+fun newDeploymentTriggerPolicy(block : DeploymentTriggerPolicy.() -> Unit = {}): DeploymentTriggerPolicy {
   val instance = DeploymentTriggerPolicy()
   instance.block()
   return instance
 }
 
 
-fun dockerBuildStrategy(block : DockerBuildStrategy.() -> Unit = {}): DockerBuildStrategy {
+fun newDockerBuildStrategy(block : DockerBuildStrategy.() -> Unit = {}): DockerBuildStrategy {
   val instance = DockerBuildStrategy()
   instance.block()
   return instance
 }
 
 
-fun dockerStrategyOptions(block : DockerStrategyOptions.() -> Unit = {}): DockerStrategyOptions {
+fun newDockerStrategyOptions(block : DockerStrategyOptions.() -> Unit = {}): DockerStrategyOptions {
   val instance = DockerStrategyOptions()
   instance.block()
   return instance
 }
 
 
-fun execNewPodHook(block : ExecNewPodHook.() -> Unit = {}): ExecNewPodHook {
+fun newExecNewPodHook(block : ExecNewPodHook.() -> Unit = {}): ExecNewPodHook {
   val instance = ExecNewPodHook()
   instance.block()
   return instance
 }
 
 
-fun fsGroupStrategyOptions(block : FSGroupStrategyOptions.() -> Unit = {}): FSGroupStrategyOptions {
+fun newFSGroupStrategyOptions(block : FSGroupStrategyOptions.() -> Unit = {}): FSGroupStrategyOptions {
   val instance = FSGroupStrategyOptions()
   instance.block()
   return instance
 }
 
 
-fun genericWebHookCause(block : GenericWebHookCause.() -> Unit = {}): GenericWebHookCause {
+fun newGenericWebHookCause(block : GenericWebHookCause.() -> Unit = {}): GenericWebHookCause {
   val instance = GenericWebHookCause()
   instance.block()
   return instance
 }
 
 
-fun gitBuildSource(block : GitBuildSource.() -> Unit = {}): GitBuildSource {
+fun newGitBuildSource(block : GitBuildSource.() -> Unit = {}): GitBuildSource {
   val instance = GitBuildSource()
   instance.block()
   return instance
 }
 
 
-fun gitHubWebHookCause(block : GitHubWebHookCause.() -> Unit = {}): GitHubWebHookCause {
+fun newGitHubWebHookCause(block : GitHubWebHookCause.() -> Unit = {}): GitHubWebHookCause {
   val instance = GitHubWebHookCause()
   instance.block()
   return instance
 }
 
 
-fun gitLabWebHookCause(block : GitLabWebHookCause.() -> Unit = {}): GitLabWebHookCause {
+fun newGitLabWebHookCause(block : GitLabWebHookCause.() -> Unit = {}): GitLabWebHookCause {
   val instance = GitLabWebHookCause()
   instance.block()
   return instance
 }
 
 
-fun gitSourceRevision(block : GitSourceRevision.() -> Unit = {}): GitSourceRevision {
+fun newGitSourceRevision(block : GitSourceRevision.() -> Unit = {}): GitSourceRevision {
   val instance = GitSourceRevision()
   instance.block()
   return instance
 }
 
 
-fun group(block : Group.() -> Unit = {}): Group {
+fun newGroup(block : Group.() -> Unit = {}): Group {
   val instance = Group()
   instance.block()
   return instance
 }
 
 
-fun groupList(block : GroupList.() -> Unit = {}): GroupList {
+fun newGroupList(block : GroupList.() -> Unit = {}): GroupList {
   val instance = GroupList()
   instance.block()
   return instance
 }
 
 
-fun groupRestriction(block : GroupRestriction.() -> Unit = {}): GroupRestriction {
+fun newGroupRestriction(block : GroupRestriction.() -> Unit = {}): GroupRestriction {
   val instance = GroupRestriction()
   instance.block()
   return instance
 }
 
 
-fun idRange(block : IDRange.() -> Unit = {}): IDRange {
+fun newIDRange(block : IDRange.() -> Unit = {}): IDRange {
   val instance = IDRange()
   instance.block()
   return instance
 }
 
 
-fun identity(block : Identity.() -> Unit = {}): Identity {
+fun newIdentity(block : Identity.() -> Unit = {}): Identity {
   val instance = Identity()
   instance.block()
   return instance
 }
 
 
-fun identityList(block : IdentityList.() -> Unit = {}): IdentityList {
+fun newIdentityList(block : IdentityList.() -> Unit = {}): IdentityList {
   val instance = IdentityList()
   instance.block()
   return instance
 }
 
 
-fun image(block : Image.() -> Unit = {}): Image {
+fun newImage(block : Image.() -> Unit = {}): Image {
   val instance = Image()
   instance.block()
   return instance
 }
 
 
-fun imageChangeCause(block : ImageChangeCause.() -> Unit = {}): ImageChangeCause {
+fun newImageChangeCause(block : ImageChangeCause.() -> Unit = {}): ImageChangeCause {
   val instance = ImageChangeCause()
   instance.block()
   return instance
 }
 
 
-fun imageChangeTrigger(block : ImageChangeTrigger.() -> Unit = {}): ImageChangeTrigger {
+fun newImageChangeTrigger(block : ImageChangeTrigger.() -> Unit = {}): ImageChangeTrigger {
   val instance = ImageChangeTrigger()
   instance.block()
   return instance
 }
 
 
-fun imageLabel(block : ImageLabel.() -> Unit = {}): ImageLabel {
+fun newImageLabel(block : ImageLabel.() -> Unit = {}): ImageLabel {
   val instance = ImageLabel()
   instance.block()
   return instance
 }
 
 
-fun imageLayer(block : ImageLayer.() -> Unit = {}): ImageLayer {
+fun newImageLayer(block : ImageLayer.() -> Unit = {}): ImageLayer {
   val instance = ImageLayer()
   instance.block()
   return instance
 }
 
 
-fun imageList(block : ImageList.() -> Unit = {}): ImageList {
+fun newImageList(block : ImageList.() -> Unit = {}): ImageList {
   val instance = ImageList()
   instance.block()
   return instance
 }
 
 
-fun imageLookupPolicy(block : ImageLookupPolicy.() -> Unit = {}): ImageLookupPolicy {
+fun newImageLookupPolicy(block : ImageLookupPolicy.() -> Unit = {}): ImageLookupPolicy {
   val instance = ImageLookupPolicy()
   instance.block()
   return instance
 }
 
 
-fun imageSignature(block : ImageSignature.() -> Unit = {}): ImageSignature {
+fun newImageSignature(block : ImageSignature.() -> Unit = {}): ImageSignature {
   val instance = ImageSignature()
   instance.block()
   return instance
 }
 
 
-fun imageSource(block : ImageSource.() -> Unit = {}): ImageSource {
+fun newImageSource(block : ImageSource.() -> Unit = {}): ImageSource {
   val instance = ImageSource()
   instance.block()
   return instance
 }
 
 
-fun imageSourcePath(block : ImageSourcePath.() -> Unit = {}): ImageSourcePath {
+fun newImageSourcePath(block : ImageSourcePath.() -> Unit = {}): ImageSourcePath {
   val instance = ImageSourcePath()
   instance.block()
   return instance
 }
 
 
-fun imageStream(block : ImageStream.() -> Unit = {}): ImageStream {
+fun newImageStream(block : ImageStream.() -> Unit = {}): ImageStream {
   val instance = ImageStream()
   instance.block()
   return instance
 }
 
 
-fun imageStreamList(block : ImageStreamList.() -> Unit = {}): ImageStreamList {
+fun newImageStreamList(block : ImageStreamList.() -> Unit = {}): ImageStreamList {
   val instance = ImageStreamList()
   instance.block()
   return instance
 }
 
 
-fun imageStreamSpec(block : ImageStreamSpec.() -> Unit = {}): ImageStreamSpec {
+fun newImageStreamSpec(block : ImageStreamSpec.() -> Unit = {}): ImageStreamSpec {
   val instance = ImageStreamSpec()
   instance.block()
   return instance
 }
 
 
-fun imageStreamStatus(block : ImageStreamStatus.() -> Unit = {}): ImageStreamStatus {
+fun newImageStreamStatus(block : ImageStreamStatus.() -> Unit = {}): ImageStreamStatus {
   val instance = ImageStreamStatus()
   instance.block()
   return instance
 }
 
 
-fun imageStreamTag(block : ImageStreamTag.() -> Unit = {}): ImageStreamTag {
+fun newImageStreamTag(block : ImageStreamTag.() -> Unit = {}): ImageStreamTag {
   val instance = ImageStreamTag()
   instance.block()
   return instance
 }
 
 
-fun imageStreamTagList(block : ImageStreamTagList.() -> Unit = {}): ImageStreamTagList {
+fun newImageStreamTagList(block : ImageStreamTagList.() -> Unit = {}): ImageStreamTagList {
   val instance = ImageStreamTagList()
   instance.block()
   return instance
 }
 
 
-fun jenkinsPipelineBuildStrategy(block : JenkinsPipelineBuildStrategy.() -> Unit = {}): JenkinsPipelineBuildStrategy {
+fun newJenkinsPipelineBuildStrategy(block : JenkinsPipelineBuildStrategy.() -> Unit = {}): JenkinsPipelineBuildStrategy {
   val instance = JenkinsPipelineBuildStrategy()
   instance.block()
   return instance
 }
 
 
-fun lifecycleHook(block : LifecycleHook.() -> Unit = {}): LifecycleHook {
+fun newLifecycleHook(block : LifecycleHook.() -> Unit = {}): LifecycleHook {
   val instance = LifecycleHook()
   instance.block()
   return instance
 }
 
 
-fun localSubjectAccessReview(block : LocalSubjectAccessReview.() -> Unit = {}): LocalSubjectAccessReview {
+fun newLocalSubjectAccessReview(block : LocalSubjectAccessReview.() -> Unit = {}): LocalSubjectAccessReview {
   val instance = LocalSubjectAccessReview()
   instance.block()
   return instance
 }
 
 
-fun namedClusterRole(block : NamedClusterRole.() -> Unit = {}): NamedClusterRole {
+fun newNamedClusterRole(block : NamedClusterRole.() -> Unit = {}): NamedClusterRole {
   val instance = NamedClusterRole()
   instance.block()
   return instance
 }
 
 
-fun namedClusterRoleBinding(block : NamedClusterRoleBinding.() -> Unit = {}): NamedClusterRoleBinding {
+fun newNamedClusterRoleBinding(block : NamedClusterRoleBinding.() -> Unit = {}): NamedClusterRoleBinding {
   val instance = NamedClusterRoleBinding()
   instance.block()
   return instance
 }
 
 
-fun namedRole(block : NamedRole.() -> Unit = {}): NamedRole {
+fun newNamedRole(block : NamedRole.() -> Unit = {}): NamedRole {
   val instance = NamedRole()
   instance.block()
   return instance
 }
 
 
-fun namedRoleBinding(block : NamedRoleBinding.() -> Unit = {}): NamedRoleBinding {
+fun newNamedRoleBinding(block : NamedRoleBinding.() -> Unit = {}): NamedRoleBinding {
   val instance = NamedRoleBinding()
   instance.block()
   return instance
 }
 
 
-fun namedTagEventList(block : NamedTagEventList.() -> Unit = {}): NamedTagEventList {
+fun newNamedTagEventList(block : NamedTagEventList.() -> Unit = {}): NamedTagEventList {
   val instance = NamedTagEventList()
   instance.block()
   return instance
 }
 
 
-fun oAuthAccessToken(block : OAuthAccessToken.() -> Unit = {}): OAuthAccessToken {
+fun newOAuthAccessToken(block : OAuthAccessToken.() -> Unit = {}): OAuthAccessToken {
   val instance = OAuthAccessToken()
   instance.block()
   return instance
 }
 
 
-fun oAuthAccessTokenList(block : OAuthAccessTokenList.() -> Unit = {}): OAuthAccessTokenList {
+fun newOAuthAccessTokenList(block : OAuthAccessTokenList.() -> Unit = {}): OAuthAccessTokenList {
   val instance = OAuthAccessTokenList()
   instance.block()
   return instance
 }
 
 
-fun oAuthAuthorizeToken(block : OAuthAuthorizeToken.() -> Unit = {}): OAuthAuthorizeToken {
+fun newOAuthAuthorizeToken(block : OAuthAuthorizeToken.() -> Unit = {}): OAuthAuthorizeToken {
   val instance = OAuthAuthorizeToken()
   instance.block()
   return instance
 }
 
 
-fun oAuthAuthorizeTokenList(block : OAuthAuthorizeTokenList.() -> Unit = {}): OAuthAuthorizeTokenList {
+fun newOAuthAuthorizeTokenList(block : OAuthAuthorizeTokenList.() -> Unit = {}): OAuthAuthorizeTokenList {
   val instance = OAuthAuthorizeTokenList()
   instance.block()
   return instance
 }
 
 
-fun oAuthClient(block : OAuthClient.() -> Unit = {}): OAuthClient {
+fun newOAuthClient(block : OAuthClient.() -> Unit = {}): OAuthClient {
   val instance = OAuthClient()
   instance.block()
   return instance
 }
 
 
-fun oAuthClientAuthorization(block : OAuthClientAuthorization.() -> Unit = {}): OAuthClientAuthorization {
+fun newOAuthClientAuthorization(block : OAuthClientAuthorization.() -> Unit = {}): OAuthClientAuthorization {
   val instance = OAuthClientAuthorization()
   instance.block()
   return instance
 }
 
 
-fun oAuthClientAuthorizationList(block : OAuthClientAuthorizationList.() -> Unit = {}): OAuthClientAuthorizationList {
+fun newOAuthClientAuthorizationList(block : OAuthClientAuthorizationList.() -> Unit = {}): OAuthClientAuthorizationList {
   val instance = OAuthClientAuthorizationList()
   instance.block()
   return instance
 }
 
 
-fun oAuthClientList(block : OAuthClientList.() -> Unit = {}): OAuthClientList {
+fun newOAuthClientList(block : OAuthClientList.() -> Unit = {}): OAuthClientList {
   val instance = OAuthClientList()
   instance.block()
   return instance
 }
 
 
-fun parameter(block : Parameter.() -> Unit = {}): Parameter {
+fun newParameter(block : Parameter.() -> Unit = {}): Parameter {
   val instance = Parameter()
   instance.block()
   return instance
 }
 
 
-fun policy(block : Policy.() -> Unit = {}): Policy {
+fun newPolicy(block : Policy.() -> Unit = {}): Policy {
   val instance = Policy()
   instance.block()
   return instance
 }
 
 
-fun policyBinding(block : PolicyBinding.() -> Unit = {}): PolicyBinding {
+fun newPolicyBinding(block : PolicyBinding.() -> Unit = {}): PolicyBinding {
   val instance = PolicyBinding()
   instance.block()
   return instance
 }
 
 
-fun policyBindingList(block : PolicyBindingList.() -> Unit = {}): PolicyBindingList {
+fun newPolicyBindingList(block : PolicyBindingList.() -> Unit = {}): PolicyBindingList {
   val instance = PolicyBindingList()
   instance.block()
   return instance
 }
 
 
-fun policyList(block : PolicyList.() -> Unit = {}): PolicyList {
+fun newPolicyList(block : PolicyList.() -> Unit = {}): PolicyList {
   val instance = PolicyList()
   instance.block()
   return instance
 }
 
 
-fun policyRule(block : PolicyRule.() -> Unit = {}): PolicyRule {
+fun newPolicyRule(block : PolicyRule.() -> Unit = {}): PolicyRule {
   val instance = PolicyRule()
   instance.block()
   return instance
 }
 
 
-fun project(block : Project.() -> Unit = {}): Project {
+fun newProject(block : Project.() -> Unit = {}): Project {
   val instance = Project()
   instance.block()
   return instance
 }
 
 
-fun projectList(block : ProjectList.() -> Unit = {}): ProjectList {
+fun newProjectList(block : ProjectList.() -> Unit = {}): ProjectList {
   val instance = ProjectList()
   instance.block()
   return instance
 }
 
 
-fun projectRequest(block : ProjectRequest.() -> Unit = {}): ProjectRequest {
+fun newProjectRequest(block : ProjectRequest.() -> Unit = {}): ProjectRequest {
   val instance = ProjectRequest()
   instance.block()
   return instance
 }
 
 
-fun projectSpec(block : ProjectSpec.() -> Unit = {}): ProjectSpec {
+fun newProjectSpec(block : ProjectSpec.() -> Unit = {}): ProjectSpec {
   val instance = ProjectSpec()
   instance.block()
   return instance
 }
 
 
-fun projectStatus(block : ProjectStatus.() -> Unit = {}): ProjectStatus {
+fun newProjectStatus(block : ProjectStatus.() -> Unit = {}): ProjectStatus {
   val instance = ProjectStatus()
   instance.block()
   return instance
 }
 
 
-fun recreateDeploymentStrategyParams(block : RecreateDeploymentStrategyParams.() -> Unit = {}): RecreateDeploymentStrategyParams {
+fun newRecreateDeploymentStrategyParams(block : RecreateDeploymentStrategyParams.() -> Unit = {}): RecreateDeploymentStrategyParams {
   val instance = RecreateDeploymentStrategyParams()
   instance.block()
   return instance
 }
 
 
-fun role(block : Role.() -> Unit = {}): Role {
+fun newRole(block : Role.() -> Unit = {}): Role {
   val instance = Role()
   instance.block()
   return instance
 }
 
 
-fun roleBinding(block : RoleBinding.() -> Unit = {}): RoleBinding {
+fun newRoleBinding(block : RoleBinding.() -> Unit = {}): RoleBinding {
   val instance = RoleBinding()
   instance.block()
   return instance
 }
 
 
-fun roleBindingList(block : RoleBindingList.() -> Unit = {}): RoleBindingList {
+fun newRoleBindingList(block : RoleBindingList.() -> Unit = {}): RoleBindingList {
   val instance = RoleBindingList()
   instance.block()
   return instance
 }
 
 
-fun roleBindingRestriction(block : RoleBindingRestriction.() -> Unit = {}): RoleBindingRestriction {
+fun newRoleBindingRestriction(block : RoleBindingRestriction.() -> Unit = {}): RoleBindingRestriction {
   val instance = RoleBindingRestriction()
   instance.block()
   return instance
 }
 
 
-fun roleBindingRestrictionSpec(block : RoleBindingRestrictionSpec.() -> Unit = {}): RoleBindingRestrictionSpec {
+fun newRoleBindingRestrictionSpec(block : RoleBindingRestrictionSpec.() -> Unit = {}): RoleBindingRestrictionSpec {
   val instance = RoleBindingRestrictionSpec()
   instance.block()
   return instance
 }
 
 
-fun roleList(block : RoleList.() -> Unit = {}): RoleList {
+fun newRoleList(block : RoleList.() -> Unit = {}): RoleList {
   val instance = RoleList()
   instance.block()
   return instance
 }
 
 
-fun rollingDeploymentStrategyParams(block : RollingDeploymentStrategyParams.() -> Unit = {}): RollingDeploymentStrategyParams {
+fun newRollingDeploymentStrategyParams(block : RollingDeploymentStrategyParams.() -> Unit = {}): RollingDeploymentStrategyParams {
   val instance = RollingDeploymentStrategyParams()
   instance.block()
   return instance
 }
 
 
-fun route(block : Route.() -> Unit = {}): Route {
+fun newRoute(block : Route.() -> Unit = {}): Route {
   val instance = Route()
   instance.block()
   return instance
 }
 
 
-fun routeIngress(block : RouteIngress.() -> Unit = {}): RouteIngress {
+fun newRouteIngress(block : RouteIngress.() -> Unit = {}): RouteIngress {
   val instance = RouteIngress()
   instance.block()
   return instance
 }
 
 
-fun routeIngressCondition(block : RouteIngressCondition.() -> Unit = {}): RouteIngressCondition {
+fun newRouteIngressCondition(block : RouteIngressCondition.() -> Unit = {}): RouteIngressCondition {
   val instance = RouteIngressCondition()
   instance.block()
   return instance
 }
 
 
-fun routeList(block : RouteList.() -> Unit = {}): RouteList {
+fun newRouteList(block : RouteList.() -> Unit = {}): RouteList {
   val instance = RouteList()
   instance.block()
   return instance
 }
 
 
-fun routePort(block : RoutePort.() -> Unit = {}): RoutePort {
+fun newRoutePort(block : RoutePort.() -> Unit = {}): RoutePort {
   val instance = RoutePort()
   instance.block()
   return instance
 }
 
 
-fun routeSpec(block : RouteSpec.() -> Unit = {}): RouteSpec {
+fun newRouteSpec(block : RouteSpec.() -> Unit = {}): RouteSpec {
   val instance = RouteSpec()
   instance.block()
   return instance
 }
 
 
-fun routeStatus(block : RouteStatus.() -> Unit = {}): RouteStatus {
+fun newRouteStatus(block : RouteStatus.() -> Unit = {}): RouteStatus {
   val instance = RouteStatus()
   instance.block()
   return instance
 }
 
 
-fun routeTargetReference(block : RouteTargetReference.() -> Unit = {}): RouteTargetReference {
+fun newRouteTargetReference(block : RouteTargetReference.() -> Unit = {}): RouteTargetReference {
   val instance = RouteTargetReference()
   instance.block()
   return instance
 }
 
 
-fun runAsUserStrategyOptions(block : RunAsUserStrategyOptions.() -> Unit = {}): RunAsUserStrategyOptions {
+fun newRunAsUserStrategyOptions(block : RunAsUserStrategyOptions.() -> Unit = {}): RunAsUserStrategyOptions {
   val instance = RunAsUserStrategyOptions()
   instance.block()
   return instance
 }
 
 
-fun seLinuxContextStrategyOptions(block : SELinuxContextStrategyOptions.() -> Unit = {}): SELinuxContextStrategyOptions {
+fun newSELinuxContextStrategyOptions(block : SELinuxContextStrategyOptions.() -> Unit = {}): SELinuxContextStrategyOptions {
   val instance = SELinuxContextStrategyOptions()
   instance.block()
   return instance
 }
 
 
-fun scopeRestriction(block : ScopeRestriction.() -> Unit = {}): ScopeRestriction {
+fun newScopeRestriction(block : ScopeRestriction.() -> Unit = {}): ScopeRestriction {
   val instance = ScopeRestriction()
   instance.block()
   return instance
 }
 
 
-fun secretBuildSource(block : SecretBuildSource.() -> Unit = {}): SecretBuildSource {
+fun newSecretBuildSource(block : SecretBuildSource.() -> Unit = {}): SecretBuildSource {
   val instance = SecretBuildSource()
   instance.block()
   return instance
 }
 
 
-fun secretSpec(block : SecretSpec.() -> Unit = {}): SecretSpec {
+fun newSecretSpec(block : SecretSpec.() -> Unit = {}): SecretSpec {
   val instance = SecretSpec()
   instance.block()
   return instance
 }
 
 
-fun securityContextConstraints(block : SecurityContextConstraints.() -> Unit = {}): SecurityContextConstraints {
+fun newSecurityContextConstraints(block : SecurityContextConstraints.() -> Unit = {}): SecurityContextConstraints {
   val instance = SecurityContextConstraints()
   instance.block()
   return instance
 }
 
 
-fun securityContextConstraintsList(block : SecurityContextConstraintsList.() -> Unit = {}): SecurityContextConstraintsList {
+fun newSecurityContextConstraintsList(block : SecurityContextConstraintsList.() -> Unit = {}): SecurityContextConstraintsList {
   val instance = SecurityContextConstraintsList()
   instance.block()
   return instance
 }
 
 
-fun serviceAccountReference(block : ServiceAccountReference.() -> Unit = {}): ServiceAccountReference {
+fun newServiceAccountReference(block : ServiceAccountReference.() -> Unit = {}): ServiceAccountReference {
   val instance = ServiceAccountReference()
   instance.block()
   return instance
 }
 
 
-fun serviceAccountRestriction(block : ServiceAccountRestriction.() -> Unit = {}): ServiceAccountRestriction {
+fun newServiceAccountRestriction(block : ServiceAccountRestriction.() -> Unit = {}): ServiceAccountRestriction {
   val instance = ServiceAccountRestriction()
   instance.block()
   return instance
 }
 
 
-fun signatureCondition(block : SignatureCondition.() -> Unit = {}): SignatureCondition {
+fun newSignatureCondition(block : SignatureCondition.() -> Unit = {}): SignatureCondition {
   val instance = SignatureCondition()
   instance.block()
   return instance
 }
 
 
-fun signatureIssuer(block : SignatureIssuer.() -> Unit = {}): SignatureIssuer {
+fun newSignatureIssuer(block : SignatureIssuer.() -> Unit = {}): SignatureIssuer {
   val instance = SignatureIssuer()
   instance.block()
   return instance
 }
 
 
-fun signatureSubject(block : SignatureSubject.() -> Unit = {}): SignatureSubject {
+fun newSignatureSubject(block : SignatureSubject.() -> Unit = {}): SignatureSubject {
   val instance = SignatureSubject()
   instance.block()
   return instance
 }
 
 
-fun sourceBuildStrategy(block : SourceBuildStrategy.() -> Unit = {}): SourceBuildStrategy {
+fun newSourceBuildStrategy(block : SourceBuildStrategy.() -> Unit = {}): SourceBuildStrategy {
   val instance = SourceBuildStrategy()
   instance.block()
   return instance
 }
 
 
-fun sourceControlUser(block : SourceControlUser.() -> Unit = {}): SourceControlUser {
+fun newSourceControlUser(block : SourceControlUser.() -> Unit = {}): SourceControlUser {
   val instance = SourceControlUser()
   instance.block()
   return instance
 }
 
 
-fun sourceRevision(block : SourceRevision.() -> Unit = {}): SourceRevision {
+fun newSourceRevision(block : SourceRevision.() -> Unit = {}): SourceRevision {
   val instance = SourceRevision()
   instance.block()
   return instance
 }
 
 
-fun stageInfo(block : StageInfo.() -> Unit = {}): StageInfo {
+fun newStageInfo(block : StageInfo.() -> Unit = {}): StageInfo {
   val instance = StageInfo()
   instance.block()
   return instance
 }
 
 
-fun stepInfo(block : StepInfo.() -> Unit = {}): StepInfo {
+fun newStepInfo(block : StepInfo.() -> Unit = {}): StepInfo {
   val instance = StepInfo()
   instance.block()
   return instance
 }
 
 
-fun subjectAccessReview(block : SubjectAccessReview.() -> Unit = {}): SubjectAccessReview {
+fun newSubjectAccessReview(block : SubjectAccessReview.() -> Unit = {}): SubjectAccessReview {
   val instance = SubjectAccessReview()
   instance.block()
   return instance
 }
 
 
-fun subjectAccessReviewResponse(block : SubjectAccessReviewResponse.() -> Unit = {}): SubjectAccessReviewResponse {
+fun newSubjectAccessReviewResponse(block : SubjectAccessReviewResponse.() -> Unit = {}): SubjectAccessReviewResponse {
   val instance = SubjectAccessReviewResponse()
   instance.block()
   return instance
 }
 
 
-fun supplementalGroupsStrategyOptions(block : SupplementalGroupsStrategyOptions.() -> Unit = {}): SupplementalGroupsStrategyOptions {
+fun newSupplementalGroupsStrategyOptions(block : SupplementalGroupsStrategyOptions.() -> Unit = {}): SupplementalGroupsStrategyOptions {
   val instance = SupplementalGroupsStrategyOptions()
   instance.block()
   return instance
 }
 
 
-fun tlsConfig(block : TLSConfig.() -> Unit = {}): TLSConfig {
+fun newTLSConfig(block : TLSConfig.() -> Unit = {}): TLSConfig {
   val instance = TLSConfig()
   instance.block()
   return instance
 }
 
 
-fun tagEvent(block : TagEvent.() -> Unit = {}): TagEvent {
+fun newTagEvent(block : TagEvent.() -> Unit = {}): TagEvent {
   val instance = TagEvent()
   instance.block()
   return instance
 }
 
 
-fun tagEventCondition(block : TagEventCondition.() -> Unit = {}): TagEventCondition {
+fun newTagEventCondition(block : TagEventCondition.() -> Unit = {}): TagEventCondition {
   val instance = TagEventCondition()
   instance.block()
   return instance
 }
 
 
-fun tagImageHook(block : TagImageHook.() -> Unit = {}): TagImageHook {
+fun newTagImageHook(block : TagImageHook.() -> Unit = {}): TagImageHook {
   val instance = TagImageHook()
   instance.block()
   return instance
 }
 
 
-fun tagImportPolicy(block : TagImportPolicy.() -> Unit = {}): TagImportPolicy {
+fun newTagImportPolicy(block : TagImportPolicy.() -> Unit = {}): TagImportPolicy {
   val instance = TagImportPolicy()
   instance.block()
   return instance
 }
 
 
-fun tagReference(block : TagReference.() -> Unit = {}): TagReference {
+fun newTagReference(block : TagReference.() -> Unit = {}): TagReference {
   val instance = TagReference()
   instance.block()
   return instance
 }
 
 
-fun tagReferencePolicy(block : TagReferencePolicy.() -> Unit = {}): TagReferencePolicy {
+fun newTagReferencePolicy(block : TagReferencePolicy.() -> Unit = {}): TagReferencePolicy {
   val instance = TagReferencePolicy()
   instance.block()
   return instance
 }
 
 
-fun template(block : Template.() -> Unit = {}): Template {
+fun newTemplate(block : Template.() -> Unit = {}): Template {
   val instance = Template()
   instance.block()
   return instance
 }
 
 
-fun templateList(block : TemplateList.() -> Unit = {}): TemplateList {
+fun newTemplateList(block : TemplateList.() -> Unit = {}): TemplateList {
   val instance = TemplateList()
   instance.block()
   return instance
 }
 
 
-fun user(block : User.() -> Unit = {}): User {
+fun newUser(block : User.() -> Unit = {}): User {
   val instance = User()
   instance.block()
   return instance
 }
 
 
-fun userList(block : UserList.() -> Unit = {}): UserList {
+fun newUserList(block : UserList.() -> Unit = {}): UserList {
   val instance = UserList()
   instance.block()
   return instance
 }
 
 
-fun userRestriction(block : UserRestriction.() -> Unit = {}): UserRestriction {
+fun newUserRestriction(block : UserRestriction.() -> Unit = {}): UserRestriction {
   val instance = UserRestriction()
   instance.block()
   return instance
 }
 
 
-fun webHookTrigger(block : WebHookTrigger.() -> Unit = {}): WebHookTrigger {
+fun newWebHookTrigger(block : WebHookTrigger.() -> Unit = {}): WebHookTrigger {
   val instance = WebHookTrigger()
   instance.block()
   return instance

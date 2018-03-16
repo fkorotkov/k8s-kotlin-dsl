@@ -32,7 +32,7 @@ import io.fabric8.kubernetes.client.DefaultKubernetesClient
 fun main(args: Array<String>) {
   val client = DefaultKubernetesClient().inNamespace("default")
   client.extensions().ingresses().createOrReplace(
-    ingress {
+    newIngress {
       metadata {
         name = "example-ingress"
       }
@@ -65,6 +65,9 @@ baseService.apply {
 Here is an example of `BaseDeployment` that defines a deployment with one replica and mounts a secret that can be used by the service.
 
 ```kotlin
+import io.fabric8.kubernetes.api.model.IntOrString
+import io.fabric8.kubernetes.api.model.extensions.Deployment
+
 class BaseDeployment : Deployment {
   constructor(serviceName: String) {
     metadata {
@@ -85,24 +88,24 @@ class BaseDeployment : Deployment {
         }
         spec {
           containers = listOf(
-            container {
-              name  = "$serviceName-service"
+            newContainer {
+              name = "$serviceName-service"
               image = "gcr.io/fkorotkov/$serviceName-service:latest"
               volumeMounts = listOf(
-                volumeMount {
+                newVolumeMount {
                   name = "gcp-credentials"
                   mountPath = "/etc/credentials"
                   readOnly = true
                 }
               )
               env = listOf(
-                envVar {
+                newEnvVar {
                   name = "GOOGLE_APPLICATION_CREDENTIALS"
                   value = "/etc/credentials/service-account-credentials.json"
                 }
               )
               ports = listOf(
-                containerPort {
+                newContainerPort {
                   containerPort = 8080
                 }
               )
@@ -124,7 +127,7 @@ class BaseDeployment : Deployment {
             }
           )
           volumes = listOf(
-            volume {
+            newVolume {
               name = "gcp-credentials"
               secret {
                 secretName = "gcp-credentials"

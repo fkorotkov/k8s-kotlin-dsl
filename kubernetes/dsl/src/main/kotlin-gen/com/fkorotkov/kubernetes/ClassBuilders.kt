@@ -272,1883 +272,1883 @@ import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetSpec
 import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetStatus
 
 
-fun awsElasticBlockStoreVolumeSource(block : AWSElasticBlockStoreVolumeSource.() -> Unit = {}): AWSElasticBlockStoreVolumeSource {
+fun newAWSElasticBlockStoreVolumeSource(block : AWSElasticBlockStoreVolumeSource.() -> Unit = {}): AWSElasticBlockStoreVolumeSource {
   val instance = AWSElasticBlockStoreVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun affinity(block : Affinity.() -> Unit = {}): Affinity {
+fun newAffinity(block : Affinity.() -> Unit = {}): Affinity {
   val instance = Affinity()
   instance.block()
   return instance
 }
 
 
-fun attachedVolume(block : AttachedVolume.() -> Unit = {}): AttachedVolume {
+fun newAttachedVolume(block : AttachedVolume.() -> Unit = {}): AttachedVolume {
   val instance = AttachedVolume()
   instance.block()
   return instance
 }
 
 
-fun authInfo(block : AuthInfo.() -> Unit = {}): AuthInfo {
+fun newAuthInfo(block : AuthInfo.() -> Unit = {}): AuthInfo {
   val instance = AuthInfo()
   instance.block()
   return instance
 }
 
 
-fun authProviderConfig(block : AuthProviderConfig.() -> Unit = {}): AuthProviderConfig {
+fun newAuthProviderConfig(block : AuthProviderConfig.() -> Unit = {}): AuthProviderConfig {
   val instance = AuthProviderConfig()
   instance.block()
   return instance
 }
 
 
-fun azureDiskVolumeSource(block : AzureDiskVolumeSource.() -> Unit = {}): AzureDiskVolumeSource {
+fun newAzureDiskVolumeSource(block : AzureDiskVolumeSource.() -> Unit = {}): AzureDiskVolumeSource {
   val instance = AzureDiskVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun azureFileVolumeSource(block : AzureFileVolumeSource.() -> Unit = {}): AzureFileVolumeSource {
+fun newAzureFileVolumeSource(block : AzureFileVolumeSource.() -> Unit = {}): AzureFileVolumeSource {
   val instance = AzureFileVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun baseKubernetesList(block : BaseKubernetesList.() -> Unit = {}): BaseKubernetesList {
+fun newBaseKubernetesList(block : BaseKubernetesList.() -> Unit = {}): BaseKubernetesList {
   val instance = BaseKubernetesList()
   instance.block()
   return instance
 }
 
 
-fun binding(block : Binding.() -> Unit = {}): Binding {
+fun newBinding(block : Binding.() -> Unit = {}): Binding {
   val instance = Binding()
   instance.block()
   return instance
 }
 
 
-fun capabilities(block : Capabilities.() -> Unit = {}): Capabilities {
+fun newCapabilities(block : Capabilities.() -> Unit = {}): Capabilities {
   val instance = Capabilities()
   instance.block()
   return instance
 }
 
 
-fun cephFSVolumeSource(block : CephFSVolumeSource.() -> Unit = {}): CephFSVolumeSource {
+fun newCephFSVolumeSource(block : CephFSVolumeSource.() -> Unit = {}): CephFSVolumeSource {
   val instance = CephFSVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun cinderVolumeSource(block : CinderVolumeSource.() -> Unit = {}): CinderVolumeSource {
+fun newCinderVolumeSource(block : CinderVolumeSource.() -> Unit = {}): CinderVolumeSource {
   val instance = CinderVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun cluster(block : Cluster.() -> Unit = {}): Cluster {
+fun newCluster(block : Cluster.() -> Unit = {}): Cluster {
   val instance = Cluster()
   instance.block()
   return instance
 }
 
 
-fun componentCondition(block : ComponentCondition.() -> Unit = {}): ComponentCondition {
+fun newComponentCondition(block : ComponentCondition.() -> Unit = {}): ComponentCondition {
   val instance = ComponentCondition()
   instance.block()
   return instance
 }
 
 
-fun componentStatus(block : ComponentStatus.() -> Unit = {}): ComponentStatus {
+fun newComponentStatus(block : ComponentStatus.() -> Unit = {}): ComponentStatus {
   val instance = ComponentStatus()
   instance.block()
   return instance
 }
 
 
-fun componentStatusList(block : ComponentStatusList.() -> Unit = {}): ComponentStatusList {
+fun newComponentStatusList(block : ComponentStatusList.() -> Unit = {}): ComponentStatusList {
   val instance = ComponentStatusList()
   instance.block()
   return instance
 }
 
 
-fun config(block : Config.() -> Unit = {}): Config {
+fun newConfig(block : Config.() -> Unit = {}): Config {
   val instance = Config()
   instance.block()
   return instance
 }
 
 
-fun configMap(block : ConfigMap.() -> Unit = {}): ConfigMap {
+fun newConfigMap(block : ConfigMap.() -> Unit = {}): ConfigMap {
   val instance = ConfigMap()
   instance.block()
   return instance
 }
 
 
-fun configMapEnvSource(block : ConfigMapEnvSource.() -> Unit = {}): ConfigMapEnvSource {
+fun newConfigMapEnvSource(block : ConfigMapEnvSource.() -> Unit = {}): ConfigMapEnvSource {
   val instance = ConfigMapEnvSource()
   instance.block()
   return instance
 }
 
 
-fun configMapKeySelector(block : ConfigMapKeySelector.() -> Unit = {}): ConfigMapKeySelector {
+fun newConfigMapKeySelector(block : ConfigMapKeySelector.() -> Unit = {}): ConfigMapKeySelector {
   val instance = ConfigMapKeySelector()
   instance.block()
   return instance
 }
 
 
-fun configMapList(block : ConfigMapList.() -> Unit = {}): ConfigMapList {
+fun newConfigMapList(block : ConfigMapList.() -> Unit = {}): ConfigMapList {
   val instance = ConfigMapList()
   instance.block()
   return instance
 }
 
 
-fun configMapProjection(block : ConfigMapProjection.() -> Unit = {}): ConfigMapProjection {
+fun newConfigMapProjection(block : ConfigMapProjection.() -> Unit = {}): ConfigMapProjection {
   val instance = ConfigMapProjection()
   instance.block()
   return instance
 }
 
 
-fun configMapVolumeSource(block : ConfigMapVolumeSource.() -> Unit = {}): ConfigMapVolumeSource {
+fun newConfigMapVolumeSource(block : ConfigMapVolumeSource.() -> Unit = {}): ConfigMapVolumeSource {
   val instance = ConfigMapVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun container(block : Container.() -> Unit = {}): Container {
+fun newContainer(block : Container.() -> Unit = {}): Container {
   val instance = Container()
   instance.block()
   return instance
 }
 
 
-fun containerImage(block : ContainerImage.() -> Unit = {}): ContainerImage {
+fun newContainerImage(block : ContainerImage.() -> Unit = {}): ContainerImage {
   val instance = ContainerImage()
   instance.block()
   return instance
 }
 
 
-fun containerPort(block : ContainerPort.() -> Unit = {}): ContainerPort {
+fun newContainerPort(block : ContainerPort.() -> Unit = {}): ContainerPort {
   val instance = ContainerPort()
   instance.block()
   return instance
 }
 
 
-fun containerState(block : ContainerState.() -> Unit = {}): ContainerState {
+fun newContainerState(block : ContainerState.() -> Unit = {}): ContainerState {
   val instance = ContainerState()
   instance.block()
   return instance
 }
 
 
-fun containerStateRunning(block : ContainerStateRunning.() -> Unit = {}): ContainerStateRunning {
+fun newContainerStateRunning(block : ContainerStateRunning.() -> Unit = {}): ContainerStateRunning {
   val instance = ContainerStateRunning()
   instance.block()
   return instance
 }
 
 
-fun containerStateTerminated(block : ContainerStateTerminated.() -> Unit = {}): ContainerStateTerminated {
+fun newContainerStateTerminated(block : ContainerStateTerminated.() -> Unit = {}): ContainerStateTerminated {
   val instance = ContainerStateTerminated()
   instance.block()
   return instance
 }
 
 
-fun containerStateWaiting(block : ContainerStateWaiting.() -> Unit = {}): ContainerStateWaiting {
+fun newContainerStateWaiting(block : ContainerStateWaiting.() -> Unit = {}): ContainerStateWaiting {
   val instance = ContainerStateWaiting()
   instance.block()
   return instance
 }
 
 
-fun containerStatus(block : ContainerStatus.() -> Unit = {}): ContainerStatus {
+fun newContainerStatus(block : ContainerStatus.() -> Unit = {}): ContainerStatus {
   val instance = ContainerStatus()
   instance.block()
   return instance
 }
 
 
-fun context(block : Context.() -> Unit = {}): Context {
+fun newContext(block : Context.() -> Unit = {}): Context {
   val instance = Context()
   instance.block()
   return instance
 }
 
 
-fun cronJob(block : CronJob.() -> Unit = {}): CronJob {
+fun newCronJob(block : CronJob.() -> Unit = {}): CronJob {
   val instance = CronJob()
   instance.block()
   return instance
 }
 
 
-fun cronJobList(block : CronJobList.() -> Unit = {}): CronJobList {
+fun newCronJobList(block : CronJobList.() -> Unit = {}): CronJobList {
   val instance = CronJobList()
   instance.block()
   return instance
 }
 
 
-fun cronJobSpec(block : CronJobSpec.() -> Unit = {}): CronJobSpec {
+fun newCronJobSpec(block : CronJobSpec.() -> Unit = {}): CronJobSpec {
   val instance = CronJobSpec()
   instance.block()
   return instance
 }
 
 
-fun cronJobStatus(block : CronJobStatus.() -> Unit = {}): CronJobStatus {
+fun newCronJobStatus(block : CronJobStatus.() -> Unit = {}): CronJobStatus {
   val instance = CronJobStatus()
   instance.block()
   return instance
 }
 
 
-fun crossVersionObjectReference(block : CrossVersionObjectReference.() -> Unit = {}): CrossVersionObjectReference {
+fun newCrossVersionObjectReference(block : CrossVersionObjectReference.() -> Unit = {}): CrossVersionObjectReference {
   val instance = CrossVersionObjectReference()
   instance.block()
   return instance
 }
 
 
-fun daemonEndpoint(block : DaemonEndpoint.() -> Unit = {}): DaemonEndpoint {
+fun newDaemonEndpoint(block : DaemonEndpoint.() -> Unit = {}): DaemonEndpoint {
   val instance = DaemonEndpoint()
   instance.block()
   return instance
 }
 
 
-fun deleteOptions(block : DeleteOptions.() -> Unit = {}): DeleteOptions {
+fun newDeleteOptions(block : DeleteOptions.() -> Unit = {}): DeleteOptions {
   val instance = DeleteOptions()
   instance.block()
   return instance
 }
 
 
-fun downwardAPIProjection(block : DownwardAPIProjection.() -> Unit = {}): DownwardAPIProjection {
+fun newDownwardAPIProjection(block : DownwardAPIProjection.() -> Unit = {}): DownwardAPIProjection {
   val instance = DownwardAPIProjection()
   instance.block()
   return instance
 }
 
 
-fun downwardAPIVolumeFile(block : DownwardAPIVolumeFile.() -> Unit = {}): DownwardAPIVolumeFile {
+fun newDownwardAPIVolumeFile(block : DownwardAPIVolumeFile.() -> Unit = {}): DownwardAPIVolumeFile {
   val instance = DownwardAPIVolumeFile()
   instance.block()
   return instance
 }
 
 
-fun downwardAPIVolumeSource(block : DownwardAPIVolumeSource.() -> Unit = {}): DownwardAPIVolumeSource {
+fun newDownwardAPIVolumeSource(block : DownwardAPIVolumeSource.() -> Unit = {}): DownwardAPIVolumeSource {
   val instance = DownwardAPIVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun emptyDirVolumeSource(block : EmptyDirVolumeSource.() -> Unit = {}): EmptyDirVolumeSource {
+fun newEmptyDirVolumeSource(block : EmptyDirVolumeSource.() -> Unit = {}): EmptyDirVolumeSource {
   val instance = EmptyDirVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun endpointAddress(block : EndpointAddress.() -> Unit = {}): EndpointAddress {
+fun newEndpointAddress(block : EndpointAddress.() -> Unit = {}): EndpointAddress {
   val instance = EndpointAddress()
   instance.block()
   return instance
 }
 
 
-fun endpointPort(block : EndpointPort.() -> Unit = {}): EndpointPort {
+fun newEndpointPort(block : EndpointPort.() -> Unit = {}): EndpointPort {
   val instance = EndpointPort()
   instance.block()
   return instance
 }
 
 
-fun endpointSubset(block : EndpointSubset.() -> Unit = {}): EndpointSubset {
+fun newEndpointSubset(block : EndpointSubset.() -> Unit = {}): EndpointSubset {
   val instance = EndpointSubset()
   instance.block()
   return instance
 }
 
 
-fun endpoints(block : Endpoints.() -> Unit = {}): Endpoints {
+fun newEndpoints(block : Endpoints.() -> Unit = {}): Endpoints {
   val instance = Endpoints()
   instance.block()
   return instance
 }
 
 
-fun endpointsList(block : EndpointsList.() -> Unit = {}): EndpointsList {
+fun newEndpointsList(block : EndpointsList.() -> Unit = {}): EndpointsList {
   val instance = EndpointsList()
   instance.block()
   return instance
 }
 
 
-fun envFromSource(block : EnvFromSource.() -> Unit = {}): EnvFromSource {
+fun newEnvFromSource(block : EnvFromSource.() -> Unit = {}): EnvFromSource {
   val instance = EnvFromSource()
   instance.block()
   return instance
 }
 
 
-fun envVar(block : EnvVar.() -> Unit = {}): EnvVar {
+fun newEnvVar(block : EnvVar.() -> Unit = {}): EnvVar {
   val instance = EnvVar()
   instance.block()
   return instance
 }
 
 
-fun envVarSource(block : EnvVarSource.() -> Unit = {}): EnvVarSource {
+fun newEnvVarSource(block : EnvVarSource.() -> Unit = {}): EnvVarSource {
   val instance = EnvVarSource()
   instance.block()
   return instance
 }
 
 
-fun event(block : Event.() -> Unit = {}): Event {
+fun newEvent(block : Event.() -> Unit = {}): Event {
   val instance = Event()
   instance.block()
   return instance
 }
 
 
-fun eventList(block : EventList.() -> Unit = {}): EventList {
+fun newEventList(block : EventList.() -> Unit = {}): EventList {
   val instance = EventList()
   instance.block()
   return instance
 }
 
 
-fun eventSource(block : EventSource.() -> Unit = {}): EventSource {
+fun newEventSource(block : EventSource.() -> Unit = {}): EventSource {
   val instance = EventSource()
   instance.block()
   return instance
 }
 
 
-fun execAction(block : ExecAction.() -> Unit = {}): ExecAction {
+fun newExecAction(block : ExecAction.() -> Unit = {}): ExecAction {
   val instance = ExecAction()
   instance.block()
   return instance
 }
 
 
-fun fcVolumeSource(block : FCVolumeSource.() -> Unit = {}): FCVolumeSource {
+fun newFCVolumeSource(block : FCVolumeSource.() -> Unit = {}): FCVolumeSource {
   val instance = FCVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun flexVolumeSource(block : FlexVolumeSource.() -> Unit = {}): FlexVolumeSource {
+fun newFlexVolumeSource(block : FlexVolumeSource.() -> Unit = {}): FlexVolumeSource {
   val instance = FlexVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun flockerVolumeSource(block : FlockerVolumeSource.() -> Unit = {}): FlockerVolumeSource {
+fun newFlockerVolumeSource(block : FlockerVolumeSource.() -> Unit = {}): FlockerVolumeSource {
   val instance = FlockerVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun gcePersistentDiskVolumeSource(block : GCEPersistentDiskVolumeSource.() -> Unit = {}): GCEPersistentDiskVolumeSource {
+fun newGCEPersistentDiskVolumeSource(block : GCEPersistentDiskVolumeSource.() -> Unit = {}): GCEPersistentDiskVolumeSource {
   val instance = GCEPersistentDiskVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun gitRepoVolumeSource(block : GitRepoVolumeSource.() -> Unit = {}): GitRepoVolumeSource {
+fun newGitRepoVolumeSource(block : GitRepoVolumeSource.() -> Unit = {}): GitRepoVolumeSource {
   val instance = GitRepoVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun glusterfsVolumeSource(block : GlusterfsVolumeSource.() -> Unit = {}): GlusterfsVolumeSource {
+fun newGlusterfsVolumeSource(block : GlusterfsVolumeSource.() -> Unit = {}): GlusterfsVolumeSource {
   val instance = GlusterfsVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun httpGetAction(block : HTTPGetAction.() -> Unit = {}): HTTPGetAction {
+fun newHTTPGetAction(block : HTTPGetAction.() -> Unit = {}): HTTPGetAction {
   val instance = HTTPGetAction()
   instance.block()
   return instance
 }
 
 
-fun httpHeader(block : HTTPHeader.() -> Unit = {}): HTTPHeader {
+fun newHTTPHeader(block : HTTPHeader.() -> Unit = {}): HTTPHeader {
   val instance = HTTPHeader()
   instance.block()
   return instance
 }
 
 
-fun handler(block : Handler.() -> Unit = {}): Handler {
+fun newHandler(block : Handler.() -> Unit = {}): Handler {
   val instance = Handler()
   instance.block()
   return instance
 }
 
 
-fun horizontalPodAutoscaler(block : HorizontalPodAutoscaler.() -> Unit = {}): HorizontalPodAutoscaler {
+fun newHorizontalPodAutoscaler(block : HorizontalPodAutoscaler.() -> Unit = {}): HorizontalPodAutoscaler {
   val instance = HorizontalPodAutoscaler()
   instance.block()
   return instance
 }
 
 
-fun horizontalPodAutoscalerList(block : HorizontalPodAutoscalerList.() -> Unit = {}): HorizontalPodAutoscalerList {
+fun newHorizontalPodAutoscalerList(block : HorizontalPodAutoscalerList.() -> Unit = {}): HorizontalPodAutoscalerList {
   val instance = HorizontalPodAutoscalerList()
   instance.block()
   return instance
 }
 
 
-fun horizontalPodAutoscalerSpec(block : HorizontalPodAutoscalerSpec.() -> Unit = {}): HorizontalPodAutoscalerSpec {
+fun newHorizontalPodAutoscalerSpec(block : HorizontalPodAutoscalerSpec.() -> Unit = {}): HorizontalPodAutoscalerSpec {
   val instance = HorizontalPodAutoscalerSpec()
   instance.block()
   return instance
 }
 
 
-fun horizontalPodAutoscalerStatus(block : HorizontalPodAutoscalerStatus.() -> Unit = {}): HorizontalPodAutoscalerStatus {
+fun newHorizontalPodAutoscalerStatus(block : HorizontalPodAutoscalerStatus.() -> Unit = {}): HorizontalPodAutoscalerStatus {
   val instance = HorizontalPodAutoscalerStatus()
   instance.block()
   return instance
 }
 
 
-fun hostAlias(block : HostAlias.() -> Unit = {}): HostAlias {
+fun newHostAlias(block : HostAlias.() -> Unit = {}): HostAlias {
   val instance = HostAlias()
   instance.block()
   return instance
 }
 
 
-fun hostPathVolumeSource(block : HostPathVolumeSource.() -> Unit = {}): HostPathVolumeSource {
+fun newHostPathVolumeSource(block : HostPathVolumeSource.() -> Unit = {}): HostPathVolumeSource {
   val instance = HostPathVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun iscsiVolumeSource(block : ISCSIVolumeSource.() -> Unit = {}): ISCSIVolumeSource {
+fun newISCSIVolumeSource(block : ISCSIVolumeSource.() -> Unit = {}): ISCSIVolumeSource {
   val instance = ISCSIVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun initializer(block : Initializer.() -> Unit = {}): Initializer {
+fun newInitializer(block : Initializer.() -> Unit = {}): Initializer {
   val instance = Initializer()
   instance.block()
   return instance
 }
 
 
-fun initializers(block : Initializers.() -> Unit = {}): Initializers {
+fun newInitializers(block : Initializers.() -> Unit = {}): Initializers {
   val instance = Initializers()
   instance.block()
   return instance
 }
 
 
-fun job(block : Job.() -> Unit = {}): Job {
+fun newJob(block : Job.() -> Unit = {}): Job {
   val instance = Job()
   instance.block()
   return instance
 }
 
 
-fun jobCondition(block : JobCondition.() -> Unit = {}): JobCondition {
+fun newJobCondition(block : JobCondition.() -> Unit = {}): JobCondition {
   val instance = JobCondition()
   instance.block()
   return instance
 }
 
 
-fun jobList(block : JobList.() -> Unit = {}): JobList {
+fun newJobList(block : JobList.() -> Unit = {}): JobList {
   val instance = JobList()
   instance.block()
   return instance
 }
 
 
-fun jobSpec(block : JobSpec.() -> Unit = {}): JobSpec {
+fun newJobSpec(block : JobSpec.() -> Unit = {}): JobSpec {
   val instance = JobSpec()
   instance.block()
   return instance
 }
 
 
-fun jobStatus(block : JobStatus.() -> Unit = {}): JobStatus {
+fun newJobStatus(block : JobStatus.() -> Unit = {}): JobStatus {
   val instance = JobStatus()
   instance.block()
   return instance
 }
 
 
-fun jobTemplateSpec(block : JobTemplateSpec.() -> Unit = {}): JobTemplateSpec {
+fun newJobTemplateSpec(block : JobTemplateSpec.() -> Unit = {}): JobTemplateSpec {
   val instance = JobTemplateSpec()
   instance.block()
   return instance
 }
 
 
-fun keyToPath(block : KeyToPath.() -> Unit = {}): KeyToPath {
+fun newKeyToPath(block : KeyToPath.() -> Unit = {}): KeyToPath {
   val instance = KeyToPath()
   instance.block()
   return instance
 }
 
 
-fun kubernetesList(block : KubernetesList.() -> Unit = {}): KubernetesList {
+fun newKubernetesList(block : KubernetesList.() -> Unit = {}): KubernetesList {
   val instance = KubernetesList()
   instance.block()
   return instance
 }
 
 
-fun labelSelector(block : LabelSelector.() -> Unit = {}): LabelSelector {
+fun newLabelSelector(block : LabelSelector.() -> Unit = {}): LabelSelector {
   val instance = LabelSelector()
   instance.block()
   return instance
 }
 
 
-fun labelSelectorRequirement(block : LabelSelectorRequirement.() -> Unit = {}): LabelSelectorRequirement {
+fun newLabelSelectorRequirement(block : LabelSelectorRequirement.() -> Unit = {}): LabelSelectorRequirement {
   val instance = LabelSelectorRequirement()
   instance.block()
   return instance
 }
 
 
-fun lifecycle(block : Lifecycle.() -> Unit = {}): Lifecycle {
+fun newLifecycle(block : Lifecycle.() -> Unit = {}): Lifecycle {
   val instance = Lifecycle()
   instance.block()
   return instance
 }
 
 
-fun limitRange(block : LimitRange.() -> Unit = {}): LimitRange {
+fun newLimitRange(block : LimitRange.() -> Unit = {}): LimitRange {
   val instance = LimitRange()
   instance.block()
   return instance
 }
 
 
-fun limitRangeItem(block : LimitRangeItem.() -> Unit = {}): LimitRangeItem {
+fun newLimitRangeItem(block : LimitRangeItem.() -> Unit = {}): LimitRangeItem {
   val instance = LimitRangeItem()
   instance.block()
   return instance
 }
 
 
-fun limitRangeList(block : LimitRangeList.() -> Unit = {}): LimitRangeList {
+fun newLimitRangeList(block : LimitRangeList.() -> Unit = {}): LimitRangeList {
   val instance = LimitRangeList()
   instance.block()
   return instance
 }
 
 
-fun limitRangeSpec(block : LimitRangeSpec.() -> Unit = {}): LimitRangeSpec {
+fun newLimitRangeSpec(block : LimitRangeSpec.() -> Unit = {}): LimitRangeSpec {
   val instance = LimitRangeSpec()
   instance.block()
   return instance
 }
 
 
-fun listMeta(block : ListMeta.() -> Unit = {}): ListMeta {
+fun newListMeta(block : ListMeta.() -> Unit = {}): ListMeta {
   val instance = ListMeta()
   instance.block()
   return instance
 }
 
 
-fun loadBalancerIngress(block : LoadBalancerIngress.() -> Unit = {}): LoadBalancerIngress {
+fun newLoadBalancerIngress(block : LoadBalancerIngress.() -> Unit = {}): LoadBalancerIngress {
   val instance = LoadBalancerIngress()
   instance.block()
   return instance
 }
 
 
-fun loadBalancerStatus(block : LoadBalancerStatus.() -> Unit = {}): LoadBalancerStatus {
+fun newLoadBalancerStatus(block : LoadBalancerStatus.() -> Unit = {}): LoadBalancerStatus {
   val instance = LoadBalancerStatus()
   instance.block()
   return instance
 }
 
 
-fun localObjectReference(block : LocalObjectReference.() -> Unit = {}): LocalObjectReference {
+fun newLocalObjectReference(block : LocalObjectReference.() -> Unit = {}): LocalObjectReference {
   val instance = LocalObjectReference()
   instance.block()
   return instance
 }
 
 
-fun localVolumeSource(block : LocalVolumeSource.() -> Unit = {}): LocalVolumeSource {
+fun newLocalVolumeSource(block : LocalVolumeSource.() -> Unit = {}): LocalVolumeSource {
   val instance = LocalVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun nfsVolumeSource(block : NFSVolumeSource.() -> Unit = {}): NFSVolumeSource {
+fun newNFSVolumeSource(block : NFSVolumeSource.() -> Unit = {}): NFSVolumeSource {
   val instance = NFSVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun namedAuthInfo(block : NamedAuthInfo.() -> Unit = {}): NamedAuthInfo {
+fun newNamedAuthInfo(block : NamedAuthInfo.() -> Unit = {}): NamedAuthInfo {
   val instance = NamedAuthInfo()
   instance.block()
   return instance
 }
 
 
-fun namedCluster(block : NamedCluster.() -> Unit = {}): NamedCluster {
+fun newNamedCluster(block : NamedCluster.() -> Unit = {}): NamedCluster {
   val instance = NamedCluster()
   instance.block()
   return instance
 }
 
 
-fun namedContext(block : NamedContext.() -> Unit = {}): NamedContext {
+fun newNamedContext(block : NamedContext.() -> Unit = {}): NamedContext {
   val instance = NamedContext()
   instance.block()
   return instance
 }
 
 
-fun namedExtension(block : NamedExtension.() -> Unit = {}): NamedExtension {
+fun newNamedExtension(block : NamedExtension.() -> Unit = {}): NamedExtension {
   val instance = NamedExtension()
   instance.block()
   return instance
 }
 
 
-fun namespace(block : Namespace.() -> Unit = {}): Namespace {
+fun newNamespace(block : Namespace.() -> Unit = {}): Namespace {
   val instance = Namespace()
   instance.block()
   return instance
 }
 
 
-fun namespaceList(block : NamespaceList.() -> Unit = {}): NamespaceList {
+fun newNamespaceList(block : NamespaceList.() -> Unit = {}): NamespaceList {
   val instance = NamespaceList()
   instance.block()
   return instance
 }
 
 
-fun namespaceSpec(block : NamespaceSpec.() -> Unit = {}): NamespaceSpec {
+fun newNamespaceSpec(block : NamespaceSpec.() -> Unit = {}): NamespaceSpec {
   val instance = NamespaceSpec()
   instance.block()
   return instance
 }
 
 
-fun namespaceStatus(block : NamespaceStatus.() -> Unit = {}): NamespaceStatus {
+fun newNamespaceStatus(block : NamespaceStatus.() -> Unit = {}): NamespaceStatus {
   val instance = NamespaceStatus()
   instance.block()
   return instance
 }
 
 
-fun node(block : Node.() -> Unit = {}): Node {
+fun newNode(block : Node.() -> Unit = {}): Node {
   val instance = Node()
   instance.block()
   return instance
 }
 
 
-fun nodeAddress(block : NodeAddress.() -> Unit = {}): NodeAddress {
+fun newNodeAddress(block : NodeAddress.() -> Unit = {}): NodeAddress {
   val instance = NodeAddress()
   instance.block()
   return instance
 }
 
 
-fun nodeAffinity(block : NodeAffinity.() -> Unit = {}): NodeAffinity {
+fun newNodeAffinity(block : NodeAffinity.() -> Unit = {}): NodeAffinity {
   val instance = NodeAffinity()
   instance.block()
   return instance
 }
 
 
-fun nodeCondition(block : NodeCondition.() -> Unit = {}): NodeCondition {
+fun newNodeCondition(block : NodeCondition.() -> Unit = {}): NodeCondition {
   val instance = NodeCondition()
   instance.block()
   return instance
 }
 
 
-fun nodeDaemonEndpoints(block : NodeDaemonEndpoints.() -> Unit = {}): NodeDaemonEndpoints {
+fun newNodeDaemonEndpoints(block : NodeDaemonEndpoints.() -> Unit = {}): NodeDaemonEndpoints {
   val instance = NodeDaemonEndpoints()
   instance.block()
   return instance
 }
 
 
-fun nodeList(block : NodeList.() -> Unit = {}): NodeList {
+fun newNodeList(block : NodeList.() -> Unit = {}): NodeList {
   val instance = NodeList()
   instance.block()
   return instance
 }
 
 
-fun nodeSelector(block : NodeSelector.() -> Unit = {}): NodeSelector {
+fun newNodeSelector(block : NodeSelector.() -> Unit = {}): NodeSelector {
   val instance = NodeSelector()
   instance.block()
   return instance
 }
 
 
-fun nodeSelectorRequirement(block : NodeSelectorRequirement.() -> Unit = {}): NodeSelectorRequirement {
+fun newNodeSelectorRequirement(block : NodeSelectorRequirement.() -> Unit = {}): NodeSelectorRequirement {
   val instance = NodeSelectorRequirement()
   instance.block()
   return instance
 }
 
 
-fun nodeSelectorTerm(block : NodeSelectorTerm.() -> Unit = {}): NodeSelectorTerm {
+fun newNodeSelectorTerm(block : NodeSelectorTerm.() -> Unit = {}): NodeSelectorTerm {
   val instance = NodeSelectorTerm()
   instance.block()
   return instance
 }
 
 
-fun nodeSpec(block : NodeSpec.() -> Unit = {}): NodeSpec {
+fun newNodeSpec(block : NodeSpec.() -> Unit = {}): NodeSpec {
   val instance = NodeSpec()
   instance.block()
   return instance
 }
 
 
-fun nodeStatus(block : NodeStatus.() -> Unit = {}): NodeStatus {
+fun newNodeStatus(block : NodeStatus.() -> Unit = {}): NodeStatus {
   val instance = NodeStatus()
   instance.block()
   return instance
 }
 
 
-fun nodeSystemInfo(block : NodeSystemInfo.() -> Unit = {}): NodeSystemInfo {
+fun newNodeSystemInfo(block : NodeSystemInfo.() -> Unit = {}): NodeSystemInfo {
   val instance = NodeSystemInfo()
   instance.block()
   return instance
 }
 
 
-fun objectFieldSelector(block : ObjectFieldSelector.() -> Unit = {}): ObjectFieldSelector {
+fun newObjectFieldSelector(block : ObjectFieldSelector.() -> Unit = {}): ObjectFieldSelector {
   val instance = ObjectFieldSelector()
   instance.block()
   return instance
 }
 
 
-fun objectMeta(block : ObjectMeta.() -> Unit = {}): ObjectMeta {
+fun newObjectMeta(block : ObjectMeta.() -> Unit = {}): ObjectMeta {
   val instance = ObjectMeta()
   instance.block()
   return instance
 }
 
 
-fun objectReference(block : ObjectReference.() -> Unit = {}): ObjectReference {
+fun newObjectReference(block : ObjectReference.() -> Unit = {}): ObjectReference {
   val instance = ObjectReference()
   instance.block()
   return instance
 }
 
 
-fun ownerReference(block : OwnerReference.() -> Unit = {}): OwnerReference {
+fun newOwnerReference(block : OwnerReference.() -> Unit = {}): OwnerReference {
   val instance = OwnerReference()
   instance.block()
   return instance
 }
 
 
-fun patch(block : Patch.() -> Unit = {}): Patch {
+fun newPatch(block : Patch.() -> Unit = {}): Patch {
   val instance = Patch()
   instance.block()
   return instance
 }
 
 
-fun persistentVolume(block : PersistentVolume.() -> Unit = {}): PersistentVolume {
+fun newPersistentVolume(block : PersistentVolume.() -> Unit = {}): PersistentVolume {
   val instance = PersistentVolume()
   instance.block()
   return instance
 }
 
 
-fun persistentVolumeClaim(block : PersistentVolumeClaim.() -> Unit = {}): PersistentVolumeClaim {
+fun newPersistentVolumeClaim(block : PersistentVolumeClaim.() -> Unit = {}): PersistentVolumeClaim {
   val instance = PersistentVolumeClaim()
   instance.block()
   return instance
 }
 
 
-fun persistentVolumeClaimList(block : PersistentVolumeClaimList.() -> Unit = {}): PersistentVolumeClaimList {
+fun newPersistentVolumeClaimList(block : PersistentVolumeClaimList.() -> Unit = {}): PersistentVolumeClaimList {
   val instance = PersistentVolumeClaimList()
   instance.block()
   return instance
 }
 
 
-fun persistentVolumeClaimSpec(block : PersistentVolumeClaimSpec.() -> Unit = {}): PersistentVolumeClaimSpec {
+fun newPersistentVolumeClaimSpec(block : PersistentVolumeClaimSpec.() -> Unit = {}): PersistentVolumeClaimSpec {
   val instance = PersistentVolumeClaimSpec()
   instance.block()
   return instance
 }
 
 
-fun persistentVolumeClaimStatus(block : PersistentVolumeClaimStatus.() -> Unit = {}): PersistentVolumeClaimStatus {
+fun newPersistentVolumeClaimStatus(block : PersistentVolumeClaimStatus.() -> Unit = {}): PersistentVolumeClaimStatus {
   val instance = PersistentVolumeClaimStatus()
   instance.block()
   return instance
 }
 
 
-fun persistentVolumeClaimVolumeSource(block : PersistentVolumeClaimVolumeSource.() -> Unit = {}): PersistentVolumeClaimVolumeSource {
+fun newPersistentVolumeClaimVolumeSource(block : PersistentVolumeClaimVolumeSource.() -> Unit = {}): PersistentVolumeClaimVolumeSource {
   val instance = PersistentVolumeClaimVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun persistentVolumeList(block : PersistentVolumeList.() -> Unit = {}): PersistentVolumeList {
+fun newPersistentVolumeList(block : PersistentVolumeList.() -> Unit = {}): PersistentVolumeList {
   val instance = PersistentVolumeList()
   instance.block()
   return instance
 }
 
 
-fun persistentVolumeSpec(block : PersistentVolumeSpec.() -> Unit = {}): PersistentVolumeSpec {
+fun newPersistentVolumeSpec(block : PersistentVolumeSpec.() -> Unit = {}): PersistentVolumeSpec {
   val instance = PersistentVolumeSpec()
   instance.block()
   return instance
 }
 
 
-fun persistentVolumeStatus(block : PersistentVolumeStatus.() -> Unit = {}): PersistentVolumeStatus {
+fun newPersistentVolumeStatus(block : PersistentVolumeStatus.() -> Unit = {}): PersistentVolumeStatus {
   val instance = PersistentVolumeStatus()
   instance.block()
   return instance
 }
 
 
-fun photonPersistentDiskVolumeSource(block : PhotonPersistentDiskVolumeSource.() -> Unit = {}): PhotonPersistentDiskVolumeSource {
+fun newPhotonPersistentDiskVolumeSource(block : PhotonPersistentDiskVolumeSource.() -> Unit = {}): PhotonPersistentDiskVolumeSource {
   val instance = PhotonPersistentDiskVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun pod(block : Pod.() -> Unit = {}): Pod {
+fun newPod(block : Pod.() -> Unit = {}): Pod {
   val instance = Pod()
   instance.block()
   return instance
 }
 
 
-fun podAffinity(block : PodAffinity.() -> Unit = {}): PodAffinity {
+fun newPodAffinity(block : PodAffinity.() -> Unit = {}): PodAffinity {
   val instance = PodAffinity()
   instance.block()
   return instance
 }
 
 
-fun podAffinityTerm(block : PodAffinityTerm.() -> Unit = {}): PodAffinityTerm {
+fun newPodAffinityTerm(block : PodAffinityTerm.() -> Unit = {}): PodAffinityTerm {
   val instance = PodAffinityTerm()
   instance.block()
   return instance
 }
 
 
-fun podAntiAffinity(block : PodAntiAffinity.() -> Unit = {}): PodAntiAffinity {
+fun newPodAntiAffinity(block : PodAntiAffinity.() -> Unit = {}): PodAntiAffinity {
   val instance = PodAntiAffinity()
   instance.block()
   return instance
 }
 
 
-fun podCondition(block : PodCondition.() -> Unit = {}): PodCondition {
+fun newPodCondition(block : PodCondition.() -> Unit = {}): PodCondition {
   val instance = PodCondition()
   instance.block()
   return instance
 }
 
 
-fun podList(block : PodList.() -> Unit = {}): PodList {
+fun newPodList(block : PodList.() -> Unit = {}): PodList {
   val instance = PodList()
   instance.block()
   return instance
 }
 
 
-fun podSecurityContext(block : PodSecurityContext.() -> Unit = {}): PodSecurityContext {
+fun newPodSecurityContext(block : PodSecurityContext.() -> Unit = {}): PodSecurityContext {
   val instance = PodSecurityContext()
   instance.block()
   return instance
 }
 
 
-fun podSpec(block : PodSpec.() -> Unit = {}): PodSpec {
+fun newPodSpec(block : PodSpec.() -> Unit = {}): PodSpec {
   val instance = PodSpec()
   instance.block()
   return instance
 }
 
 
-fun podStatus(block : PodStatus.() -> Unit = {}): PodStatus {
+fun newPodStatus(block : PodStatus.() -> Unit = {}): PodStatus {
   val instance = PodStatus()
   instance.block()
   return instance
 }
 
 
-fun podTemplate(block : PodTemplate.() -> Unit = {}): PodTemplate {
+fun newPodTemplate(block : PodTemplate.() -> Unit = {}): PodTemplate {
   val instance = PodTemplate()
   instance.block()
   return instance
 }
 
 
-fun podTemplateList(block : PodTemplateList.() -> Unit = {}): PodTemplateList {
+fun newPodTemplateList(block : PodTemplateList.() -> Unit = {}): PodTemplateList {
   val instance = PodTemplateList()
   instance.block()
   return instance
 }
 
 
-fun podTemplateSpec(block : PodTemplateSpec.() -> Unit = {}): PodTemplateSpec {
+fun newPodTemplateSpec(block : PodTemplateSpec.() -> Unit = {}): PodTemplateSpec {
   val instance = PodTemplateSpec()
   instance.block()
   return instance
 }
 
 
-fun portworxVolumeSource(block : PortworxVolumeSource.() -> Unit = {}): PortworxVolumeSource {
+fun newPortworxVolumeSource(block : PortworxVolumeSource.() -> Unit = {}): PortworxVolumeSource {
   val instance = PortworxVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun preconditions(block : Preconditions.() -> Unit = {}): Preconditions {
+fun newPreconditions(block : Preconditions.() -> Unit = {}): Preconditions {
   val instance = Preconditions()
   instance.block()
   return instance
 }
 
 
-fun preferences(block : Preferences.() -> Unit = {}): Preferences {
+fun newPreferences(block : Preferences.() -> Unit = {}): Preferences {
   val instance = Preferences()
   instance.block()
   return instance
 }
 
 
-fun preferredSchedulingTerm(block : PreferredSchedulingTerm.() -> Unit = {}): PreferredSchedulingTerm {
+fun newPreferredSchedulingTerm(block : PreferredSchedulingTerm.() -> Unit = {}): PreferredSchedulingTerm {
   val instance = PreferredSchedulingTerm()
   instance.block()
   return instance
 }
 
 
-fun probe(block : Probe.() -> Unit = {}): Probe {
+fun newProbe(block : Probe.() -> Unit = {}): Probe {
   val instance = Probe()
   instance.block()
   return instance
 }
 
 
-fun projectedVolumeSource(block : ProjectedVolumeSource.() -> Unit = {}): ProjectedVolumeSource {
+fun newProjectedVolumeSource(block : ProjectedVolumeSource.() -> Unit = {}): ProjectedVolumeSource {
   val instance = ProjectedVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun quobyteVolumeSource(block : QuobyteVolumeSource.() -> Unit = {}): QuobyteVolumeSource {
+fun newQuobyteVolumeSource(block : QuobyteVolumeSource.() -> Unit = {}): QuobyteVolumeSource {
   val instance = QuobyteVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun rbdVolumeSource(block : RBDVolumeSource.() -> Unit = {}): RBDVolumeSource {
+fun newRBDVolumeSource(block : RBDVolumeSource.() -> Unit = {}): RBDVolumeSource {
   val instance = RBDVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun replicationController(block : ReplicationController.() -> Unit = {}): ReplicationController {
+fun newReplicationController(block : ReplicationController.() -> Unit = {}): ReplicationController {
   val instance = ReplicationController()
   instance.block()
   return instance
 }
 
 
-fun replicationControllerCondition(block : ReplicationControllerCondition.() -> Unit = {}): ReplicationControllerCondition {
+fun newReplicationControllerCondition(block : ReplicationControllerCondition.() -> Unit = {}): ReplicationControllerCondition {
   val instance = ReplicationControllerCondition()
   instance.block()
   return instance
 }
 
 
-fun replicationControllerList(block : ReplicationControllerList.() -> Unit = {}): ReplicationControllerList {
+fun newReplicationControllerList(block : ReplicationControllerList.() -> Unit = {}): ReplicationControllerList {
   val instance = ReplicationControllerList()
   instance.block()
   return instance
 }
 
 
-fun replicationControllerSpec(block : ReplicationControllerSpec.() -> Unit = {}): ReplicationControllerSpec {
+fun newReplicationControllerSpec(block : ReplicationControllerSpec.() -> Unit = {}): ReplicationControllerSpec {
   val instance = ReplicationControllerSpec()
   instance.block()
   return instance
 }
 
 
-fun replicationControllerStatus(block : ReplicationControllerStatus.() -> Unit = {}): ReplicationControllerStatus {
+fun newReplicationControllerStatus(block : ReplicationControllerStatus.() -> Unit = {}): ReplicationControllerStatus {
   val instance = ReplicationControllerStatus()
   instance.block()
   return instance
 }
 
 
-fun resourceFieldSelector(block : ResourceFieldSelector.() -> Unit = {}): ResourceFieldSelector {
+fun newResourceFieldSelector(block : ResourceFieldSelector.() -> Unit = {}): ResourceFieldSelector {
   val instance = ResourceFieldSelector()
   instance.block()
   return instance
 }
 
 
-fun resourceQuota(block : ResourceQuota.() -> Unit = {}): ResourceQuota {
+fun newResourceQuota(block : ResourceQuota.() -> Unit = {}): ResourceQuota {
   val instance = ResourceQuota()
   instance.block()
   return instance
 }
 
 
-fun resourceQuotaList(block : ResourceQuotaList.() -> Unit = {}): ResourceQuotaList {
+fun newResourceQuotaList(block : ResourceQuotaList.() -> Unit = {}): ResourceQuotaList {
   val instance = ResourceQuotaList()
   instance.block()
   return instance
 }
 
 
-fun resourceQuotaSpec(block : ResourceQuotaSpec.() -> Unit = {}): ResourceQuotaSpec {
+fun newResourceQuotaSpec(block : ResourceQuotaSpec.() -> Unit = {}): ResourceQuotaSpec {
   val instance = ResourceQuotaSpec()
   instance.block()
   return instance
 }
 
 
-fun resourceQuotaStatus(block : ResourceQuotaStatus.() -> Unit = {}): ResourceQuotaStatus {
+fun newResourceQuotaStatus(block : ResourceQuotaStatus.() -> Unit = {}): ResourceQuotaStatus {
   val instance = ResourceQuotaStatus()
   instance.block()
   return instance
 }
 
 
-fun resourceRequirements(block : ResourceRequirements.() -> Unit = {}): ResourceRequirements {
+fun newResourceRequirements(block : ResourceRequirements.() -> Unit = {}): ResourceRequirements {
   val instance = ResourceRequirements()
   instance.block()
   return instance
 }
 
 
-fun rootPaths(block : RootPaths.() -> Unit = {}): RootPaths {
+fun newRootPaths(block : RootPaths.() -> Unit = {}): RootPaths {
   val instance = RootPaths()
   instance.block()
   return instance
 }
 
 
-fun seLinuxOptions(block : SELinuxOptions.() -> Unit = {}): SELinuxOptions {
+fun newSELinuxOptions(block : SELinuxOptions.() -> Unit = {}): SELinuxOptions {
   val instance = SELinuxOptions()
   instance.block()
   return instance
 }
 
 
-fun scaleIOVolumeSource(block : ScaleIOVolumeSource.() -> Unit = {}): ScaleIOVolumeSource {
+fun newScaleIOVolumeSource(block : ScaleIOVolumeSource.() -> Unit = {}): ScaleIOVolumeSource {
   val instance = ScaleIOVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun secret(block : Secret.() -> Unit = {}): Secret {
+fun newSecret(block : Secret.() -> Unit = {}): Secret {
   val instance = Secret()
   instance.block()
   return instance
 }
 
 
-fun secretEnvSource(block : SecretEnvSource.() -> Unit = {}): SecretEnvSource {
+fun newSecretEnvSource(block : SecretEnvSource.() -> Unit = {}): SecretEnvSource {
   val instance = SecretEnvSource()
   instance.block()
   return instance
 }
 
 
-fun secretKeySelector(block : SecretKeySelector.() -> Unit = {}): SecretKeySelector {
+fun newSecretKeySelector(block : SecretKeySelector.() -> Unit = {}): SecretKeySelector {
   val instance = SecretKeySelector()
   instance.block()
   return instance
 }
 
 
-fun secretList(block : SecretList.() -> Unit = {}): SecretList {
+fun newSecretList(block : SecretList.() -> Unit = {}): SecretList {
   val instance = SecretList()
   instance.block()
   return instance
 }
 
 
-fun secretProjection(block : SecretProjection.() -> Unit = {}): SecretProjection {
+fun newSecretProjection(block : SecretProjection.() -> Unit = {}): SecretProjection {
   val instance = SecretProjection()
   instance.block()
   return instance
 }
 
 
-fun secretVolumeSource(block : SecretVolumeSource.() -> Unit = {}): SecretVolumeSource {
+fun newSecretVolumeSource(block : SecretVolumeSource.() -> Unit = {}): SecretVolumeSource {
   val instance = SecretVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun securityContext(block : SecurityContext.() -> Unit = {}): SecurityContext {
+fun newSecurityContext(block : SecurityContext.() -> Unit = {}): SecurityContext {
   val instance = SecurityContext()
   instance.block()
   return instance
 }
 
 
-fun service(block : Service.() -> Unit = {}): Service {
+fun newService(block : Service.() -> Unit = {}): Service {
   val instance = Service()
   instance.block()
   return instance
 }
 
 
-fun serviceAccount(block : ServiceAccount.() -> Unit = {}): ServiceAccount {
+fun newServiceAccount(block : ServiceAccount.() -> Unit = {}): ServiceAccount {
   val instance = ServiceAccount()
   instance.block()
   return instance
 }
 
 
-fun serviceAccountList(block : ServiceAccountList.() -> Unit = {}): ServiceAccountList {
+fun newServiceAccountList(block : ServiceAccountList.() -> Unit = {}): ServiceAccountList {
   val instance = ServiceAccountList()
   instance.block()
   return instance
 }
 
 
-fun serviceList(block : ServiceList.() -> Unit = {}): ServiceList {
+fun newServiceList(block : ServiceList.() -> Unit = {}): ServiceList {
   val instance = ServiceList()
   instance.block()
   return instance
 }
 
 
-fun servicePort(block : ServicePort.() -> Unit = {}): ServicePort {
+fun newServicePort(block : ServicePort.() -> Unit = {}): ServicePort {
   val instance = ServicePort()
   instance.block()
   return instance
 }
 
 
-fun serviceSpec(block : ServiceSpec.() -> Unit = {}): ServiceSpec {
+fun newServiceSpec(block : ServiceSpec.() -> Unit = {}): ServiceSpec {
   val instance = ServiceSpec()
   instance.block()
   return instance
 }
 
 
-fun serviceStatus(block : ServiceStatus.() -> Unit = {}): ServiceStatus {
+fun newServiceStatus(block : ServiceStatus.() -> Unit = {}): ServiceStatus {
   val instance = ServiceStatus()
   instance.block()
   return instance
 }
 
 
-fun status(block : Status.() -> Unit = {}): Status {
+fun newStatus(block : Status.() -> Unit = {}): Status {
   val instance = Status()
   instance.block()
   return instance
 }
 
 
-fun statusCause(block : StatusCause.() -> Unit = {}): StatusCause {
+fun newStatusCause(block : StatusCause.() -> Unit = {}): StatusCause {
   val instance = StatusCause()
   instance.block()
   return instance
 }
 
 
-fun statusDetails(block : StatusDetails.() -> Unit = {}): StatusDetails {
+fun newStatusDetails(block : StatusDetails.() -> Unit = {}): StatusDetails {
   val instance = StatusDetails()
   instance.block()
   return instance
 }
 
 
-fun storageClass(block : StorageClass.() -> Unit = {}): StorageClass {
+fun newStorageClass(block : StorageClass.() -> Unit = {}): StorageClass {
   val instance = StorageClass()
   instance.block()
   return instance
 }
 
 
-fun storageClassList(block : StorageClassList.() -> Unit = {}): StorageClassList {
+fun newStorageClassList(block : StorageClassList.() -> Unit = {}): StorageClassList {
   val instance = StorageClassList()
   instance.block()
   return instance
 }
 
 
-fun storageOSPersistentVolumeSource(block : StorageOSPersistentVolumeSource.() -> Unit = {}): StorageOSPersistentVolumeSource {
+fun newStorageOSPersistentVolumeSource(block : StorageOSPersistentVolumeSource.() -> Unit = {}): StorageOSPersistentVolumeSource {
   val instance = StorageOSPersistentVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun storageOSVolumeSource(block : StorageOSVolumeSource.() -> Unit = {}): StorageOSVolumeSource {
+fun newStorageOSVolumeSource(block : StorageOSVolumeSource.() -> Unit = {}): StorageOSVolumeSource {
   val instance = StorageOSVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun tcpSocketAction(block : TCPSocketAction.() -> Unit = {}): TCPSocketAction {
+fun newTCPSocketAction(block : TCPSocketAction.() -> Unit = {}): TCPSocketAction {
   val instance = TCPSocketAction()
   instance.block()
   return instance
 }
 
 
-fun taint(block : Taint.() -> Unit = {}): Taint {
+fun newTaint(block : Taint.() -> Unit = {}): Taint {
   val instance = Taint()
   instance.block()
   return instance
 }
 
 
-fun toleration(block : Toleration.() -> Unit = {}): Toleration {
+fun newToleration(block : Toleration.() -> Unit = {}): Toleration {
   val instance = Toleration()
   instance.block()
   return instance
 }
 
 
-fun volume(block : Volume.() -> Unit = {}): Volume {
+fun newVolume(block : Volume.() -> Unit = {}): Volume {
   val instance = Volume()
   instance.block()
   return instance
 }
 
 
-fun volumeMount(block : VolumeMount.() -> Unit = {}): VolumeMount {
+fun newVolumeMount(block : VolumeMount.() -> Unit = {}): VolumeMount {
   val instance = VolumeMount()
   instance.block()
   return instance
 }
 
 
-fun volumeProjection(block : VolumeProjection.() -> Unit = {}): VolumeProjection {
+fun newVolumeProjection(block : VolumeProjection.() -> Unit = {}): VolumeProjection {
   val instance = VolumeProjection()
   instance.block()
   return instance
 }
 
 
-fun vsphereVirtualDiskVolumeSource(block : VsphereVirtualDiskVolumeSource.() -> Unit = {}): VsphereVirtualDiskVolumeSource {
+fun newVsphereVirtualDiskVolumeSource(block : VsphereVirtualDiskVolumeSource.() -> Unit = {}): VsphereVirtualDiskVolumeSource {
   val instance = VsphereVirtualDiskVolumeSource()
   instance.block()
   return instance
 }
 
 
-fun watchEvent(block : WatchEvent.() -> Unit = {}): WatchEvent {
+fun newWatchEvent(block : WatchEvent.() -> Unit = {}): WatchEvent {
   val instance = WatchEvent()
   instance.block()
   return instance
 }
 
 
-fun weightedPodAffinityTerm(block : WeightedPodAffinityTerm.() -> Unit = {}): WeightedPodAffinityTerm {
+fun newWeightedPodAffinityTerm(block : WeightedPodAffinityTerm.() -> Unit = {}): WeightedPodAffinityTerm {
   val instance = WeightedPodAffinityTerm()
   instance.block()
   return instance
 }
 
 
-fun customResourceDefinition(block : CustomResourceDefinition.() -> Unit = {}): CustomResourceDefinition {
+fun newCustomResourceDefinition(block : CustomResourceDefinition.() -> Unit = {}): CustomResourceDefinition {
   val instance = CustomResourceDefinition()
   instance.block()
   return instance
 }
 
 
-fun customResourceDefinitionCondition(block : CustomResourceDefinitionCondition.() -> Unit = {}): CustomResourceDefinitionCondition {
+fun newCustomResourceDefinitionCondition(block : CustomResourceDefinitionCondition.() -> Unit = {}): CustomResourceDefinitionCondition {
   val instance = CustomResourceDefinitionCondition()
   instance.block()
   return instance
 }
 
 
-fun customResourceDefinitionList(block : CustomResourceDefinitionList.() -> Unit = {}): CustomResourceDefinitionList {
+fun newCustomResourceDefinitionList(block : CustomResourceDefinitionList.() -> Unit = {}): CustomResourceDefinitionList {
   val instance = CustomResourceDefinitionList()
   instance.block()
   return instance
 }
 
 
-fun customResourceDefinitionNames(block : CustomResourceDefinitionNames.() -> Unit = {}): CustomResourceDefinitionNames {
+fun newCustomResourceDefinitionNames(block : CustomResourceDefinitionNames.() -> Unit = {}): CustomResourceDefinitionNames {
   val instance = CustomResourceDefinitionNames()
   instance.block()
   return instance
 }
 
 
-fun customResourceDefinitionSpec(block : CustomResourceDefinitionSpec.() -> Unit = {}): CustomResourceDefinitionSpec {
+fun newCustomResourceDefinitionSpec(block : CustomResourceDefinitionSpec.() -> Unit = {}): CustomResourceDefinitionSpec {
   val instance = CustomResourceDefinitionSpec()
   instance.block()
   return instance
 }
 
 
-fun customResourceDefinitionStatus(block : CustomResourceDefinitionStatus.() -> Unit = {}): CustomResourceDefinitionStatus {
+fun newCustomResourceDefinitionStatus(block : CustomResourceDefinitionStatus.() -> Unit = {}): CustomResourceDefinitionStatus {
   val instance = CustomResourceDefinitionStatus()
   instance.block()
   return instance
 }
 
 
-fun tokenReview(block : TokenReview.() -> Unit = {}): TokenReview {
+fun newTokenReview(block : TokenReview.() -> Unit = {}): TokenReview {
   val instance = TokenReview()
   instance.block()
   return instance
 }
 
 
-fun tokenReviewSpec(block : TokenReviewSpec.() -> Unit = {}): TokenReviewSpec {
+fun newTokenReviewSpec(block : TokenReviewSpec.() -> Unit = {}): TokenReviewSpec {
   val instance = TokenReviewSpec()
   instance.block()
   return instance
 }
 
 
-fun tokenReviewStatus(block : TokenReviewStatus.() -> Unit = {}): TokenReviewStatus {
+fun newTokenReviewStatus(block : TokenReviewStatus.() -> Unit = {}): TokenReviewStatus {
   val instance = TokenReviewStatus()
   instance.block()
   return instance
 }
 
 
-fun userInfo(block : UserInfo.() -> Unit = {}): UserInfo {
+fun newUserInfo(block : UserInfo.() -> Unit = {}): UserInfo {
   val instance = UserInfo()
   instance.block()
   return instance
 }
 
 
-fun localSubjectAccessReview(block : LocalSubjectAccessReview.() -> Unit = {}): LocalSubjectAccessReview {
+fun newLocalSubjectAccessReview(block : LocalSubjectAccessReview.() -> Unit = {}): LocalSubjectAccessReview {
   val instance = LocalSubjectAccessReview()
   instance.block()
   return instance
 }
 
 
-fun nonResourceAttributes(block : NonResourceAttributes.() -> Unit = {}): NonResourceAttributes {
+fun newNonResourceAttributes(block : NonResourceAttributes.() -> Unit = {}): NonResourceAttributes {
   val instance = NonResourceAttributes()
   instance.block()
   return instance
 }
 
 
-fun resourceAttributes(block : ResourceAttributes.() -> Unit = {}): ResourceAttributes {
+fun newResourceAttributes(block : ResourceAttributes.() -> Unit = {}): ResourceAttributes {
   val instance = ResourceAttributes()
   instance.block()
   return instance
 }
 
 
-fun subjectAccessReview(block : SubjectAccessReview.() -> Unit = {}): SubjectAccessReview {
+fun newSubjectAccessReview(block : SubjectAccessReview.() -> Unit = {}): SubjectAccessReview {
   val instance = SubjectAccessReview()
   instance.block()
   return instance
 }
 
 
-fun subjectAccessReviewSpec(block : SubjectAccessReviewSpec.() -> Unit = {}): SubjectAccessReviewSpec {
+fun newSubjectAccessReviewSpec(block : SubjectAccessReviewSpec.() -> Unit = {}): SubjectAccessReviewSpec {
   val instance = SubjectAccessReviewSpec()
   instance.block()
   return instance
 }
 
 
-fun subjectAccessReviewStatus(block : SubjectAccessReviewStatus.() -> Unit = {}): SubjectAccessReviewStatus {
+fun newSubjectAccessReviewStatus(block : SubjectAccessReviewStatus.() -> Unit = {}): SubjectAccessReviewStatus {
   val instance = SubjectAccessReviewStatus()
   instance.block()
   return instance
 }
 
 
-fun apiVersion(block : APIVersion.() -> Unit = {}): APIVersion {
+fun newAPIVersion(block : APIVersion.() -> Unit = {}): APIVersion {
   val instance = APIVersion()
   instance.block()
   return instance
 }
 
 
-fun daemonSet(block : DaemonSet.() -> Unit = {}): DaemonSet {
+fun newDaemonSet(block : DaemonSet.() -> Unit = {}): DaemonSet {
   val instance = DaemonSet()
   instance.block()
   return instance
 }
 
 
-fun daemonSetList(block : DaemonSetList.() -> Unit = {}): DaemonSetList {
+fun newDaemonSetList(block : DaemonSetList.() -> Unit = {}): DaemonSetList {
   val instance = DaemonSetList()
   instance.block()
   return instance
 }
 
 
-fun daemonSetSpec(block : DaemonSetSpec.() -> Unit = {}): DaemonSetSpec {
+fun newDaemonSetSpec(block : DaemonSetSpec.() -> Unit = {}): DaemonSetSpec {
   val instance = DaemonSetSpec()
   instance.block()
   return instance
 }
 
 
-fun daemonSetStatus(block : DaemonSetStatus.() -> Unit = {}): DaemonSetStatus {
+fun newDaemonSetStatus(block : DaemonSetStatus.() -> Unit = {}): DaemonSetStatus {
   val instance = DaemonSetStatus()
   instance.block()
   return instance
 }
 
 
-fun daemonSetUpdateStrategy(block : DaemonSetUpdateStrategy.() -> Unit = {}): DaemonSetUpdateStrategy {
+fun newDaemonSetUpdateStrategy(block : DaemonSetUpdateStrategy.() -> Unit = {}): DaemonSetUpdateStrategy {
   val instance = DaemonSetUpdateStrategy()
   instance.block()
   return instance
 }
 
 
-fun deployment(block : Deployment.() -> Unit = {}): Deployment {
+fun newDeployment(block : Deployment.() -> Unit = {}): Deployment {
   val instance = Deployment()
   instance.block()
   return instance
 }
 
 
-fun deploymentCondition(block : DeploymentCondition.() -> Unit = {}): DeploymentCondition {
+fun newDeploymentCondition(block : DeploymentCondition.() -> Unit = {}): DeploymentCondition {
   val instance = DeploymentCondition()
   instance.block()
   return instance
 }
 
 
-fun deploymentList(block : DeploymentList.() -> Unit = {}): DeploymentList {
+fun newDeploymentList(block : DeploymentList.() -> Unit = {}): DeploymentList {
   val instance = DeploymentList()
   instance.block()
   return instance
 }
 
 
-fun deploymentRollback(block : DeploymentRollback.() -> Unit = {}): DeploymentRollback {
+fun newDeploymentRollback(block : DeploymentRollback.() -> Unit = {}): DeploymentRollback {
   val instance = DeploymentRollback()
   instance.block()
   return instance
 }
 
 
-fun deploymentSpec(block : DeploymentSpec.() -> Unit = {}): DeploymentSpec {
+fun newDeploymentSpec(block : DeploymentSpec.() -> Unit = {}): DeploymentSpec {
   val instance = DeploymentSpec()
   instance.block()
   return instance
 }
 
 
-fun deploymentStatus(block : DeploymentStatus.() -> Unit = {}): DeploymentStatus {
+fun newDeploymentStatus(block : DeploymentStatus.() -> Unit = {}): DeploymentStatus {
   val instance = DeploymentStatus()
   instance.block()
   return instance
 }
 
 
-fun deploymentStrategy(block : DeploymentStrategy.() -> Unit = {}): DeploymentStrategy {
+fun newDeploymentStrategy(block : DeploymentStrategy.() -> Unit = {}): DeploymentStrategy {
   val instance = DeploymentStrategy()
   instance.block()
   return instance
 }
 
 
-fun fsGroupStrategyOptions(block : FSGroupStrategyOptions.() -> Unit = {}): FSGroupStrategyOptions {
+fun newFSGroupStrategyOptions(block : FSGroupStrategyOptions.() -> Unit = {}): FSGroupStrategyOptions {
   val instance = FSGroupStrategyOptions()
   instance.block()
   return instance
 }
 
 
-fun httpIngressPath(block : HTTPIngressPath.() -> Unit = {}): HTTPIngressPath {
+fun newHTTPIngressPath(block : HTTPIngressPath.() -> Unit = {}): HTTPIngressPath {
   val instance = HTTPIngressPath()
   instance.block()
   return instance
 }
 
 
-fun httpIngressRuleValue(block : HTTPIngressRuleValue.() -> Unit = {}): HTTPIngressRuleValue {
+fun newHTTPIngressRuleValue(block : HTTPIngressRuleValue.() -> Unit = {}): HTTPIngressRuleValue {
   val instance = HTTPIngressRuleValue()
   instance.block()
   return instance
 }
 
 
-fun hostPortRange(block : HostPortRange.() -> Unit = {}): HostPortRange {
+fun newHostPortRange(block : HostPortRange.() -> Unit = {}): HostPortRange {
   val instance = HostPortRange()
   instance.block()
   return instance
 }
 
 
-fun idRange(block : IDRange.() -> Unit = {}): IDRange {
+fun newIDRange(block : IDRange.() -> Unit = {}): IDRange {
   val instance = IDRange()
   instance.block()
   return instance
 }
 
 
-fun ingress(block : Ingress.() -> Unit = {}): Ingress {
+fun newIngress(block : Ingress.() -> Unit = {}): Ingress {
   val instance = Ingress()
   instance.block()
   return instance
 }
 
 
-fun ingressBackend(block : IngressBackend.() -> Unit = {}): IngressBackend {
+fun newIngressBackend(block : IngressBackend.() -> Unit = {}): IngressBackend {
   val instance = IngressBackend()
   instance.block()
   return instance
 }
 
 
-fun ingressList(block : IngressList.() -> Unit = {}): IngressList {
+fun newIngressList(block : IngressList.() -> Unit = {}): IngressList {
   val instance = IngressList()
   instance.block()
   return instance
 }
 
 
-fun ingressRule(block : IngressRule.() -> Unit = {}): IngressRule {
+fun newIngressRule(block : IngressRule.() -> Unit = {}): IngressRule {
   val instance = IngressRule()
   instance.block()
   return instance
 }
 
 
-fun ingressSpec(block : IngressSpec.() -> Unit = {}): IngressSpec {
+fun newIngressSpec(block : IngressSpec.() -> Unit = {}): IngressSpec {
   val instance = IngressSpec()
   instance.block()
   return instance
 }
 
 
-fun ingressStatus(block : IngressStatus.() -> Unit = {}): IngressStatus {
+fun newIngressStatus(block : IngressStatus.() -> Unit = {}): IngressStatus {
   val instance = IngressStatus()
   instance.block()
   return instance
 }
 
 
-fun ingressTLS(block : IngressTLS.() -> Unit = {}): IngressTLS {
+fun newIngressTLS(block : IngressTLS.() -> Unit = {}): IngressTLS {
   val instance = IngressTLS()
   instance.block()
   return instance
 }
 
 
-fun kubernetesRunAsUserStrategyOptions(block : KubernetesRunAsUserStrategyOptions.() -> Unit = {}): KubernetesRunAsUserStrategyOptions {
+fun newKubernetesRunAsUserStrategyOptions(block : KubernetesRunAsUserStrategyOptions.() -> Unit = {}): KubernetesRunAsUserStrategyOptions {
   val instance = KubernetesRunAsUserStrategyOptions()
   instance.block()
   return instance
 }
 
 
-fun networkPolicy(block : NetworkPolicy.() -> Unit = {}): NetworkPolicy {
+fun newNetworkPolicy(block : NetworkPolicy.() -> Unit = {}): NetworkPolicy {
   val instance = NetworkPolicy()
   instance.block()
   return instance
 }
 
 
-fun networkPolicyIngressRule(block : NetworkPolicyIngressRule.() -> Unit = {}): NetworkPolicyIngressRule {
+fun newNetworkPolicyIngressRule(block : NetworkPolicyIngressRule.() -> Unit = {}): NetworkPolicyIngressRule {
   val instance = NetworkPolicyIngressRule()
   instance.block()
   return instance
 }
 
 
-fun networkPolicyList(block : NetworkPolicyList.() -> Unit = {}): NetworkPolicyList {
+fun newNetworkPolicyList(block : NetworkPolicyList.() -> Unit = {}): NetworkPolicyList {
   val instance = NetworkPolicyList()
   instance.block()
   return instance
 }
 
 
-fun networkPolicyPeer(block : NetworkPolicyPeer.() -> Unit = {}): NetworkPolicyPeer {
+fun newNetworkPolicyPeer(block : NetworkPolicyPeer.() -> Unit = {}): NetworkPolicyPeer {
   val instance = NetworkPolicyPeer()
   instance.block()
   return instance
 }
 
 
-fun networkPolicyPort(block : NetworkPolicyPort.() -> Unit = {}): NetworkPolicyPort {
+fun newNetworkPolicyPort(block : NetworkPolicyPort.() -> Unit = {}): NetworkPolicyPort {
   val instance = NetworkPolicyPort()
   instance.block()
   return instance
 }
 
 
-fun networkPolicySpec(block : NetworkPolicySpec.() -> Unit = {}): NetworkPolicySpec {
+fun newNetworkPolicySpec(block : NetworkPolicySpec.() -> Unit = {}): NetworkPolicySpec {
   val instance = NetworkPolicySpec()
   instance.block()
   return instance
 }
 
 
-fun podSecurityPolicy(block : PodSecurityPolicy.() -> Unit = {}): PodSecurityPolicy {
+fun newPodSecurityPolicy(block : PodSecurityPolicy.() -> Unit = {}): PodSecurityPolicy {
   val instance = PodSecurityPolicy()
   instance.block()
   return instance
 }
 
 
-fun podSecurityPolicyList(block : PodSecurityPolicyList.() -> Unit = {}): PodSecurityPolicyList {
+fun newPodSecurityPolicyList(block : PodSecurityPolicyList.() -> Unit = {}): PodSecurityPolicyList {
   val instance = PodSecurityPolicyList()
   instance.block()
   return instance
 }
 
 
-fun podSecurityPolicySpec(block : PodSecurityPolicySpec.() -> Unit = {}): PodSecurityPolicySpec {
+fun newPodSecurityPolicySpec(block : PodSecurityPolicySpec.() -> Unit = {}): PodSecurityPolicySpec {
   val instance = PodSecurityPolicySpec()
   instance.block()
   return instance
 }
 
 
-fun replicaSet(block : ReplicaSet.() -> Unit = {}): ReplicaSet {
+fun newReplicaSet(block : ReplicaSet.() -> Unit = {}): ReplicaSet {
   val instance = ReplicaSet()
   instance.block()
   return instance
 }
 
 
-fun replicaSetCondition(block : ReplicaSetCondition.() -> Unit = {}): ReplicaSetCondition {
+fun newReplicaSetCondition(block : ReplicaSetCondition.() -> Unit = {}): ReplicaSetCondition {
   val instance = ReplicaSetCondition()
   instance.block()
   return instance
 }
 
 
-fun replicaSetList(block : ReplicaSetList.() -> Unit = {}): ReplicaSetList {
+fun newReplicaSetList(block : ReplicaSetList.() -> Unit = {}): ReplicaSetList {
   val instance = ReplicaSetList()
   instance.block()
   return instance
 }
 
 
-fun replicaSetSpec(block : ReplicaSetSpec.() -> Unit = {}): ReplicaSetSpec {
+fun newReplicaSetSpec(block : ReplicaSetSpec.() -> Unit = {}): ReplicaSetSpec {
   val instance = ReplicaSetSpec()
   instance.block()
   return instance
 }
 
 
-fun replicaSetStatus(block : ReplicaSetStatus.() -> Unit = {}): ReplicaSetStatus {
+fun newReplicaSetStatus(block : ReplicaSetStatus.() -> Unit = {}): ReplicaSetStatus {
   val instance = ReplicaSetStatus()
   instance.block()
   return instance
 }
 
 
-fun rollbackConfig(block : RollbackConfig.() -> Unit = {}): RollbackConfig {
+fun newRollbackConfig(block : RollbackConfig.() -> Unit = {}): RollbackConfig {
   val instance = RollbackConfig()
   instance.block()
   return instance
 }
 
 
-fun rollingUpdateDaemonSet(block : RollingUpdateDaemonSet.() -> Unit = {}): RollingUpdateDaemonSet {
+fun newRollingUpdateDaemonSet(block : RollingUpdateDaemonSet.() -> Unit = {}): RollingUpdateDaemonSet {
   val instance = RollingUpdateDaemonSet()
   instance.block()
   return instance
 }
 
 
-fun rollingUpdateDeployment(block : RollingUpdateDeployment.() -> Unit = {}): RollingUpdateDeployment {
+fun newRollingUpdateDeployment(block : RollingUpdateDeployment.() -> Unit = {}): RollingUpdateDeployment {
   val instance = RollingUpdateDeployment()
   instance.block()
   return instance
 }
 
 
-fun rollingUpdateStatefulSetStrategy(block : RollingUpdateStatefulSetStrategy.() -> Unit = {}): RollingUpdateStatefulSetStrategy {
+fun newRollingUpdateStatefulSetStrategy(block : RollingUpdateStatefulSetStrategy.() -> Unit = {}): RollingUpdateStatefulSetStrategy {
   val instance = RollingUpdateStatefulSetStrategy()
   instance.block()
   return instance
 }
 
 
-fun seLinuxStrategyOptions(block : SELinuxStrategyOptions.() -> Unit = {}): SELinuxStrategyOptions {
+fun newSELinuxStrategyOptions(block : SELinuxStrategyOptions.() -> Unit = {}): SELinuxStrategyOptions {
   val instance = SELinuxStrategyOptions()
   instance.block()
   return instance
 }
 
 
-fun scale(block : Scale.() -> Unit = {}): Scale {
+fun newScale(block : Scale.() -> Unit = {}): Scale {
   val instance = Scale()
   instance.block()
   return instance
 }
 
 
-fun scaleSpec(block : ScaleSpec.() -> Unit = {}): ScaleSpec {
+fun newScaleSpec(block : ScaleSpec.() -> Unit = {}): ScaleSpec {
   val instance = ScaleSpec()
   instance.block()
   return instance
 }
 
 
-fun scaleStatus(block : ScaleStatus.() -> Unit = {}): ScaleStatus {
+fun newScaleStatus(block : ScaleStatus.() -> Unit = {}): ScaleStatus {
   val instance = ScaleStatus()
   instance.block()
   return instance
 }
 
 
-fun statefulSet(block : StatefulSet.() -> Unit = {}): StatefulSet {
+fun newStatefulSet(block : StatefulSet.() -> Unit = {}): StatefulSet {
   val instance = StatefulSet()
   instance.block()
   return instance
 }
 
 
-fun statefulSetList(block : StatefulSetList.() -> Unit = {}): StatefulSetList {
+fun newStatefulSetList(block : StatefulSetList.() -> Unit = {}): StatefulSetList {
   val instance = StatefulSetList()
   instance.block()
   return instance
 }
 
 
-fun statefulSetSpec(block : StatefulSetSpec.() -> Unit = {}): StatefulSetSpec {
+fun newStatefulSetSpec(block : StatefulSetSpec.() -> Unit = {}): StatefulSetSpec {
   val instance = StatefulSetSpec()
   instance.block()
   return instance
 }
 
 
-fun statefulSetStatus(block : StatefulSetStatus.() -> Unit = {}): StatefulSetStatus {
+fun newStatefulSetStatus(block : StatefulSetStatus.() -> Unit = {}): StatefulSetStatus {
   val instance = StatefulSetStatus()
   instance.block()
   return instance
 }
 
 
-fun statefulSetUpdateStrategy(block : StatefulSetUpdateStrategy.() -> Unit = {}): StatefulSetUpdateStrategy {
+fun newStatefulSetUpdateStrategy(block : StatefulSetUpdateStrategy.() -> Unit = {}): StatefulSetUpdateStrategy {
   val instance = StatefulSetUpdateStrategy()
   instance.block()
   return instance
 }
 
 
-fun supplementalGroupsStrategyOptions(block : SupplementalGroupsStrategyOptions.() -> Unit = {}): SupplementalGroupsStrategyOptions {
+fun newSupplementalGroupsStrategyOptions(block : SupplementalGroupsStrategyOptions.() -> Unit = {}): SupplementalGroupsStrategyOptions {
   val instance = SupplementalGroupsStrategyOptions()
   instance.block()
   return instance
 }
 
 
-fun thirdPartyResource(block : ThirdPartyResource.() -> Unit = {}): ThirdPartyResource {
+fun newThirdPartyResource(block : ThirdPartyResource.() -> Unit = {}): ThirdPartyResource {
   val instance = ThirdPartyResource()
   instance.block()
   return instance
 }
 
 
-fun thirdPartyResourceList(block : ThirdPartyResourceList.() -> Unit = {}): ThirdPartyResourceList {
+fun newThirdPartyResourceList(block : ThirdPartyResourceList.() -> Unit = {}): ThirdPartyResourceList {
   val instance = ThirdPartyResourceList()
   instance.block()
   return instance
 }
 
 
-fun podDisruptionBudget(block : PodDisruptionBudget.() -> Unit = {}): PodDisruptionBudget {
+fun newPodDisruptionBudget(block : PodDisruptionBudget.() -> Unit = {}): PodDisruptionBudget {
   val instance = PodDisruptionBudget()
   instance.block()
   return instance
 }
 
 
-fun podDisruptionBudgetList(block : PodDisruptionBudgetList.() -> Unit = {}): PodDisruptionBudgetList {
+fun newPodDisruptionBudgetList(block : PodDisruptionBudgetList.() -> Unit = {}): PodDisruptionBudgetList {
   val instance = PodDisruptionBudgetList()
   instance.block()
   return instance
 }
 
 
-fun podDisruptionBudgetSpec(block : PodDisruptionBudgetSpec.() -> Unit = {}): PodDisruptionBudgetSpec {
+fun newPodDisruptionBudgetSpec(block : PodDisruptionBudgetSpec.() -> Unit = {}): PodDisruptionBudgetSpec {
   val instance = PodDisruptionBudgetSpec()
   instance.block()
   return instance
 }
 
 
-fun podDisruptionBudgetStatus(block : PodDisruptionBudgetStatus.() -> Unit = {}): PodDisruptionBudgetStatus {
+fun newPodDisruptionBudgetStatus(block : PodDisruptionBudgetStatus.() -> Unit = {}): PodDisruptionBudgetStatus {
   val instance = PodDisruptionBudgetStatus()
   instance.block()
   return instance
