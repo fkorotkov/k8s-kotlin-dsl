@@ -8,7 +8,7 @@
     {
       "group": "com.google.guava",
       "name": "guava",
-      "version": "24.0-jre"
+      "version": "24.1-jre"
     },
     {
       "group": "com.jfrog.bintray.gradle",
@@ -38,22 +38,22 @@
     {
       "group": "org.jetbrains.kotlin",
       "name": "kotlin-gradle-plugin",
-      "version": "1.2.30"
+      "version": "1.2.31"
     },
     {
       "group": "org.jetbrains.kotlin",
       "name": "kotlin-reflect",
-      "version": "1.2.30"
+      "version": "1.2.31"
     },
     {
       "group": "org.jetbrains.kotlin",
       "name": "kotlin-stdlib",
-      "version": "1.2.30"
+      "version": "1.2.31"
     },
     {
       "group": "org.jetbrains.kotlin",
       "name": "kotlin-test-junit",
-      "version": "1.2.30"
+      "version": "1.2.31"
     }
   ]
 }
