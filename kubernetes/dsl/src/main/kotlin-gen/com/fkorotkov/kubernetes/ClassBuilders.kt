@@ -270,6 +270,8 @@ import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudget
 import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetList
 import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetSpec
 import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetStatus
+import io.fabric8.kubernetes.api.model.runtime.RawExtension
+import io.fabric8.kubernetes.api.model.version.Info
 
 
 fun newAWSElasticBlockStoreVolumeSource(block : AWSElasticBlockStoreVolumeSource.() -> Unit = {}): AWSElasticBlockStoreVolumeSource {
@@ -2150,6 +2152,20 @@ fun newPodDisruptionBudgetSpec(block : PodDisruptionBudgetSpec.() -> Unit = {}):
 
 fun newPodDisruptionBudgetStatus(block : PodDisruptionBudgetStatus.() -> Unit = {}): PodDisruptionBudgetStatus {
   val instance = PodDisruptionBudgetStatus()
+  instance.block()
+  return instance
+}
+
+
+fun newRawExtension(block : RawExtension.() -> Unit = {}): RawExtension {
+  val instance = RawExtension()
+  instance.block()
+  return instance
+}
+
+
+fun newInfo(block : Info.() -> Unit = {}): Info {
+  val instance = Info()
   instance.block()
   return instance
 }

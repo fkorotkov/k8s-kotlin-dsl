@@ -3,7 +3,7 @@ apply plugin: "kotlin"
 apply plugin: "maven-publish"
 
 ext {
-    current_k8s_dsl_version = '1.0'
+    current_k8s_dsl_version = '1.0.1'
 }
 
 buildscript {

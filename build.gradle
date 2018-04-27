@@ -23,8 +23,6 @@ updateLibraries.resolutionStrategy = {
     }
 }
 
-updateLibraries.finalizedBy(":kubernetes:generator:run")
-
 subprojects {
     buildscript {
         repositories {
