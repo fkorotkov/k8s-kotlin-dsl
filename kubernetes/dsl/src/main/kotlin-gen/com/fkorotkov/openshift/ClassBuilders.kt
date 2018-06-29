@@ -1,6 +1,7 @@
 // GENERATE
 package com.fkorotkov.openshift
 
+import io.fabric8.openshift.api.model.AllowedFlexVolume
 import io.fabric8.openshift.api.model.BinaryBuildSource
 import io.fabric8.openshift.api.model.BitbucketWebHookCause
 import io.fabric8.openshift.api.model.Build
@@ -80,6 +81,8 @@ import io.fabric8.openshift.api.model.NamedClusterRoleBinding
 import io.fabric8.openshift.api.model.NamedRole
 import io.fabric8.openshift.api.model.NamedRoleBinding
 import io.fabric8.openshift.api.model.NamedTagEventList
+import io.fabric8.openshift.api.model.NetNamespace
+import io.fabric8.openshift.api.model.NetNamespaceList
 import io.fabric8.openshift.api.model.OAuthAccessToken
 import io.fabric8.openshift.api.model.OAuthAccessTokenList
 import io.fabric8.openshift.api.model.OAuthAuthorizeToken
@@ -119,6 +122,7 @@ import io.fabric8.openshift.api.model.RunAsUserStrategyOptions
 import io.fabric8.openshift.api.model.SELinuxContextStrategyOptions
 import io.fabric8.openshift.api.model.ScopeRestriction
 import io.fabric8.openshift.api.model.SecretBuildSource
+import io.fabric8.openshift.api.model.SecretLocalReference
 import io.fabric8.openshift.api.model.SecretSpec
 import io.fabric8.openshift.api.model.SecurityContextConstraints
 import io.fabric8.openshift.api.model.SecurityContextConstraintsList
@@ -130,6 +134,7 @@ import io.fabric8.openshift.api.model.SignatureSubject
 import io.fabric8.openshift.api.model.SourceBuildStrategy
 import io.fabric8.openshift.api.model.SourceControlUser
 import io.fabric8.openshift.api.model.SourceRevision
+import io.fabric8.openshift.api.model.SourceStrategyOptions
 import io.fabric8.openshift.api.model.StageInfo
 import io.fabric8.openshift.api.model.StepInfo
 import io.fabric8.openshift.api.model.SubjectAccessReview
@@ -148,6 +153,13 @@ import io.fabric8.openshift.api.model.User
 import io.fabric8.openshift.api.model.UserList
 import io.fabric8.openshift.api.model.UserRestriction
 import io.fabric8.openshift.api.model.WebHookTrigger
+
+
+fun newAllowedFlexVolume(block : AllowedFlexVolume.() -> Unit = {}): AllowedFlexVolume {
+  val instance = AllowedFlexVolume()
+  instance.block()
+  return instance
+}
 
 
 fun newBinaryBuildSource(block : BinaryBuildSource.() -> Unit = {}): BinaryBuildSource {
@@ -703,6 +715,20 @@ fun newNamedTagEventList(block : NamedTagEventList.() -> Unit = {}): NamedTagEve
 }
 
 
+fun newNetNamespace(block : NetNamespace.() -> Unit = {}): NetNamespace {
+  val instance = NetNamespace()
+  instance.block()
+  return instance
+}
+
+
+fun newNetNamespaceList(block : NetNamespaceList.() -> Unit = {}): NetNamespaceList {
+  val instance = NetNamespaceList()
+  instance.block()
+  return instance
+}
+
+
 fun newOAuthAccessToken(block : OAuthAccessToken.() -> Unit = {}): OAuthAccessToken {
   val instance = OAuthAccessToken()
   instance.block()
@@ -976,6 +1002,13 @@ fun newSecretBuildSource(block : SecretBuildSource.() -> Unit = {}): SecretBuild
 }
 
 
+fun newSecretLocalReference(block : SecretLocalReference.() -> Unit = {}): SecretLocalReference {
+  val instance = SecretLocalReference()
+  instance.block()
+  return instance
+}
+
+
 fun newSecretSpec(block : SecretSpec.() -> Unit = {}): SecretSpec {
   val instance = SecretSpec()
   instance.block()
@@ -1048,6 +1081,13 @@ fun newSourceControlUser(block : SourceControlUser.() -> Unit = {}): SourceContr
 
 fun newSourceRevision(block : SourceRevision.() -> Unit = {}): SourceRevision {
   val instance = SourceRevision()
+  instance.block()
+  return instance
+}
+
+
+fun newSourceStrategyOptions(block : SourceStrategyOptions.() -> Unit = {}): SourceStrategyOptions {
+  val instance = SourceStrategyOptions()
   instance.block()
   return instance
 }

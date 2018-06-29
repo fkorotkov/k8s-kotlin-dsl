@@ -7,12 +7,16 @@ import io.fabric8.kubernetes.api.model.AttachedVolume
 import io.fabric8.kubernetes.api.model.AuthInfo
 import io.fabric8.kubernetes.api.model.AuthProviderConfig
 import io.fabric8.kubernetes.api.model.AzureDiskVolumeSource
+import io.fabric8.kubernetes.api.model.AzureFilePersistentVolumeSource
 import io.fabric8.kubernetes.api.model.AzureFileVolumeSource
 import io.fabric8.kubernetes.api.model.BaseKubernetesList
 import io.fabric8.kubernetes.api.model.Binding
+import io.fabric8.kubernetes.api.model.CSIPersistentVolumeSource
 import io.fabric8.kubernetes.api.model.Capabilities
+import io.fabric8.kubernetes.api.model.CephFSPersistentVolumeSource
 import io.fabric8.kubernetes.api.model.CephFSVolumeSource
 import io.fabric8.kubernetes.api.model.CinderVolumeSource
+import io.fabric8.kubernetes.api.model.ClientIPConfig
 import io.fabric8.kubernetes.api.model.Cluster
 import io.fabric8.kubernetes.api.model.ComponentCondition
 import io.fabric8.kubernetes.api.model.ComponentStatus
@@ -33,10 +37,6 @@ import io.fabric8.kubernetes.api.model.ContainerStateTerminated
 import io.fabric8.kubernetes.api.model.ContainerStateWaiting
 import io.fabric8.kubernetes.api.model.ContainerStatus
 import io.fabric8.kubernetes.api.model.Context
-import io.fabric8.kubernetes.api.model.CronJob
-import io.fabric8.kubernetes.api.model.CronJobList
-import io.fabric8.kubernetes.api.model.CronJobSpec
-import io.fabric8.kubernetes.api.model.CronJobStatus
 import io.fabric8.kubernetes.api.model.CrossVersionObjectReference
 import io.fabric8.kubernetes.api.model.DaemonEndpoint
 import io.fabric8.kubernetes.api.model.DeleteOptions
@@ -54,6 +54,7 @@ import io.fabric8.kubernetes.api.model.EnvVar
 import io.fabric8.kubernetes.api.model.EnvVarSource
 import io.fabric8.kubernetes.api.model.Event
 import io.fabric8.kubernetes.api.model.EventList
+import io.fabric8.kubernetes.api.model.EventSeries
 import io.fabric8.kubernetes.api.model.EventSource
 import io.fabric8.kubernetes.api.model.ExecAction
 import io.fabric8.kubernetes.api.model.FCVolumeSource
@@ -71,15 +72,10 @@ import io.fabric8.kubernetes.api.model.HorizontalPodAutoscalerSpec
 import io.fabric8.kubernetes.api.model.HorizontalPodAutoscalerStatus
 import io.fabric8.kubernetes.api.model.HostAlias
 import io.fabric8.kubernetes.api.model.HostPathVolumeSource
+import io.fabric8.kubernetes.api.model.ISCSIPersistentVolumeSource
 import io.fabric8.kubernetes.api.model.ISCSIVolumeSource
 import io.fabric8.kubernetes.api.model.Initializer
 import io.fabric8.kubernetes.api.model.Initializers
-import io.fabric8.kubernetes.api.model.Job
-import io.fabric8.kubernetes.api.model.JobCondition
-import io.fabric8.kubernetes.api.model.JobList
-import io.fabric8.kubernetes.api.model.JobSpec
-import io.fabric8.kubernetes.api.model.JobStatus
-import io.fabric8.kubernetes.api.model.JobTemplateSpec
 import io.fabric8.kubernetes.api.model.KeyToPath
 import io.fabric8.kubernetes.api.model.KubernetesList
 import io.fabric8.kubernetes.api.model.LabelSelector
@@ -94,6 +90,7 @@ import io.fabric8.kubernetes.api.model.LoadBalancerIngress
 import io.fabric8.kubernetes.api.model.LoadBalancerStatus
 import io.fabric8.kubernetes.api.model.LocalObjectReference
 import io.fabric8.kubernetes.api.model.LocalVolumeSource
+import io.fabric8.kubernetes.api.model.MicroTime
 import io.fabric8.kubernetes.api.model.NFSVolumeSource
 import io.fabric8.kubernetes.api.model.NamedAuthInfo
 import io.fabric8.kubernetes.api.model.NamedCluster
@@ -107,6 +104,7 @@ import io.fabric8.kubernetes.api.model.Node
 import io.fabric8.kubernetes.api.model.NodeAddress
 import io.fabric8.kubernetes.api.model.NodeAffinity
 import io.fabric8.kubernetes.api.model.NodeCondition
+import io.fabric8.kubernetes.api.model.NodeConfigSource
 import io.fabric8.kubernetes.api.model.NodeDaemonEndpoints
 import io.fabric8.kubernetes.api.model.NodeList
 import io.fabric8.kubernetes.api.model.NodeSelector
@@ -122,6 +120,7 @@ import io.fabric8.kubernetes.api.model.OwnerReference
 import io.fabric8.kubernetes.api.model.Patch
 import io.fabric8.kubernetes.api.model.PersistentVolume
 import io.fabric8.kubernetes.api.model.PersistentVolumeClaim
+import io.fabric8.kubernetes.api.model.PersistentVolumeClaimCondition
 import io.fabric8.kubernetes.api.model.PersistentVolumeClaimList
 import io.fabric8.kubernetes.api.model.PersistentVolumeClaimSpec
 import io.fabric8.kubernetes.api.model.PersistentVolumeClaimStatus
@@ -135,6 +134,8 @@ import io.fabric8.kubernetes.api.model.PodAffinity
 import io.fabric8.kubernetes.api.model.PodAffinityTerm
 import io.fabric8.kubernetes.api.model.PodAntiAffinity
 import io.fabric8.kubernetes.api.model.PodCondition
+import io.fabric8.kubernetes.api.model.PodDNSConfig
+import io.fabric8.kubernetes.api.model.PodDNSConfigOption
 import io.fabric8.kubernetes.api.model.PodList
 import io.fabric8.kubernetes.api.model.PodSecurityContext
 import io.fabric8.kubernetes.api.model.PodSpec
@@ -149,6 +150,7 @@ import io.fabric8.kubernetes.api.model.PreferredSchedulingTerm
 import io.fabric8.kubernetes.api.model.Probe
 import io.fabric8.kubernetes.api.model.ProjectedVolumeSource
 import io.fabric8.kubernetes.api.model.QuobyteVolumeSource
+import io.fabric8.kubernetes.api.model.RBDPersistentVolumeSource
 import io.fabric8.kubernetes.api.model.RBDVolumeSource
 import io.fabric8.kubernetes.api.model.ReplicationController
 import io.fabric8.kubernetes.api.model.ReplicationControllerCondition
@@ -163,12 +165,14 @@ import io.fabric8.kubernetes.api.model.ResourceQuotaStatus
 import io.fabric8.kubernetes.api.model.ResourceRequirements
 import io.fabric8.kubernetes.api.model.RootPaths
 import io.fabric8.kubernetes.api.model.SELinuxOptions
+import io.fabric8.kubernetes.api.model.ScaleIOPersistentVolumeSource
 import io.fabric8.kubernetes.api.model.ScaleIOVolumeSource
 import io.fabric8.kubernetes.api.model.Secret
 import io.fabric8.kubernetes.api.model.SecretEnvSource
 import io.fabric8.kubernetes.api.model.SecretKeySelector
 import io.fabric8.kubernetes.api.model.SecretList
 import io.fabric8.kubernetes.api.model.SecretProjection
+import io.fabric8.kubernetes.api.model.SecretReference
 import io.fabric8.kubernetes.api.model.SecretVolumeSource
 import io.fabric8.kubernetes.api.model.SecurityContext
 import io.fabric8.kubernetes.api.model.Service
@@ -178,17 +182,18 @@ import io.fabric8.kubernetes.api.model.ServiceList
 import io.fabric8.kubernetes.api.model.ServicePort
 import io.fabric8.kubernetes.api.model.ServiceSpec
 import io.fabric8.kubernetes.api.model.ServiceStatus
+import io.fabric8.kubernetes.api.model.SessionAffinityConfig
 import io.fabric8.kubernetes.api.model.Status
 import io.fabric8.kubernetes.api.model.StatusCause
 import io.fabric8.kubernetes.api.model.StatusDetails
-import io.fabric8.kubernetes.api.model.StorageClass
-import io.fabric8.kubernetes.api.model.StorageClassList
 import io.fabric8.kubernetes.api.model.StorageOSPersistentVolumeSource
 import io.fabric8.kubernetes.api.model.StorageOSVolumeSource
 import io.fabric8.kubernetes.api.model.TCPSocketAction
 import io.fabric8.kubernetes.api.model.Taint
 import io.fabric8.kubernetes.api.model.Toleration
+import io.fabric8.kubernetes.api.model.TypeMeta
 import io.fabric8.kubernetes.api.model.Volume
+import io.fabric8.kubernetes.api.model.VolumeDevice
 import io.fabric8.kubernetes.api.model.VolumeMount
 import io.fabric8.kubernetes.api.model.VolumeProjection
 import io.fabric8.kubernetes.api.model.VsphereVirtualDiskVolumeSource
@@ -200,6 +205,39 @@ import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinitionLis
 import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinitionNames
 import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinitionSpec
 import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinitionStatus
+import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceValidation
+import io.fabric8.kubernetes.api.model.apiextensions.ExternalDocumentation
+import io.fabric8.kubernetes.api.model.apiextensions.JSON
+import io.fabric8.kubernetes.api.model.apiextensions.JSONSchemaProps
+import io.fabric8.kubernetes.api.model.apiextensions.JSONSchemaPropsOrArray
+import io.fabric8.kubernetes.api.model.apiextensions.JSONSchemaPropsOrBool
+import io.fabric8.kubernetes.api.model.apiextensions.JSONSchemaPropsOrStringArray
+import io.fabric8.kubernetes.api.model.apps.DaemonSet
+import io.fabric8.kubernetes.api.model.apps.DaemonSetCondition
+import io.fabric8.kubernetes.api.model.apps.DaemonSetList
+import io.fabric8.kubernetes.api.model.apps.DaemonSetSpec
+import io.fabric8.kubernetes.api.model.apps.DaemonSetStatus
+import io.fabric8.kubernetes.api.model.apps.DaemonSetUpdateStrategy
+import io.fabric8.kubernetes.api.model.apps.Deployment
+import io.fabric8.kubernetes.api.model.apps.DeploymentCondition
+import io.fabric8.kubernetes.api.model.apps.DeploymentList
+import io.fabric8.kubernetes.api.model.apps.DeploymentSpec
+import io.fabric8.kubernetes.api.model.apps.DeploymentStatus
+import io.fabric8.kubernetes.api.model.apps.DeploymentStrategy
+import io.fabric8.kubernetes.api.model.apps.ReplicaSet
+import io.fabric8.kubernetes.api.model.apps.ReplicaSetCondition
+import io.fabric8.kubernetes.api.model.apps.ReplicaSetList
+import io.fabric8.kubernetes.api.model.apps.ReplicaSetSpec
+import io.fabric8.kubernetes.api.model.apps.ReplicaSetStatus
+import io.fabric8.kubernetes.api.model.apps.RollingUpdateDaemonSet
+import io.fabric8.kubernetes.api.model.apps.RollingUpdateDeployment
+import io.fabric8.kubernetes.api.model.apps.RollingUpdateStatefulSetStrategy
+import io.fabric8.kubernetes.api.model.apps.StatefulSet
+import io.fabric8.kubernetes.api.model.apps.StatefulSetCondition
+import io.fabric8.kubernetes.api.model.apps.StatefulSetList
+import io.fabric8.kubernetes.api.model.apps.StatefulSetSpec
+import io.fabric8.kubernetes.api.model.apps.StatefulSetStatus
+import io.fabric8.kubernetes.api.model.apps.StatefulSetUpdateStrategy
 import io.fabric8.kubernetes.api.model.authentication.TokenReview
 import io.fabric8.kubernetes.api.model.authentication.TokenReviewSpec
 import io.fabric8.kubernetes.api.model.authentication.TokenReviewStatus
@@ -210,19 +248,19 @@ import io.fabric8.kubernetes.api.model.authorization.ResourceAttributes
 import io.fabric8.kubernetes.api.model.authorization.SubjectAccessReview
 import io.fabric8.kubernetes.api.model.authorization.SubjectAccessReviewSpec
 import io.fabric8.kubernetes.api.model.authorization.SubjectAccessReviewStatus
-import io.fabric8.kubernetes.api.model.extensions.APIVersion
-import io.fabric8.kubernetes.api.model.extensions.DaemonSet
-import io.fabric8.kubernetes.api.model.extensions.DaemonSetList
-import io.fabric8.kubernetes.api.model.extensions.DaemonSetSpec
-import io.fabric8.kubernetes.api.model.extensions.DaemonSetStatus
-import io.fabric8.kubernetes.api.model.extensions.DaemonSetUpdateStrategy
-import io.fabric8.kubernetes.api.model.extensions.Deployment
-import io.fabric8.kubernetes.api.model.extensions.DeploymentCondition
-import io.fabric8.kubernetes.api.model.extensions.DeploymentList
+import io.fabric8.kubernetes.api.model.batch.CronJob
+import io.fabric8.kubernetes.api.model.batch.CronJobList
+import io.fabric8.kubernetes.api.model.batch.CronJobSpec
+import io.fabric8.kubernetes.api.model.batch.CronJobStatus
+import io.fabric8.kubernetes.api.model.batch.Job
+import io.fabric8.kubernetes.api.model.batch.JobCondition
+import io.fabric8.kubernetes.api.model.batch.JobList
+import io.fabric8.kubernetes.api.model.batch.JobSpec
+import io.fabric8.kubernetes.api.model.batch.JobStatus
+import io.fabric8.kubernetes.api.model.batch.JobTemplateSpec
+import io.fabric8.kubernetes.api.model.extensions.AllowedFlexVolume
+import io.fabric8.kubernetes.api.model.extensions.AllowedHostPath
 import io.fabric8.kubernetes.api.model.extensions.DeploymentRollback
-import io.fabric8.kubernetes.api.model.extensions.DeploymentSpec
-import io.fabric8.kubernetes.api.model.extensions.DeploymentStatus
-import io.fabric8.kubernetes.api.model.extensions.DeploymentStrategy
 import io.fabric8.kubernetes.api.model.extensions.FSGroupStrategyOptions
 import io.fabric8.kubernetes.api.model.extensions.HTTPIngressPath
 import io.fabric8.kubernetes.api.model.extensions.HTTPIngressRuleValue
@@ -236,41 +274,38 @@ import io.fabric8.kubernetes.api.model.extensions.IngressSpec
 import io.fabric8.kubernetes.api.model.extensions.IngressStatus
 import io.fabric8.kubernetes.api.model.extensions.IngressTLS
 import io.fabric8.kubernetes.api.model.extensions.KubernetesRunAsUserStrategyOptions
-import io.fabric8.kubernetes.api.model.extensions.NetworkPolicy
-import io.fabric8.kubernetes.api.model.extensions.NetworkPolicyIngressRule
-import io.fabric8.kubernetes.api.model.extensions.NetworkPolicyList
-import io.fabric8.kubernetes.api.model.extensions.NetworkPolicyPeer
-import io.fabric8.kubernetes.api.model.extensions.NetworkPolicyPort
-import io.fabric8.kubernetes.api.model.extensions.NetworkPolicySpec
 import io.fabric8.kubernetes.api.model.extensions.PodSecurityPolicy
 import io.fabric8.kubernetes.api.model.extensions.PodSecurityPolicyList
 import io.fabric8.kubernetes.api.model.extensions.PodSecurityPolicySpec
-import io.fabric8.kubernetes.api.model.extensions.ReplicaSet
-import io.fabric8.kubernetes.api.model.extensions.ReplicaSetCondition
-import io.fabric8.kubernetes.api.model.extensions.ReplicaSetList
-import io.fabric8.kubernetes.api.model.extensions.ReplicaSetSpec
-import io.fabric8.kubernetes.api.model.extensions.ReplicaSetStatus
 import io.fabric8.kubernetes.api.model.extensions.RollbackConfig
-import io.fabric8.kubernetes.api.model.extensions.RollingUpdateDaemonSet
-import io.fabric8.kubernetes.api.model.extensions.RollingUpdateDeployment
-import io.fabric8.kubernetes.api.model.extensions.RollingUpdateStatefulSetStrategy
 import io.fabric8.kubernetes.api.model.extensions.SELinuxStrategyOptions
 import io.fabric8.kubernetes.api.model.extensions.Scale
 import io.fabric8.kubernetes.api.model.extensions.ScaleSpec
 import io.fabric8.kubernetes.api.model.extensions.ScaleStatus
-import io.fabric8.kubernetes.api.model.extensions.StatefulSet
-import io.fabric8.kubernetes.api.model.extensions.StatefulSetList
-import io.fabric8.kubernetes.api.model.extensions.StatefulSetSpec
-import io.fabric8.kubernetes.api.model.extensions.StatefulSetStatus
-import io.fabric8.kubernetes.api.model.extensions.StatefulSetUpdateStrategy
 import io.fabric8.kubernetes.api.model.extensions.SupplementalGroupsStrategyOptions
-import io.fabric8.kubernetes.api.model.extensions.ThirdPartyResource
-import io.fabric8.kubernetes.api.model.extensions.ThirdPartyResourceList
+import io.fabric8.kubernetes.api.model.networking.IPBlock
+import io.fabric8.kubernetes.api.model.networking.NetworkPolicy
+import io.fabric8.kubernetes.api.model.networking.NetworkPolicyEgressRule
+import io.fabric8.kubernetes.api.model.networking.NetworkPolicyIngressRule
+import io.fabric8.kubernetes.api.model.networking.NetworkPolicyList
+import io.fabric8.kubernetes.api.model.networking.NetworkPolicyPeer
+import io.fabric8.kubernetes.api.model.networking.NetworkPolicyPort
+import io.fabric8.kubernetes.api.model.networking.NetworkPolicySpec
 import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudget
 import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetList
 import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetSpec
 import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetStatus
+import io.fabric8.kubernetes.api.model.rbac.KubernetesAggregationRule
+import io.fabric8.kubernetes.api.model.rbac.KubernetesPolicyRule
+import io.fabric8.kubernetes.api.model.rbac.KubernetesRole
+import io.fabric8.kubernetes.api.model.rbac.KubernetesRoleBinding
+import io.fabric8.kubernetes.api.model.rbac.KubernetesRoleBindingList
+import io.fabric8.kubernetes.api.model.rbac.KubernetesRoleList
+import io.fabric8.kubernetes.api.model.rbac.KubernetesRoleRef
+import io.fabric8.kubernetes.api.model.rbac.KubernetesSubject
 import io.fabric8.kubernetes.api.model.runtime.RawExtension
+import io.fabric8.kubernetes.api.model.storage.StorageClass
+import io.fabric8.kubernetes.api.model.storage.StorageClassList
 import io.fabric8.kubernetes.api.model.version.Info
 
 
@@ -316,6 +351,13 @@ fun newAzureDiskVolumeSource(block : AzureDiskVolumeSource.() -> Unit = {}): Azu
 }
 
 
+fun newAzureFilePersistentVolumeSource(block : AzureFilePersistentVolumeSource.() -> Unit = {}): AzureFilePersistentVolumeSource {
+  val instance = AzureFilePersistentVolumeSource()
+  instance.block()
+  return instance
+}
+
+
 fun newAzureFileVolumeSource(block : AzureFileVolumeSource.() -> Unit = {}): AzureFileVolumeSource {
   val instance = AzureFileVolumeSource()
   instance.block()
@@ -337,8 +379,22 @@ fun newBinding(block : Binding.() -> Unit = {}): Binding {
 }
 
 
+fun newCSIPersistentVolumeSource(block : CSIPersistentVolumeSource.() -> Unit = {}): CSIPersistentVolumeSource {
+  val instance = CSIPersistentVolumeSource()
+  instance.block()
+  return instance
+}
+
+
 fun newCapabilities(block : Capabilities.() -> Unit = {}): Capabilities {
   val instance = Capabilities()
+  instance.block()
+  return instance
+}
+
+
+fun newCephFSPersistentVolumeSource(block : CephFSPersistentVolumeSource.() -> Unit = {}): CephFSPersistentVolumeSource {
+  val instance = CephFSPersistentVolumeSource()
   instance.block()
   return instance
 }
@@ -353,6 +409,13 @@ fun newCephFSVolumeSource(block : CephFSVolumeSource.() -> Unit = {}): CephFSVol
 
 fun newCinderVolumeSource(block : CinderVolumeSource.() -> Unit = {}): CinderVolumeSource {
   val instance = CinderVolumeSource()
+  instance.block()
+  return instance
+}
+
+
+fun newClientIPConfig(block : ClientIPConfig.() -> Unit = {}): ClientIPConfig {
+  val instance = ClientIPConfig()
   instance.block()
   return instance
 }
@@ -498,34 +561,6 @@ fun newContext(block : Context.() -> Unit = {}): Context {
 }
 
 
-fun newCronJob(block : CronJob.() -> Unit = {}): CronJob {
-  val instance = CronJob()
-  instance.block()
-  return instance
-}
-
-
-fun newCronJobList(block : CronJobList.() -> Unit = {}): CronJobList {
-  val instance = CronJobList()
-  instance.block()
-  return instance
-}
-
-
-fun newCronJobSpec(block : CronJobSpec.() -> Unit = {}): CronJobSpec {
-  val instance = CronJobSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newCronJobStatus(block : CronJobStatus.() -> Unit = {}): CronJobStatus {
-  val instance = CronJobStatus()
-  instance.block()
-  return instance
-}
-
-
 fun newCrossVersionObjectReference(block : CrossVersionObjectReference.() -> Unit = {}): CrossVersionObjectReference {
   val instance = CrossVersionObjectReference()
   instance.block()
@@ -640,6 +675,13 @@ fun newEvent(block : Event.() -> Unit = {}): Event {
 
 fun newEventList(block : EventList.() -> Unit = {}): EventList {
   val instance = EventList()
+  instance.block()
+  return instance
+}
+
+
+fun newEventSeries(block : EventSeries.() -> Unit = {}): EventSeries {
+  val instance = EventSeries()
   instance.block()
   return instance
 }
@@ -764,6 +806,13 @@ fun newHostPathVolumeSource(block : HostPathVolumeSource.() -> Unit = {}): HostP
 }
 
 
+fun newISCSIPersistentVolumeSource(block : ISCSIPersistentVolumeSource.() -> Unit = {}): ISCSIPersistentVolumeSource {
+  val instance = ISCSIPersistentVolumeSource()
+  instance.block()
+  return instance
+}
+
+
 fun newISCSIVolumeSource(block : ISCSIVolumeSource.() -> Unit = {}): ISCSIVolumeSource {
   val instance = ISCSIVolumeSource()
   instance.block()
@@ -780,48 +829,6 @@ fun newInitializer(block : Initializer.() -> Unit = {}): Initializer {
 
 fun newInitializers(block : Initializers.() -> Unit = {}): Initializers {
   val instance = Initializers()
-  instance.block()
-  return instance
-}
-
-
-fun newJob(block : Job.() -> Unit = {}): Job {
-  val instance = Job()
-  instance.block()
-  return instance
-}
-
-
-fun newJobCondition(block : JobCondition.() -> Unit = {}): JobCondition {
-  val instance = JobCondition()
-  instance.block()
-  return instance
-}
-
-
-fun newJobList(block : JobList.() -> Unit = {}): JobList {
-  val instance = JobList()
-  instance.block()
-  return instance
-}
-
-
-fun newJobSpec(block : JobSpec.() -> Unit = {}): JobSpec {
-  val instance = JobSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newJobStatus(block : JobStatus.() -> Unit = {}): JobStatus {
-  val instance = JobStatus()
-  instance.block()
-  return instance
-}
-
-
-fun newJobTemplateSpec(block : JobTemplateSpec.() -> Unit = {}): JobTemplateSpec {
-  val instance = JobTemplateSpec()
   instance.block()
   return instance
 }
@@ -925,6 +932,13 @@ fun newLocalVolumeSource(block : LocalVolumeSource.() -> Unit = {}): LocalVolume
 }
 
 
+fun newMicroTime(block : MicroTime.() -> Unit = {}): MicroTime {
+  val instance = MicroTime()
+  instance.block()
+  return instance
+}
+
+
 fun newNFSVolumeSource(block : NFSVolumeSource.() -> Unit = {}): NFSVolumeSource {
   val instance = NFSVolumeSource()
   instance.block()
@@ -1011,6 +1025,13 @@ fun newNodeAffinity(block : NodeAffinity.() -> Unit = {}): NodeAffinity {
 
 fun newNodeCondition(block : NodeCondition.() -> Unit = {}): NodeCondition {
   val instance = NodeCondition()
+  instance.block()
+  return instance
+}
+
+
+fun newNodeConfigSource(block : NodeConfigSource.() -> Unit = {}): NodeConfigSource {
+  val instance = NodeConfigSource()
   instance.block()
   return instance
 }
@@ -1121,6 +1142,13 @@ fun newPersistentVolumeClaim(block : PersistentVolumeClaim.() -> Unit = {}): Per
 }
 
 
+fun newPersistentVolumeClaimCondition(block : PersistentVolumeClaimCondition.() -> Unit = {}): PersistentVolumeClaimCondition {
+  val instance = PersistentVolumeClaimCondition()
+  instance.block()
+  return instance
+}
+
+
 fun newPersistentVolumeClaimList(block : PersistentVolumeClaimList.() -> Unit = {}): PersistentVolumeClaimList {
   val instance = PersistentVolumeClaimList()
   instance.block()
@@ -1207,6 +1235,20 @@ fun newPodAntiAffinity(block : PodAntiAffinity.() -> Unit = {}): PodAntiAffinity
 
 fun newPodCondition(block : PodCondition.() -> Unit = {}): PodCondition {
   val instance = PodCondition()
+  instance.block()
+  return instance
+}
+
+
+fun newPodDNSConfig(block : PodDNSConfig.() -> Unit = {}): PodDNSConfig {
+  val instance = PodDNSConfig()
+  instance.block()
+  return instance
+}
+
+
+fun newPodDNSConfigOption(block : PodDNSConfigOption.() -> Unit = {}): PodDNSConfigOption {
+  val instance = PodDNSConfigOption()
   instance.block()
   return instance
 }
@@ -1310,6 +1352,13 @@ fun newQuobyteVolumeSource(block : QuobyteVolumeSource.() -> Unit = {}): Quobyte
 }
 
 
+fun newRBDPersistentVolumeSource(block : RBDPersistentVolumeSource.() -> Unit = {}): RBDPersistentVolumeSource {
+  val instance = RBDPersistentVolumeSource()
+  instance.block()
+  return instance
+}
+
+
 fun newRBDVolumeSource(block : RBDVolumeSource.() -> Unit = {}): RBDVolumeSource {
   val instance = RBDVolumeSource()
   instance.block()
@@ -1408,6 +1457,13 @@ fun newSELinuxOptions(block : SELinuxOptions.() -> Unit = {}): SELinuxOptions {
 }
 
 
+fun newScaleIOPersistentVolumeSource(block : ScaleIOPersistentVolumeSource.() -> Unit = {}): ScaleIOPersistentVolumeSource {
+  val instance = ScaleIOPersistentVolumeSource()
+  instance.block()
+  return instance
+}
+
+
 fun newScaleIOVolumeSource(block : ScaleIOVolumeSource.() -> Unit = {}): ScaleIOVolumeSource {
   val instance = ScaleIOVolumeSource()
   instance.block()
@@ -1445,6 +1501,13 @@ fun newSecretList(block : SecretList.() -> Unit = {}): SecretList {
 
 fun newSecretProjection(block : SecretProjection.() -> Unit = {}): SecretProjection {
   val instance = SecretProjection()
+  instance.block()
+  return instance
+}
+
+
+fun newSecretReference(block : SecretReference.() -> Unit = {}): SecretReference {
+  val instance = SecretReference()
   instance.block()
   return instance
 }
@@ -1513,6 +1576,13 @@ fun newServiceStatus(block : ServiceStatus.() -> Unit = {}): ServiceStatus {
 }
 
 
+fun newSessionAffinityConfig(block : SessionAffinityConfig.() -> Unit = {}): SessionAffinityConfig {
+  val instance = SessionAffinityConfig()
+  instance.block()
+  return instance
+}
+
+
 fun newStatus(block : Status.() -> Unit = {}): Status {
   val instance = Status()
   instance.block()
@@ -1529,20 +1599,6 @@ fun newStatusCause(block : StatusCause.() -> Unit = {}): StatusCause {
 
 fun newStatusDetails(block : StatusDetails.() -> Unit = {}): StatusDetails {
   val instance = StatusDetails()
-  instance.block()
-  return instance
-}
-
-
-fun newStorageClass(block : StorageClass.() -> Unit = {}): StorageClass {
-  val instance = StorageClass()
-  instance.block()
-  return instance
-}
-
-
-fun newStorageClassList(block : StorageClassList.() -> Unit = {}): StorageClassList {
-  val instance = StorageClassList()
   instance.block()
   return instance
 }
@@ -1583,8 +1639,22 @@ fun newToleration(block : Toleration.() -> Unit = {}): Toleration {
 }
 
 
+fun newTypeMeta(block : TypeMeta.() -> Unit = {}): TypeMeta {
+  val instance = TypeMeta()
+  instance.block()
+  return instance
+}
+
+
 fun newVolume(block : Volume.() -> Unit = {}): Volume {
   val instance = Volume()
+  instance.block()
+  return instance
+}
+
+
+fun newVolumeDevice(block : VolumeDevice.() -> Unit = {}): VolumeDevice {
+  val instance = VolumeDevice()
   instance.block()
   return instance
 }
@@ -1667,6 +1737,237 @@ fun newCustomResourceDefinitionStatus(block : CustomResourceDefinitionStatus.() 
 }
 
 
+fun newCustomResourceValidation(block : CustomResourceValidation.() -> Unit = {}): CustomResourceValidation {
+  val instance = CustomResourceValidation()
+  instance.block()
+  return instance
+}
+
+
+fun newExternalDocumentation(block : ExternalDocumentation.() -> Unit = {}): ExternalDocumentation {
+  val instance = ExternalDocumentation()
+  instance.block()
+  return instance
+}
+
+
+fun newJSON(block : JSON.() -> Unit = {}): JSON {
+  val instance = JSON()
+  instance.block()
+  return instance
+}
+
+
+fun newJSONSchemaProps(block : JSONSchemaProps.() -> Unit = {}): JSONSchemaProps {
+  val instance = JSONSchemaProps()
+  instance.block()
+  return instance
+}
+
+
+fun newJSONSchemaPropsOrArray(block : JSONSchemaPropsOrArray.() -> Unit = {}): JSONSchemaPropsOrArray {
+  val instance = JSONSchemaPropsOrArray()
+  instance.block()
+  return instance
+}
+
+
+fun newJSONSchemaPropsOrBool(block : JSONSchemaPropsOrBool.() -> Unit = {}): JSONSchemaPropsOrBool {
+  val instance = JSONSchemaPropsOrBool()
+  instance.block()
+  return instance
+}
+
+
+fun newJSONSchemaPropsOrStringArray(block : JSONSchemaPropsOrStringArray.() -> Unit = {}): JSONSchemaPropsOrStringArray {
+  val instance = JSONSchemaPropsOrStringArray()
+  instance.block()
+  return instance
+}
+
+
+fun newDaemonSet(block : DaemonSet.() -> Unit = {}): DaemonSet {
+  val instance = DaemonSet()
+  instance.block()
+  return instance
+}
+
+
+fun newDaemonSetCondition(block : DaemonSetCondition.() -> Unit = {}): DaemonSetCondition {
+  val instance = DaemonSetCondition()
+  instance.block()
+  return instance
+}
+
+
+fun newDaemonSetList(block : DaemonSetList.() -> Unit = {}): DaemonSetList {
+  val instance = DaemonSetList()
+  instance.block()
+  return instance
+}
+
+
+fun newDaemonSetSpec(block : DaemonSetSpec.() -> Unit = {}): DaemonSetSpec {
+  val instance = DaemonSetSpec()
+  instance.block()
+  return instance
+}
+
+
+fun newDaemonSetStatus(block : DaemonSetStatus.() -> Unit = {}): DaemonSetStatus {
+  val instance = DaemonSetStatus()
+  instance.block()
+  return instance
+}
+
+
+fun newDaemonSetUpdateStrategy(block : DaemonSetUpdateStrategy.() -> Unit = {}): DaemonSetUpdateStrategy {
+  val instance = DaemonSetUpdateStrategy()
+  instance.block()
+  return instance
+}
+
+
+fun newDeployment(block : Deployment.() -> Unit = {}): Deployment {
+  val instance = Deployment()
+  instance.block()
+  return instance
+}
+
+
+fun newDeploymentCondition(block : DeploymentCondition.() -> Unit = {}): DeploymentCondition {
+  val instance = DeploymentCondition()
+  instance.block()
+  return instance
+}
+
+
+fun newDeploymentList(block : DeploymentList.() -> Unit = {}): DeploymentList {
+  val instance = DeploymentList()
+  instance.block()
+  return instance
+}
+
+
+fun newDeploymentSpec(block : DeploymentSpec.() -> Unit = {}): DeploymentSpec {
+  val instance = DeploymentSpec()
+  instance.block()
+  return instance
+}
+
+
+fun newDeploymentStatus(block : DeploymentStatus.() -> Unit = {}): DeploymentStatus {
+  val instance = DeploymentStatus()
+  instance.block()
+  return instance
+}
+
+
+fun newDeploymentStrategy(block : DeploymentStrategy.() -> Unit = {}): DeploymentStrategy {
+  val instance = DeploymentStrategy()
+  instance.block()
+  return instance
+}
+
+
+fun newReplicaSet(block : ReplicaSet.() -> Unit = {}): ReplicaSet {
+  val instance = ReplicaSet()
+  instance.block()
+  return instance
+}
+
+
+fun newReplicaSetCondition(block : ReplicaSetCondition.() -> Unit = {}): ReplicaSetCondition {
+  val instance = ReplicaSetCondition()
+  instance.block()
+  return instance
+}
+
+
+fun newReplicaSetList(block : ReplicaSetList.() -> Unit = {}): ReplicaSetList {
+  val instance = ReplicaSetList()
+  instance.block()
+  return instance
+}
+
+
+fun newReplicaSetSpec(block : ReplicaSetSpec.() -> Unit = {}): ReplicaSetSpec {
+  val instance = ReplicaSetSpec()
+  instance.block()
+  return instance
+}
+
+
+fun newReplicaSetStatus(block : ReplicaSetStatus.() -> Unit = {}): ReplicaSetStatus {
+  val instance = ReplicaSetStatus()
+  instance.block()
+  return instance
+}
+
+
+fun newRollingUpdateDaemonSet(block : RollingUpdateDaemonSet.() -> Unit = {}): RollingUpdateDaemonSet {
+  val instance = RollingUpdateDaemonSet()
+  instance.block()
+  return instance
+}
+
+
+fun newRollingUpdateDeployment(block : RollingUpdateDeployment.() -> Unit = {}): RollingUpdateDeployment {
+  val instance = RollingUpdateDeployment()
+  instance.block()
+  return instance
+}
+
+
+fun newRollingUpdateStatefulSetStrategy(block : RollingUpdateStatefulSetStrategy.() -> Unit = {}): RollingUpdateStatefulSetStrategy {
+  val instance = RollingUpdateStatefulSetStrategy()
+  instance.block()
+  return instance
+}
+
+
+fun newStatefulSet(block : StatefulSet.() -> Unit = {}): StatefulSet {
+  val instance = StatefulSet()
+  instance.block()
+  return instance
+}
+
+
+fun newStatefulSetCondition(block : StatefulSetCondition.() -> Unit = {}): StatefulSetCondition {
+  val instance = StatefulSetCondition()
+  instance.block()
+  return instance
+}
+
+
+fun newStatefulSetList(block : StatefulSetList.() -> Unit = {}): StatefulSetList {
+  val instance = StatefulSetList()
+  instance.block()
+  return instance
+}
+
+
+fun newStatefulSetSpec(block : StatefulSetSpec.() -> Unit = {}): StatefulSetSpec {
+  val instance = StatefulSetSpec()
+  instance.block()
+  return instance
+}
+
+
+fun newStatefulSetStatus(block : StatefulSetStatus.() -> Unit = {}): StatefulSetStatus {
+  val instance = StatefulSetStatus()
+  instance.block()
+  return instance
+}
+
+
+fun newStatefulSetUpdateStrategy(block : StatefulSetUpdateStrategy.() -> Unit = {}): StatefulSetUpdateStrategy {
+  val instance = StatefulSetUpdateStrategy()
+  instance.block()
+  return instance
+}
+
+
 fun newTokenReview(block : TokenReview.() -> Unit = {}): TokenReview {
   val instance = TokenReview()
   instance.block()
@@ -1737,64 +2038,85 @@ fun newSubjectAccessReviewStatus(block : SubjectAccessReviewStatus.() -> Unit = 
 }
 
 
-fun newAPIVersion(block : APIVersion.() -> Unit = {}): APIVersion {
-  val instance = APIVersion()
+fun newCronJob(block : CronJob.() -> Unit = {}): CronJob {
+  val instance = CronJob()
   instance.block()
   return instance
 }
 
 
-fun newDaemonSet(block : DaemonSet.() -> Unit = {}): DaemonSet {
-  val instance = DaemonSet()
+fun newCronJobList(block : CronJobList.() -> Unit = {}): CronJobList {
+  val instance = CronJobList()
   instance.block()
   return instance
 }
 
 
-fun newDaemonSetList(block : DaemonSetList.() -> Unit = {}): DaemonSetList {
-  val instance = DaemonSetList()
+fun newCronJobSpec(block : CronJobSpec.() -> Unit = {}): CronJobSpec {
+  val instance = CronJobSpec()
   instance.block()
   return instance
 }
 
 
-fun newDaemonSetSpec(block : DaemonSetSpec.() -> Unit = {}): DaemonSetSpec {
-  val instance = DaemonSetSpec()
+fun newCronJobStatus(block : CronJobStatus.() -> Unit = {}): CronJobStatus {
+  val instance = CronJobStatus()
   instance.block()
   return instance
 }
 
 
-fun newDaemonSetStatus(block : DaemonSetStatus.() -> Unit = {}): DaemonSetStatus {
-  val instance = DaemonSetStatus()
+fun newJob(block : Job.() -> Unit = {}): Job {
+  val instance = Job()
   instance.block()
   return instance
 }
 
 
-fun newDaemonSetUpdateStrategy(block : DaemonSetUpdateStrategy.() -> Unit = {}): DaemonSetUpdateStrategy {
-  val instance = DaemonSetUpdateStrategy()
+fun newJobCondition(block : JobCondition.() -> Unit = {}): JobCondition {
+  val instance = JobCondition()
   instance.block()
   return instance
 }
 
 
-fun newDeployment(block : Deployment.() -> Unit = {}): Deployment {
-  val instance = Deployment()
+fun newJobList(block : JobList.() -> Unit = {}): JobList {
+  val instance = JobList()
   instance.block()
   return instance
 }
 
 
-fun newDeploymentCondition(block : DeploymentCondition.() -> Unit = {}): DeploymentCondition {
-  val instance = DeploymentCondition()
+fun newJobSpec(block : JobSpec.() -> Unit = {}): JobSpec {
+  val instance = JobSpec()
   instance.block()
   return instance
 }
 
 
-fun newDeploymentList(block : DeploymentList.() -> Unit = {}): DeploymentList {
-  val instance = DeploymentList()
+fun newJobStatus(block : JobStatus.() -> Unit = {}): JobStatus {
+  val instance = JobStatus()
+  instance.block()
+  return instance
+}
+
+
+fun newJobTemplateSpec(block : JobTemplateSpec.() -> Unit = {}): JobTemplateSpec {
+  val instance = JobTemplateSpec()
+  instance.block()
+  return instance
+}
+
+
+fun newAllowedFlexVolume(block : AllowedFlexVolume.() -> Unit = {}): AllowedFlexVolume {
+  val instance = AllowedFlexVolume()
+  instance.block()
+  return instance
+}
+
+
+fun newAllowedHostPath(block : AllowedHostPath.() -> Unit = {}): AllowedHostPath {
+  val instance = AllowedHostPath()
   instance.block()
   return instance
 }
@@ -1802,27 +2124,6 @@ fun newDeploymentList(block : DeploymentList.() -> Unit = {}): DeploymentList {
 
 fun newDeploymentRollback(block : DeploymentRollback.() -> Unit = {}): DeploymentRollback {
   val instance = DeploymentRollback()
-  instance.block()
-  return instance
-}
-
-
-fun newDeploymentSpec(block : DeploymentSpec.() -> Unit = {}): DeploymentSpec {
-  val instance = DeploymentSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newDeploymentStatus(block : DeploymentStatus.() -> Unit = {}): DeploymentStatus {
-  val instance = DeploymentStatus()
-  instance.block()
-  return instance
-}
-
-
-fun newDeploymentStrategy(block : DeploymentStrategy.() -> Unit = {}): DeploymentStrategy {
-  val instance = DeploymentStrategy()
   instance.block()
   return instance
 }
@@ -1919,8 +2220,85 @@ fun newKubernetesRunAsUserStrategyOptions(block : KubernetesRunAsUserStrategyOpt
 }
 
 
+fun newPodSecurityPolicy(block : PodSecurityPolicy.() -> Unit = {}): PodSecurityPolicy {
+  val instance = PodSecurityPolicy()
+  instance.block()
+  return instance
+}
+
+
+fun newPodSecurityPolicyList(block : PodSecurityPolicyList.() -> Unit = {}): PodSecurityPolicyList {
+  val instance = PodSecurityPolicyList()
+  instance.block()
+  return instance
+}
+
+
+fun newPodSecurityPolicySpec(block : PodSecurityPolicySpec.() -> Unit = {}): PodSecurityPolicySpec {
+  val instance = PodSecurityPolicySpec()
+  instance.block()
+  return instance
+}
+
+
+fun newRollbackConfig(block : RollbackConfig.() -> Unit = {}): RollbackConfig {
+  val instance = RollbackConfig()
+  instance.block()
+  return instance
+}
+
+
+fun newSELinuxStrategyOptions(block : SELinuxStrategyOptions.() -> Unit = {}): SELinuxStrategyOptions {
+  val instance = SELinuxStrategyOptions()
+  instance.block()
+  return instance
+}
+
+
+fun newScale(block : Scale.() -> Unit = {}): Scale {
+  val instance = Scale()
+  instance.block()
+  return instance
+}
+
+
+fun newScaleSpec(block : ScaleSpec.() -> Unit = {}): ScaleSpec {
+  val instance = ScaleSpec()
+  instance.block()
+  return instance
+}
+
+
+fun newScaleStatus(block : ScaleStatus.() -> Unit = {}): ScaleStatus {
+  val instance = ScaleStatus()
+  instance.block()
+  return instance
+}
+
+
+fun newSupplementalGroupsStrategyOptions(block : SupplementalGroupsStrategyOptions.() -> Unit = {}): SupplementalGroupsStrategyOptions {
+  val instance = SupplementalGroupsStrategyOptions()
+  instance.block()
+  return instance
+}
+
+
+fun newIPBlock(block : IPBlock.() -> Unit = {}): IPBlock {
+  val instance = IPBlock()
+  instance.block()
+  return instance
+}
+
+
 fun newNetworkPolicy(block : NetworkPolicy.() -> Unit = {}): NetworkPolicy {
   val instance = NetworkPolicy()
+  instance.block()
+  return instance
+}
+
+
+fun newNetworkPolicyEgressRule(block : NetworkPolicyEgressRule.() -> Unit = {}): NetworkPolicyEgressRule {
+  val instance = NetworkPolicyEgressRule()
   instance.block()
   return instance
 }
@@ -1961,174 +2339,6 @@ fun newNetworkPolicySpec(block : NetworkPolicySpec.() -> Unit = {}): NetworkPoli
 }
 
 
-fun newPodSecurityPolicy(block : PodSecurityPolicy.() -> Unit = {}): PodSecurityPolicy {
-  val instance = PodSecurityPolicy()
-  instance.block()
-  return instance
-}
-
-
-fun newPodSecurityPolicyList(block : PodSecurityPolicyList.() -> Unit = {}): PodSecurityPolicyList {
-  val instance = PodSecurityPolicyList()
-  instance.block()
-  return instance
-}
-
-
-fun newPodSecurityPolicySpec(block : PodSecurityPolicySpec.() -> Unit = {}): PodSecurityPolicySpec {
-  val instance = PodSecurityPolicySpec()
-  instance.block()
-  return instance
-}
-
-
-fun newReplicaSet(block : ReplicaSet.() -> Unit = {}): ReplicaSet {
-  val instance = ReplicaSet()
-  instance.block()
-  return instance
-}
-
-
-fun newReplicaSetCondition(block : ReplicaSetCondition.() -> Unit = {}): ReplicaSetCondition {
-  val instance = ReplicaSetCondition()
-  instance.block()
-  return instance
-}
-
-
-fun newReplicaSetList(block : ReplicaSetList.() -> Unit = {}): ReplicaSetList {
-  val instance = ReplicaSetList()
-  instance.block()
-  return instance
-}
-
-
-fun newReplicaSetSpec(block : ReplicaSetSpec.() -> Unit = {}): ReplicaSetSpec {
-  val instance = ReplicaSetSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newReplicaSetStatus(block : ReplicaSetStatus.() -> Unit = {}): ReplicaSetStatus {
-  val instance = ReplicaSetStatus()
-  instance.block()
-  return instance
-}
-
-
-fun newRollbackConfig(block : RollbackConfig.() -> Unit = {}): RollbackConfig {
-  val instance = RollbackConfig()
-  instance.block()
-  return instance
-}
-
-
-fun newRollingUpdateDaemonSet(block : RollingUpdateDaemonSet.() -> Unit = {}): RollingUpdateDaemonSet {
-  val instance = RollingUpdateDaemonSet()
-  instance.block()
-  return instance
-}
-
-
-fun newRollingUpdateDeployment(block : RollingUpdateDeployment.() -> Unit = {}): RollingUpdateDeployment {
-  val instance = RollingUpdateDeployment()
-  instance.block()
-  return instance
-}
-
-
-fun newRollingUpdateStatefulSetStrategy(block : RollingUpdateStatefulSetStrategy.() -> Unit = {}): RollingUpdateStatefulSetStrategy {
-  val instance = RollingUpdateStatefulSetStrategy()
-  instance.block()
-  return instance
-}
-
-
-fun newSELinuxStrategyOptions(block : SELinuxStrategyOptions.() -> Unit = {}): SELinuxStrategyOptions {
-  val instance = SELinuxStrategyOptions()
-  instance.block()
-  return instance
-}
-
-
-fun newScale(block : Scale.() -> Unit = {}): Scale {
-  val instance = Scale()
-  instance.block()
-  return instance
-}
-
-
-fun newScaleSpec(block : ScaleSpec.() -> Unit = {}): ScaleSpec {
-  val instance = ScaleSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newScaleStatus(block : ScaleStatus.() -> Unit = {}): ScaleStatus {
-  val instance = ScaleStatus()
-  instance.block()
-  return instance
-}
-
-
-fun newStatefulSet(block : StatefulSet.() -> Unit = {}): StatefulSet {
-  val instance = StatefulSet()
-  instance.block()
-  return instance
-}
-
-
-fun newStatefulSetList(block : StatefulSetList.() -> Unit = {}): StatefulSetList {
-  val instance = StatefulSetList()
-  instance.block()
-  return instance
-}
-
-
-fun newStatefulSetSpec(block : StatefulSetSpec.() -> Unit = {}): StatefulSetSpec {
-  val instance = StatefulSetSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newStatefulSetStatus(block : StatefulSetStatus.() -> Unit = {}): StatefulSetStatus {
-  val instance = StatefulSetStatus()
-  instance.block()
-  return instance
-}
-
-
-fun newStatefulSetUpdateStrategy(block : StatefulSetUpdateStrategy.() -> Unit = {}): StatefulSetUpdateStrategy {
-  val instance = StatefulSetUpdateStrategy()
-  instance.block()
-  return instance
-}
-
-
-fun newSupplementalGroupsStrategyOptions(block : SupplementalGroupsStrategyOptions.() -> Unit = {}): SupplementalGroupsStrategyOptions {
-  val instance = SupplementalGroupsStrategyOptions()
-  instance.block()
-  return instance
-}
-
-
-fun newThirdPartyResource(block : ThirdPartyResource.() -> Unit = {}): ThirdPartyResource {
-  val instance = ThirdPartyResource()
-  instance.block()
-  return instance
-}
-
-
-fun newThirdPartyResourceList(block : ThirdPartyResourceList.() -> Unit = {}): ThirdPartyResourceList {
-  val instance = ThirdPartyResourceList()
-  instance.block()
-  return instance
-}
-
-
 fun newPodDisruptionBudget(block : PodDisruptionBudget.() -> Unit = {}): PodDisruptionBudget {
   val instance = PodDisruptionBudget()
   instance.block()
@@ -2157,8 +2367,78 @@ fun newPodDisruptionBudgetStatus(block : PodDisruptionBudgetStatus.() -> Unit = 
 }
 
 
+fun newKubernetesAggregationRule(block : KubernetesAggregationRule.() -> Unit = {}): KubernetesAggregationRule {
+  val instance = KubernetesAggregationRule()
+  instance.block()
+  return instance
+}
+
+
+fun newKubernetesPolicyRule(block : KubernetesPolicyRule.() -> Unit = {}): KubernetesPolicyRule {
+  val instance = KubernetesPolicyRule()
+  instance.block()
+  return instance
+}
+
+
+fun newKubernetesRole(block : KubernetesRole.() -> Unit = {}): KubernetesRole {
+  val instance = KubernetesRole()
+  instance.block()
+  return instance
+}
+
+
+fun newKubernetesRoleBinding(block : KubernetesRoleBinding.() -> Unit = {}): KubernetesRoleBinding {
+  val instance = KubernetesRoleBinding()
+  instance.block()
+  return instance
+}
+
+
+fun newKubernetesRoleBindingList(block : KubernetesRoleBindingList.() -> Unit = {}): KubernetesRoleBindingList {
+  val instance = KubernetesRoleBindingList()
+  instance.block()
+  return instance
+}
+
+
+fun newKubernetesRoleList(block : KubernetesRoleList.() -> Unit = {}): KubernetesRoleList {
+  val instance = KubernetesRoleList()
+  instance.block()
+  return instance
+}
+
+
+fun newKubernetesRoleRef(block : KubernetesRoleRef.() -> Unit = {}): KubernetesRoleRef {
+  val instance = KubernetesRoleRef()
+  instance.block()
+  return instance
+}
+
+
+fun newKubernetesSubject(block : KubernetesSubject.() -> Unit = {}): KubernetesSubject {
+  val instance = KubernetesSubject()
+  instance.block()
+  return instance
+}
+
+
 fun newRawExtension(block : RawExtension.() -> Unit = {}): RawExtension {
   val instance = RawExtension()
+  instance.block()
+  return instance
+}
+
+
+fun newStorageClass(block : StorageClass.() -> Unit = {}): StorageClass {
+  val instance = StorageClass()
+  instance.block()
+  return instance
+}
+
+
+fun newStorageClassList(block : StorageClassList.() -> Unit = {}): StorageClassList {
+  val instance = StorageClassList()
   instance.block()
   return instance
 }

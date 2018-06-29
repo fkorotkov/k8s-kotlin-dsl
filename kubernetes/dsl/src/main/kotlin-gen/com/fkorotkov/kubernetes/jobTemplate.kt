@@ -1,8 +1,8 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.CronJobSpec
-import io.fabric8.kubernetes.api.model.JobTemplateSpec
+import io.fabric8.kubernetes.api.model.batch.CronJobSpec
+import io.fabric8.kubernetes.api.model.batch.JobTemplateSpec
 
 
 fun  CronJobSpec.`jobTemplate`(block: JobTemplateSpec.() -> Unit = {}) {

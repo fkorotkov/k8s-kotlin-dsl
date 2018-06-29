@@ -1,12 +1,12 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.extensions.DaemonSetUpdateStrategy
-import io.fabric8.kubernetes.api.model.extensions.DeploymentStrategy
-import io.fabric8.kubernetes.api.model.extensions.RollingUpdateDaemonSet
-import io.fabric8.kubernetes.api.model.extensions.RollingUpdateDeployment
-import io.fabric8.kubernetes.api.model.extensions.RollingUpdateStatefulSetStrategy
-import io.fabric8.kubernetes.api.model.extensions.StatefulSetUpdateStrategy
+import io.fabric8.kubernetes.api.model.apps.DaemonSetUpdateStrategy
+import io.fabric8.kubernetes.api.model.apps.DeploymentStrategy
+import io.fabric8.kubernetes.api.model.apps.RollingUpdateDaemonSet
+import io.fabric8.kubernetes.api.model.apps.RollingUpdateDeployment
+import io.fabric8.kubernetes.api.model.apps.RollingUpdateStatefulSetStrategy
+import io.fabric8.kubernetes.api.model.apps.StatefulSetUpdateStrategy
 
 
 fun  DaemonSetUpdateStrategy.`rollingUpdate`(block: RollingUpdateDaemonSet.() -> Unit = {}) {

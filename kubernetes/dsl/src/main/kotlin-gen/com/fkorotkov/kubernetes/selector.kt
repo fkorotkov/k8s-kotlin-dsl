@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.JobSpec
 import io.fabric8.kubernetes.api.model.LabelSelector
 import io.fabric8.kubernetes.api.model.PersistentVolumeClaimSpec
-import io.fabric8.kubernetes.api.model.extensions.DaemonSetSpec
-import io.fabric8.kubernetes.api.model.extensions.DeploymentSpec
-import io.fabric8.kubernetes.api.model.extensions.ReplicaSetSpec
-import io.fabric8.kubernetes.api.model.extensions.StatefulSetSpec
+import io.fabric8.kubernetes.api.model.apps.DaemonSetSpec
+import io.fabric8.kubernetes.api.model.apps.DeploymentSpec
+import io.fabric8.kubernetes.api.model.apps.ReplicaSetSpec
+import io.fabric8.kubernetes.api.model.apps.StatefulSetSpec
+import io.fabric8.kubernetes.api.model.batch.JobSpec
 import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetSpec
 
 

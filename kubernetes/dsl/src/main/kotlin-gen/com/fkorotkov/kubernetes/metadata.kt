@@ -7,17 +7,12 @@ import io.fabric8.kubernetes.api.model.ComponentStatus
 import io.fabric8.kubernetes.api.model.ComponentStatusList
 import io.fabric8.kubernetes.api.model.ConfigMap
 import io.fabric8.kubernetes.api.model.ConfigMapList
-import io.fabric8.kubernetes.api.model.CronJob
-import io.fabric8.kubernetes.api.model.CronJobList
 import io.fabric8.kubernetes.api.model.Endpoints
 import io.fabric8.kubernetes.api.model.EndpointsList
 import io.fabric8.kubernetes.api.model.Event
 import io.fabric8.kubernetes.api.model.EventList
 import io.fabric8.kubernetes.api.model.HorizontalPodAutoscaler
 import io.fabric8.kubernetes.api.model.HorizontalPodAutoscalerList
-import io.fabric8.kubernetes.api.model.Job
-import io.fabric8.kubernetes.api.model.JobList
-import io.fabric8.kubernetes.api.model.JobTemplateSpec
 import io.fabric8.kubernetes.api.model.LimitRange
 import io.fabric8.kubernetes.api.model.LimitRangeList
 import io.fabric8.kubernetes.api.model.ListMeta
@@ -46,32 +41,39 @@ import io.fabric8.kubernetes.api.model.ServiceAccount
 import io.fabric8.kubernetes.api.model.ServiceAccountList
 import io.fabric8.kubernetes.api.model.ServiceList
 import io.fabric8.kubernetes.api.model.Status
-import io.fabric8.kubernetes.api.model.StorageClass
-import io.fabric8.kubernetes.api.model.StorageClassList
 import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinition
 import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinitionList
+import io.fabric8.kubernetes.api.model.apps.DaemonSet
+import io.fabric8.kubernetes.api.model.apps.DaemonSetList
+import io.fabric8.kubernetes.api.model.apps.Deployment
+import io.fabric8.kubernetes.api.model.apps.DeploymentList
+import io.fabric8.kubernetes.api.model.apps.ReplicaSet
+import io.fabric8.kubernetes.api.model.apps.ReplicaSetList
+import io.fabric8.kubernetes.api.model.apps.StatefulSet
+import io.fabric8.kubernetes.api.model.apps.StatefulSetList
 import io.fabric8.kubernetes.api.model.authentication.TokenReview
 import io.fabric8.kubernetes.api.model.authorization.LocalSubjectAccessReview
 import io.fabric8.kubernetes.api.model.authorization.SubjectAccessReview
-import io.fabric8.kubernetes.api.model.extensions.DaemonSet
-import io.fabric8.kubernetes.api.model.extensions.DaemonSetList
-import io.fabric8.kubernetes.api.model.extensions.Deployment
-import io.fabric8.kubernetes.api.model.extensions.DeploymentList
+import io.fabric8.kubernetes.api.model.batch.CronJob
+import io.fabric8.kubernetes.api.model.batch.CronJobList
+import io.fabric8.kubernetes.api.model.batch.Job
+import io.fabric8.kubernetes.api.model.batch.JobList
+import io.fabric8.kubernetes.api.model.batch.JobTemplateSpec
 import io.fabric8.kubernetes.api.model.extensions.Ingress
 import io.fabric8.kubernetes.api.model.extensions.IngressList
-import io.fabric8.kubernetes.api.model.extensions.NetworkPolicy
-import io.fabric8.kubernetes.api.model.extensions.NetworkPolicyList
 import io.fabric8.kubernetes.api.model.extensions.PodSecurityPolicy
 import io.fabric8.kubernetes.api.model.extensions.PodSecurityPolicyList
-import io.fabric8.kubernetes.api.model.extensions.ReplicaSet
-import io.fabric8.kubernetes.api.model.extensions.ReplicaSetList
 import io.fabric8.kubernetes.api.model.extensions.Scale
-import io.fabric8.kubernetes.api.model.extensions.StatefulSet
-import io.fabric8.kubernetes.api.model.extensions.StatefulSetList
-import io.fabric8.kubernetes.api.model.extensions.ThirdPartyResource
-import io.fabric8.kubernetes.api.model.extensions.ThirdPartyResourceList
+import io.fabric8.kubernetes.api.model.networking.NetworkPolicy
+import io.fabric8.kubernetes.api.model.networking.NetworkPolicyList
 import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudget
 import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetList
+import io.fabric8.kubernetes.api.model.rbac.KubernetesRole
+import io.fabric8.kubernetes.api.model.rbac.KubernetesRoleBinding
+import io.fabric8.kubernetes.api.model.rbac.KubernetesRoleBindingList
+import io.fabric8.kubernetes.api.model.rbac.KubernetesRoleList
+import io.fabric8.kubernetes.api.model.storage.StorageClass
+import io.fabric8.kubernetes.api.model.storage.StorageClassList
 
 
 fun  BaseKubernetesList.`metadata`(block: ListMeta.() -> Unit = {}) {
@@ -293,6 +295,42 @@ fun  JobList.`metadata`(block: ListMeta.() -> Unit = {}) {
 fun  JobTemplateSpec.`metadata`(block: ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  KubernetesRole.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  KubernetesRoleBinding.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  KubernetesRoleBindingList.`metadata`(block: ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  KubernetesRoleList.`metadata`(block: ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ListMeta()
   }
 
   this.`metadata`.block()
@@ -662,24 +700,6 @@ fun  StorageClassList.`metadata`(block: ListMeta.() -> Unit = {}) {
 fun  SubjectAccessReview.`metadata`(block: ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  ThirdPartyResource.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  ThirdPartyResourceList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
   }
 
   this.`metadata`.block()

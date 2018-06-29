@@ -2,8 +2,8 @@
 package com.fkorotkov.kubernetes
 
 import io.fabric8.kubernetes.api.model.IntOrString
-import io.fabric8.kubernetes.api.model.extensions.RollingUpdateDaemonSet
-import io.fabric8.kubernetes.api.model.extensions.RollingUpdateDeployment
+import io.fabric8.kubernetes.api.model.apps.RollingUpdateDaemonSet
+import io.fabric8.kubernetes.api.model.apps.RollingUpdateDeployment
 import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetSpec
 
 

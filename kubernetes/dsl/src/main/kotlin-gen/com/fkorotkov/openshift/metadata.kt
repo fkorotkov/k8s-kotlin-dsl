@@ -28,6 +28,8 @@ import io.fabric8.openshift.api.model.ImageStream
 import io.fabric8.openshift.api.model.ImageStreamList
 import io.fabric8.openshift.api.model.ImageStreamTag
 import io.fabric8.openshift.api.model.ImageStreamTagList
+import io.fabric8.openshift.api.model.NetNamespace
+import io.fabric8.openshift.api.model.NetNamespaceList
 import io.fabric8.openshift.api.model.OAuthAccessToken
 import io.fabric8.openshift.api.model.OAuthAccessTokenList
 import io.fabric8.openshift.api.model.OAuthAuthorizeToken
@@ -275,6 +277,24 @@ fun  ImageStreamTag.`metadata`(block: ObjectMeta.() -> Unit = {}) {
 
 
 fun  ImageStreamTagList.`metadata`(block: ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  NetNamespace.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  NetNamespaceList.`metadata`(block: ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = ListMeta()
   }

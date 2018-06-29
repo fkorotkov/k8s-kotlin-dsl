@@ -49,19 +49,22 @@ clazzToProperties.map { (clazz, property) -> extensionFunctionTemplate(clazz, pr
 
     return """
 fun ${genericsTemplate(generics)} $clazzDecl.`${property.name}`(block: $returnClassDecl.() -> Unit = {}) {${initializer(property, returnClass)}
-  this.`${property.name}`.block()
+  this.`${sanitizePropertyName(property.name)}`.block()
 }
 """
   }
 
   private fun initializer(property: KMutableProperty<*>, returnClass: KClass<*>): String {
     if (returnClass.isAbstract) return ""
+    val propertyName = sanitizePropertyName(property.name)
     return """
-  if(this.`${property.name}` == null) {
-    this.`${property.name}` = ${returnClass.simpleName}()
+  if(this.`$propertyName` == null) {
+    this.`$propertyName` = ${returnClass.simpleName}()
   }
 """
   }
+
+  private fun sanitizePropertyName(name: String) = name.removePrefix("_") // remove "_" for names as Java keywords
 
   private fun genericsTemplate(generics: List<String>): String {
     if (generics.isEmpty()) {

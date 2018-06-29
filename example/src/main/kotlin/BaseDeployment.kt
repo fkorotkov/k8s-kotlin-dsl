@@ -1,6 +1,6 @@
 import com.fkorotkov.kubernetes.*
 import io.fabric8.kubernetes.api.model.IntOrString
-import io.fabric8.kubernetes.api.model.extensions.Deployment
+import io.fabric8.kubernetes.api.model.apps.Deployment
 
 class BaseDeployment : Deployment {
   constructor(serviceName: String) {

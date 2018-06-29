@@ -2,8 +2,8 @@
 package com.fkorotkov.kubernetes
 
 import io.fabric8.kubernetes.api.model.LabelSelector
-import io.fabric8.kubernetes.api.model.extensions.NetworkPolicyPeer
-import io.fabric8.kubernetes.api.model.extensions.NetworkPolicySpec
+import io.fabric8.kubernetes.api.model.networking.NetworkPolicyPeer
+import io.fabric8.kubernetes.api.model.networking.NetworkPolicySpec
 
 
 fun  NetworkPolicyPeer.`podSelector`(block: LabelSelector.() -> Unit = {}) {

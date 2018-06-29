@@ -1,14 +1,14 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.JobSpec
 import io.fabric8.kubernetes.api.model.PodTemplate
 import io.fabric8.kubernetes.api.model.PodTemplateSpec
 import io.fabric8.kubernetes.api.model.ReplicationControllerSpec
-import io.fabric8.kubernetes.api.model.extensions.DaemonSetSpec
-import io.fabric8.kubernetes.api.model.extensions.DeploymentSpec
-import io.fabric8.kubernetes.api.model.extensions.ReplicaSetSpec
-import io.fabric8.kubernetes.api.model.extensions.StatefulSetSpec
+import io.fabric8.kubernetes.api.model.apps.DaemonSetSpec
+import io.fabric8.kubernetes.api.model.apps.DeploymentSpec
+import io.fabric8.kubernetes.api.model.apps.ReplicaSetSpec
+import io.fabric8.kubernetes.api.model.apps.StatefulSetSpec
+import io.fabric8.kubernetes.api.model.batch.JobSpec
 
 
 fun  DaemonSetSpec.`template`(block: PodTemplateSpec.() -> Unit = {}) {

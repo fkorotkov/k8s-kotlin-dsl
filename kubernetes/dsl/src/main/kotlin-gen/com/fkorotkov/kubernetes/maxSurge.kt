@@ -2,7 +2,7 @@
 package com.fkorotkov.kubernetes
 
 import io.fabric8.kubernetes.api.model.IntOrString
-import io.fabric8.kubernetes.api.model.extensions.RollingUpdateDeployment
+import io.fabric8.kubernetes.api.model.apps.RollingUpdateDeployment
 
 
 fun  RollingUpdateDeployment.`maxSurge`(block: IntOrString.() -> Unit = {}) {

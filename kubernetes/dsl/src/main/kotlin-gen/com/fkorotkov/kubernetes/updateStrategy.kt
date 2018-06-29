@@ -1,10 +1,10 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.extensions.DaemonSetSpec
-import io.fabric8.kubernetes.api.model.extensions.DaemonSetUpdateStrategy
-import io.fabric8.kubernetes.api.model.extensions.StatefulSetSpec
-import io.fabric8.kubernetes.api.model.extensions.StatefulSetUpdateStrategy
+import io.fabric8.kubernetes.api.model.apps.DaemonSetSpec
+import io.fabric8.kubernetes.api.model.apps.DaemonSetUpdateStrategy
+import io.fabric8.kubernetes.api.model.apps.StatefulSetSpec
+import io.fabric8.kubernetes.api.model.apps.StatefulSetUpdateStrategy
 
 
 fun  DaemonSetSpec.`updateStrategy`(block: DaemonSetUpdateStrategy.() -> Unit = {}) {

@@ -1,8 +1,8 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.extensions.DeploymentSpec
-import io.fabric8.kubernetes.api.model.extensions.DeploymentStrategy
+import io.fabric8.kubernetes.api.model.apps.DeploymentSpec
+import io.fabric8.kubernetes.api.model.apps.DeploymentStrategy
 
 
 fun  DeploymentSpec.`strategy`(block: DeploymentStrategy.() -> Unit = {}) {
