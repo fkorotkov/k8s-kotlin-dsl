@@ -60,6 +60,8 @@ import io.fabric8.openshift.api.model.IdentityList
 import io.fabric8.openshift.api.model.Image
 import io.fabric8.openshift.api.model.ImageChangeCause
 import io.fabric8.openshift.api.model.ImageChangeTrigger
+import io.fabric8.openshift.api.model.ImageImportSpec
+import io.fabric8.openshift.api.model.ImageImportStatus
 import io.fabric8.openshift.api.model.ImageLabel
 import io.fabric8.openshift.api.model.ImageLayer
 import io.fabric8.openshift.api.model.ImageList
@@ -68,6 +70,9 @@ import io.fabric8.openshift.api.model.ImageSignature
 import io.fabric8.openshift.api.model.ImageSource
 import io.fabric8.openshift.api.model.ImageSourcePath
 import io.fabric8.openshift.api.model.ImageStream
+import io.fabric8.openshift.api.model.ImageStreamImport
+import io.fabric8.openshift.api.model.ImageStreamImportSpec
+import io.fabric8.openshift.api.model.ImageStreamImportStatus
 import io.fabric8.openshift.api.model.ImageStreamList
 import io.fabric8.openshift.api.model.ImageStreamSpec
 import io.fabric8.openshift.api.model.ImageStreamStatus
@@ -103,6 +108,8 @@ import io.fabric8.openshift.api.model.ProjectRequest
 import io.fabric8.openshift.api.model.ProjectSpec
 import io.fabric8.openshift.api.model.ProjectStatus
 import io.fabric8.openshift.api.model.RecreateDeploymentStrategyParams
+import io.fabric8.openshift.api.model.RepositoryImportSpec
+import io.fabric8.openshift.api.model.RepositoryImportStatus
 import io.fabric8.openshift.api.model.Role
 import io.fabric8.openshift.api.model.RoleBinding
 import io.fabric8.openshift.api.model.RoleBindingList
@@ -568,6 +575,20 @@ fun newImageChangeTrigger(block : ImageChangeTrigger.() -> Unit = {}): ImageChan
 }
 
 
+fun newImageImportSpec(block : ImageImportSpec.() -> Unit = {}): ImageImportSpec {
+  val instance = ImageImportSpec()
+  instance.block()
+  return instance
+}
+
+
+fun newImageImportStatus(block : ImageImportStatus.() -> Unit = {}): ImageImportStatus {
+  val instance = ImageImportStatus()
+  instance.block()
+  return instance
+}
+
+
 fun newImageLabel(block : ImageLabel.() -> Unit = {}): ImageLabel {
   val instance = ImageLabel()
   instance.block()
@@ -619,6 +640,27 @@ fun newImageSourcePath(block : ImageSourcePath.() -> Unit = {}): ImageSourcePath
 
 fun newImageStream(block : ImageStream.() -> Unit = {}): ImageStream {
   val instance = ImageStream()
+  instance.block()
+  return instance
+}
+
+
+fun newImageStreamImport(block : ImageStreamImport.() -> Unit = {}): ImageStreamImport {
+  val instance = ImageStreamImport()
+  instance.block()
+  return instance
+}
+
+
+fun newImageStreamImportSpec(block : ImageStreamImportSpec.() -> Unit = {}): ImageStreamImportSpec {
+  val instance = ImageStreamImportSpec()
+  instance.block()
+  return instance
+}
+
+
+fun newImageStreamImportStatus(block : ImageStreamImportStatus.() -> Unit = {}): ImageStreamImportStatus {
+  val instance = ImageStreamImportStatus()
   instance.block()
   return instance
 }
@@ -864,6 +906,20 @@ fun newProjectStatus(block : ProjectStatus.() -> Unit = {}): ProjectStatus {
 
 fun newRecreateDeploymentStrategyParams(block : RecreateDeploymentStrategyParams.() -> Unit = {}): RecreateDeploymentStrategyParams {
   val instance = RecreateDeploymentStrategyParams()
+  instance.block()
+  return instance
+}
+
+
+fun newRepositoryImportSpec(block : RepositoryImportSpec.() -> Unit = {}): RepositoryImportSpec {
+  val instance = RepositoryImportSpec()
+  instance.block()
+  return instance
+}
+
+
+fun newRepositoryImportStatus(block : RepositoryImportStatus.() -> Unit = {}): RepositoryImportStatus {
+  val instance = RepositoryImportStatus()
   instance.block()
   return instance
 }

@@ -68,6 +68,10 @@ import io.fabric8.kubernetes.api.model.networking.NetworkPolicy
 import io.fabric8.kubernetes.api.model.networking.NetworkPolicyList
 import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudget
 import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetList
+import io.fabric8.kubernetes.api.model.rbac.KubernetesClusterRole
+import io.fabric8.kubernetes.api.model.rbac.KubernetesClusterRoleBinding
+import io.fabric8.kubernetes.api.model.rbac.KubernetesClusterRoleBindingList
+import io.fabric8.kubernetes.api.model.rbac.KubernetesClusterRoleList
 import io.fabric8.kubernetes.api.model.rbac.KubernetesRole
 import io.fabric8.kubernetes.api.model.rbac.KubernetesRoleBinding
 import io.fabric8.kubernetes.api.model.rbac.KubernetesRoleBindingList
@@ -295,6 +299,42 @@ fun  JobList.`metadata`(block: ListMeta.() -> Unit = {}) {
 fun  JobTemplateSpec.`metadata`(block: ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  KubernetesClusterRole.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  KubernetesClusterRoleBinding.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  KubernetesClusterRoleBindingList.`metadata`(block: ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  KubernetesClusterRoleList.`metadata`(block: ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ListMeta()
   }
 
   this.`metadata`.block()

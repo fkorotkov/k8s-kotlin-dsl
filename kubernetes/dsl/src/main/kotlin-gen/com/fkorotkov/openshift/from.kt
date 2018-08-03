@@ -8,7 +8,9 @@ import io.fabric8.openshift.api.model.DeploymentCauseImageTrigger
 import io.fabric8.openshift.api.model.DeploymentTriggerImageChangeParams
 import io.fabric8.openshift.api.model.DockerBuildStrategy
 import io.fabric8.openshift.api.model.ImageChangeTrigger
+import io.fabric8.openshift.api.model.ImageImportSpec
 import io.fabric8.openshift.api.model.ImageSource
+import io.fabric8.openshift.api.model.RepositoryImportSpec
 import io.fabric8.openshift.api.model.SourceBuildStrategy
 import io.fabric8.openshift.api.model.TagReference
 
@@ -67,7 +69,25 @@ fun  ImageChangeTrigger.`from`(block: ObjectReference.() -> Unit = {}) {
 }
 
 
+fun  ImageImportSpec.`from`(block: ObjectReference.() -> Unit = {}) {
+  if(this.`from` == null) {
+    this.`from` = ObjectReference()
+  }
+
+  this.`from`.block()
+}
+
+
 fun  ImageSource.`from`(block: ObjectReference.() -> Unit = {}) {
+  if(this.`from` == null) {
+    this.`from` = ObjectReference()
+  }
+
+  this.`from`.block()
+}
+
+
+fun  RepositoryImportSpec.`from`(block: ObjectReference.() -> Unit = {}) {
   if(this.`from` == null) {
     this.`from` = ObjectReference()
   }

@@ -8,6 +8,8 @@ import io.fabric8.openshift.api.model.BuildSpec
 import io.fabric8.openshift.api.model.DeploymentConfig
 import io.fabric8.openshift.api.model.DeploymentConfigSpec
 import io.fabric8.openshift.api.model.ImageStream
+import io.fabric8.openshift.api.model.ImageStreamImport
+import io.fabric8.openshift.api.model.ImageStreamImportSpec
 import io.fabric8.openshift.api.model.ImageStreamSpec
 import io.fabric8.openshift.api.model.Project
 import io.fabric8.openshift.api.model.ProjectSpec
@@ -47,6 +49,15 @@ fun  DeploymentConfig.`spec`(block: DeploymentConfigSpec.() -> Unit = {}) {
 fun  ImageStream.`spec`(block: ImageStreamSpec.() -> Unit = {}) {
   if(this.`spec` == null) {
     this.`spec` = ImageStreamSpec()
+  }
+
+  this.`spec`.block()
+}
+
+
+fun  ImageStreamImport.`spec`(block: ImageStreamImportSpec.() -> Unit = {}) {
+  if(this.`spec` == null) {
+    this.`spec` = ImageStreamImportSpec()
   }
 
   this.`spec`.block()
