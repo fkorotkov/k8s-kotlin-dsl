@@ -8,12 +8,12 @@
     {
       "group": "com.google.guava",
       "name": "guava",
-      "version": "25.1-jre"
+      "version": "26.0-jre"
     },
     {
       "group": "com.jfrog.bintray.gradle",
       "name": "gradle-bintray-plugin",
-      "version": "1.8.3"
+      "version": "1.8.4"
     },
     {
       "group": "io.fabric8",
