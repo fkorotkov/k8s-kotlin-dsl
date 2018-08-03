@@ -25,6 +25,7 @@ import io.fabric8.openshift.api.model.Image
 import io.fabric8.openshift.api.model.ImageList
 import io.fabric8.openshift.api.model.ImageSignature
 import io.fabric8.openshift.api.model.ImageStream
+import io.fabric8.openshift.api.model.ImageStreamImport
 import io.fabric8.openshift.api.model.ImageStreamList
 import io.fabric8.openshift.api.model.ImageStreamTag
 import io.fabric8.openshift.api.model.ImageStreamTagList
@@ -250,6 +251,15 @@ fun  ImageSignature.`metadata`(block: ObjectMeta.() -> Unit = {}) {
 
 
 fun  ImageStream.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  ImageStreamImport.`metadata`(block: ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = ObjectMeta()
   }

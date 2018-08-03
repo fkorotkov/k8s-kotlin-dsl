@@ -296,6 +296,10 @@ import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetList
 import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetSpec
 import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetStatus
 import io.fabric8.kubernetes.api.model.rbac.KubernetesAggregationRule
+import io.fabric8.kubernetes.api.model.rbac.KubernetesClusterRole
+import io.fabric8.kubernetes.api.model.rbac.KubernetesClusterRoleBinding
+import io.fabric8.kubernetes.api.model.rbac.KubernetesClusterRoleBindingList
+import io.fabric8.kubernetes.api.model.rbac.KubernetesClusterRoleList
 import io.fabric8.kubernetes.api.model.rbac.KubernetesPolicyRule
 import io.fabric8.kubernetes.api.model.rbac.KubernetesRole
 import io.fabric8.kubernetes.api.model.rbac.KubernetesRoleBinding
@@ -2369,6 +2373,34 @@ fun newPodDisruptionBudgetStatus(block : PodDisruptionBudgetStatus.() -> Unit = 
 
 fun newKubernetesAggregationRule(block : KubernetesAggregationRule.() -> Unit = {}): KubernetesAggregationRule {
   val instance = KubernetesAggregationRule()
+  instance.block()
+  return instance
+}
+
+
+fun newKubernetesClusterRole(block : KubernetesClusterRole.() -> Unit = {}): KubernetesClusterRole {
+  val instance = KubernetesClusterRole()
+  instance.block()
+  return instance
+}
+
+
+fun newKubernetesClusterRoleBinding(block : KubernetesClusterRoleBinding.() -> Unit = {}): KubernetesClusterRoleBinding {
+  val instance = KubernetesClusterRoleBinding()
+  instance.block()
+  return instance
+}
+
+
+fun newKubernetesClusterRoleBindingList(block : KubernetesClusterRoleBindingList.() -> Unit = {}): KubernetesClusterRoleBindingList {
+  val instance = KubernetesClusterRoleBindingList()
+  instance.block()
+  return instance
+}
+
+
+fun newKubernetesClusterRoleList(block : KubernetesClusterRoleList.() -> Unit = {}): KubernetesClusterRoleList {
+  val instance = KubernetesClusterRoleList()
   instance.block()
   return instance
 }
