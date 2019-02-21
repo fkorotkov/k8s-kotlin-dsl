@@ -33,6 +33,11 @@ bintray {
     }
 }
 
+task sourcesJar(type: Jar) {
+    from sourceSets.main.kotlin
+    archiveClassifier = 'sources'
+}
+
 publishing {
     publications {
         maven(MavenPublication) {
@@ -40,6 +45,7 @@ publishing {
             artifactId 'kubernetes-dsl'
             version current_k8s_dsl_version
             from components.java
+            artifacts = [ sourcesJar ]
         }
     }
 }
@@ -48,7 +54,6 @@ task sourceJar(type: Jar) {
     from sourceSets.main.allSource
     classifier "sources"
 }
-
 sourceSets {
     main {
         kotlin {
