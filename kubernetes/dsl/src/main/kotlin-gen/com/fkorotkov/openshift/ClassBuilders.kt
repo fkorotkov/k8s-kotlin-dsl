@@ -21,14 +21,7 @@ import io.fabric8.openshift.api.model.BuildStatusOutputTo
 import io.fabric8.openshift.api.model.BuildStrategy
 import io.fabric8.openshift.api.model.BuildTriggerCause
 import io.fabric8.openshift.api.model.BuildTriggerPolicy
-import io.fabric8.openshift.api.model.ClusterPolicy
-import io.fabric8.openshift.api.model.ClusterPolicyBinding
-import io.fabric8.openshift.api.model.ClusterPolicyBindingList
-import io.fabric8.openshift.api.model.ClusterPolicyList
-import io.fabric8.openshift.api.model.ClusterRole
-import io.fabric8.openshift.api.model.ClusterRoleBinding
-import io.fabric8.openshift.api.model.ClusterRoleBindingList
-import io.fabric8.openshift.api.model.ClusterRoleScopeRestriction
+import io.fabric8.openshift.api.model.ConfigMapBuildSource
 import io.fabric8.openshift.api.model.CustomBuildStrategy
 import io.fabric8.openshift.api.model.CustomDeploymentStrategyParams
 import io.fabric8.openshift.api.model.DeploymentCause
@@ -81,10 +74,6 @@ import io.fabric8.openshift.api.model.ImageStreamTagList
 import io.fabric8.openshift.api.model.JenkinsPipelineBuildStrategy
 import io.fabric8.openshift.api.model.LifecycleHook
 import io.fabric8.openshift.api.model.LocalSubjectAccessReview
-import io.fabric8.openshift.api.model.NamedClusterRole
-import io.fabric8.openshift.api.model.NamedClusterRoleBinding
-import io.fabric8.openshift.api.model.NamedRole
-import io.fabric8.openshift.api.model.NamedRoleBinding
 import io.fabric8.openshift.api.model.NamedTagEventList
 import io.fabric8.openshift.api.model.NetNamespace
 import io.fabric8.openshift.api.model.NetNamespaceList
@@ -96,11 +85,17 @@ import io.fabric8.openshift.api.model.OAuthClient
 import io.fabric8.openshift.api.model.OAuthClientAuthorization
 import io.fabric8.openshift.api.model.OAuthClientAuthorizationList
 import io.fabric8.openshift.api.model.OAuthClientList
+import io.fabric8.openshift.api.model.OpenshiftClusterRole
+import io.fabric8.openshift.api.model.OpenshiftClusterRoleBinding
+import io.fabric8.openshift.api.model.OpenshiftClusterRoleBindingList
+import io.fabric8.openshift.api.model.OpenshiftClusterRoleScopeRestriction
+import io.fabric8.openshift.api.model.OpenshiftRole
+import io.fabric8.openshift.api.model.OpenshiftRoleBinding
+import io.fabric8.openshift.api.model.OpenshiftRoleBindingList
+import io.fabric8.openshift.api.model.OpenshiftRoleBindingRestriction
+import io.fabric8.openshift.api.model.OpenshiftRoleBindingRestrictionSpec
+import io.fabric8.openshift.api.model.OpenshiftRoleList
 import io.fabric8.openshift.api.model.Parameter
-import io.fabric8.openshift.api.model.Policy
-import io.fabric8.openshift.api.model.PolicyBinding
-import io.fabric8.openshift.api.model.PolicyBindingList
-import io.fabric8.openshift.api.model.PolicyList
 import io.fabric8.openshift.api.model.PolicyRule
 import io.fabric8.openshift.api.model.Project
 import io.fabric8.openshift.api.model.ProjectList
@@ -110,12 +105,6 @@ import io.fabric8.openshift.api.model.ProjectStatus
 import io.fabric8.openshift.api.model.RecreateDeploymentStrategyParams
 import io.fabric8.openshift.api.model.RepositoryImportSpec
 import io.fabric8.openshift.api.model.RepositoryImportStatus
-import io.fabric8.openshift.api.model.Role
-import io.fabric8.openshift.api.model.RoleBinding
-import io.fabric8.openshift.api.model.RoleBindingList
-import io.fabric8.openshift.api.model.RoleBindingRestriction
-import io.fabric8.openshift.api.model.RoleBindingRestrictionSpec
-import io.fabric8.openshift.api.model.RoleList
 import io.fabric8.openshift.api.model.RollingDeploymentStrategyParams
 import io.fabric8.openshift.api.model.Route
 import io.fabric8.openshift.api.model.RouteIngress
@@ -302,57 +291,8 @@ fun newBuildTriggerPolicy(block : BuildTriggerPolicy.() -> Unit = {}): BuildTrig
 }
 
 
-fun newClusterPolicy(block : ClusterPolicy.() -> Unit = {}): ClusterPolicy {
-  val instance = ClusterPolicy()
-  instance.block()
-  return instance
-}
-
-
-fun newClusterPolicyBinding(block : ClusterPolicyBinding.() -> Unit = {}): ClusterPolicyBinding {
-  val instance = ClusterPolicyBinding()
-  instance.block()
-  return instance
-}
-
-
-fun newClusterPolicyBindingList(block : ClusterPolicyBindingList.() -> Unit = {}): ClusterPolicyBindingList {
-  val instance = ClusterPolicyBindingList()
-  instance.block()
-  return instance
-}
-
-
-fun newClusterPolicyList(block : ClusterPolicyList.() -> Unit = {}): ClusterPolicyList {
-  val instance = ClusterPolicyList()
-  instance.block()
-  return instance
-}
-
-
-fun newClusterRole(block : ClusterRole.() -> Unit = {}): ClusterRole {
-  val instance = ClusterRole()
-  instance.block()
-  return instance
-}
-
-
-fun newClusterRoleBinding(block : ClusterRoleBinding.() -> Unit = {}): ClusterRoleBinding {
-  val instance = ClusterRoleBinding()
-  instance.block()
-  return instance
-}
-
-
-fun newClusterRoleBindingList(block : ClusterRoleBindingList.() -> Unit = {}): ClusterRoleBindingList {
-  val instance = ClusterRoleBindingList()
-  instance.block()
-  return instance
-}
-
-
-fun newClusterRoleScopeRestriction(block : ClusterRoleScopeRestriction.() -> Unit = {}): ClusterRoleScopeRestriction {
-  val instance = ClusterRoleScopeRestriction()
+fun newConfigMapBuildSource(block : ConfigMapBuildSource.() -> Unit = {}): ConfigMapBuildSource {
+  val instance = ConfigMapBuildSource()
   instance.block()
   return instance
 }
@@ -722,34 +662,6 @@ fun newLocalSubjectAccessReview(block : LocalSubjectAccessReview.() -> Unit = {}
 }
 
 
-fun newNamedClusterRole(block : NamedClusterRole.() -> Unit = {}): NamedClusterRole {
-  val instance = NamedClusterRole()
-  instance.block()
-  return instance
-}
-
-
-fun newNamedClusterRoleBinding(block : NamedClusterRoleBinding.() -> Unit = {}): NamedClusterRoleBinding {
-  val instance = NamedClusterRoleBinding()
-  instance.block()
-  return instance
-}
-
-
-fun newNamedRole(block : NamedRole.() -> Unit = {}): NamedRole {
-  val instance = NamedRole()
-  instance.block()
-  return instance
-}
-
-
-fun newNamedRoleBinding(block : NamedRoleBinding.() -> Unit = {}): NamedRoleBinding {
-  val instance = NamedRoleBinding()
-  instance.block()
-  return instance
-}
-
-
 fun newNamedTagEventList(block : NamedTagEventList.() -> Unit = {}): NamedTagEventList {
   val instance = NamedTagEventList()
   instance.block()
@@ -827,36 +739,78 @@ fun newOAuthClientList(block : OAuthClientList.() -> Unit = {}): OAuthClientList
 }
 
 
+fun newOpenshiftClusterRole(block : OpenshiftClusterRole.() -> Unit = {}): OpenshiftClusterRole {
+  val instance = OpenshiftClusterRole()
+  instance.block()
+  return instance
+}
+
+
+fun newOpenshiftClusterRoleBinding(block : OpenshiftClusterRoleBinding.() -> Unit = {}): OpenshiftClusterRoleBinding {
+  val instance = OpenshiftClusterRoleBinding()
+  instance.block()
+  return instance
+}
+
+
+fun newOpenshiftClusterRoleBindingList(block : OpenshiftClusterRoleBindingList.() -> Unit = {}): OpenshiftClusterRoleBindingList {
+  val instance = OpenshiftClusterRoleBindingList()
+  instance.block()
+  return instance
+}
+
+
+fun newOpenshiftClusterRoleScopeRestriction(block : OpenshiftClusterRoleScopeRestriction.() -> Unit = {}): OpenshiftClusterRoleScopeRestriction {
+  val instance = OpenshiftClusterRoleScopeRestriction()
+  instance.block()
+  return instance
+}
+
+
+fun newOpenshiftRole(block : OpenshiftRole.() -> Unit = {}): OpenshiftRole {
+  val instance = OpenshiftRole()
+  instance.block()
+  return instance
+}
+
+
+fun newOpenshiftRoleBinding(block : OpenshiftRoleBinding.() -> Unit = {}): OpenshiftRoleBinding {
+  val instance = OpenshiftRoleBinding()
+  instance.block()
+  return instance
+}
+
+
+fun newOpenshiftRoleBindingList(block : OpenshiftRoleBindingList.() -> Unit = {}): OpenshiftRoleBindingList {
+  val instance = OpenshiftRoleBindingList()
+  instance.block()
+  return instance
+}
+
+
+fun newOpenshiftRoleBindingRestriction(block : OpenshiftRoleBindingRestriction.() -> Unit = {}): OpenshiftRoleBindingRestriction {
+  val instance = OpenshiftRoleBindingRestriction()
+  instance.block()
+  return instance
+}
+
+
+fun newOpenshiftRoleBindingRestrictionSpec(block : OpenshiftRoleBindingRestrictionSpec.() -> Unit = {}): OpenshiftRoleBindingRestrictionSpec {
+  val instance = OpenshiftRoleBindingRestrictionSpec()
+  instance.block()
+  return instance
+}
+
+
+fun newOpenshiftRoleList(block : OpenshiftRoleList.() -> Unit = {}): OpenshiftRoleList {
+  val instance = OpenshiftRoleList()
+  instance.block()
+  return instance
+}
+
+
 fun newParameter(block : Parameter.() -> Unit = {}): Parameter {
   val instance = Parameter()
-  instance.block()
-  return instance
-}
-
-
-fun newPolicy(block : Policy.() -> Unit = {}): Policy {
-  val instance = Policy()
-  instance.block()
-  return instance
-}
-
-
-fun newPolicyBinding(block : PolicyBinding.() -> Unit = {}): PolicyBinding {
-  val instance = PolicyBinding()
-  instance.block()
-  return instance
-}
-
-
-fun newPolicyBindingList(block : PolicyBindingList.() -> Unit = {}): PolicyBindingList {
-  val instance = PolicyBindingList()
-  instance.block()
-  return instance
-}
-
-
-fun newPolicyList(block : PolicyList.() -> Unit = {}): PolicyList {
-  val instance = PolicyList()
   instance.block()
   return instance
 }
@@ -920,48 +874,6 @@ fun newRepositoryImportSpec(block : RepositoryImportSpec.() -> Unit = {}): Repos
 
 fun newRepositoryImportStatus(block : RepositoryImportStatus.() -> Unit = {}): RepositoryImportStatus {
   val instance = RepositoryImportStatus()
-  instance.block()
-  return instance
-}
-
-
-fun newRole(block : Role.() -> Unit = {}): Role {
-  val instance = Role()
-  instance.block()
-  return instance
-}
-
-
-fun newRoleBinding(block : RoleBinding.() -> Unit = {}): RoleBinding {
-  val instance = RoleBinding()
-  instance.block()
-  return instance
-}
-
-
-fun newRoleBindingList(block : RoleBindingList.() -> Unit = {}): RoleBindingList {
-  val instance = RoleBindingList()
-  instance.block()
-  return instance
-}
-
-
-fun newRoleBindingRestriction(block : RoleBindingRestriction.() -> Unit = {}): RoleBindingRestriction {
-  val instance = RoleBindingRestriction()
-  instance.block()
-  return instance
-}
-
-
-fun newRoleBindingRestrictionSpec(block : RoleBindingRestrictionSpec.() -> Unit = {}): RoleBindingRestrictionSpec {
-  val instance = RoleBindingRestrictionSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newRoleList(block : RoleList.() -> Unit = {}): RoleList {
-  val instance = RoleList()
   instance.block()
   return instance
 }

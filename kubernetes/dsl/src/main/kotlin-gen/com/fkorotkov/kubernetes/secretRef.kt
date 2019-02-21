@@ -3,7 +3,10 @@ package com.fkorotkov.kubernetes
 
 import io.fabric8.kubernetes.api.model.CephFSPersistentVolumeSource
 import io.fabric8.kubernetes.api.model.CephFSVolumeSource
+import io.fabric8.kubernetes.api.model.CinderPersistentVolumeSource
+import io.fabric8.kubernetes.api.model.CinderVolumeSource
 import io.fabric8.kubernetes.api.model.EnvFromSource
+import io.fabric8.kubernetes.api.model.FlexPersistentVolumeSource
 import io.fabric8.kubernetes.api.model.FlexVolumeSource
 import io.fabric8.kubernetes.api.model.ISCSIPersistentVolumeSource
 import io.fabric8.kubernetes.api.model.ISCSIVolumeSource
@@ -37,9 +40,36 @@ fun  CephFSVolumeSource.`secretRef`(block: LocalObjectReference.() -> Unit = {})
 }
 
 
+fun  CinderPersistentVolumeSource.`secretRef`(block: SecretReference.() -> Unit = {}) {
+  if(this.`secretRef` == null) {
+    this.`secretRef` = SecretReference()
+  }
+
+  this.`secretRef`.block()
+}
+
+
+fun  CinderVolumeSource.`secretRef`(block: LocalObjectReference.() -> Unit = {}) {
+  if(this.`secretRef` == null) {
+    this.`secretRef` = LocalObjectReference()
+  }
+
+  this.`secretRef`.block()
+}
+
+
 fun  EnvFromSource.`secretRef`(block: SecretEnvSource.() -> Unit = {}) {
   if(this.`secretRef` == null) {
     this.`secretRef` = SecretEnvSource()
+  }
+
+  this.`secretRef`.block()
+}
+
+
+fun  FlexPersistentVolumeSource.`secretRef`(block: SecretReference.() -> Unit = {}) {
+  if(this.`secretRef` == null) {
+    this.`secretRef` = SecretReference()
   }
 
   this.`secretRef`.block()

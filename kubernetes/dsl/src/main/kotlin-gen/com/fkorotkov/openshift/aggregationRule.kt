@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.openshift
 
-import io.fabric8.kubernetes.api.model.rbac.KubernetesAggregationRule
-import io.fabric8.openshift.api.model.ClusterRole
+import io.fabric8.kubernetes.api.model.rbac.AggregationRule
+import io.fabric8.openshift.api.model.OpenshiftClusterRole
 
 
-fun  ClusterRole.`aggregationRule`(block: KubernetesAggregationRule.() -> Unit = {}) {
+fun  OpenshiftClusterRole.`aggregationRule`(block: AggregationRule.() -> Unit = {}) {
   if(this.`aggregationRule` == null) {
-    this.`aggregationRule` = KubernetesAggregationRule()
+    this.`aggregationRule` = AggregationRule()
   }
 
   this.`aggregationRule`.block()

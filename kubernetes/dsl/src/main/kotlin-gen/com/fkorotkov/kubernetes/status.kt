@@ -19,8 +19,12 @@ import io.fabric8.kubernetes.api.model.ResourceQuota
 import io.fabric8.kubernetes.api.model.ResourceQuotaStatus
 import io.fabric8.kubernetes.api.model.Service
 import io.fabric8.kubernetes.api.model.ServiceStatus
+import io.fabric8.kubernetes.api.model.Status
+import io.fabric8.kubernetes.api.model.admission.AdmissionResponse
 import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinition
 import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinitionStatus
+import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceSubresourceStatus
+import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceSubresources
 import io.fabric8.kubernetes.api.model.apps.DaemonSet
 import io.fabric8.kubernetes.api.model.apps.DaemonSetStatus
 import io.fabric8.kubernetes.api.model.apps.Deployment
@@ -38,12 +42,32 @@ import io.fabric8.kubernetes.api.model.batch.CronJob
 import io.fabric8.kubernetes.api.model.batch.CronJobStatus
 import io.fabric8.kubernetes.api.model.batch.Job
 import io.fabric8.kubernetes.api.model.batch.JobStatus
+import io.fabric8.kubernetes.api.model.certificates.CertificateSigningRequest
+import io.fabric8.kubernetes.api.model.certificates.CertificateSigningRequestStatus
 import io.fabric8.kubernetes.api.model.extensions.Ingress
 import io.fabric8.kubernetes.api.model.extensions.IngressStatus
 import io.fabric8.kubernetes.api.model.extensions.Scale
 import io.fabric8.kubernetes.api.model.extensions.ScaleStatus
 import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudget
 import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetStatus
+
+
+fun  AdmissionResponse.`status`(block: Status.() -> Unit = {}) {
+  if(this.`status` == null) {
+    this.`status` = Status()
+  }
+
+  this.`status`.block()
+}
+
+
+fun  CertificateSigningRequest.`status`(block: CertificateSigningRequestStatus.() -> Unit = {}) {
+  if(this.`status` == null) {
+    this.`status` = CertificateSigningRequestStatus()
+  }
+
+  this.`status`.block()
+}
 
 
 fun  CronJob.`status`(block: CronJobStatus.() -> Unit = {}) {
@@ -58,6 +82,15 @@ fun  CronJob.`status`(block: CronJobStatus.() -> Unit = {}) {
 fun  CustomResourceDefinition.`status`(block: CustomResourceDefinitionStatus.() -> Unit = {}) {
   if(this.`status` == null) {
     this.`status` = CustomResourceDefinitionStatus()
+  }
+
+  this.`status`.block()
+}
+
+
+fun  CustomResourceSubresources.`status`(block: CustomResourceSubresourceStatus.() -> Unit = {}) {
+  if(this.`status` == null) {
+    this.`status` = CustomResourceSubresourceStatus()
   }
 
   this.`status`.block()

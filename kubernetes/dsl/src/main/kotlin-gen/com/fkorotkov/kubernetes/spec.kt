@@ -42,6 +42,8 @@ import io.fabric8.kubernetes.api.model.batch.CronJobSpec
 import io.fabric8.kubernetes.api.model.batch.Job
 import io.fabric8.kubernetes.api.model.batch.JobSpec
 import io.fabric8.kubernetes.api.model.batch.JobTemplateSpec
+import io.fabric8.kubernetes.api.model.certificates.CertificateSigningRequest
+import io.fabric8.kubernetes.api.model.certificates.CertificateSigningRequestSpec
 import io.fabric8.kubernetes.api.model.extensions.Ingress
 import io.fabric8.kubernetes.api.model.extensions.IngressSpec
 import io.fabric8.kubernetes.api.model.extensions.PodSecurityPolicy
@@ -52,6 +54,17 @@ import io.fabric8.kubernetes.api.model.networking.NetworkPolicy
 import io.fabric8.kubernetes.api.model.networking.NetworkPolicySpec
 import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudget
 import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetSpec
+import io.fabric8.kubernetes.api.model.settings.PodPreset
+import io.fabric8.kubernetes.api.model.settings.PodPresetSpec
+
+
+fun  CertificateSigningRequest.`spec`(block: CertificateSigningRequestSpec.() -> Unit = {}) {
+  if(this.`spec` == null) {
+    this.`spec` = CertificateSigningRequestSpec()
+  }
+
+  this.`spec`.block()
+}
 
 
 fun  CronJob.`spec`(block: CronJobSpec.() -> Unit = {}) {
@@ -201,6 +214,15 @@ fun  Pod.`spec`(block: PodSpec.() -> Unit = {}) {
 fun  PodDisruptionBudget.`spec`(block: PodDisruptionBudgetSpec.() -> Unit = {}) {
   if(this.`spec` == null) {
     this.`spec` = PodDisruptionBudgetSpec()
+  }
+
+  this.`spec`.block()
+}
+
+
+fun  PodPreset.`spec`(block: PodPresetSpec.() -> Unit = {}) {
+  if(this.`spec` == null) {
+    this.`spec` = PodPresetSpec()
   }
 
   this.`spec`.block()

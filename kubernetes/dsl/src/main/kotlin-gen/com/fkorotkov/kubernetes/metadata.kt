@@ -41,6 +41,10 @@ import io.fabric8.kubernetes.api.model.ServiceAccount
 import io.fabric8.kubernetes.api.model.ServiceAccountList
 import io.fabric8.kubernetes.api.model.ServiceList
 import io.fabric8.kubernetes.api.model.Status
+import io.fabric8.kubernetes.api.model.admissionregistration.MutatingWebhookConfiguration
+import io.fabric8.kubernetes.api.model.admissionregistration.MutatingWebhookConfigurationList
+import io.fabric8.kubernetes.api.model.admissionregistration.ValidatingWebhookConfiguration
+import io.fabric8.kubernetes.api.model.admissionregistration.ValidatingWebhookConfigurationList
 import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinition
 import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinitionList
 import io.fabric8.kubernetes.api.model.apps.DaemonSet
@@ -59,6 +63,9 @@ import io.fabric8.kubernetes.api.model.batch.CronJobList
 import io.fabric8.kubernetes.api.model.batch.Job
 import io.fabric8.kubernetes.api.model.batch.JobList
 import io.fabric8.kubernetes.api.model.batch.JobTemplateSpec
+import io.fabric8.kubernetes.api.model.certificates.CertificateSigningRequest
+import io.fabric8.kubernetes.api.model.certificates.CertificateSigningRequestList
+import io.fabric8.kubernetes.api.model.events.Event
 import io.fabric8.kubernetes.api.model.extensions.Ingress
 import io.fabric8.kubernetes.api.model.extensions.IngressList
 import io.fabric8.kubernetes.api.model.extensions.PodSecurityPolicy
@@ -68,14 +75,18 @@ import io.fabric8.kubernetes.api.model.networking.NetworkPolicy
 import io.fabric8.kubernetes.api.model.networking.NetworkPolicyList
 import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudget
 import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetList
-import io.fabric8.kubernetes.api.model.rbac.KubernetesClusterRole
-import io.fabric8.kubernetes.api.model.rbac.KubernetesClusterRoleBinding
-import io.fabric8.kubernetes.api.model.rbac.KubernetesClusterRoleBindingList
-import io.fabric8.kubernetes.api.model.rbac.KubernetesClusterRoleList
-import io.fabric8.kubernetes.api.model.rbac.KubernetesRole
-import io.fabric8.kubernetes.api.model.rbac.KubernetesRoleBinding
-import io.fabric8.kubernetes.api.model.rbac.KubernetesRoleBindingList
-import io.fabric8.kubernetes.api.model.rbac.KubernetesRoleList
+import io.fabric8.kubernetes.api.model.rbac.ClusterRole
+import io.fabric8.kubernetes.api.model.rbac.ClusterRoleBinding
+import io.fabric8.kubernetes.api.model.rbac.ClusterRoleBindingList
+import io.fabric8.kubernetes.api.model.rbac.ClusterRoleList
+import io.fabric8.kubernetes.api.model.rbac.Role
+import io.fabric8.kubernetes.api.model.rbac.RoleBinding
+import io.fabric8.kubernetes.api.model.rbac.RoleBindingList
+import io.fabric8.kubernetes.api.model.rbac.RoleList
+import io.fabric8.kubernetes.api.model.scheduling.PriorityClass
+import io.fabric8.kubernetes.api.model.scheduling.PriorityClassList
+import io.fabric8.kubernetes.api.model.settings.PodPreset
+import io.fabric8.kubernetes.api.model.settings.PodPresetList
 import io.fabric8.kubernetes.api.model.storage.StorageClass
 import io.fabric8.kubernetes.api.model.storage.StorageClassList
 
@@ -92,6 +103,60 @@ fun  BaseKubernetesList.`metadata`(block: ListMeta.() -> Unit = {}) {
 fun  Binding.`metadata`(block: ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  CertificateSigningRequest.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  CertificateSigningRequestList.`metadata`(block: ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  ClusterRole.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  ClusterRoleBinding.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  ClusterRoleBindingList.`metadata`(block: ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  ClusterRoleList.`metadata`(block: ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ListMeta()
   }
 
   this.`metadata`.block()
@@ -233,6 +298,15 @@ fun  Event.`metadata`(block: ObjectMeta.() -> Unit = {}) {
 }
 
 
+fun  Event.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
 fun  EventList.`metadata`(block: ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = ListMeta()
@@ -305,78 +379,6 @@ fun  JobTemplateSpec.`metadata`(block: ObjectMeta.() -> Unit = {}) {
 }
 
 
-fun  KubernetesClusterRole.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  KubernetesClusterRoleBinding.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  KubernetesClusterRoleBindingList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  KubernetesClusterRoleList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  KubernetesRole.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  KubernetesRoleBinding.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  KubernetesRoleBindingList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  KubernetesRoleList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
 fun  LimitRange.`metadata`(block: ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = ObjectMeta()
@@ -398,6 +400,24 @@ fun  LimitRangeList.`metadata`(block: ListMeta.() -> Unit = {}) {
 fun  LocalSubjectAccessReview.`metadata`(block: ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  MutatingWebhookConfiguration.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  MutatingWebhookConfigurationList.`metadata`(block: ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ListMeta()
   }
 
   this.`metadata`.block()
@@ -530,6 +550,24 @@ fun  PodList.`metadata`(block: ListMeta.() -> Unit = {}) {
 }
 
 
+fun  PodPreset.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  PodPresetList.`metadata`(block: ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
 fun  PodSecurityPolicy.`metadata`(block: ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = ObjectMeta()
@@ -569,6 +607,24 @@ fun  PodTemplateList.`metadata`(block: ListMeta.() -> Unit = {}) {
 fun  PodTemplateSpec.`metadata`(block: ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  PriorityClass.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  PriorityClassList.`metadata`(block: ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ListMeta()
   }
 
   this.`metadata`.block()
@@ -621,6 +677,42 @@ fun  ResourceQuota.`metadata`(block: ObjectMeta.() -> Unit = {}) {
 
 
 fun  ResourceQuotaList.`metadata`(block: ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  Role.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  RoleBinding.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  RoleBindingList.`metadata`(block: ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  RoleList.`metadata`(block: ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = ListMeta()
   }
@@ -749,6 +841,24 @@ fun  SubjectAccessReview.`metadata`(block: ObjectMeta.() -> Unit = {}) {
 fun  TokenReview.`metadata`(block: ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  ValidatingWebhookConfiguration.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  ValidatingWebhookConfigurationList.`metadata`(block: ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ListMeta()
   }
 
   this.`metadata`.block()

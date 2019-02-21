@@ -8,13 +8,6 @@ import io.fabric8.openshift.api.model.BuildConfig
 import io.fabric8.openshift.api.model.BuildConfigList
 import io.fabric8.openshift.api.model.BuildList
 import io.fabric8.openshift.api.model.BuildRequest
-import io.fabric8.openshift.api.model.ClusterPolicy
-import io.fabric8.openshift.api.model.ClusterPolicyBinding
-import io.fabric8.openshift.api.model.ClusterPolicyBindingList
-import io.fabric8.openshift.api.model.ClusterPolicyList
-import io.fabric8.openshift.api.model.ClusterRole
-import io.fabric8.openshift.api.model.ClusterRoleBinding
-import io.fabric8.openshift.api.model.ClusterRoleBindingList
 import io.fabric8.openshift.api.model.DeploymentConfig
 import io.fabric8.openshift.api.model.DeploymentConfigList
 import io.fabric8.openshift.api.model.Group
@@ -39,18 +32,17 @@ import io.fabric8.openshift.api.model.OAuthClient
 import io.fabric8.openshift.api.model.OAuthClientAuthorization
 import io.fabric8.openshift.api.model.OAuthClientAuthorizationList
 import io.fabric8.openshift.api.model.OAuthClientList
-import io.fabric8.openshift.api.model.Policy
-import io.fabric8.openshift.api.model.PolicyBinding
-import io.fabric8.openshift.api.model.PolicyBindingList
-import io.fabric8.openshift.api.model.PolicyList
+import io.fabric8.openshift.api.model.OpenshiftClusterRole
+import io.fabric8.openshift.api.model.OpenshiftClusterRoleBinding
+import io.fabric8.openshift.api.model.OpenshiftClusterRoleBindingList
+import io.fabric8.openshift.api.model.OpenshiftRole
+import io.fabric8.openshift.api.model.OpenshiftRoleBinding
+import io.fabric8.openshift.api.model.OpenshiftRoleBindingList
+import io.fabric8.openshift.api.model.OpenshiftRoleBindingRestriction
+import io.fabric8.openshift.api.model.OpenshiftRoleList
 import io.fabric8.openshift.api.model.Project
 import io.fabric8.openshift.api.model.ProjectList
 import io.fabric8.openshift.api.model.ProjectRequest
-import io.fabric8.openshift.api.model.Role
-import io.fabric8.openshift.api.model.RoleBinding
-import io.fabric8.openshift.api.model.RoleBindingList
-import io.fabric8.openshift.api.model.RoleBindingRestriction
-import io.fabric8.openshift.api.model.RoleList
 import io.fabric8.openshift.api.model.Route
 import io.fabric8.openshift.api.model.RouteList
 import io.fabric8.openshift.api.model.SecurityContextConstraints
@@ -100,69 +92,6 @@ fun  BuildList.`metadata`(block: ListMeta.() -> Unit = {}) {
 fun  BuildRequest.`metadata`(block: ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  ClusterPolicy.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  ClusterPolicyBinding.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  ClusterPolicyBindingList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  ClusterPolicyList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  ClusterRole.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  ClusterRoleBinding.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  ClusterRoleBindingList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
   }
 
   this.`metadata`.block()
@@ -385,7 +314,7 @@ fun  OAuthClientList.`metadata`(block: ListMeta.() -> Unit = {}) {
 }
 
 
-fun  Policy.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  OpenshiftClusterRole.`metadata`(block: ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = ObjectMeta()
   }
@@ -394,7 +323,7 @@ fun  Policy.`metadata`(block: ObjectMeta.() -> Unit = {}) {
 }
 
 
-fun  PolicyBinding.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  OpenshiftClusterRoleBinding.`metadata`(block: ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = ObjectMeta()
   }
@@ -403,7 +332,7 @@ fun  PolicyBinding.`metadata`(block: ObjectMeta.() -> Unit = {}) {
 }
 
 
-fun  PolicyBindingList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  OpenshiftClusterRoleBindingList.`metadata`(block: ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = ListMeta()
   }
@@ -412,7 +341,43 @@ fun  PolicyBindingList.`metadata`(block: ListMeta.() -> Unit = {}) {
 }
 
 
-fun  PolicyList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  OpenshiftRole.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  OpenshiftRoleBinding.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  OpenshiftRoleBindingList.`metadata`(block: ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  OpenshiftRoleBindingRestriction.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  OpenshiftRoleList.`metadata`(block: ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = ListMeta()
   }
@@ -442,51 +407,6 @@ fun  ProjectList.`metadata`(block: ListMeta.() -> Unit = {}) {
 fun  ProjectRequest.`metadata`(block: ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  Role.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  RoleBinding.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  RoleBindingList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  RoleBindingRestriction.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  RoleList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
   }
 
   this.`metadata`.block()

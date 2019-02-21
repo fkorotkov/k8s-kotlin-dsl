@@ -11,10 +11,10 @@ import io.fabric8.openshift.api.model.ImageStream
 import io.fabric8.openshift.api.model.ImageStreamImport
 import io.fabric8.openshift.api.model.ImageStreamImportSpec
 import io.fabric8.openshift.api.model.ImageStreamSpec
+import io.fabric8.openshift.api.model.OpenshiftRoleBindingRestriction
+import io.fabric8.openshift.api.model.OpenshiftRoleBindingRestrictionSpec
 import io.fabric8.openshift.api.model.Project
 import io.fabric8.openshift.api.model.ProjectSpec
-import io.fabric8.openshift.api.model.RoleBindingRestriction
-import io.fabric8.openshift.api.model.RoleBindingRestrictionSpec
 import io.fabric8.openshift.api.model.Route
 import io.fabric8.openshift.api.model.RouteSpec
 
@@ -64,18 +64,18 @@ fun  ImageStreamImport.`spec`(block: ImageStreamImportSpec.() -> Unit = {}) {
 }
 
 
-fun  Project.`spec`(block: ProjectSpec.() -> Unit = {}) {
+fun  OpenshiftRoleBindingRestriction.`spec`(block: OpenshiftRoleBindingRestrictionSpec.() -> Unit = {}) {
   if(this.`spec` == null) {
-    this.`spec` = ProjectSpec()
+    this.`spec` = OpenshiftRoleBindingRestrictionSpec()
   }
 
   this.`spec`.block()
 }
 
 
-fun  RoleBindingRestriction.`spec`(block: RoleBindingRestrictionSpec.() -> Unit = {}) {
+fun  Project.`spec`(block: ProjectSpec.() -> Unit = {}) {
   if(this.`spec` == null) {
-    this.`spec` = RoleBindingRestrictionSpec()
+    this.`spec` = ProjectSpec()
   }
 
   this.`spec`.block()
