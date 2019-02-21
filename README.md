@@ -24,12 +24,12 @@ dependencies {
 Let's check out how to create an Ingress via [fabric8 client](https://github.com/fabric8io/kubernetes-client). Don't forget to add a dependency on `io.fabric8:kubernetes-client:${kubernetes_client_version}`.
 
 ```kotlin
-import com.fkorotkov.kubernetes.*
+import com.fkorotkov.kubernetes.extensions.*
 import io.fabric8.kubernetes.api.model.IntOrString
 import io.fabric8.kubernetes.client.DefaultKubernetesClient
 
 
-fun main(args: Array<String>) {
+fun main() {
   val client = DefaultKubernetesClient().inNamespace("default")
   client.extensions().ingresses().createOrReplace(
     newIngress {
@@ -65,8 +65,10 @@ baseService.apply {
 Here is an example of `BaseDeployment` that defines a deployment with one replica and mounts a secret that can be used by the service.
 
 ```kotlin
+import com.fkorotkov.kubernetes.*
+import com.fkorotkov.kubernetes.apps.*
 import io.fabric8.kubernetes.api.model.IntOrString
-import io.fabric8.kubernetes.api.model.extensions.Deployment
+import io.fabric8.kubernetes.api.model.apps.Deployment
 
 class BaseDeployment : Deployment {
   constructor(serviceName: String) {

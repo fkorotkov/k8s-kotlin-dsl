@@ -1,9 +1,9 @@
-import com.fkorotkov.kubernetes.*
+import com.fkorotkov.kubernetes.extensions.*
 import io.fabric8.kubernetes.api.model.IntOrString
 import io.fabric8.kubernetes.client.DefaultKubernetesClient
 
 
-fun main(args: Array<String>) {
+fun main() {
   val client = DefaultKubernetesClient().inNamespace("default")
   client.extensions().ingresses().createOrReplace(
     newIngress {
