@@ -1,10 +1,8 @@
 package com.fkorotkov.kotlin.dsl
 
+import com.fkorotkov.kotlin.util.uniqueSimpleAlias
 import java.io.File
-import java.lang.Character.isUpperCase
-import java.util.*
 import kotlin.reflect.KClass
-import kotlin.reflect.KMutableProperty
 
 object ClassBuilderGenerator {
   fun generateClassBuilders(
@@ -28,7 +26,7 @@ object ClassBuilderGenerator {
 package $outputPackage
 
 ${
-allClasses.map { it.qualifiedName }.toSet().map { "import $it" }.sorted().joinToString("\n")
+    allClasses.map { "import ${it.qualifiedName} as ${it.uniqueSimpleAlias}" }.toSet().sorted().joinToString("\n")
 }
 
 ${
@@ -39,8 +37,8 @@ allClasses.map { classBuilderTemplate(it) }.joinToString("\n")
 
   private fun classBuilderTemplate(clazz: KClass<*>): String {
     return """
-fun new${clazz.simpleName}(block : ${clazz.simpleName}.() -> Unit = {}): ${clazz.simpleName} {
-  val instance = ${clazz.simpleName}()
+fun new${clazz.simpleName}(block : ${clazz.uniqueSimpleAlias}.() -> Unit = {}): ${clazz.uniqueSimpleAlias} {
+  val instance = ${clazz.uniqueSimpleAlias}()
   instance.block()
   return instance
 }
