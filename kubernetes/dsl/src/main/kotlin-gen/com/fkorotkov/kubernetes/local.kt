@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.LocalVolumeSource
-import io.fabric8.kubernetes.api.model.PersistentVolumeSpec
+import io.fabric8.kubernetes.api.model.LocalVolumeSource as model_LocalVolumeSource
+import io.fabric8.kubernetes.api.model.PersistentVolumeSpec as model_PersistentVolumeSpec
 
 
-fun  PersistentVolumeSpec.`local`(block: LocalVolumeSource.() -> Unit = {}) {
+fun  model_PersistentVolumeSpec.`local`(block: model_LocalVolumeSource.() -> Unit = {}) {
   if(this.`local` == null) {
-    this.`local` = LocalVolumeSource()
+    this.`local` = model_LocalVolumeSource()
   }
 
   this.`local`.block()

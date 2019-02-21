@@ -1,754 +1,384 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.BaseKubernetesList
-import io.fabric8.kubernetes.api.model.Binding
-import io.fabric8.kubernetes.api.model.ComponentStatus
-import io.fabric8.kubernetes.api.model.ComponentStatusList
-import io.fabric8.kubernetes.api.model.ConfigMap
-import io.fabric8.kubernetes.api.model.ConfigMapList
-import io.fabric8.kubernetes.api.model.Endpoints
-import io.fabric8.kubernetes.api.model.EndpointsList
-import io.fabric8.kubernetes.api.model.Event
-import io.fabric8.kubernetes.api.model.EventList
-import io.fabric8.kubernetes.api.model.HorizontalPodAutoscaler
-import io.fabric8.kubernetes.api.model.HorizontalPodAutoscalerList
-import io.fabric8.kubernetes.api.model.LimitRange
-import io.fabric8.kubernetes.api.model.LimitRangeList
-import io.fabric8.kubernetes.api.model.ListMeta
-import io.fabric8.kubernetes.api.model.Namespace
-import io.fabric8.kubernetes.api.model.NamespaceList
-import io.fabric8.kubernetes.api.model.Node
-import io.fabric8.kubernetes.api.model.NodeList
-import io.fabric8.kubernetes.api.model.ObjectMeta
-import io.fabric8.kubernetes.api.model.PersistentVolume
-import io.fabric8.kubernetes.api.model.PersistentVolumeClaim
-import io.fabric8.kubernetes.api.model.PersistentVolumeClaimList
-import io.fabric8.kubernetes.api.model.PersistentVolumeList
-import io.fabric8.kubernetes.api.model.Pod
-import io.fabric8.kubernetes.api.model.PodList
-import io.fabric8.kubernetes.api.model.PodTemplate
-import io.fabric8.kubernetes.api.model.PodTemplateList
-import io.fabric8.kubernetes.api.model.PodTemplateSpec
-import io.fabric8.kubernetes.api.model.ReplicationController
-import io.fabric8.kubernetes.api.model.ReplicationControllerList
-import io.fabric8.kubernetes.api.model.ResourceQuota
-import io.fabric8.kubernetes.api.model.ResourceQuotaList
-import io.fabric8.kubernetes.api.model.Secret
-import io.fabric8.kubernetes.api.model.SecretList
-import io.fabric8.kubernetes.api.model.Service
-import io.fabric8.kubernetes.api.model.ServiceAccount
-import io.fabric8.kubernetes.api.model.ServiceAccountList
-import io.fabric8.kubernetes.api.model.ServiceList
-import io.fabric8.kubernetes.api.model.Status
-import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinition
-import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinitionList
-import io.fabric8.kubernetes.api.model.apps.DaemonSet
-import io.fabric8.kubernetes.api.model.apps.DaemonSetList
-import io.fabric8.kubernetes.api.model.apps.Deployment
-import io.fabric8.kubernetes.api.model.apps.DeploymentList
-import io.fabric8.kubernetes.api.model.apps.ReplicaSet
-import io.fabric8.kubernetes.api.model.apps.ReplicaSetList
-import io.fabric8.kubernetes.api.model.apps.StatefulSet
-import io.fabric8.kubernetes.api.model.apps.StatefulSetList
-import io.fabric8.kubernetes.api.model.authentication.TokenReview
-import io.fabric8.kubernetes.api.model.authorization.LocalSubjectAccessReview
-import io.fabric8.kubernetes.api.model.authorization.SubjectAccessReview
-import io.fabric8.kubernetes.api.model.batch.CronJob
-import io.fabric8.kubernetes.api.model.batch.CronJobList
-import io.fabric8.kubernetes.api.model.batch.Job
-import io.fabric8.kubernetes.api.model.batch.JobList
-import io.fabric8.kubernetes.api.model.batch.JobTemplateSpec
-import io.fabric8.kubernetes.api.model.extensions.Ingress
-import io.fabric8.kubernetes.api.model.extensions.IngressList
-import io.fabric8.kubernetes.api.model.extensions.PodSecurityPolicy
-import io.fabric8.kubernetes.api.model.extensions.PodSecurityPolicyList
-import io.fabric8.kubernetes.api.model.extensions.Scale
-import io.fabric8.kubernetes.api.model.networking.NetworkPolicy
-import io.fabric8.kubernetes.api.model.networking.NetworkPolicyList
-import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudget
-import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetList
-import io.fabric8.kubernetes.api.model.rbac.KubernetesClusterRole
-import io.fabric8.kubernetes.api.model.rbac.KubernetesClusterRoleBinding
-import io.fabric8.kubernetes.api.model.rbac.KubernetesClusterRoleBindingList
-import io.fabric8.kubernetes.api.model.rbac.KubernetesClusterRoleList
-import io.fabric8.kubernetes.api.model.rbac.KubernetesRole
-import io.fabric8.kubernetes.api.model.rbac.KubernetesRoleBinding
-import io.fabric8.kubernetes.api.model.rbac.KubernetesRoleBindingList
-import io.fabric8.kubernetes.api.model.rbac.KubernetesRoleList
-import io.fabric8.kubernetes.api.model.storage.StorageClass
-import io.fabric8.kubernetes.api.model.storage.StorageClassList
+import io.fabric8.kubernetes.api.model.BaseKubernetesList as model_BaseKubernetesList
+import io.fabric8.kubernetes.api.model.Binding as model_Binding
+import io.fabric8.kubernetes.api.model.ComponentStatus as model_ComponentStatus
+import io.fabric8.kubernetes.api.model.ComponentStatusList as model_ComponentStatusList
+import io.fabric8.kubernetes.api.model.ConfigMap as model_ConfigMap
+import io.fabric8.kubernetes.api.model.ConfigMapList as model_ConfigMapList
+import io.fabric8.kubernetes.api.model.Endpoints as model_Endpoints
+import io.fabric8.kubernetes.api.model.EndpointsList as model_EndpointsList
+import io.fabric8.kubernetes.api.model.Event as model_Event
+import io.fabric8.kubernetes.api.model.EventList as model_EventList
+import io.fabric8.kubernetes.api.model.HorizontalPodAutoscaler as model_HorizontalPodAutoscaler
+import io.fabric8.kubernetes.api.model.HorizontalPodAutoscalerList as model_HorizontalPodAutoscalerList
+import io.fabric8.kubernetes.api.model.LimitRange as model_LimitRange
+import io.fabric8.kubernetes.api.model.LimitRangeList as model_LimitRangeList
+import io.fabric8.kubernetes.api.model.ListMeta as model_ListMeta
+import io.fabric8.kubernetes.api.model.Namespace as model_Namespace
+import io.fabric8.kubernetes.api.model.NamespaceList as model_NamespaceList
+import io.fabric8.kubernetes.api.model.Node as model_Node
+import io.fabric8.kubernetes.api.model.NodeList as model_NodeList
+import io.fabric8.kubernetes.api.model.ObjectMeta as model_ObjectMeta
+import io.fabric8.kubernetes.api.model.PersistentVolume as model_PersistentVolume
+import io.fabric8.kubernetes.api.model.PersistentVolumeClaim as model_PersistentVolumeClaim
+import io.fabric8.kubernetes.api.model.PersistentVolumeClaimList as model_PersistentVolumeClaimList
+import io.fabric8.kubernetes.api.model.PersistentVolumeList as model_PersistentVolumeList
+import io.fabric8.kubernetes.api.model.Pod as model_Pod
+import io.fabric8.kubernetes.api.model.PodList as model_PodList
+import io.fabric8.kubernetes.api.model.PodTemplate as model_PodTemplate
+import io.fabric8.kubernetes.api.model.PodTemplateList as model_PodTemplateList
+import io.fabric8.kubernetes.api.model.PodTemplateSpec as model_PodTemplateSpec
+import io.fabric8.kubernetes.api.model.ReplicationController as model_ReplicationController
+import io.fabric8.kubernetes.api.model.ReplicationControllerList as model_ReplicationControllerList
+import io.fabric8.kubernetes.api.model.ResourceQuota as model_ResourceQuota
+import io.fabric8.kubernetes.api.model.ResourceQuotaList as model_ResourceQuotaList
+import io.fabric8.kubernetes.api.model.Secret as model_Secret
+import io.fabric8.kubernetes.api.model.SecretList as model_SecretList
+import io.fabric8.kubernetes.api.model.Service as model_Service
+import io.fabric8.kubernetes.api.model.ServiceAccount as model_ServiceAccount
+import io.fabric8.kubernetes.api.model.ServiceAccountList as model_ServiceAccountList
+import io.fabric8.kubernetes.api.model.ServiceList as model_ServiceList
+import io.fabric8.kubernetes.api.model.Status as model_Status
 
 
-fun  BaseKubernetesList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_BaseKubernetesList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  Binding.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_Binding.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  ComponentStatus.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_ComponentStatus.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  ComponentStatusList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_ComponentStatusList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  ConfigMap.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_ConfigMap.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  ConfigMapList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_ConfigMapList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  CronJob.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_Endpoints.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  CronJobList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_EndpointsList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  CustomResourceDefinition.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_Event.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  CustomResourceDefinitionList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_EventList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  DaemonSet.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_HorizontalPodAutoscaler.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  DaemonSetList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_HorizontalPodAutoscalerList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  Deployment.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_LimitRange.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  DeploymentList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_LimitRangeList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  Endpoints.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_Namespace.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  EndpointsList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_NamespaceList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  Event.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_Node.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  EventList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_NodeList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  HorizontalPodAutoscaler.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_PersistentVolume.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  HorizontalPodAutoscalerList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_PersistentVolumeClaim.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  Ingress.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_PersistentVolumeClaimList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  IngressList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_PersistentVolumeList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  Job.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_Pod.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  JobList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_PodList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  JobTemplateSpec.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_PodTemplate.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  KubernetesClusterRole.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_PodTemplateList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  KubernetesClusterRoleBinding.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_PodTemplateSpec.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  KubernetesClusterRoleBindingList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_ReplicationController.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  KubernetesClusterRoleList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_ReplicationControllerList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  KubernetesRole.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_ResourceQuota.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  KubernetesRoleBinding.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_ResourceQuotaList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  KubernetesRoleBindingList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_Secret.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  KubernetesRoleList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_SecretList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  LimitRange.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_Service.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  LimitRangeList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_ServiceAccount.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  LocalSubjectAccessReview.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_ServiceAccountList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  Namespace.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_ServiceList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  NamespaceList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_Status.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  NetworkPolicy.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  NetworkPolicyList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  Node.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  NodeList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  PersistentVolume.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  PersistentVolumeClaim.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  PersistentVolumeClaimList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  PersistentVolumeList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  Pod.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  PodDisruptionBudget.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  PodDisruptionBudgetList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  PodList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  PodSecurityPolicy.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  PodSecurityPolicyList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  PodTemplate.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  PodTemplateList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  PodTemplateSpec.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  ReplicaSet.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  ReplicaSetList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  ReplicationController.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  ReplicationControllerList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  ResourceQuota.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  ResourceQuotaList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  Scale.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  Secret.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  SecretList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  Service.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  ServiceAccount.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  ServiceAccountList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  ServiceList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  StatefulSet.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  StatefulSetList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  Status.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  StorageClass.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  StorageClassList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  SubjectAccessReview.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  TokenReview.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()

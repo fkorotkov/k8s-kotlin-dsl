@@ -1,23 +1,23 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.GCEPersistentDiskVolumeSource
-import io.fabric8.kubernetes.api.model.PersistentVolumeSpec
-import io.fabric8.kubernetes.api.model.Volume
+import io.fabric8.kubernetes.api.model.GCEPersistentDiskVolumeSource as model_GCEPersistentDiskVolumeSource
+import io.fabric8.kubernetes.api.model.PersistentVolumeSpec as model_PersistentVolumeSpec
+import io.fabric8.kubernetes.api.model.Volume as model_Volume
 
 
-fun  PersistentVolumeSpec.`gcePersistentDisk`(block: GCEPersistentDiskVolumeSource.() -> Unit = {}) {
+fun  model_PersistentVolumeSpec.`gcePersistentDisk`(block: model_GCEPersistentDiskVolumeSource.() -> Unit = {}) {
   if(this.`gcePersistentDisk` == null) {
-    this.`gcePersistentDisk` = GCEPersistentDiskVolumeSource()
+    this.`gcePersistentDisk` = model_GCEPersistentDiskVolumeSource()
   }
 
   this.`gcePersistentDisk`.block()
 }
 
 
-fun  Volume.`gcePersistentDisk`(block: GCEPersistentDiskVolumeSource.() -> Unit = {}) {
+fun  model_Volume.`gcePersistentDisk`(block: model_GCEPersistentDiskVolumeSource.() -> Unit = {}) {
   if(this.`gcePersistentDisk` == null) {
-    this.`gcePersistentDisk` = GCEPersistentDiskVolumeSource()
+    this.`gcePersistentDisk` = model_GCEPersistentDiskVolumeSource()
   }
 
   this.`gcePersistentDisk`.block()

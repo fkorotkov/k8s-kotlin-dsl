@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.openshift
 
-import io.fabric8.openshift.api.model.BuildTriggerCause
-import io.fabric8.openshift.api.model.GitHubWebHookCause
+import io.fabric8.openshift.api.model.BuildTriggerCause as model_BuildTriggerCause
+import io.fabric8.openshift.api.model.GitHubWebHookCause as model_GitHubWebHookCause
 
 
-fun  BuildTriggerCause.`githubWebHook`(block: GitHubWebHookCause.() -> Unit = {}) {
+fun  model_BuildTriggerCause.`githubWebHook`(block: model_GitHubWebHookCause.() -> Unit = {}) {
   if(this.`githubWebHook` == null) {
-    this.`githubWebHook` = GitHubWebHookCause()
+    this.`githubWebHook` = model_GitHubWebHookCause()
   }
 
   this.`githubWebHook`.block()

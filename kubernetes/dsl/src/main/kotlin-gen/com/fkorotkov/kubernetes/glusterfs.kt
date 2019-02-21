@@ -1,23 +1,24 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.GlusterfsVolumeSource
-import io.fabric8.kubernetes.api.model.PersistentVolumeSpec
-import io.fabric8.kubernetes.api.model.Volume
+import io.fabric8.kubernetes.api.model.GlusterfsPersistentVolumeSource as model_GlusterfsPersistentVolumeSource
+import io.fabric8.kubernetes.api.model.GlusterfsVolumeSource as model_GlusterfsVolumeSource
+import io.fabric8.kubernetes.api.model.PersistentVolumeSpec as model_PersistentVolumeSpec
+import io.fabric8.kubernetes.api.model.Volume as model_Volume
 
 
-fun  PersistentVolumeSpec.`glusterfs`(block: GlusterfsVolumeSource.() -> Unit = {}) {
+fun  model_PersistentVolumeSpec.`glusterfs`(block: model_GlusterfsPersistentVolumeSource.() -> Unit = {}) {
   if(this.`glusterfs` == null) {
-    this.`glusterfs` = GlusterfsVolumeSource()
+    this.`glusterfs` = model_GlusterfsPersistentVolumeSource()
   }
 
   this.`glusterfs`.block()
 }
 
 
-fun  Volume.`glusterfs`(block: GlusterfsVolumeSource.() -> Unit = {}) {
+fun  model_Volume.`glusterfs`(block: model_GlusterfsVolumeSource.() -> Unit = {}) {
   if(this.`glusterfs` == null) {
-    this.`glusterfs` = GlusterfsVolumeSource()
+    this.`glusterfs` = model_GlusterfsVolumeSource()
   }
 
   this.`glusterfs`.block()

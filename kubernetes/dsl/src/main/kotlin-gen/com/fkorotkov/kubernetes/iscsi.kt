@@ -1,24 +1,24 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.ISCSIPersistentVolumeSource
-import io.fabric8.kubernetes.api.model.ISCSIVolumeSource
-import io.fabric8.kubernetes.api.model.PersistentVolumeSpec
-import io.fabric8.kubernetes.api.model.Volume
+import io.fabric8.kubernetes.api.model.ISCSIPersistentVolumeSource as model_ISCSIPersistentVolumeSource
+import io.fabric8.kubernetes.api.model.ISCSIVolumeSource as model_ISCSIVolumeSource
+import io.fabric8.kubernetes.api.model.PersistentVolumeSpec as model_PersistentVolumeSpec
+import io.fabric8.kubernetes.api.model.Volume as model_Volume
 
 
-fun  PersistentVolumeSpec.`iscsi`(block: ISCSIPersistentVolumeSource.() -> Unit = {}) {
+fun  model_PersistentVolumeSpec.`iscsi`(block: model_ISCSIPersistentVolumeSource.() -> Unit = {}) {
   if(this.`iscsi` == null) {
-    this.`iscsi` = ISCSIPersistentVolumeSource()
+    this.`iscsi` = model_ISCSIPersistentVolumeSource()
   }
 
   this.`iscsi`.block()
 }
 
 
-fun  Volume.`iscsi`(block: ISCSIVolumeSource.() -> Unit = {}) {
+fun  model_Volume.`iscsi`(block: model_ISCSIVolumeSource.() -> Unit = {}) {
   if(this.`iscsi` == null) {
-    this.`iscsi` = ISCSIVolumeSource()
+    this.`iscsi` = model_ISCSIVolumeSource()
   }
 
   this.`iscsi`.block()

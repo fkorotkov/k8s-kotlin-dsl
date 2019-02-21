@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.ContainerState
-import io.fabric8.kubernetes.api.model.ContainerStateWaiting
+import io.fabric8.kubernetes.api.model.ContainerState as model_ContainerState
+import io.fabric8.kubernetes.api.model.ContainerStateWaiting as model_ContainerStateWaiting
 
 
-fun  ContainerState.`waiting`(block: ContainerStateWaiting.() -> Unit = {}) {
+fun  model_ContainerState.`waiting`(block: model_ContainerStateWaiting.() -> Unit = {}) {
   if(this.`waiting` == null) {
-    this.`waiting` = ContainerStateWaiting()
+    this.`waiting` = model_ContainerStateWaiting()
   }
 
   this.`waiting`.block()

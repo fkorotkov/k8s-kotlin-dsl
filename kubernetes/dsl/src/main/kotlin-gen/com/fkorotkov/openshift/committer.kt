@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.openshift
 
-import io.fabric8.openshift.api.model.GitSourceRevision
-import io.fabric8.openshift.api.model.SourceControlUser
+import io.fabric8.openshift.api.model.GitSourceRevision as model_GitSourceRevision
+import io.fabric8.openshift.api.model.SourceControlUser as model_SourceControlUser
 
 
-fun  GitSourceRevision.`committer`(block: SourceControlUser.() -> Unit = {}) {
+fun  model_GitSourceRevision.`committer`(block: model_SourceControlUser.() -> Unit = {}) {
   if(this.`committer` == null) {
-    this.`committer` = SourceControlUser()
+    this.`committer` = model_SourceControlUser()
   }
 
   this.`committer`.block()

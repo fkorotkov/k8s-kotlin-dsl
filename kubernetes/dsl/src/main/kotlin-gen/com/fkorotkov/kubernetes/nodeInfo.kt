@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.NodeStatus
-import io.fabric8.kubernetes.api.model.NodeSystemInfo
+import io.fabric8.kubernetes.api.model.NodeStatus as model_NodeStatus
+import io.fabric8.kubernetes.api.model.NodeSystemInfo as model_NodeSystemInfo
 
 
-fun  NodeStatus.`nodeInfo`(block: NodeSystemInfo.() -> Unit = {}) {
+fun  model_NodeStatus.`nodeInfo`(block: model_NodeSystemInfo.() -> Unit = {}) {
   if(this.`nodeInfo` == null) {
-    this.`nodeInfo` = NodeSystemInfo()
+    this.`nodeInfo` = model_NodeSystemInfo()
   }
 
   this.`nodeInfo`.block()

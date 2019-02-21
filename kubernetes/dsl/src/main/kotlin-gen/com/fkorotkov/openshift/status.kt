@@ -1,100 +1,100 @@
 // GENERATED
 package com.fkorotkov.openshift
 
-import io.fabric8.kubernetes.api.model.Status
-import io.fabric8.openshift.api.model.Build
-import io.fabric8.openshift.api.model.BuildConfig
-import io.fabric8.openshift.api.model.BuildConfigStatus
-import io.fabric8.openshift.api.model.BuildStatus
-import io.fabric8.openshift.api.model.DeploymentConfig
-import io.fabric8.openshift.api.model.DeploymentConfigStatus
-import io.fabric8.openshift.api.model.ImageImportStatus
-import io.fabric8.openshift.api.model.ImageStream
-import io.fabric8.openshift.api.model.ImageStreamImport
-import io.fabric8.openshift.api.model.ImageStreamImportStatus
-import io.fabric8.openshift.api.model.ImageStreamStatus
-import io.fabric8.openshift.api.model.Project
-import io.fabric8.openshift.api.model.ProjectStatus
-import io.fabric8.openshift.api.model.RepositoryImportStatus
-import io.fabric8.openshift.api.model.Route
-import io.fabric8.openshift.api.model.RouteStatus
+import io.fabric8.kubernetes.api.model.Status as model_Status
+import io.fabric8.openshift.api.model.Build as model_Build
+import io.fabric8.openshift.api.model.BuildConfig as model_BuildConfig
+import io.fabric8.openshift.api.model.BuildConfigStatus as model_BuildConfigStatus
+import io.fabric8.openshift.api.model.BuildStatus as model_BuildStatus
+import io.fabric8.openshift.api.model.DeploymentConfig as model_DeploymentConfig
+import io.fabric8.openshift.api.model.DeploymentConfigStatus as model_DeploymentConfigStatus
+import io.fabric8.openshift.api.model.ImageImportStatus as model_ImageImportStatus
+import io.fabric8.openshift.api.model.ImageStream as model_ImageStream
+import io.fabric8.openshift.api.model.ImageStreamImport as model_ImageStreamImport
+import io.fabric8.openshift.api.model.ImageStreamImportStatus as model_ImageStreamImportStatus
+import io.fabric8.openshift.api.model.ImageStreamStatus as model_ImageStreamStatus
+import io.fabric8.openshift.api.model.Project as model_Project
+import io.fabric8.openshift.api.model.ProjectStatus as model_ProjectStatus
+import io.fabric8.openshift.api.model.RepositoryImportStatus as model_RepositoryImportStatus
+import io.fabric8.openshift.api.model.Route as model_Route
+import io.fabric8.openshift.api.model.RouteStatus as model_RouteStatus
 
 
-fun  Build.`status`(block: BuildStatus.() -> Unit = {}) {
+fun  model_Build.`status`(block: model_BuildStatus.() -> Unit = {}) {
   if(this.`status` == null) {
-    this.`status` = BuildStatus()
+    this.`status` = model_BuildStatus()
   }
 
   this.`status`.block()
 }
 
 
-fun  BuildConfig.`status`(block: BuildConfigStatus.() -> Unit = {}) {
+fun  model_BuildConfig.`status`(block: model_BuildConfigStatus.() -> Unit = {}) {
   if(this.`status` == null) {
-    this.`status` = BuildConfigStatus()
+    this.`status` = model_BuildConfigStatus()
   }
 
   this.`status`.block()
 }
 
 
-fun  DeploymentConfig.`status`(block: DeploymentConfigStatus.() -> Unit = {}) {
+fun  model_DeploymentConfig.`status`(block: model_DeploymentConfigStatus.() -> Unit = {}) {
   if(this.`status` == null) {
-    this.`status` = DeploymentConfigStatus()
+    this.`status` = model_DeploymentConfigStatus()
   }
 
   this.`status`.block()
 }
 
 
-fun  ImageImportStatus.`status`(block: Status.() -> Unit = {}) {
+fun  model_ImageImportStatus.`status`(block: model_Status.() -> Unit = {}) {
   if(this.`status` == null) {
-    this.`status` = Status()
+    this.`status` = model_Status()
   }
 
   this.`status`.block()
 }
 
 
-fun  ImageStream.`status`(block: ImageStreamStatus.() -> Unit = {}) {
+fun  model_ImageStream.`status`(block: model_ImageStreamStatus.() -> Unit = {}) {
   if(this.`status` == null) {
-    this.`status` = ImageStreamStatus()
+    this.`status` = model_ImageStreamStatus()
   }
 
   this.`status`.block()
 }
 
 
-fun  ImageStreamImport.`status`(block: ImageStreamImportStatus.() -> Unit = {}) {
+fun  model_ImageStreamImport.`status`(block: model_ImageStreamImportStatus.() -> Unit = {}) {
   if(this.`status` == null) {
-    this.`status` = ImageStreamImportStatus()
+    this.`status` = model_ImageStreamImportStatus()
   }
 
   this.`status`.block()
 }
 
 
-fun  Project.`status`(block: ProjectStatus.() -> Unit = {}) {
+fun  model_Project.`status`(block: model_ProjectStatus.() -> Unit = {}) {
   if(this.`status` == null) {
-    this.`status` = ProjectStatus()
+    this.`status` = model_ProjectStatus()
   }
 
   this.`status`.block()
 }
 
 
-fun  RepositoryImportStatus.`status`(block: Status.() -> Unit = {}) {
+fun  model_RepositoryImportStatus.`status`(block: model_Status.() -> Unit = {}) {
   if(this.`status` == null) {
-    this.`status` = Status()
+    this.`status` = model_Status()
   }
 
   this.`status`.block()
 }
 
 
-fun  Route.`status`(block: RouteStatus.() -> Unit = {}) {
+fun  model_Route.`status`(block: model_RouteStatus.() -> Unit = {}) {
   if(this.`status` == null) {
-    this.`status` = RouteStatus()
+    this.`status` = model_RouteStatus()
   }
 
   this.`status`.block()

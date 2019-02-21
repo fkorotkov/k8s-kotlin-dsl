@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.ObjectReference
-import io.fabric8.kubernetes.api.model.PersistentVolumeSpec
+import io.fabric8.kubernetes.api.model.ObjectReference as model_ObjectReference
+import io.fabric8.kubernetes.api.model.PersistentVolumeSpec as model_PersistentVolumeSpec
 
 
-fun  PersistentVolumeSpec.`claimRef`(block: ObjectReference.() -> Unit = {}) {
+fun  model_PersistentVolumeSpec.`claimRef`(block: model_ObjectReference.() -> Unit = {}) {
   if(this.`claimRef` == null) {
-    this.`claimRef` = ObjectReference()
+    this.`claimRef` = model_ObjectReference()
   }
 
   this.`claimRef`.block()

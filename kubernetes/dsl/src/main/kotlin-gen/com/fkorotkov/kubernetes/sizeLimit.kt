@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.EmptyDirVolumeSource
-import io.fabric8.kubernetes.api.model.Quantity
+import io.fabric8.kubernetes.api.model.EmptyDirVolumeSource as model_EmptyDirVolumeSource
+import io.fabric8.kubernetes.api.model.Quantity as model_Quantity
 
 
-fun  EmptyDirVolumeSource.`sizeLimit`(block: Quantity.() -> Unit = {}) {
+fun  model_EmptyDirVolumeSource.`sizeLimit`(block: model_Quantity.() -> Unit = {}) {
   if(this.`sizeLimit` == null) {
-    this.`sizeLimit` = Quantity()
+    this.`sizeLimit` = model_Quantity()
   }
 
   this.`sizeLimit`.block()

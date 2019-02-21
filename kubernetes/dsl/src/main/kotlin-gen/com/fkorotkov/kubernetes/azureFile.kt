@@ -1,24 +1,24 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.AzureFilePersistentVolumeSource
-import io.fabric8.kubernetes.api.model.AzureFileVolumeSource
-import io.fabric8.kubernetes.api.model.PersistentVolumeSpec
-import io.fabric8.kubernetes.api.model.Volume
+import io.fabric8.kubernetes.api.model.AzureFilePersistentVolumeSource as model_AzureFilePersistentVolumeSource
+import io.fabric8.kubernetes.api.model.AzureFileVolumeSource as model_AzureFileVolumeSource
+import io.fabric8.kubernetes.api.model.PersistentVolumeSpec as model_PersistentVolumeSpec
+import io.fabric8.kubernetes.api.model.Volume as model_Volume
 
 
-fun  PersistentVolumeSpec.`azureFile`(block: AzureFilePersistentVolumeSource.() -> Unit = {}) {
+fun  model_PersistentVolumeSpec.`azureFile`(block: model_AzureFilePersistentVolumeSource.() -> Unit = {}) {
   if(this.`azureFile` == null) {
-    this.`azureFile` = AzureFilePersistentVolumeSource()
+    this.`azureFile` = model_AzureFilePersistentVolumeSource()
   }
 
   this.`azureFile`.block()
 }
 
 
-fun  Volume.`azureFile`(block: AzureFileVolumeSource.() -> Unit = {}) {
+fun  model_Volume.`azureFile`(block: model_AzureFileVolumeSource.() -> Unit = {}) {
   if(this.`azureFile` == null) {
-    this.`azureFile` = AzureFileVolumeSource()
+    this.`azureFile` = model_AzureFileVolumeSource()
   }
 
   this.`azureFile`.block()

@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.openshift
 
-import io.fabric8.openshift.api.model.BuildRequest
-import io.fabric8.openshift.api.model.SourceStrategyOptions
+import io.fabric8.openshift.api.model.BuildRequest as model_BuildRequest
+import io.fabric8.openshift.api.model.SourceStrategyOptions as model_SourceStrategyOptions
 
 
-fun  BuildRequest.`sourceStrategyOptions`(block: SourceStrategyOptions.() -> Unit = {}) {
+fun  model_BuildRequest.`sourceStrategyOptions`(block: model_SourceStrategyOptions.() -> Unit = {}) {
   if(this.`sourceStrategyOptions` == null) {
-    this.`sourceStrategyOptions` = SourceStrategyOptions()
+    this.`sourceStrategyOptions` = model_SourceStrategyOptions()
   }
 
   this.`sourceStrategyOptions`.block()

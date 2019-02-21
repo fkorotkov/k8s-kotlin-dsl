@@ -1,23 +1,23 @@
 // GENERATED
 package com.fkorotkov.openshift
 
-import io.fabric8.kubernetes.api.model.ObjectReference
-import io.fabric8.openshift.api.model.ClusterRoleBinding
-import io.fabric8.openshift.api.model.RoleBinding
+import io.fabric8.kubernetes.api.model.ObjectReference as model_ObjectReference
+import io.fabric8.openshift.api.model.OpenshiftClusterRoleBinding as model_OpenshiftClusterRoleBinding
+import io.fabric8.openshift.api.model.OpenshiftRoleBinding as model_OpenshiftRoleBinding
 
 
-fun  ClusterRoleBinding.`roleRef`(block: ObjectReference.() -> Unit = {}) {
+fun  model_OpenshiftClusterRoleBinding.`roleRef`(block: model_ObjectReference.() -> Unit = {}) {
   if(this.`roleRef` == null) {
-    this.`roleRef` = ObjectReference()
+    this.`roleRef` = model_ObjectReference()
   }
 
   this.`roleRef`.block()
 }
 
 
-fun  RoleBinding.`roleRef`(block: ObjectReference.() -> Unit = {}) {
+fun  model_OpenshiftRoleBinding.`roleRef`(block: model_ObjectReference.() -> Unit = {}) {
   if(this.`roleRef` == null) {
-    this.`roleRef` = ObjectReference()
+    this.`roleRef` = model_ObjectReference()
   }
 
   this.`roleRef`.block()

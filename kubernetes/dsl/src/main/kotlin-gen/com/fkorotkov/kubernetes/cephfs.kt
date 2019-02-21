@@ -1,24 +1,24 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.CephFSPersistentVolumeSource
-import io.fabric8.kubernetes.api.model.CephFSVolumeSource
-import io.fabric8.kubernetes.api.model.PersistentVolumeSpec
-import io.fabric8.kubernetes.api.model.Volume
+import io.fabric8.kubernetes.api.model.CephFSPersistentVolumeSource as model_CephFSPersistentVolumeSource
+import io.fabric8.kubernetes.api.model.CephFSVolumeSource as model_CephFSVolumeSource
+import io.fabric8.kubernetes.api.model.PersistentVolumeSpec as model_PersistentVolumeSpec
+import io.fabric8.kubernetes.api.model.Volume as model_Volume
 
 
-fun  PersistentVolumeSpec.`cephfs`(block: CephFSPersistentVolumeSource.() -> Unit = {}) {
+fun  model_PersistentVolumeSpec.`cephfs`(block: model_CephFSPersistentVolumeSource.() -> Unit = {}) {
   if(this.`cephfs` == null) {
-    this.`cephfs` = CephFSPersistentVolumeSource()
+    this.`cephfs` = model_CephFSPersistentVolumeSource()
   }
 
   this.`cephfs`.block()
 }
 
 
-fun  Volume.`cephfs`(block: CephFSVolumeSource.() -> Unit = {}) {
+fun  model_Volume.`cephfs`(block: model_CephFSVolumeSource.() -> Unit = {}) {
   if(this.`cephfs` == null) {
-    this.`cephfs` = CephFSVolumeSource()
+    this.`cephfs` = model_CephFSVolumeSource()
   }
 
   this.`cephfs`.block()

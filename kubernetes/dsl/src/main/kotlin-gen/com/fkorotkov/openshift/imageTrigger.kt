@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.openshift
 
-import io.fabric8.openshift.api.model.DeploymentCause
-import io.fabric8.openshift.api.model.DeploymentCauseImageTrigger
+import io.fabric8.openshift.api.model.DeploymentCause as model_DeploymentCause
+import io.fabric8.openshift.api.model.DeploymentCauseImageTrigger as model_DeploymentCauseImageTrigger
 
 
-fun  DeploymentCause.`imageTrigger`(block: DeploymentCauseImageTrigger.() -> Unit = {}) {
+fun  model_DeploymentCause.`imageTrigger`(block: model_DeploymentCauseImageTrigger.() -> Unit = {}) {
   if(this.`imageTrigger` == null) {
-    this.`imageTrigger` = DeploymentCauseImageTrigger()
+    this.`imageTrigger` = model_DeploymentCauseImageTrigger()
   }
 
   this.`imageTrigger`.block()

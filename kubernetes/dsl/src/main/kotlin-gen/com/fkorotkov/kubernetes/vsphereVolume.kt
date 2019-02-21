@@ -1,23 +1,23 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.PersistentVolumeSpec
-import io.fabric8.kubernetes.api.model.Volume
-import io.fabric8.kubernetes.api.model.VsphereVirtualDiskVolumeSource
+import io.fabric8.kubernetes.api.model.PersistentVolumeSpec as model_PersistentVolumeSpec
+import io.fabric8.kubernetes.api.model.Volume as model_Volume
+import io.fabric8.kubernetes.api.model.VsphereVirtualDiskVolumeSource as model_VsphereVirtualDiskVolumeSource
 
 
-fun  PersistentVolumeSpec.`vsphereVolume`(block: VsphereVirtualDiskVolumeSource.() -> Unit = {}) {
+fun  model_PersistentVolumeSpec.`vsphereVolume`(block: model_VsphereVirtualDiskVolumeSource.() -> Unit = {}) {
   if(this.`vsphereVolume` == null) {
-    this.`vsphereVolume` = VsphereVirtualDiskVolumeSource()
+    this.`vsphereVolume` = model_VsphereVirtualDiskVolumeSource()
   }
 
   this.`vsphereVolume`.block()
 }
 
 
-fun  Volume.`vsphereVolume`(block: VsphereVirtualDiskVolumeSource.() -> Unit = {}) {
+fun  model_Volume.`vsphereVolume`(block: model_VsphereVirtualDiskVolumeSource.() -> Unit = {}) {
   if(this.`vsphereVolume` == null) {
-    this.`vsphereVolume` = VsphereVirtualDiskVolumeSource()
+    this.`vsphereVolume` = model_VsphereVirtualDiskVolumeSource()
   }
 
   this.`vsphereVolume`.block()

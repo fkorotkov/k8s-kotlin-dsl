@@ -1,73 +1,53 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.LabelSelector
-import io.fabric8.kubernetes.api.model.PersistentVolumeClaimSpec
-import io.fabric8.kubernetes.api.model.apps.DaemonSetSpec
-import io.fabric8.kubernetes.api.model.apps.DeploymentSpec
-import io.fabric8.kubernetes.api.model.apps.ReplicaSetSpec
-import io.fabric8.kubernetes.api.model.apps.StatefulSetSpec
-import io.fabric8.kubernetes.api.model.batch.JobSpec
-import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetSpec
+import io.fabric8.kubernetes.api.model.LabelSelector as model_LabelSelector
+import io.fabric8.kubernetes.api.model.ObjectMetricSource as model_ObjectMetricSource
+import io.fabric8.kubernetes.api.model.ObjectMetricStatus as model_ObjectMetricStatus
+import io.fabric8.kubernetes.api.model.PersistentVolumeClaimSpec as model_PersistentVolumeClaimSpec
+import io.fabric8.kubernetes.api.model.PodsMetricSource as model_PodsMetricSource
+import io.fabric8.kubernetes.api.model.PodsMetricStatus as model_PodsMetricStatus
 
 
-fun  DaemonSetSpec.`selector`(block: LabelSelector.() -> Unit = {}) {
+fun  model_ObjectMetricSource.`selector`(block: model_LabelSelector.() -> Unit = {}) {
   if(this.`selector` == null) {
-    this.`selector` = LabelSelector()
+    this.`selector` = model_LabelSelector()
   }
 
   this.`selector`.block()
 }
 
 
-fun  DeploymentSpec.`selector`(block: LabelSelector.() -> Unit = {}) {
+fun  model_ObjectMetricStatus.`selector`(block: model_LabelSelector.() -> Unit = {}) {
   if(this.`selector` == null) {
-    this.`selector` = LabelSelector()
+    this.`selector` = model_LabelSelector()
   }
 
   this.`selector`.block()
 }
 
 
-fun  JobSpec.`selector`(block: LabelSelector.() -> Unit = {}) {
+fun  model_PersistentVolumeClaimSpec.`selector`(block: model_LabelSelector.() -> Unit = {}) {
   if(this.`selector` == null) {
-    this.`selector` = LabelSelector()
+    this.`selector` = model_LabelSelector()
   }
 
   this.`selector`.block()
 }
 
 
-fun  PersistentVolumeClaimSpec.`selector`(block: LabelSelector.() -> Unit = {}) {
+fun  model_PodsMetricSource.`selector`(block: model_LabelSelector.() -> Unit = {}) {
   if(this.`selector` == null) {
-    this.`selector` = LabelSelector()
+    this.`selector` = model_LabelSelector()
   }
 
   this.`selector`.block()
 }
 
 
-fun  PodDisruptionBudgetSpec.`selector`(block: LabelSelector.() -> Unit = {}) {
+fun  model_PodsMetricStatus.`selector`(block: model_LabelSelector.() -> Unit = {}) {
   if(this.`selector` == null) {
-    this.`selector` = LabelSelector()
-  }
-
-  this.`selector`.block()
-}
-
-
-fun  ReplicaSetSpec.`selector`(block: LabelSelector.() -> Unit = {}) {
-  if(this.`selector` == null) {
-    this.`selector` = LabelSelector()
-  }
-
-  this.`selector`.block()
-}
-
-
-fun  StatefulSetSpec.`selector`(block: LabelSelector.() -> Unit = {}) {
-  if(this.`selector` == null) {
-    this.`selector` = LabelSelector()
+    this.`selector` = model_LabelSelector()
   }
 
   this.`selector`.block()

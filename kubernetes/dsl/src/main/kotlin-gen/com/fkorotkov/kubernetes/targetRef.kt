@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.EndpointAddress
-import io.fabric8.kubernetes.api.model.ObjectReference
+import io.fabric8.kubernetes.api.model.EndpointAddress as model_EndpointAddress
+import io.fabric8.kubernetes.api.model.ObjectReference as model_ObjectReference
 
 
-fun  EndpointAddress.`targetRef`(block: ObjectReference.() -> Unit = {}) {
+fun  model_EndpointAddress.`targetRef`(block: model_ObjectReference.() -> Unit = {}) {
   if(this.`targetRef` == null) {
-    this.`targetRef` = ObjectReference()
+    this.`targetRef` = model_ObjectReference()
   }
 
   this.`targetRef`.block()

@@ -1,34 +1,34 @@
 // GENERATED
 package com.fkorotkov.openshift
 
-import io.fabric8.openshift.api.model.BuildConfigSpec
-import io.fabric8.openshift.api.model.BuildSpec
-import io.fabric8.openshift.api.model.BuildStrategy
-import io.fabric8.openshift.api.model.DeploymentConfigSpec
-import io.fabric8.openshift.api.model.DeploymentStrategy
+import io.fabric8.openshift.api.model.BuildConfigSpec as model_BuildConfigSpec
+import io.fabric8.openshift.api.model.BuildSpec as model_BuildSpec
+import io.fabric8.openshift.api.model.BuildStrategy as model_BuildStrategy
+import io.fabric8.openshift.api.model.DeploymentConfigSpec as model_DeploymentConfigSpec
+import io.fabric8.openshift.api.model.DeploymentStrategy as model_DeploymentStrategy
 
 
-fun  BuildConfigSpec.`strategy`(block: BuildStrategy.() -> Unit = {}) {
+fun  model_BuildConfigSpec.`strategy`(block: model_BuildStrategy.() -> Unit = {}) {
   if(this.`strategy` == null) {
-    this.`strategy` = BuildStrategy()
+    this.`strategy` = model_BuildStrategy()
   }
 
   this.`strategy`.block()
 }
 
 
-fun  BuildSpec.`strategy`(block: BuildStrategy.() -> Unit = {}) {
+fun  model_BuildSpec.`strategy`(block: model_BuildStrategy.() -> Unit = {}) {
   if(this.`strategy` == null) {
-    this.`strategy` = BuildStrategy()
+    this.`strategy` = model_BuildStrategy()
   }
 
   this.`strategy`.block()
 }
 
 
-fun  DeploymentConfigSpec.`strategy`(block: DeploymentStrategy.() -> Unit = {}) {
+fun  model_DeploymentConfigSpec.`strategy`(block: model_DeploymentStrategy.() -> Unit = {}) {
   if(this.`strategy` == null) {
-    this.`strategy` = DeploymentStrategy()
+    this.`strategy` = model_DeploymentStrategy()
   }
 
   this.`strategy`.block()

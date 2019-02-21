@@ -1,23 +1,23 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.Handler
-import io.fabric8.kubernetes.api.model.Probe
-import io.fabric8.kubernetes.api.model.TCPSocketAction
+import io.fabric8.kubernetes.api.model.Handler as model_Handler
+import io.fabric8.kubernetes.api.model.Probe as model_Probe
+import io.fabric8.kubernetes.api.model.TCPSocketAction as model_TCPSocketAction
 
 
-fun  Handler.`tcpSocket`(block: TCPSocketAction.() -> Unit = {}) {
+fun  model_Handler.`tcpSocket`(block: model_TCPSocketAction.() -> Unit = {}) {
   if(this.`tcpSocket` == null) {
-    this.`tcpSocket` = TCPSocketAction()
+    this.`tcpSocket` = model_TCPSocketAction()
   }
 
   this.`tcpSocket`.block()
 }
 
 
-fun  Probe.`tcpSocket`(block: TCPSocketAction.() -> Unit = {}) {
+fun  model_Probe.`tcpSocket`(block: model_TCPSocketAction.() -> Unit = {}) {
   if(this.`tcpSocket` == null) {
-    this.`tcpSocket` = TCPSocketAction()
+    this.`tcpSocket` = model_TCPSocketAction()
   }
 
   this.`tcpSocket`.block()

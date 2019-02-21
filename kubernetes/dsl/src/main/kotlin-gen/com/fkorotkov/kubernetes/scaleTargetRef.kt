@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.CrossVersionObjectReference
-import io.fabric8.kubernetes.api.model.HorizontalPodAutoscalerSpec
+import io.fabric8.kubernetes.api.model.CrossVersionObjectReference as model_CrossVersionObjectReference
+import io.fabric8.kubernetes.api.model.HorizontalPodAutoscalerSpec as model_HorizontalPodAutoscalerSpec
 
 
-fun  HorizontalPodAutoscalerSpec.`scaleTargetRef`(block: CrossVersionObjectReference.() -> Unit = {}) {
+fun  model_HorizontalPodAutoscalerSpec.`scaleTargetRef`(block: model_CrossVersionObjectReference.() -> Unit = {}) {
   if(this.`scaleTargetRef` == null) {
-    this.`scaleTargetRef` = CrossVersionObjectReference()
+    this.`scaleTargetRef` = model_CrossVersionObjectReference()
   }
 
   this.`scaleTargetRef`.block()

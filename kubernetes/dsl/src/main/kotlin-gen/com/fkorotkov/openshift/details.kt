@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.openshift
 
-import io.fabric8.openshift.api.model.DeploymentConfigStatus
-import io.fabric8.openshift.api.model.DeploymentDetails
+import io.fabric8.openshift.api.model.DeploymentConfigStatus as model_DeploymentConfigStatus
+import io.fabric8.openshift.api.model.DeploymentDetails as model_DeploymentDetails
 
 
-fun  DeploymentConfigStatus.`details`(block: DeploymentDetails.() -> Unit = {}) {
+fun  model_DeploymentConfigStatus.`details`(block: model_DeploymentDetails.() -> Unit = {}) {
   if(this.`details` == null) {
-    this.`details` = DeploymentDetails()
+    this.`details` = model_DeploymentDetails()
   }
 
   this.`details`.block()

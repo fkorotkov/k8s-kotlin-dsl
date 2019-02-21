@@ -1,23 +1,23 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.AWSElasticBlockStoreVolumeSource
-import io.fabric8.kubernetes.api.model.PersistentVolumeSpec
-import io.fabric8.kubernetes.api.model.Volume
+import io.fabric8.kubernetes.api.model.AWSElasticBlockStoreVolumeSource as model_AWSElasticBlockStoreVolumeSource
+import io.fabric8.kubernetes.api.model.PersistentVolumeSpec as model_PersistentVolumeSpec
+import io.fabric8.kubernetes.api.model.Volume as model_Volume
 
 
-fun  PersistentVolumeSpec.`awsElasticBlockStore`(block: AWSElasticBlockStoreVolumeSource.() -> Unit = {}) {
+fun  model_PersistentVolumeSpec.`awsElasticBlockStore`(block: model_AWSElasticBlockStoreVolumeSource.() -> Unit = {}) {
   if(this.`awsElasticBlockStore` == null) {
-    this.`awsElasticBlockStore` = AWSElasticBlockStoreVolumeSource()
+    this.`awsElasticBlockStore` = model_AWSElasticBlockStoreVolumeSource()
   }
 
   this.`awsElasticBlockStore`.block()
 }
 
 
-fun  Volume.`awsElasticBlockStore`(block: AWSElasticBlockStoreVolumeSource.() -> Unit = {}) {
+fun  model_Volume.`awsElasticBlockStore`(block: model_AWSElasticBlockStoreVolumeSource.() -> Unit = {}) {
   if(this.`awsElasticBlockStore` == null) {
-    this.`awsElasticBlockStore` = AWSElasticBlockStoreVolumeSource()
+    this.`awsElasticBlockStore` = model_AWSElasticBlockStoreVolumeSource()
   }
 
   this.`awsElasticBlockStore`.block()

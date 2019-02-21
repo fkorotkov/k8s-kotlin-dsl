@@ -1,24 +1,24 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.PersistentVolumeSpec
-import io.fabric8.kubernetes.api.model.RBDPersistentVolumeSource
-import io.fabric8.kubernetes.api.model.RBDVolumeSource
-import io.fabric8.kubernetes.api.model.Volume
+import io.fabric8.kubernetes.api.model.PersistentVolumeSpec as model_PersistentVolumeSpec
+import io.fabric8.kubernetes.api.model.RBDPersistentVolumeSource as model_RBDPersistentVolumeSource
+import io.fabric8.kubernetes.api.model.RBDVolumeSource as model_RBDVolumeSource
+import io.fabric8.kubernetes.api.model.Volume as model_Volume
 
 
-fun  PersistentVolumeSpec.`rbd`(block: RBDPersistentVolumeSource.() -> Unit = {}) {
+fun  model_PersistentVolumeSpec.`rbd`(block: model_RBDPersistentVolumeSource.() -> Unit = {}) {
   if(this.`rbd` == null) {
-    this.`rbd` = RBDPersistentVolumeSource()
+    this.`rbd` = model_RBDPersistentVolumeSource()
   }
 
   this.`rbd`.block()
 }
 
 
-fun  Volume.`rbd`(block: RBDVolumeSource.() -> Unit = {}) {
+fun  model_Volume.`rbd`(block: model_RBDVolumeSource.() -> Unit = {}) {
   if(this.`rbd` == null) {
-    this.`rbd` = RBDVolumeSource()
+    this.`rbd` = model_RBDVolumeSource()
   }
 
   this.`rbd`.block()

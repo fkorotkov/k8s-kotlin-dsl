@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.openshift
 
-import io.fabric8.openshift.api.model.ExecNewPodHook
-import io.fabric8.openshift.api.model.LifecycleHook
+import io.fabric8.openshift.api.model.ExecNewPodHook as model_ExecNewPodHook
+import io.fabric8.openshift.api.model.LifecycleHook as model_LifecycleHook
 
 
-fun  LifecycleHook.`execNewPod`(block: ExecNewPodHook.() -> Unit = {}) {
+fun  model_LifecycleHook.`execNewPod`(block: model_ExecNewPodHook.() -> Unit = {}) {
   if(this.`execNewPod` == null) {
-    this.`execNewPod` = ExecNewPodHook()
+    this.`execNewPod` = model_ExecNewPodHook()
   }
 
   this.`execNewPod`.block()

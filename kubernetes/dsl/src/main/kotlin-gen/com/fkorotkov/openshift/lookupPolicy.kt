@@ -1,23 +1,23 @@
 // GENERATED
 package com.fkorotkov.openshift
 
-import io.fabric8.openshift.api.model.ImageLookupPolicy
-import io.fabric8.openshift.api.model.ImageStreamSpec
-import io.fabric8.openshift.api.model.ImageStreamTag
+import io.fabric8.openshift.api.model.ImageLookupPolicy as model_ImageLookupPolicy
+import io.fabric8.openshift.api.model.ImageStreamSpec as model_ImageStreamSpec
+import io.fabric8.openshift.api.model.ImageStreamTag as model_ImageStreamTag
 
 
-fun  ImageStreamSpec.`lookupPolicy`(block: ImageLookupPolicy.() -> Unit = {}) {
+fun  model_ImageStreamSpec.`lookupPolicy`(block: model_ImageLookupPolicy.() -> Unit = {}) {
   if(this.`lookupPolicy` == null) {
-    this.`lookupPolicy` = ImageLookupPolicy()
+    this.`lookupPolicy` = model_ImageLookupPolicy()
   }
 
   this.`lookupPolicy`.block()
 }
 
 
-fun  ImageStreamTag.`lookupPolicy`(block: ImageLookupPolicy.() -> Unit = {}) {
+fun  model_ImageStreamTag.`lookupPolicy`(block: model_ImageLookupPolicy.() -> Unit = {}) {
   if(this.`lookupPolicy` == null) {
-    this.`lookupPolicy` = ImageLookupPolicy()
+    this.`lookupPolicy` = model_ImageLookupPolicy()
   }
 
   this.`lookupPolicy`.block()
