@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.Container
-import io.fabric8.kubernetes.api.model.Lifecycle
+import io.fabric8.kubernetes.api.model.Container as model_Container
+import io.fabric8.kubernetes.api.model.Lifecycle as model_Lifecycle
 
 
-fun  Container.`lifecycle`(block: Lifecycle.() -> Unit = {}) {
+fun  model_Container.`lifecycle`(block: model_Lifecycle.() -> Unit = {}) {
   if(this.`lifecycle` == null) {
-    this.`lifecycle` = Lifecycle()
+    this.`lifecycle` = model_Lifecycle()
   }
 
   this.`lifecycle`.block()

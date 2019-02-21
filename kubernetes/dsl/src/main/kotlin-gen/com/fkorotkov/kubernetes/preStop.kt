@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.Handler
-import io.fabric8.kubernetes.api.model.Lifecycle
+import io.fabric8.kubernetes.api.model.Handler as model_Handler
+import io.fabric8.kubernetes.api.model.Lifecycle as model_Lifecycle
 
 
-fun  Lifecycle.`preStop`(block: Handler.() -> Unit = {}) {
+fun  model_Lifecycle.`preStop`(block: model_Handler.() -> Unit = {}) {
   if(this.`preStop` == null) {
-    this.`preStop` = Handler()
+    this.`preStop` = model_Handler()
   }
 
   this.`preStop`.block()

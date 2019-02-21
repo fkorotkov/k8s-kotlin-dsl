@@ -1,24 +1,24 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.DownwardAPIProjection
-import io.fabric8.kubernetes.api.model.DownwardAPIVolumeSource
-import io.fabric8.kubernetes.api.model.Volume
-import io.fabric8.kubernetes.api.model.VolumeProjection
+import io.fabric8.kubernetes.api.model.DownwardAPIProjection as model_DownwardAPIProjection
+import io.fabric8.kubernetes.api.model.DownwardAPIVolumeSource as model_DownwardAPIVolumeSource
+import io.fabric8.kubernetes.api.model.Volume as model_Volume
+import io.fabric8.kubernetes.api.model.VolumeProjection as model_VolumeProjection
 
 
-fun  Volume.`downwardAPI`(block: DownwardAPIVolumeSource.() -> Unit = {}) {
+fun  model_Volume.`downwardAPI`(block: model_DownwardAPIVolumeSource.() -> Unit = {}) {
   if(this.`downwardAPI` == null) {
-    this.`downwardAPI` = DownwardAPIVolumeSource()
+    this.`downwardAPI` = model_DownwardAPIVolumeSource()
   }
 
   this.`downwardAPI`.block()
 }
 
 
-fun  VolumeProjection.`downwardAPI`(block: DownwardAPIProjection.() -> Unit = {}) {
+fun  model_VolumeProjection.`downwardAPI`(block: model_DownwardAPIProjection.() -> Unit = {}) {
   if(this.`downwardAPI` == null) {
-    this.`downwardAPI` = DownwardAPIProjection()
+    this.`downwardAPI` = model_DownwardAPIProjection()
   }
 
   this.`downwardAPI`.block()

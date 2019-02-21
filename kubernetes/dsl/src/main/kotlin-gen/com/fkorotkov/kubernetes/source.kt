@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.Event
-import io.fabric8.kubernetes.api.model.EventSource
+import io.fabric8.kubernetes.api.model.Event as model_Event
+import io.fabric8.kubernetes.api.model.EventSource as model_EventSource
 
 
-fun  Event.`source`(block: EventSource.() -> Unit = {}) {
+fun  model_Event.`source`(block: model_EventSource.() -> Unit = {}) {
   if(this.`source` == null) {
-    this.`source` = EventSource()
+    this.`source` = model_EventSource()
   }
 
   this.`source`.block()

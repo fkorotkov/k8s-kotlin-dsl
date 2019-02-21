@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.openshift
 
-import io.fabric8.openshift.api.model.DeploymentTriggerImageChangeParams
-import io.fabric8.openshift.api.model.DeploymentTriggerPolicy
+import io.fabric8.openshift.api.model.DeploymentTriggerImageChangeParams as model_DeploymentTriggerImageChangeParams
+import io.fabric8.openshift.api.model.DeploymentTriggerPolicy as model_DeploymentTriggerPolicy
 
 
-fun  DeploymentTriggerPolicy.`imageChangeParams`(block: DeploymentTriggerImageChangeParams.() -> Unit = {}) {
+fun  model_DeploymentTriggerPolicy.`imageChangeParams`(block: model_DeploymentTriggerImageChangeParams.() -> Unit = {}) {
   if(this.`imageChangeParams` == null) {
-    this.`imageChangeParams` = DeploymentTriggerImageChangeParams()
+    this.`imageChangeParams` = model_DeploymentTriggerImageChangeParams()
   }
 
   this.`imageChangeParams`.block()

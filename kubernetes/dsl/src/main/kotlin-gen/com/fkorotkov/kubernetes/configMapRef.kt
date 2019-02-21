@@ -1,24 +1,13 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.ConfigMapEnvSource
-import io.fabric8.kubernetes.api.model.EnvFromSource
-import io.fabric8.kubernetes.api.model.NodeConfigSource
-import io.fabric8.kubernetes.api.model.ObjectReference
+import io.fabric8.kubernetes.api.model.ConfigMapEnvSource as model_ConfigMapEnvSource
+import io.fabric8.kubernetes.api.model.EnvFromSource as model_EnvFromSource
 
 
-fun  EnvFromSource.`configMapRef`(block: ConfigMapEnvSource.() -> Unit = {}) {
+fun  model_EnvFromSource.`configMapRef`(block: model_ConfigMapEnvSource.() -> Unit = {}) {
   if(this.`configMapRef` == null) {
-    this.`configMapRef` = ConfigMapEnvSource()
-  }
-
-  this.`configMapRef`.block()
-}
-
-
-fun  NodeConfigSource.`configMapRef`(block: ObjectReference.() -> Unit = {}) {
-  if(this.`configMapRef` == null) {
-    this.`configMapRef` = ObjectReference()
+    this.`configMapRef` = model_ConfigMapEnvSource()
   }
 
   this.`configMapRef`.block()

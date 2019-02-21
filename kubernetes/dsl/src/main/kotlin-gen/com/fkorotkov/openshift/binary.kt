@@ -1,23 +1,23 @@
 // GENERATED
 package com.fkorotkov.openshift
 
-import io.fabric8.openshift.api.model.BinaryBuildSource
-import io.fabric8.openshift.api.model.BuildRequest
-import io.fabric8.openshift.api.model.BuildSource
+import io.fabric8.openshift.api.model.BinaryBuildSource as model_BinaryBuildSource
+import io.fabric8.openshift.api.model.BuildRequest as model_BuildRequest
+import io.fabric8.openshift.api.model.BuildSource as model_BuildSource
 
 
-fun  BuildRequest.`binary`(block: BinaryBuildSource.() -> Unit = {}) {
+fun  model_BuildRequest.`binary`(block: model_BinaryBuildSource.() -> Unit = {}) {
   if(this.`binary` == null) {
-    this.`binary` = BinaryBuildSource()
+    this.`binary` = model_BinaryBuildSource()
   }
 
   this.`binary`.block()
 }
 
 
-fun  BuildSource.`binary`(block: BinaryBuildSource.() -> Unit = {}) {
+fun  model_BuildSource.`binary`(block: model_BinaryBuildSource.() -> Unit = {}) {
   if(this.`binary` == null) {
-    this.`binary` = BinaryBuildSource()
+    this.`binary` = model_BinaryBuildSource()
   }
 
   this.`binary`.block()

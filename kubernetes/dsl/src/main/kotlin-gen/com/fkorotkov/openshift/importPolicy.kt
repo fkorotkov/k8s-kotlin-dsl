@@ -1,33 +1,33 @@
 // GENERATED
 package com.fkorotkov.openshift
 
-import io.fabric8.openshift.api.model.ImageImportSpec
-import io.fabric8.openshift.api.model.RepositoryImportSpec
-import io.fabric8.openshift.api.model.TagImportPolicy
-import io.fabric8.openshift.api.model.TagReference
+import io.fabric8.openshift.api.model.ImageImportSpec as model_ImageImportSpec
+import io.fabric8.openshift.api.model.RepositoryImportSpec as model_RepositoryImportSpec
+import io.fabric8.openshift.api.model.TagImportPolicy as model_TagImportPolicy
+import io.fabric8.openshift.api.model.TagReference as model_TagReference
 
 
-fun  ImageImportSpec.`importPolicy`(block: TagImportPolicy.() -> Unit = {}) {
+fun  model_ImageImportSpec.`importPolicy`(block: model_TagImportPolicy.() -> Unit = {}) {
   if(this.`importPolicy` == null) {
-    this.`importPolicy` = TagImportPolicy()
+    this.`importPolicy` = model_TagImportPolicy()
   }
 
   this.`importPolicy`.block()
 }
 
 
-fun  RepositoryImportSpec.`importPolicy`(block: TagImportPolicy.() -> Unit = {}) {
+fun  model_RepositoryImportSpec.`importPolicy`(block: model_TagImportPolicy.() -> Unit = {}) {
   if(this.`importPolicy` == null) {
-    this.`importPolicy` = TagImportPolicy()
+    this.`importPolicy` = model_TagImportPolicy()
   }
 
   this.`importPolicy`.block()
 }
 
 
-fun  TagReference.`importPolicy`(block: TagImportPolicy.() -> Unit = {}) {
+fun  model_TagReference.`importPolicy`(block: model_TagImportPolicy.() -> Unit = {}) {
   if(this.`importPolicy` == null) {
-    this.`importPolicy` = TagImportPolicy()
+    this.`importPolicy` = model_TagImportPolicy()
   }
 
   this.`importPolicy`.block()

@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.openshift
 
-import io.fabric8.openshift.api.model.BuildStrategy
-import io.fabric8.openshift.api.model.DockerBuildStrategy
+import io.fabric8.openshift.api.model.BuildStrategy as model_BuildStrategy
+import io.fabric8.openshift.api.model.DockerBuildStrategy as model_DockerBuildStrategy
 
 
-fun  BuildStrategy.`dockerStrategy`(block: DockerBuildStrategy.() -> Unit = {}) {
+fun  model_BuildStrategy.`dockerStrategy`(block: model_DockerBuildStrategy.() -> Unit = {}) {
   if(this.`dockerStrategy` == null) {
-    this.`dockerStrategy` = DockerBuildStrategy()
+    this.`dockerStrategy` = model_DockerBuildStrategy()
   }
 
   this.`dockerStrategy`.block()

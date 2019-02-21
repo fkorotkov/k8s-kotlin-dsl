@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.openshift
 
-import io.fabric8.openshift.api.model.ImageSignature
-import io.fabric8.openshift.api.model.SignatureSubject
+import io.fabric8.openshift.api.model.ImageSignature as model_ImageSignature
+import io.fabric8.openshift.api.model.SignatureSubject as model_SignatureSubject
 
 
-fun  ImageSignature.`issuedTo`(block: SignatureSubject.() -> Unit = {}) {
+fun  model_ImageSignature.`issuedTo`(block: model_SignatureSubject.() -> Unit = {}) {
   if(this.`issuedTo` == null) {
-    this.`issuedTo` = SignatureSubject()
+    this.`issuedTo` = model_SignatureSubject()
   }
 
   this.`issuedTo`.block()

@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.Event
-import io.fabric8.kubernetes.api.model.MicroTime
+import io.fabric8.kubernetes.api.model.Event as model_Event
+import io.fabric8.kubernetes.api.model.MicroTime as model_MicroTime
 
 
-fun  Event.`eventTime`(block: MicroTime.() -> Unit = {}) {
+fun  model_Event.`eventTime`(block: model_MicroTime.() -> Unit = {}) {
   if(this.`eventTime` == null) {
-    this.`eventTime` = MicroTime()
+    this.`eventTime` = model_MicroTime()
   }
 
   this.`eventTime`.block()

@@ -1,90 +1,90 @@
 // GENERATED
 package com.fkorotkov.openshift
 
-import io.fabric8.openshift.api.model.Build
-import io.fabric8.openshift.api.model.BuildConfig
-import io.fabric8.openshift.api.model.BuildConfigSpec
-import io.fabric8.openshift.api.model.BuildSpec
-import io.fabric8.openshift.api.model.DeploymentConfig
-import io.fabric8.openshift.api.model.DeploymentConfigSpec
-import io.fabric8.openshift.api.model.ImageStream
-import io.fabric8.openshift.api.model.ImageStreamImport
-import io.fabric8.openshift.api.model.ImageStreamImportSpec
-import io.fabric8.openshift.api.model.ImageStreamSpec
-import io.fabric8.openshift.api.model.Project
-import io.fabric8.openshift.api.model.ProjectSpec
-import io.fabric8.openshift.api.model.RoleBindingRestriction
-import io.fabric8.openshift.api.model.RoleBindingRestrictionSpec
-import io.fabric8.openshift.api.model.Route
-import io.fabric8.openshift.api.model.RouteSpec
+import io.fabric8.openshift.api.model.Build as model_Build
+import io.fabric8.openshift.api.model.BuildConfig as model_BuildConfig
+import io.fabric8.openshift.api.model.BuildConfigSpec as model_BuildConfigSpec
+import io.fabric8.openshift.api.model.BuildSpec as model_BuildSpec
+import io.fabric8.openshift.api.model.DeploymentConfig as model_DeploymentConfig
+import io.fabric8.openshift.api.model.DeploymentConfigSpec as model_DeploymentConfigSpec
+import io.fabric8.openshift.api.model.ImageStream as model_ImageStream
+import io.fabric8.openshift.api.model.ImageStreamImport as model_ImageStreamImport
+import io.fabric8.openshift.api.model.ImageStreamImportSpec as model_ImageStreamImportSpec
+import io.fabric8.openshift.api.model.ImageStreamSpec as model_ImageStreamSpec
+import io.fabric8.openshift.api.model.OpenshiftRoleBindingRestriction as model_OpenshiftRoleBindingRestriction
+import io.fabric8.openshift.api.model.OpenshiftRoleBindingRestrictionSpec as model_OpenshiftRoleBindingRestrictionSpec
+import io.fabric8.openshift.api.model.Project as model_Project
+import io.fabric8.openshift.api.model.ProjectSpec as model_ProjectSpec
+import io.fabric8.openshift.api.model.Route as model_Route
+import io.fabric8.openshift.api.model.RouteSpec as model_RouteSpec
 
 
-fun  Build.`spec`(block: BuildSpec.() -> Unit = {}) {
+fun  model_Build.`spec`(block: model_BuildSpec.() -> Unit = {}) {
   if(this.`spec` == null) {
-    this.`spec` = BuildSpec()
+    this.`spec` = model_BuildSpec()
   }
 
   this.`spec`.block()
 }
 
 
-fun  BuildConfig.`spec`(block: BuildConfigSpec.() -> Unit = {}) {
+fun  model_BuildConfig.`spec`(block: model_BuildConfigSpec.() -> Unit = {}) {
   if(this.`spec` == null) {
-    this.`spec` = BuildConfigSpec()
+    this.`spec` = model_BuildConfigSpec()
   }
 
   this.`spec`.block()
 }
 
 
-fun  DeploymentConfig.`spec`(block: DeploymentConfigSpec.() -> Unit = {}) {
+fun  model_DeploymentConfig.`spec`(block: model_DeploymentConfigSpec.() -> Unit = {}) {
   if(this.`spec` == null) {
-    this.`spec` = DeploymentConfigSpec()
+    this.`spec` = model_DeploymentConfigSpec()
   }
 
   this.`spec`.block()
 }
 
 
-fun  ImageStream.`spec`(block: ImageStreamSpec.() -> Unit = {}) {
+fun  model_ImageStream.`spec`(block: model_ImageStreamSpec.() -> Unit = {}) {
   if(this.`spec` == null) {
-    this.`spec` = ImageStreamSpec()
+    this.`spec` = model_ImageStreamSpec()
   }
 
   this.`spec`.block()
 }
 
 
-fun  ImageStreamImport.`spec`(block: ImageStreamImportSpec.() -> Unit = {}) {
+fun  model_ImageStreamImport.`spec`(block: model_ImageStreamImportSpec.() -> Unit = {}) {
   if(this.`spec` == null) {
-    this.`spec` = ImageStreamImportSpec()
+    this.`spec` = model_ImageStreamImportSpec()
   }
 
   this.`spec`.block()
 }
 
 
-fun  Project.`spec`(block: ProjectSpec.() -> Unit = {}) {
+fun  model_OpenshiftRoleBindingRestriction.`spec`(block: model_OpenshiftRoleBindingRestrictionSpec.() -> Unit = {}) {
   if(this.`spec` == null) {
-    this.`spec` = ProjectSpec()
+    this.`spec` = model_OpenshiftRoleBindingRestrictionSpec()
   }
 
   this.`spec`.block()
 }
 
 
-fun  RoleBindingRestriction.`spec`(block: RoleBindingRestrictionSpec.() -> Unit = {}) {
+fun  model_Project.`spec`(block: model_ProjectSpec.() -> Unit = {}) {
   if(this.`spec` == null) {
-    this.`spec` = RoleBindingRestrictionSpec()
+    this.`spec` = model_ProjectSpec()
   }
 
   this.`spec`.block()
 }
 
 
-fun  Route.`spec`(block: RouteSpec.() -> Unit = {}) {
+fun  model_Route.`spec`(block: model_RouteSpec.() -> Unit = {}) {
   if(this.`spec` == null) {
-    this.`spec` = RouteSpec()
+    this.`spec` = model_RouteSpec()
   }
 
   this.`spec`.block()

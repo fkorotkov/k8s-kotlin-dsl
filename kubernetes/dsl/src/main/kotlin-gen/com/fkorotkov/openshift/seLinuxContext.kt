@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.openshift
 
-import io.fabric8.openshift.api.model.SELinuxContextStrategyOptions
-import io.fabric8.openshift.api.model.SecurityContextConstraints
+import io.fabric8.openshift.api.model.SELinuxContextStrategyOptions as model_SELinuxContextStrategyOptions
+import io.fabric8.openshift.api.model.SecurityContextConstraints as model_SecurityContextConstraints
 
 
-fun  SecurityContextConstraints.`seLinuxContext`(block: SELinuxContextStrategyOptions.() -> Unit = {}) {
+fun  model_SecurityContextConstraints.`seLinuxContext`(block: model_SELinuxContextStrategyOptions.() -> Unit = {}) {
   if(this.`seLinuxContext` == null) {
-    this.`seLinuxContext` = SELinuxContextStrategyOptions()
+    this.`seLinuxContext` = model_SELinuxContextStrategyOptions()
   }
 
   this.`seLinuxContext`.block()

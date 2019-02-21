@@ -1,23 +1,23 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.AzureDiskVolumeSource
-import io.fabric8.kubernetes.api.model.PersistentVolumeSpec
-import io.fabric8.kubernetes.api.model.Volume
+import io.fabric8.kubernetes.api.model.AzureDiskVolumeSource as model_AzureDiskVolumeSource
+import io.fabric8.kubernetes.api.model.PersistentVolumeSpec as model_PersistentVolumeSpec
+import io.fabric8.kubernetes.api.model.Volume as model_Volume
 
 
-fun  PersistentVolumeSpec.`azureDisk`(block: AzureDiskVolumeSource.() -> Unit = {}) {
+fun  model_PersistentVolumeSpec.`azureDisk`(block: model_AzureDiskVolumeSource.() -> Unit = {}) {
   if(this.`azureDisk` == null) {
-    this.`azureDisk` = AzureDiskVolumeSource()
+    this.`azureDisk` = model_AzureDiskVolumeSource()
   }
 
   this.`azureDisk`.block()
 }
 
 
-fun  Volume.`azureDisk`(block: AzureDiskVolumeSource.() -> Unit = {}) {
+fun  model_Volume.`azureDisk`(block: model_AzureDiskVolumeSource.() -> Unit = {}) {
   if(this.`azureDisk` == null) {
-    this.`azureDisk` = AzureDiskVolumeSource()
+    this.`azureDisk` = model_AzureDiskVolumeSource()
   }
 
   this.`azureDisk`.block()

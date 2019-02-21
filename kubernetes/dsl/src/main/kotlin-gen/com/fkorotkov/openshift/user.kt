@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.openshift
 
-import io.fabric8.kubernetes.api.model.ObjectReference
-import io.fabric8.openshift.api.model.Identity
+import io.fabric8.kubernetes.api.model.ObjectReference as model_ObjectReference
+import io.fabric8.openshift.api.model.Identity as model_Identity
 
 
-fun  Identity.`user`(block: ObjectReference.() -> Unit = {}) {
+fun  model_Identity.`user`(block: model_ObjectReference.() -> Unit = {}) {
   if(this.`user` == null) {
-    this.`user` = ObjectReference()
+    this.`user` = model_ObjectReference()
   }
 
   this.`user`.block()

@@ -1,564 +1,484 @@
 // GENERATED
 package com.fkorotkov.openshift
 
-import io.fabric8.kubernetes.api.model.ListMeta
-import io.fabric8.kubernetes.api.model.ObjectMeta
-import io.fabric8.openshift.api.model.Build
-import io.fabric8.openshift.api.model.BuildConfig
-import io.fabric8.openshift.api.model.BuildConfigList
-import io.fabric8.openshift.api.model.BuildList
-import io.fabric8.openshift.api.model.BuildRequest
-import io.fabric8.openshift.api.model.ClusterPolicy
-import io.fabric8.openshift.api.model.ClusterPolicyBinding
-import io.fabric8.openshift.api.model.ClusterPolicyBindingList
-import io.fabric8.openshift.api.model.ClusterPolicyList
-import io.fabric8.openshift.api.model.ClusterRole
-import io.fabric8.openshift.api.model.ClusterRoleBinding
-import io.fabric8.openshift.api.model.ClusterRoleBindingList
-import io.fabric8.openshift.api.model.DeploymentConfig
-import io.fabric8.openshift.api.model.DeploymentConfigList
-import io.fabric8.openshift.api.model.Group
-import io.fabric8.openshift.api.model.GroupList
-import io.fabric8.openshift.api.model.Identity
-import io.fabric8.openshift.api.model.IdentityList
-import io.fabric8.openshift.api.model.Image
-import io.fabric8.openshift.api.model.ImageList
-import io.fabric8.openshift.api.model.ImageSignature
-import io.fabric8.openshift.api.model.ImageStream
-import io.fabric8.openshift.api.model.ImageStreamImport
-import io.fabric8.openshift.api.model.ImageStreamList
-import io.fabric8.openshift.api.model.ImageStreamTag
-import io.fabric8.openshift.api.model.ImageStreamTagList
-import io.fabric8.openshift.api.model.NetNamespace
-import io.fabric8.openshift.api.model.NetNamespaceList
-import io.fabric8.openshift.api.model.OAuthAccessToken
-import io.fabric8.openshift.api.model.OAuthAccessTokenList
-import io.fabric8.openshift.api.model.OAuthAuthorizeToken
-import io.fabric8.openshift.api.model.OAuthAuthorizeTokenList
-import io.fabric8.openshift.api.model.OAuthClient
-import io.fabric8.openshift.api.model.OAuthClientAuthorization
-import io.fabric8.openshift.api.model.OAuthClientAuthorizationList
-import io.fabric8.openshift.api.model.OAuthClientList
-import io.fabric8.openshift.api.model.Policy
-import io.fabric8.openshift.api.model.PolicyBinding
-import io.fabric8.openshift.api.model.PolicyBindingList
-import io.fabric8.openshift.api.model.PolicyList
-import io.fabric8.openshift.api.model.Project
-import io.fabric8.openshift.api.model.ProjectList
-import io.fabric8.openshift.api.model.ProjectRequest
-import io.fabric8.openshift.api.model.Role
-import io.fabric8.openshift.api.model.RoleBinding
-import io.fabric8.openshift.api.model.RoleBindingList
-import io.fabric8.openshift.api.model.RoleBindingRestriction
-import io.fabric8.openshift.api.model.RoleList
-import io.fabric8.openshift.api.model.Route
-import io.fabric8.openshift.api.model.RouteList
-import io.fabric8.openshift.api.model.SecurityContextConstraints
-import io.fabric8.openshift.api.model.SecurityContextConstraintsList
-import io.fabric8.openshift.api.model.Template
-import io.fabric8.openshift.api.model.TemplateList
-import io.fabric8.openshift.api.model.User
-import io.fabric8.openshift.api.model.UserList
+import io.fabric8.kubernetes.api.model.ListMeta as model_ListMeta
+import io.fabric8.kubernetes.api.model.ObjectMeta as model_ObjectMeta
+import io.fabric8.openshift.api.model.Build as model_Build
+import io.fabric8.openshift.api.model.BuildConfig as model_BuildConfig
+import io.fabric8.openshift.api.model.BuildConfigList as model_BuildConfigList
+import io.fabric8.openshift.api.model.BuildList as model_BuildList
+import io.fabric8.openshift.api.model.BuildRequest as model_BuildRequest
+import io.fabric8.openshift.api.model.DeploymentConfig as model_DeploymentConfig
+import io.fabric8.openshift.api.model.DeploymentConfigList as model_DeploymentConfigList
+import io.fabric8.openshift.api.model.Group as model_Group
+import io.fabric8.openshift.api.model.GroupList as model_GroupList
+import io.fabric8.openshift.api.model.Identity as model_Identity
+import io.fabric8.openshift.api.model.IdentityList as model_IdentityList
+import io.fabric8.openshift.api.model.Image as model_Image
+import io.fabric8.openshift.api.model.ImageList as model_ImageList
+import io.fabric8.openshift.api.model.ImageSignature as model_ImageSignature
+import io.fabric8.openshift.api.model.ImageStream as model_ImageStream
+import io.fabric8.openshift.api.model.ImageStreamImport as model_ImageStreamImport
+import io.fabric8.openshift.api.model.ImageStreamList as model_ImageStreamList
+import io.fabric8.openshift.api.model.ImageStreamTag as model_ImageStreamTag
+import io.fabric8.openshift.api.model.ImageStreamTagList as model_ImageStreamTagList
+import io.fabric8.openshift.api.model.NetNamespace as model_NetNamespace
+import io.fabric8.openshift.api.model.NetNamespaceList as model_NetNamespaceList
+import io.fabric8.openshift.api.model.OAuthAccessToken as model_OAuthAccessToken
+import io.fabric8.openshift.api.model.OAuthAccessTokenList as model_OAuthAccessTokenList
+import io.fabric8.openshift.api.model.OAuthAuthorizeToken as model_OAuthAuthorizeToken
+import io.fabric8.openshift.api.model.OAuthAuthorizeTokenList as model_OAuthAuthorizeTokenList
+import io.fabric8.openshift.api.model.OAuthClient as model_OAuthClient
+import io.fabric8.openshift.api.model.OAuthClientAuthorization as model_OAuthClientAuthorization
+import io.fabric8.openshift.api.model.OAuthClientAuthorizationList as model_OAuthClientAuthorizationList
+import io.fabric8.openshift.api.model.OAuthClientList as model_OAuthClientList
+import io.fabric8.openshift.api.model.OpenshiftClusterRole as model_OpenshiftClusterRole
+import io.fabric8.openshift.api.model.OpenshiftClusterRoleBinding as model_OpenshiftClusterRoleBinding
+import io.fabric8.openshift.api.model.OpenshiftClusterRoleBindingList as model_OpenshiftClusterRoleBindingList
+import io.fabric8.openshift.api.model.OpenshiftRole as model_OpenshiftRole
+import io.fabric8.openshift.api.model.OpenshiftRoleBinding as model_OpenshiftRoleBinding
+import io.fabric8.openshift.api.model.OpenshiftRoleBindingList as model_OpenshiftRoleBindingList
+import io.fabric8.openshift.api.model.OpenshiftRoleBindingRestriction as model_OpenshiftRoleBindingRestriction
+import io.fabric8.openshift.api.model.OpenshiftRoleList as model_OpenshiftRoleList
+import io.fabric8.openshift.api.model.Project as model_Project
+import io.fabric8.openshift.api.model.ProjectList as model_ProjectList
+import io.fabric8.openshift.api.model.ProjectRequest as model_ProjectRequest
+import io.fabric8.openshift.api.model.Route as model_Route
+import io.fabric8.openshift.api.model.RouteList as model_RouteList
+import io.fabric8.openshift.api.model.SecurityContextConstraints as model_SecurityContextConstraints
+import io.fabric8.openshift.api.model.SecurityContextConstraintsList as model_SecurityContextConstraintsList
+import io.fabric8.openshift.api.model.Template as model_Template
+import io.fabric8.openshift.api.model.TemplateList as model_TemplateList
+import io.fabric8.openshift.api.model.User as model_User
+import io.fabric8.openshift.api.model.UserList as model_UserList
 
 
-fun  Build.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_Build.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  BuildConfig.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_BuildConfig.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  BuildConfigList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_BuildConfigList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  BuildList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_BuildList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  BuildRequest.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_BuildRequest.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  ClusterPolicy.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_DeploymentConfig.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  ClusterPolicyBinding.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_DeploymentConfigList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  ClusterPolicyBindingList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_Group.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  ClusterPolicyList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_GroupList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  ClusterRole.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_Identity.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  ClusterRoleBinding.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_IdentityList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  ClusterRoleBindingList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_Image.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  DeploymentConfig.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_ImageList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  DeploymentConfigList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_ImageSignature.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  Group.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_ImageStream.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  GroupList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_ImageStreamImport.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  Identity.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_ImageStreamList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  IdentityList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_ImageStreamTag.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  Image.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_ImageStreamTagList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  ImageList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_NetNamespace.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  ImageSignature.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_NetNamespaceList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  ImageStream.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_OAuthAccessToken.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  ImageStreamImport.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_OAuthAccessTokenList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  ImageStreamList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_OAuthAuthorizeToken.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  ImageStreamTag.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_OAuthAuthorizeTokenList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  ImageStreamTagList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_OAuthClient.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  NetNamespace.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_OAuthClientAuthorization.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  NetNamespaceList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_OAuthClientAuthorizationList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  OAuthAccessToken.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_OAuthClientList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  OAuthAccessTokenList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_OpenshiftClusterRole.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  OAuthAuthorizeToken.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_OpenshiftClusterRoleBinding.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  OAuthAuthorizeTokenList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_OpenshiftClusterRoleBindingList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  OAuthClient.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_OpenshiftRole.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  OAuthClientAuthorization.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_OpenshiftRoleBinding.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  OAuthClientAuthorizationList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_OpenshiftRoleBindingList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  OAuthClientList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_OpenshiftRoleBindingRestriction.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  Policy.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_OpenshiftRoleList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  PolicyBinding.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_Project.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  PolicyBindingList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_ProjectList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  PolicyList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_ProjectRequest.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  Project.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_Route.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  ProjectList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_RouteList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  ProjectRequest.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_SecurityContextConstraints.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  Role.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_SecurityContextConstraintsList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  RoleBinding.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_Template.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  RoleBindingList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_TemplateList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  RoleBindingRestriction.`metadata`(block: ObjectMeta.() -> Unit = {}) {
+fun  model_User.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
 }
 
 
-fun  RoleList.`metadata`(block: ListMeta.() -> Unit = {}) {
+fun  model_UserList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  Route.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  RouteList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  SecurityContextConstraints.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  SecurityContextConstraintsList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  Template.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  TemplateList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  User.`metadata`(block: ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  UserList.`metadata`(block: ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = ListMeta()
+    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()

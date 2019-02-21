@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.ContainerState
-import io.fabric8.kubernetes.api.model.ContainerStateTerminated
+import io.fabric8.kubernetes.api.model.ContainerState as model_ContainerState
+import io.fabric8.kubernetes.api.model.ContainerStateTerminated as model_ContainerStateTerminated
 
 
-fun  ContainerState.`terminated`(block: ContainerStateTerminated.() -> Unit = {}) {
+fun  model_ContainerState.`terminated`(block: model_ContainerStateTerminated.() -> Unit = {}) {
   if(this.`terminated` == null) {
-    this.`terminated` = ContainerStateTerminated()
+    this.`terminated` = model_ContainerStateTerminated()
   }
 
   this.`terminated`.block()

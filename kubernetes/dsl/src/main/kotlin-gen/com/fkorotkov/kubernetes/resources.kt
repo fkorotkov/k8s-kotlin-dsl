@@ -1,23 +1,23 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.Container
-import io.fabric8.kubernetes.api.model.PersistentVolumeClaimSpec
-import io.fabric8.kubernetes.api.model.ResourceRequirements
+import io.fabric8.kubernetes.api.model.Container as model_Container
+import io.fabric8.kubernetes.api.model.PersistentVolumeClaimSpec as model_PersistentVolumeClaimSpec
+import io.fabric8.kubernetes.api.model.ResourceRequirements as model_ResourceRequirements
 
 
-fun  Container.`resources`(block: ResourceRequirements.() -> Unit = {}) {
+fun  model_Container.`resources`(block: model_ResourceRequirements.() -> Unit = {}) {
   if(this.`resources` == null) {
-    this.`resources` = ResourceRequirements()
+    this.`resources` = model_ResourceRequirements()
   }
 
   this.`resources`.block()
 }
 
 
-fun  PersistentVolumeClaimSpec.`resources`(block: ResourceRequirements.() -> Unit = {}) {
+fun  model_PersistentVolumeClaimSpec.`resources`(block: model_ResourceRequirements.() -> Unit = {}) {
   if(this.`resources` == null) {
-    this.`resources` = ResourceRequirements()
+    this.`resources` = model_ResourceRequirements()
   }
 
   this.`resources`.block()

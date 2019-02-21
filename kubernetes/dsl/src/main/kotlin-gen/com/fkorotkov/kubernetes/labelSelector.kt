@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.LabelSelector
-import io.fabric8.kubernetes.api.model.PodAffinityTerm
+import io.fabric8.kubernetes.api.model.LabelSelector as model_LabelSelector
+import io.fabric8.kubernetes.api.model.PodAffinityTerm as model_PodAffinityTerm
 
 
-fun  PodAffinityTerm.`labelSelector`(block: LabelSelector.() -> Unit = {}) {
+fun  model_PodAffinityTerm.`labelSelector`(block: model_LabelSelector.() -> Unit = {}) {
   if(this.`labelSelector` == null) {
-    this.`labelSelector` = LabelSelector()
+    this.`labelSelector` = model_LabelSelector()
   }
 
   this.`labelSelector`.block()

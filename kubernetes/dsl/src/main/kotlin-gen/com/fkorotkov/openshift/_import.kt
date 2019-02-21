@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.openshift
 
-import io.fabric8.openshift.api.model.ImageStream
-import io.fabric8.openshift.api.model.ImageStreamImportStatus
+import io.fabric8.openshift.api.model.ImageStream as model_ImageStream
+import io.fabric8.openshift.api.model.ImageStreamImportStatus as model_ImageStreamImportStatus
 
 
-fun  ImageStreamImportStatus.`_import`(block: ImageStream.() -> Unit = {}) {
+fun  model_ImageStreamImportStatus.`_import`(block: model_ImageStream.() -> Unit = {}) {
   if(this.`import` == null) {
-    this.`import` = ImageStream()
+    this.`import` = model_ImageStream()
   }
 
   this.`import`.block()

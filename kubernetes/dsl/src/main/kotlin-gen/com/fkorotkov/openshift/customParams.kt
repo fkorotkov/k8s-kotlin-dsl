@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.openshift
 
-import io.fabric8.openshift.api.model.CustomDeploymentStrategyParams
-import io.fabric8.openshift.api.model.DeploymentStrategy
+import io.fabric8.openshift.api.model.CustomDeploymentStrategyParams as model_CustomDeploymentStrategyParams
+import io.fabric8.openshift.api.model.DeploymentStrategy as model_DeploymentStrategy
 
 
-fun  DeploymentStrategy.`customParams`(block: CustomDeploymentStrategyParams.() -> Unit = {}) {
+fun  model_DeploymentStrategy.`customParams`(block: model_CustomDeploymentStrategyParams.() -> Unit = {}) {
   if(this.`customParams` == null) {
-    this.`customParams` = CustomDeploymentStrategyParams()
+    this.`customParams` = model_CustomDeploymentStrategyParams()
   }
 
   this.`customParams`.block()

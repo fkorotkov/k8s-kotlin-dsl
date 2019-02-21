@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.Status
-import io.fabric8.kubernetes.api.model.StatusDetails
+import io.fabric8.kubernetes.api.model.Status as model_Status
+import io.fabric8.kubernetes.api.model.StatusDetails as model_StatusDetails
 
 
-fun  Status.`details`(block: StatusDetails.() -> Unit = {}) {
+fun  model_Status.`details`(block: model_StatusDetails.() -> Unit = {}) {
   if(this.`details` == null) {
-    this.`details` = StatusDetails()
+    this.`details` = model_StatusDetails()
   }
 
   this.`details`.block()

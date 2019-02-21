@@ -1,243 +1,101 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.HorizontalPodAutoscaler
-import io.fabric8.kubernetes.api.model.HorizontalPodAutoscalerStatus
-import io.fabric8.kubernetes.api.model.Namespace
-import io.fabric8.kubernetes.api.model.NamespaceStatus
-import io.fabric8.kubernetes.api.model.Node
-import io.fabric8.kubernetes.api.model.NodeStatus
-import io.fabric8.kubernetes.api.model.PersistentVolume
-import io.fabric8.kubernetes.api.model.PersistentVolumeClaim
-import io.fabric8.kubernetes.api.model.PersistentVolumeClaimStatus
-import io.fabric8.kubernetes.api.model.PersistentVolumeStatus
-import io.fabric8.kubernetes.api.model.Pod
-import io.fabric8.kubernetes.api.model.PodStatus
-import io.fabric8.kubernetes.api.model.ReplicationController
-import io.fabric8.kubernetes.api.model.ReplicationControllerStatus
-import io.fabric8.kubernetes.api.model.ResourceQuota
-import io.fabric8.kubernetes.api.model.ResourceQuotaStatus
-import io.fabric8.kubernetes.api.model.Service
-import io.fabric8.kubernetes.api.model.ServiceStatus
-import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinition
-import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceDefinitionStatus
-import io.fabric8.kubernetes.api.model.apps.DaemonSet
-import io.fabric8.kubernetes.api.model.apps.DaemonSetStatus
-import io.fabric8.kubernetes.api.model.apps.Deployment
-import io.fabric8.kubernetes.api.model.apps.DeploymentStatus
-import io.fabric8.kubernetes.api.model.apps.ReplicaSet
-import io.fabric8.kubernetes.api.model.apps.ReplicaSetStatus
-import io.fabric8.kubernetes.api.model.apps.StatefulSet
-import io.fabric8.kubernetes.api.model.apps.StatefulSetStatus
-import io.fabric8.kubernetes.api.model.authentication.TokenReview
-import io.fabric8.kubernetes.api.model.authentication.TokenReviewStatus
-import io.fabric8.kubernetes.api.model.authorization.LocalSubjectAccessReview
-import io.fabric8.kubernetes.api.model.authorization.SubjectAccessReview
-import io.fabric8.kubernetes.api.model.authorization.SubjectAccessReviewStatus
-import io.fabric8.kubernetes.api.model.batch.CronJob
-import io.fabric8.kubernetes.api.model.batch.CronJobStatus
-import io.fabric8.kubernetes.api.model.batch.Job
-import io.fabric8.kubernetes.api.model.batch.JobStatus
-import io.fabric8.kubernetes.api.model.extensions.Ingress
-import io.fabric8.kubernetes.api.model.extensions.IngressStatus
-import io.fabric8.kubernetes.api.model.extensions.Scale
-import io.fabric8.kubernetes.api.model.extensions.ScaleStatus
-import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudget
-import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetStatus
+import io.fabric8.kubernetes.api.model.HorizontalPodAutoscaler as model_HorizontalPodAutoscaler
+import io.fabric8.kubernetes.api.model.HorizontalPodAutoscalerStatus as model_HorizontalPodAutoscalerStatus
+import io.fabric8.kubernetes.api.model.Namespace as model_Namespace
+import io.fabric8.kubernetes.api.model.NamespaceStatus as model_NamespaceStatus
+import io.fabric8.kubernetes.api.model.Node as model_Node
+import io.fabric8.kubernetes.api.model.NodeStatus as model_NodeStatus
+import io.fabric8.kubernetes.api.model.PersistentVolume as model_PersistentVolume
+import io.fabric8.kubernetes.api.model.PersistentVolumeClaim as model_PersistentVolumeClaim
+import io.fabric8.kubernetes.api.model.PersistentVolumeClaimStatus as model_PersistentVolumeClaimStatus
+import io.fabric8.kubernetes.api.model.PersistentVolumeStatus as model_PersistentVolumeStatus
+import io.fabric8.kubernetes.api.model.Pod as model_Pod
+import io.fabric8.kubernetes.api.model.PodStatus as model_PodStatus
+import io.fabric8.kubernetes.api.model.ReplicationController as model_ReplicationController
+import io.fabric8.kubernetes.api.model.ReplicationControllerStatus as model_ReplicationControllerStatus
+import io.fabric8.kubernetes.api.model.ResourceQuota as model_ResourceQuota
+import io.fabric8.kubernetes.api.model.ResourceQuotaStatus as model_ResourceQuotaStatus
+import io.fabric8.kubernetes.api.model.Service as model_Service
+import io.fabric8.kubernetes.api.model.ServiceStatus as model_ServiceStatus
 
 
-fun  CronJob.`status`(block: CronJobStatus.() -> Unit = {}) {
+fun  model_HorizontalPodAutoscaler.`status`(block: model_HorizontalPodAutoscalerStatus.() -> Unit = {}) {
   if(this.`status` == null) {
-    this.`status` = CronJobStatus()
+    this.`status` = model_HorizontalPodAutoscalerStatus()
   }
 
   this.`status`.block()
 }
 
 
-fun  CustomResourceDefinition.`status`(block: CustomResourceDefinitionStatus.() -> Unit = {}) {
+fun  model_Namespace.`status`(block: model_NamespaceStatus.() -> Unit = {}) {
   if(this.`status` == null) {
-    this.`status` = CustomResourceDefinitionStatus()
+    this.`status` = model_NamespaceStatus()
   }
 
   this.`status`.block()
 }
 
 
-fun  DaemonSet.`status`(block: DaemonSetStatus.() -> Unit = {}) {
+fun  model_Node.`status`(block: model_NodeStatus.() -> Unit = {}) {
   if(this.`status` == null) {
-    this.`status` = DaemonSetStatus()
+    this.`status` = model_NodeStatus()
   }
 
   this.`status`.block()
 }
 
 
-fun  Deployment.`status`(block: DeploymentStatus.() -> Unit = {}) {
+fun  model_PersistentVolume.`status`(block: model_PersistentVolumeStatus.() -> Unit = {}) {
   if(this.`status` == null) {
-    this.`status` = DeploymentStatus()
+    this.`status` = model_PersistentVolumeStatus()
   }
 
   this.`status`.block()
 }
 
 
-fun  HorizontalPodAutoscaler.`status`(block: HorizontalPodAutoscalerStatus.() -> Unit = {}) {
+fun  model_PersistentVolumeClaim.`status`(block: model_PersistentVolumeClaimStatus.() -> Unit = {}) {
   if(this.`status` == null) {
-    this.`status` = HorizontalPodAutoscalerStatus()
+    this.`status` = model_PersistentVolumeClaimStatus()
   }
 
   this.`status`.block()
 }
 
 
-fun  Ingress.`status`(block: IngressStatus.() -> Unit = {}) {
+fun  model_Pod.`status`(block: model_PodStatus.() -> Unit = {}) {
   if(this.`status` == null) {
-    this.`status` = IngressStatus()
+    this.`status` = model_PodStatus()
   }
 
   this.`status`.block()
 }
 
 
-fun  Job.`status`(block: JobStatus.() -> Unit = {}) {
+fun  model_ReplicationController.`status`(block: model_ReplicationControllerStatus.() -> Unit = {}) {
   if(this.`status` == null) {
-    this.`status` = JobStatus()
+    this.`status` = model_ReplicationControllerStatus()
   }
 
   this.`status`.block()
 }
 
 
-fun  LocalSubjectAccessReview.`status`(block: SubjectAccessReviewStatus.() -> Unit = {}) {
+fun  model_ResourceQuota.`status`(block: model_ResourceQuotaStatus.() -> Unit = {}) {
   if(this.`status` == null) {
-    this.`status` = SubjectAccessReviewStatus()
+    this.`status` = model_ResourceQuotaStatus()
   }
 
   this.`status`.block()
 }
 
 
-fun  Namespace.`status`(block: NamespaceStatus.() -> Unit = {}) {
+fun  model_Service.`status`(block: model_ServiceStatus.() -> Unit = {}) {
   if(this.`status` == null) {
-    this.`status` = NamespaceStatus()
-  }
-
-  this.`status`.block()
-}
-
-
-fun  Node.`status`(block: NodeStatus.() -> Unit = {}) {
-  if(this.`status` == null) {
-    this.`status` = NodeStatus()
-  }
-
-  this.`status`.block()
-}
-
-
-fun  PersistentVolume.`status`(block: PersistentVolumeStatus.() -> Unit = {}) {
-  if(this.`status` == null) {
-    this.`status` = PersistentVolumeStatus()
-  }
-
-  this.`status`.block()
-}
-
-
-fun  PersistentVolumeClaim.`status`(block: PersistentVolumeClaimStatus.() -> Unit = {}) {
-  if(this.`status` == null) {
-    this.`status` = PersistentVolumeClaimStatus()
-  }
-
-  this.`status`.block()
-}
-
-
-fun  Pod.`status`(block: PodStatus.() -> Unit = {}) {
-  if(this.`status` == null) {
-    this.`status` = PodStatus()
-  }
-
-  this.`status`.block()
-}
-
-
-fun  PodDisruptionBudget.`status`(block: PodDisruptionBudgetStatus.() -> Unit = {}) {
-  if(this.`status` == null) {
-    this.`status` = PodDisruptionBudgetStatus()
-  }
-
-  this.`status`.block()
-}
-
-
-fun  ReplicaSet.`status`(block: ReplicaSetStatus.() -> Unit = {}) {
-  if(this.`status` == null) {
-    this.`status` = ReplicaSetStatus()
-  }
-
-  this.`status`.block()
-}
-
-
-fun  ReplicationController.`status`(block: ReplicationControllerStatus.() -> Unit = {}) {
-  if(this.`status` == null) {
-    this.`status` = ReplicationControllerStatus()
-  }
-
-  this.`status`.block()
-}
-
-
-fun  ResourceQuota.`status`(block: ResourceQuotaStatus.() -> Unit = {}) {
-  if(this.`status` == null) {
-    this.`status` = ResourceQuotaStatus()
-  }
-
-  this.`status`.block()
-}
-
-
-fun  Scale.`status`(block: ScaleStatus.() -> Unit = {}) {
-  if(this.`status` == null) {
-    this.`status` = ScaleStatus()
-  }
-
-  this.`status`.block()
-}
-
-
-fun  Service.`status`(block: ServiceStatus.() -> Unit = {}) {
-  if(this.`status` == null) {
-    this.`status` = ServiceStatus()
-  }
-
-  this.`status`.block()
-}
-
-
-fun  StatefulSet.`status`(block: StatefulSetStatus.() -> Unit = {}) {
-  if(this.`status` == null) {
-    this.`status` = StatefulSetStatus()
-  }
-
-  this.`status`.block()
-}
-
-
-fun  SubjectAccessReview.`status`(block: SubjectAccessReviewStatus.() -> Unit = {}) {
-  if(this.`status` == null) {
-    this.`status` = SubjectAccessReviewStatus()
-  }
-
-  this.`status`.block()
-}
-
-
-fun  TokenReview.`status`(block: TokenReviewStatus.() -> Unit = {}) {
-  if(this.`status` == null) {
-    this.`status` = TokenReviewStatus()
+    this.`status` = model_ServiceStatus()
   }
 
   this.`status`.block()

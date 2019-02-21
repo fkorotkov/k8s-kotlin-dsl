@@ -1,33 +1,23 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
-import io.fabric8.kubernetes.api.model.PodSecurityContext
-import io.fabric8.kubernetes.api.model.SELinuxOptions
-import io.fabric8.kubernetes.api.model.SecurityContext
-import io.fabric8.kubernetes.api.model.extensions.SELinuxStrategyOptions
+import io.fabric8.kubernetes.api.model.PodSecurityContext as model_PodSecurityContext
+import io.fabric8.kubernetes.api.model.SELinuxOptions as model_SELinuxOptions
+import io.fabric8.kubernetes.api.model.SecurityContext as model_SecurityContext
 
 
-fun  PodSecurityContext.`seLinuxOptions`(block: SELinuxOptions.() -> Unit = {}) {
+fun  model_PodSecurityContext.`seLinuxOptions`(block: model_SELinuxOptions.() -> Unit = {}) {
   if(this.`seLinuxOptions` == null) {
-    this.`seLinuxOptions` = SELinuxOptions()
+    this.`seLinuxOptions` = model_SELinuxOptions()
   }
 
   this.`seLinuxOptions`.block()
 }
 
 
-fun  SELinuxStrategyOptions.`seLinuxOptions`(block: SELinuxOptions.() -> Unit = {}) {
+fun  model_SecurityContext.`seLinuxOptions`(block: model_SELinuxOptions.() -> Unit = {}) {
   if(this.`seLinuxOptions` == null) {
-    this.`seLinuxOptions` = SELinuxOptions()
-  }
-
-  this.`seLinuxOptions`.block()
-}
-
-
-fun  SecurityContext.`seLinuxOptions`(block: SELinuxOptions.() -> Unit = {}) {
-  if(this.`seLinuxOptions` == null) {
-    this.`seLinuxOptions` = SELinuxOptions()
+    this.`seLinuxOptions` = model_SELinuxOptions()
   }
 
   this.`seLinuxOptions`.block()

@@ -1,13 +1,13 @@
 // GENERATED
 package com.fkorotkov.openshift
 
-import io.fabric8.openshift.api.model.FSGroupStrategyOptions
-import io.fabric8.openshift.api.model.SecurityContextConstraints
+import io.fabric8.openshift.api.model.FSGroupStrategyOptions as model_FSGroupStrategyOptions
+import io.fabric8.openshift.api.model.SecurityContextConstraints as model_SecurityContextConstraints
 
 
-fun  SecurityContextConstraints.`fsGroup`(block: FSGroupStrategyOptions.() -> Unit = {}) {
+fun  model_SecurityContextConstraints.`fsGroup`(block: model_FSGroupStrategyOptions.() -> Unit = {}) {
   if(this.`fsGroup` == null) {
-    this.`fsGroup` = FSGroupStrategyOptions()
+    this.`fsGroup` = model_FSGroupStrategyOptions()
   }
 
   this.`fsGroup`.block()
