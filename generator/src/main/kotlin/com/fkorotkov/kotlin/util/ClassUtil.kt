@@ -14,3 +14,9 @@ object ClassUtil {
     }
   }
 }
+
+val <T: Any> KClass<T>.packageName: String?
+  get() = qualifiedName?.substringBeforeLast('.')
+
+val <T: Any> KClass<T>.uniqueSimpleAlias: String?
+  get() = this.qualifiedName?.split('.')?.takeLast(2)?.joinToString(separator = "_") ?: this.simpleName

@@ -1,5 +1,6 @@
 package com.fkorotkov.kotlin.dsl
 
+import com.fkorotkov.kotlin.util.uniqueSimpleAlias
 import java.io.File
 import java.util.*
 import kotlin.reflect.KClass
@@ -31,7 +32,7 @@ object BuilderGenerator {
 package $outputPackage
 
 ${
-allClasses.map { it.qualifiedName }.toSet().map { "import $it" }.sorted().joinToString("\n")
+allClasses.map { "import ${it.qualifiedName} as ${it.uniqueSimpleAlias}" }.toSet().sorted().joinToString("\n")
 }
 
 ${
@@ -44,8 +45,8 @@ clazzToProperties.map { (clazz, property) -> extensionFunctionTemplate(clazz, pr
     val returnClass = property.returnType.classifier as KClass<*>
     val generics: List<String> = (1..clazz.typeParameters.size).map { "T$it" }
 
-    val clazzDecl = clazz.simpleName + genericsTemplate(generics)
-    val returnClassDecl = returnClass.simpleName + genericsTemplate(Collections.nCopies(returnClass.typeParameters.size, "*"))
+    val clazzDecl = clazz.uniqueSimpleAlias + genericsTemplate(generics)
+    val returnClassDecl = returnClass.uniqueSimpleAlias + genericsTemplate(Collections.nCopies(returnClass.typeParameters.size, "*"))
 
     return """
 fun ${genericsTemplate(generics)} $clazzDecl.`${property.name}`(block: $returnClassDecl.() -> Unit = {}) {${initializer(property, returnClass)}
@@ -59,7 +60,7 @@ fun ${genericsTemplate(generics)} $clazzDecl.`${property.name}`(block: $returnCl
     val propertyName = sanitizePropertyName(property.name)
     return """
   if(this.`$propertyName` == null) {
-    this.`$propertyName` = ${returnClass.simpleName}()
+    this.`$propertyName` = ${returnClass.uniqueSimpleAlias}()
   }
 """
   }
