@@ -45,7 +45,7 @@ publishing {
             artifactId 'kubernetes-dsl'
             version current_k8s_dsl_version
             from components.java
-            artifacts = [ sourcesJar ]
+            artifact sourcesJar
         }
     }
 }
