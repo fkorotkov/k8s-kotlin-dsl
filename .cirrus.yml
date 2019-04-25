@@ -14,6 +14,10 @@ task:
     - rm -f ~/.gradle/caches/user-id.txt
     - rm -f ~/.gradle/caches/journal-1/file-access.bin
     - find ~/.gradle/caches/ -name "*.lock" -type f -delete
+  on_failure:
+    junit_artifacts:
+      path: "**/test-results/**/*.xml"
+      format: junit
 
 deploy_task:
   only_if: $CIRRUS_TAG != ''
