@@ -3,7 +3,7 @@ package com.fkorotkov.kubernetes
 import io.fabric8.kubernetes.api.model.IntOrString
 import org.junit.Test
 import kotlin.test.assertEquals
-
+import kotlin.test.assertTrue
 class SimpleCompilationTest {
   @Test
   fun testService() {
@@ -36,6 +36,7 @@ class SimpleCompilationTest {
         )
       }
     }
+    assertTrue(!myService.metadata.name.isBlank())
     assertEquals(serviceName, myService.metadata.name)
     assertEquals("NodePort", myService.spec.type)
 
