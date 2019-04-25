@@ -38,6 +38,7 @@ class SimpleCompilationTest {
     }
     assertEquals(serviceName, myService.metadata.name)
     assertEquals("NodePort", myService.spec.type)
+    assertEquals(1, myService.spec.ports.size)
 
     myService.apply {
       metadata {
