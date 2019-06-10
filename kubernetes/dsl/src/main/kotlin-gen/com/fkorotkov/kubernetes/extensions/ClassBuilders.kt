@@ -1,6 +1,7 @@
 // GENERATE
 package com.fkorotkov.kubernetes.extensions
 
+import io.fabric8.kubernetes.api.model.extensions.AllowedCSIDriver as extensions_AllowedCSIDriver
 import io.fabric8.kubernetes.api.model.extensions.AllowedFlexVolume as extensions_AllowedFlexVolume
 import io.fabric8.kubernetes.api.model.extensions.AllowedHostPath as extensions_AllowedHostPath
 import io.fabric8.kubernetes.api.model.extensions.DeploymentRollback as extensions_DeploymentRollback
@@ -27,6 +28,13 @@ import io.fabric8.kubernetes.api.model.extensions.Scale as extensions_Scale
 import io.fabric8.kubernetes.api.model.extensions.ScaleSpec as extensions_ScaleSpec
 import io.fabric8.kubernetes.api.model.extensions.ScaleStatus as extensions_ScaleStatus
 import io.fabric8.kubernetes.api.model.extensions.SupplementalGroupsStrategyOptions as extensions_SupplementalGroupsStrategyOptions
+
+
+fun newAllowedCSIDriver(block : extensions_AllowedCSIDriver.() -> Unit = {}): extensions_AllowedCSIDriver {
+  val instance = extensions_AllowedCSIDriver()
+  instance.block()
+  return instance
+}
 
 
 fun newAllowedFlexVolume(block : extensions_AllowedFlexVolume.() -> Unit = {}): extensions_AllowedFlexVolume {

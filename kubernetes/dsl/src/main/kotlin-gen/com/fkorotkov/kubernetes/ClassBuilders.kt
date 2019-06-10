@@ -12,6 +12,7 @@ import io.fabric8.kubernetes.api.model.AzureFileVolumeSource as model_AzureFileV
 import io.fabric8.kubernetes.api.model.BaseKubernetesList as model_BaseKubernetesList
 import io.fabric8.kubernetes.api.model.Binding as model_Binding
 import io.fabric8.kubernetes.api.model.CSIPersistentVolumeSource as model_CSIPersistentVolumeSource
+import io.fabric8.kubernetes.api.model.CSIVolumeSource as model_CSIVolumeSource
 import io.fabric8.kubernetes.api.model.Capabilities as model_Capabilities
 import io.fabric8.kubernetes.api.model.CephFSPersistentVolumeSource as model_CephFSPersistentVolumeSource
 import io.fabric8.kubernetes.api.model.CephFSVolumeSource as model_CephFSVolumeSource
@@ -302,6 +303,13 @@ fun newBinding(block : model_Binding.() -> Unit = {}): model_Binding {
 
 fun newCSIPersistentVolumeSource(block : model_CSIPersistentVolumeSource.() -> Unit = {}): model_CSIPersistentVolumeSource {
   val instance = model_CSIPersistentVolumeSource()
+  instance.block()
+  return instance
+}
+
+
+fun newCSIVolumeSource(block : model_CSIVolumeSource.() -> Unit = {}): model_CSIVolumeSource {
+  val instance = model_CSIVolumeSource()
   instance.block()
   return instance
 }
