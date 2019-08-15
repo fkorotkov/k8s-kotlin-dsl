@@ -1,6 +1,8 @@
 // GENERATE
 package com.fkorotkov.kubernetes
 
+import io.fabric8.kubernetes.api.model.APIGroup as model_APIGroup
+import io.fabric8.kubernetes.api.model.APIGroupList as model_APIGroupList
 import io.fabric8.kubernetes.api.model.AWSElasticBlockStoreVolumeSource as model_AWSElasticBlockStoreVolumeSource
 import io.fabric8.kubernetes.api.model.Affinity as model_Affinity
 import io.fabric8.kubernetes.api.model.AttachedVolume as model_AttachedVolume
@@ -62,8 +64,6 @@ import io.fabric8.kubernetes.api.model.EventSource as model_EventSource
 import io.fabric8.kubernetes.api.model.ExecAction as model_ExecAction
 import io.fabric8.kubernetes.api.model.ExecConfig as model_ExecConfig
 import io.fabric8.kubernetes.api.model.ExecEnvVar as model_ExecEnvVar
-import io.fabric8.kubernetes.api.model.ExternalMetricSource as model_ExternalMetricSource
-import io.fabric8.kubernetes.api.model.ExternalMetricStatus as model_ExternalMetricStatus
 import io.fabric8.kubernetes.api.model.FCVolumeSource as model_FCVolumeSource
 import io.fabric8.kubernetes.api.model.FlexPersistentVolumeSource as model_FlexPersistentVolumeSource
 import io.fabric8.kubernetes.api.model.FlexVolumeSource as model_FlexVolumeSource
@@ -72,13 +72,13 @@ import io.fabric8.kubernetes.api.model.GCEPersistentDiskVolumeSource as model_GC
 import io.fabric8.kubernetes.api.model.GitRepoVolumeSource as model_GitRepoVolumeSource
 import io.fabric8.kubernetes.api.model.GlusterfsPersistentVolumeSource as model_GlusterfsPersistentVolumeSource
 import io.fabric8.kubernetes.api.model.GlusterfsVolumeSource as model_GlusterfsVolumeSource
+import io.fabric8.kubernetes.api.model.GroupVersionForDiscovery as model_GroupVersionForDiscovery
 import io.fabric8.kubernetes.api.model.GroupVersionKind as model_GroupVersionKind
 import io.fabric8.kubernetes.api.model.GroupVersionResource as model_GroupVersionResource
 import io.fabric8.kubernetes.api.model.HTTPGetAction as model_HTTPGetAction
 import io.fabric8.kubernetes.api.model.HTTPHeader as model_HTTPHeader
 import io.fabric8.kubernetes.api.model.Handler as model_Handler
 import io.fabric8.kubernetes.api.model.HorizontalPodAutoscaler as model_HorizontalPodAutoscaler
-import io.fabric8.kubernetes.api.model.HorizontalPodAutoscalerCondition as model_HorizontalPodAutoscalerCondition
 import io.fabric8.kubernetes.api.model.HorizontalPodAutoscalerList as model_HorizontalPodAutoscalerList
 import io.fabric8.kubernetes.api.model.HorizontalPodAutoscalerSpec as model_HorizontalPodAutoscalerSpec
 import io.fabric8.kubernetes.api.model.HorizontalPodAutoscalerStatus as model_HorizontalPodAutoscalerStatus
@@ -102,8 +102,6 @@ import io.fabric8.kubernetes.api.model.LoadBalancerIngress as model_LoadBalancer
 import io.fabric8.kubernetes.api.model.LoadBalancerStatus as model_LoadBalancerStatus
 import io.fabric8.kubernetes.api.model.LocalObjectReference as model_LocalObjectReference
 import io.fabric8.kubernetes.api.model.LocalVolumeSource as model_LocalVolumeSource
-import io.fabric8.kubernetes.api.model.MetricSpec as model_MetricSpec
-import io.fabric8.kubernetes.api.model.MetricStatus as model_MetricStatus
 import io.fabric8.kubernetes.api.model.MicroTime as model_MicroTime
 import io.fabric8.kubernetes.api.model.NFSVolumeSource as model_NFSVolumeSource
 import io.fabric8.kubernetes.api.model.NamedAuthInfo as model_NamedAuthInfo
@@ -130,8 +128,6 @@ import io.fabric8.kubernetes.api.model.NodeStatus as model_NodeStatus
 import io.fabric8.kubernetes.api.model.NodeSystemInfo as model_NodeSystemInfo
 import io.fabric8.kubernetes.api.model.ObjectFieldSelector as model_ObjectFieldSelector
 import io.fabric8.kubernetes.api.model.ObjectMeta as model_ObjectMeta
-import io.fabric8.kubernetes.api.model.ObjectMetricSource as model_ObjectMetricSource
-import io.fabric8.kubernetes.api.model.ObjectMetricStatus as model_ObjectMetricStatus
 import io.fabric8.kubernetes.api.model.ObjectReference as model_ObjectReference
 import io.fabric8.kubernetes.api.model.OwnerReference as model_OwnerReference
 import io.fabric8.kubernetes.api.model.Patch as model_Patch
@@ -161,8 +157,6 @@ import io.fabric8.kubernetes.api.model.PodStatus as model_PodStatus
 import io.fabric8.kubernetes.api.model.PodTemplate as model_PodTemplate
 import io.fabric8.kubernetes.api.model.PodTemplateList as model_PodTemplateList
 import io.fabric8.kubernetes.api.model.PodTemplateSpec as model_PodTemplateSpec
-import io.fabric8.kubernetes.api.model.PodsMetricSource as model_PodsMetricSource
-import io.fabric8.kubernetes.api.model.PodsMetricStatus as model_PodsMetricStatus
 import io.fabric8.kubernetes.api.model.PortworxVolumeSource as model_PortworxVolumeSource
 import io.fabric8.kubernetes.api.model.Preconditions as model_Preconditions
 import io.fabric8.kubernetes.api.model.Preferences as model_Preferences
@@ -178,8 +172,6 @@ import io.fabric8.kubernetes.api.model.ReplicationControllerList as model_Replic
 import io.fabric8.kubernetes.api.model.ReplicationControllerSpec as model_ReplicationControllerSpec
 import io.fabric8.kubernetes.api.model.ReplicationControllerStatus as model_ReplicationControllerStatus
 import io.fabric8.kubernetes.api.model.ResourceFieldSelector as model_ResourceFieldSelector
-import io.fabric8.kubernetes.api.model.ResourceMetricSource as model_ResourceMetricSource
-import io.fabric8.kubernetes.api.model.ResourceMetricStatus as model_ResourceMetricStatus
 import io.fabric8.kubernetes.api.model.ResourceQuota as model_ResourceQuota
 import io.fabric8.kubernetes.api.model.ResourceQuotaList as model_ResourceQuotaList
 import io.fabric8.kubernetes.api.model.ResourceQuotaSpec as model_ResourceQuotaSpec
@@ -199,6 +191,7 @@ import io.fabric8.kubernetes.api.model.SecretProjection as model_SecretProjectio
 import io.fabric8.kubernetes.api.model.SecretReference as model_SecretReference
 import io.fabric8.kubernetes.api.model.SecretVolumeSource as model_SecretVolumeSource
 import io.fabric8.kubernetes.api.model.SecurityContext as model_SecurityContext
+import io.fabric8.kubernetes.api.model.ServerAddressByClientCIDR as model_ServerAddressByClientCIDR
 import io.fabric8.kubernetes.api.model.Service as model_Service
 import io.fabric8.kubernetes.api.model.ServiceAccount as model_ServiceAccount
 import io.fabric8.kubernetes.api.model.ServiceAccountList as model_ServiceAccountList
@@ -229,6 +222,20 @@ import io.fabric8.kubernetes.api.model.VolumeProjection as model_VolumeProjectio
 import io.fabric8.kubernetes.api.model.VsphereVirtualDiskVolumeSource as model_VsphereVirtualDiskVolumeSource
 import io.fabric8.kubernetes.api.model.WatchEvent as model_WatchEvent
 import io.fabric8.kubernetes.api.model.WeightedPodAffinityTerm as model_WeightedPodAffinityTerm
+
+
+fun newAPIGroup(block : model_APIGroup.() -> Unit = {}): model_APIGroup {
+  val instance = model_APIGroup()
+  instance.block()
+  return instance
+}
+
+
+fun newAPIGroupList(block : model_APIGroupList.() -> Unit = {}): model_APIGroupList {
+  val instance = model_APIGroupList()
+  instance.block()
+  return instance
+}
 
 
 fun newAWSElasticBlockStoreVolumeSource(block : model_AWSElasticBlockStoreVolumeSource.() -> Unit = {}): model_AWSElasticBlockStoreVolumeSource {
@@ -658,20 +665,6 @@ fun newExecEnvVar(block : model_ExecEnvVar.() -> Unit = {}): model_ExecEnvVar {
 }
 
 
-fun newExternalMetricSource(block : model_ExternalMetricSource.() -> Unit = {}): model_ExternalMetricSource {
-  val instance = model_ExternalMetricSource()
-  instance.block()
-  return instance
-}
-
-
-fun newExternalMetricStatus(block : model_ExternalMetricStatus.() -> Unit = {}): model_ExternalMetricStatus {
-  val instance = model_ExternalMetricStatus()
-  instance.block()
-  return instance
-}
-
-
 fun newFCVolumeSource(block : model_FCVolumeSource.() -> Unit = {}): model_FCVolumeSource {
   val instance = model_FCVolumeSource()
   instance.block()
@@ -728,6 +721,13 @@ fun newGlusterfsVolumeSource(block : model_GlusterfsVolumeSource.() -> Unit = {}
 }
 
 
+fun newGroupVersionForDiscovery(block : model_GroupVersionForDiscovery.() -> Unit = {}): model_GroupVersionForDiscovery {
+  val instance = model_GroupVersionForDiscovery()
+  instance.block()
+  return instance
+}
+
+
 fun newGroupVersionKind(block : model_GroupVersionKind.() -> Unit = {}): model_GroupVersionKind {
   val instance = model_GroupVersionKind()
   instance.block()
@@ -765,13 +765,6 @@ fun newHandler(block : model_Handler.() -> Unit = {}): model_Handler {
 
 fun newHorizontalPodAutoscaler(block : model_HorizontalPodAutoscaler.() -> Unit = {}): model_HorizontalPodAutoscaler {
   val instance = model_HorizontalPodAutoscaler()
-  instance.block()
-  return instance
-}
-
-
-fun newHorizontalPodAutoscalerCondition(block : model_HorizontalPodAutoscalerCondition.() -> Unit = {}): model_HorizontalPodAutoscalerCondition {
-  val instance = model_HorizontalPodAutoscalerCondition()
   instance.block()
   return instance
 }
@@ -933,20 +926,6 @@ fun newLocalObjectReference(block : model_LocalObjectReference.() -> Unit = {}):
 
 fun newLocalVolumeSource(block : model_LocalVolumeSource.() -> Unit = {}): model_LocalVolumeSource {
   val instance = model_LocalVolumeSource()
-  instance.block()
-  return instance
-}
-
-
-fun newMetricSpec(block : model_MetricSpec.() -> Unit = {}): model_MetricSpec {
-  val instance = model_MetricSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newMetricStatus(block : model_MetricStatus.() -> Unit = {}): model_MetricStatus {
-  val instance = model_MetricStatus()
   instance.block()
   return instance
 }
@@ -1129,20 +1108,6 @@ fun newObjectFieldSelector(block : model_ObjectFieldSelector.() -> Unit = {}): m
 
 fun newObjectMeta(block : model_ObjectMeta.() -> Unit = {}): model_ObjectMeta {
   val instance = model_ObjectMeta()
-  instance.block()
-  return instance
-}
-
-
-fun newObjectMetricSource(block : model_ObjectMetricSource.() -> Unit = {}): model_ObjectMetricSource {
-  val instance = model_ObjectMetricSource()
-  instance.block()
-  return instance
-}
-
-
-fun newObjectMetricStatus(block : model_ObjectMetricStatus.() -> Unit = {}): model_ObjectMetricStatus {
-  val instance = model_ObjectMetricStatus()
   instance.block()
   return instance
 }
@@ -1351,20 +1316,6 @@ fun newPodTemplateSpec(block : model_PodTemplateSpec.() -> Unit = {}): model_Pod
 }
 
 
-fun newPodsMetricSource(block : model_PodsMetricSource.() -> Unit = {}): model_PodsMetricSource {
-  val instance = model_PodsMetricSource()
-  instance.block()
-  return instance
-}
-
-
-fun newPodsMetricStatus(block : model_PodsMetricStatus.() -> Unit = {}): model_PodsMetricStatus {
-  val instance = model_PodsMetricStatus()
-  instance.block()
-  return instance
-}
-
-
 fun newPortworxVolumeSource(block : model_PortworxVolumeSource.() -> Unit = {}): model_PortworxVolumeSource {
   val instance = model_PortworxVolumeSource()
   instance.block()
@@ -1465,20 +1416,6 @@ fun newReplicationControllerStatus(block : model_ReplicationControllerStatus.() 
 
 fun newResourceFieldSelector(block : model_ResourceFieldSelector.() -> Unit = {}): model_ResourceFieldSelector {
   val instance = model_ResourceFieldSelector()
-  instance.block()
-  return instance
-}
-
-
-fun newResourceMetricSource(block : model_ResourceMetricSource.() -> Unit = {}): model_ResourceMetricSource {
-  val instance = model_ResourceMetricSource()
-  instance.block()
-  return instance
-}
-
-
-fun newResourceMetricStatus(block : model_ResourceMetricStatus.() -> Unit = {}): model_ResourceMetricStatus {
-  val instance = model_ResourceMetricStatus()
   instance.block()
   return instance
 }
@@ -1612,6 +1549,13 @@ fun newSecretVolumeSource(block : model_SecretVolumeSource.() -> Unit = {}): mod
 
 fun newSecurityContext(block : model_SecurityContext.() -> Unit = {}): model_SecurityContext {
   val instance = model_SecurityContext()
+  instance.block()
+  return instance
+}
+
+
+fun newServerAddressByClientCIDR(block : model_ServerAddressByClientCIDR.() -> Unit = {}): model_ServerAddressByClientCIDR {
+  val instance = model_ServerAddressByClientCIDR()
   instance.block()
   return instance
 }
