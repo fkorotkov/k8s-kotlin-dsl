@@ -4,5 +4,9 @@ dependencies {
     compile libraries['org.jetbrains.kotlin:kotlin-stdlib']
     compile libraries['org.jetbrains.kotlin:kotlin-reflect']
 
+    compile libraries['com.google.code.gson:gson']
     compile libraries['com.google.guava:guava']
+
+    testCompile libraries['junit:junit']
+    testCompile libraries['org.jetbrains.kotlin:kotlin-test-junit']
 }
