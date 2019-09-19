@@ -39,6 +39,7 @@ subprojects {
         jcenter()
         mavenCentral()
         maven { setUrl("https://repo.gradle.org/gradle/repo") }
+        maven { setUrl("https://artifactory.cronapp.io/public-release") }
     }
 
     apply plugin: 'com.fkorotkov.libraries'

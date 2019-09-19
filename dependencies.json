@@ -11,6 +11,11 @@
       "version": "2.8.5"
     },
     {
+      "group": "com.google.code.gson",
+      "name": "gson-extras",
+      "version": "2.8.5"
+    },
+    {
       "group": "com.google.guava",
       "name": "guava",
       "version": "28.1-jre"
