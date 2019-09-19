@@ -1,0 +1,21 @@
+apply plugin: "application"
+apply plugin: "kotlin"
+
+mainClassName = "com.fkorotkov.kubernetes.kafka.GeneratorKt"
+
+run {
+    args "${project(":DSLs:kafka:model").projectDir}/src/main/resources/schema.json"
+}
+
+dependencies {
+    compile project(":generator")
+
+    compile libraries['com.google.code.gson:gson']
+    compile libraries['com.google.code.gson:gson-extras']
+
+    compile libraries['org.jetbrains.kotlin:kotlin-stdlib']
+    compile libraries['org.jetbrains.kotlin:kotlin-reflect']
+
+    compile libraries['io.fabric8:kubernetes-client']
+    compile libraries['io.fabric8:kubernetes-model']
+}
