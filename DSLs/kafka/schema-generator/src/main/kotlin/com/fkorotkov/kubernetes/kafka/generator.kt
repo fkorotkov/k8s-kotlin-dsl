@@ -37,6 +37,18 @@ fun createSchema(kafkaCRD: CRDDefinition): Schema {
   val typeDefinitionRegistry = mutableMapOf<String, TypeDefinition>()
   generateTypes(typeDefinitionRegistry, "com.fkorotkov.kubernetes.kafka", kafkaCRD.spec.names.kind, kafkaCRD.spec.validation.openAPIV3Schema)
 
+  typeDefinitionRegistry.remove("Metadata")
+  typeDefinitionRegistry.forEach { _, definition ->
+    if (definition.properties.containsKey("metadata")) {
+      definition.javaInterfaces = definition.javaInterfaces + "io.fabric8.kubernetes.api.model.HasMetadata"
+      definition.properties = definition.properties + mapOf(
+          "metadata" to ExistingTypePropertyDefinition().apply {
+            existingJavaType = "io.fabric8.kubernetes.api.model.ObjectMeta"
+          }
+      )
+    }
+  }
+
   typeDefinitionRegistry["${kafkaCRD.spec.names.kind}List"] = TypeDefinition().apply {
     javaType = "com.fkorotkov.kubernetes.kafka.${kafkaCRD.spec.names.kind}List"
     javaInterfaces = listOf(
@@ -51,20 +63,11 @@ fun createSchema(kafkaCRD: CRDDefinition): Schema {
             ref = "#/definitions/${kafkaCRD.spec.names.kind}"
             javaType = "com.fkorotkov.kubernetes.kafka.${kafkaCRD.spec.names.kind}"
           }
+        },
+        "metadata" to ExistingTypePropertyDefinition().apply {
+          existingJavaType = "io.fabric8.kubernetes.api.model.ListMeta"
         }
     ))
-  }
-
-  typeDefinitionRegistry.remove("Metadata")
-  typeDefinitionRegistry.forEach { _, definition ->
-    if (definition.properties.containsKey("metadata")) {
-      definition.javaInterfaces = definition.javaInterfaces + "io.fabric8.kubernetes.api.model.HasMetadata"
-      definition.properties = definition.properties + mapOf(
-          "metadata" to ExistingTypePropertyDefinition().apply {
-            existingJavaType = "io.fabric8.kubernetes.api.model.ObjectMeta"
-          }
-      )
-    }
   }
 
   result.definitions = TreeMap(typeDefinitionRegistry)
