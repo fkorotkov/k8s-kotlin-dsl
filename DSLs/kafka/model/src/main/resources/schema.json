@@ -133,7 +133,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.kafka.KafkaCluster",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.HasMetadata"
+      ],
       "properties": {
         "apiVersion": {
           "type": "string",
@@ -144,11 +146,6 @@
           "type": "string",
           "description": "",
           "required": false
-        },
-        "metadata": {
-          "type": "ref",
-          "$ref": "#/definitions/Metadata",
-          "javaType": "com.fkorotkov.kubernetes.kafka.Metadata"
         },
         "spec": {
           "type": "ref",
@@ -180,14 +177,6 @@
           "required": false
         }
       }
-    },
-    "Metadata": {
-      "type": "object",
-      "description": "",
-      "additionalProperties": true,
-      "javaType": "com.fkorotkov.kubernetes.kafka.Metadata",
-      "javaInterfaces": [],
-      "properties": {}
     },
     "MetricReporter": {
       "type": "object",
@@ -819,11 +808,6 @@
       "type": "ref",
       "$ref": "#/definitions/Limits",
       "javaType": "com.fkorotkov.kubernetes.kafka.Limits"
-    },
-    "metadata": {
-      "type": "ref",
-      "$ref": "#/definitions/Metadata",
-      "javaType": "com.fkorotkov.kubernetes.kafka.Metadata"
     },
     "metricReporter": {
       "type": "ref",
