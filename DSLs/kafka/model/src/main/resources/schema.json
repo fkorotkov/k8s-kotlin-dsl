@@ -159,6 +159,40 @@
         }
       }
     },
+    "KafkaClusterList": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.kafka.KafkaClusterList",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource",
+        "io.fabric8.kubernetes.api.model.KubernetesResourceList"
+      ],
+      "properties": {
+        "apiVersion": {
+          "type": "string",
+          "description": "",
+          "default": "apiextensions.k8s.io/v1beta1",
+          "required": false
+        },
+        "items": {
+          "type": "array",
+          "description": "",
+          "required": false,
+          "items": {
+            "type": "ref",
+            "$ref": "#/definitions/KafkaCluster",
+            "javaType": "com.fkorotkov.kubernetes.kafka.KafkaCluster"
+          }
+        },
+        "kind": {
+          "type": "string",
+          "description": "",
+          "default": "KafkaClusterList",
+          "required": false
+        }
+      }
+    },
     "Limits": {
       "type": "object",
       "description": "",
@@ -803,6 +837,11 @@
       "type": "ref",
       "$ref": "#/definitions/KafkaCluster",
       "javaType": "com.fkorotkov.kubernetes.kafka.KafkaCluster"
+    },
+    "kafkaClusterList": {
+      "type": "ref",
+      "$ref": "#/definitions/KafkaClusterList",
+      "javaType": "com.fkorotkov.kubernetes.kafka.KafkaClusterList"
     },
     "limits": {
       "type": "ref",
