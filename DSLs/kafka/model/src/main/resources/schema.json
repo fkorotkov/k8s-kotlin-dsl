@@ -147,6 +147,11 @@
           "description": "",
           "required": false
         },
+        "metadata": {
+          "type": "object",
+          "description": "",
+          "existingJavaType": "io.fabric8.kubernetes.api.model.ObjectMeta"
+        },
         "spec": {
           "type": "ref",
           "$ref": "#/definitions/Spec",

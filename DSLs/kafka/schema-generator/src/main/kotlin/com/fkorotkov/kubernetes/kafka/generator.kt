@@ -25,6 +25,7 @@ fun main(args: Array<String>) {
               .registerSubtype(PrimitiveBooleanPropertyDefinition::class.java, "boolean")
               .registerSubtype(ArrayPropertyDefinition::class.java, "array")
               .registerSubtype(RefPropertyDefinition::class.java, "ref")
+              .registerSubtype(ExistingTypePropertyDefinition::class.java, "object")
       )
       .setPrettyPrinting()
       .create()
@@ -58,7 +59,11 @@ fun createSchema(kafkaCRD: CRDDefinition): Schema {
   typeDefinitionRegistry.forEach { _, definition ->
     if (definition.properties.containsKey("metadata")) {
       definition.javaInterfaces = definition.javaInterfaces + "io.fabric8.kubernetes.api.model.HasMetadata"
-      definition.properties = definition.properties.toMutableMap().apply { remove("metadata") }
+      definition.properties = definition.properties + mapOf(
+          "metadata" to ExistingTypePropertyDefinition().apply {
+            existingJavaType = "io.fabric8.kubernetes.api.model.ObjectMeta"
+          }
+      )
     }
   }
 

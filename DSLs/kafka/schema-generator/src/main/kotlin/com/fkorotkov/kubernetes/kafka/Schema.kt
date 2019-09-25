@@ -55,6 +55,11 @@ class ArrayPropertyDefinition : PropertyDefinition() {
   var items: PropertyDefinition? = null
 }
 
+class ExistingTypePropertyDefinition : PropertyDefinition() {
+  var description: String = ""
+  var existingJavaType: String = ""
+}
+
 class RefPropertyDefinition : PropertyDefinition() {
   @SerializedName("\$ref")
   var ref: String = ""
