@@ -45,8 +45,9 @@
           "description": "",
           "required": false,
           "items": {
-            "$ref": "#/definitions/Jvm",
-            "javaType": "com.fkorotkov.kubernetes.kafka.Jvm"
+            "type": "string",
+            "description": "",
+            "required": false
           }
         },
         "server": {
@@ -54,8 +55,9 @@
           "description": "",
           "required": false,
           "items": {
-            "$ref": "#/definitions/Server",
-            "javaType": "com.fkorotkov.kubernetes.kafka.Server"
+            "type": "string",
+            "description": "",
+            "required": false
           }
         }
       }
@@ -80,8 +82,9 @@
           "description": "",
           "required": false,
           "items": {
-            "$ref": "#/definitions/Arg",
-            "javaType": "com.fkorotkov.kubernetes.kafka.Arg"
+            "type": "string",
+            "description": "",
+            "required": false
           }
         },
         "command": {
@@ -89,8 +92,9 @@
           "description": "",
           "required": false,
           "items": {
-            "$ref": "#/definitions/Command",
-            "javaType": "com.fkorotkov.kubernetes.kafka.Command"
+            "type": "string",
+            "description": "",
+            "required": false
           }
         },
         "envVar": {
@@ -270,8 +274,9 @@
           "description": "",
           "required": false,
           "items": {
-            "$ref": "#/definitions/Value",
-            "javaType": "com.fkorotkov.kubernetes.kafka.Value"
+            "type": "string",
+            "description": "",
+            "required": false
           }
         }
       }
@@ -366,8 +371,9 @@
           "description": "",
           "required": false,
           "items": {
-            "$ref": "#/definitions/SupplementalGroup",
-            "javaType": "com.fkorotkov.kubernetes.kafka.SupplementalGroup"
+            "type": "integer",
+            "description": "",
+            "required": false
           }
         },
         "sysctls": {
@@ -375,6 +381,7 @@
           "description": "",
           "required": false,
           "items": {
+            "type": "ref",
             "$ref": "#/definitions/Sysctl",
             "javaType": "com.fkorotkov.kubernetes.kafka.Sysctl"
           }
@@ -436,6 +443,7 @@
           "description": "",
           "required": false,
           "items": {
+            "type": "ref",
             "$ref": "#/definitions/Storage",
             "javaType": "com.fkorotkov.kubernetes.kafka.Storage"
           }
@@ -493,6 +501,7 @@
           "description": "",
           "required": false,
           "items": {
+            "type": "ref",
             "$ref": "#/definitions/InitContainer",
             "javaType": "com.fkorotkov.kubernetes.kafka.InitContainer"
           }
@@ -557,8 +566,9 @@
           "description": "",
           "required": false,
           "items": {
-            "$ref": "#/definitions/Zone",
-            "javaType": "com.fkorotkov.kubernetes.kafka.Zone"
+            "type": "string",
+            "description": "",
+            "required": false
           }
         },
         "zookeeper": {
@@ -764,5 +774,136 @@
       }
     }
   },
-  "properties": {}
+  "properties": {
+    "annotations": {
+      "type": "ref",
+      "$ref": "#/definitions/Annotations",
+      "javaType": "com.fkorotkov.kubernetes.kafka.Annotations"
+    },
+    "authentication": {
+      "type": "ref",
+      "$ref": "#/definitions/Authentication",
+      "javaType": "com.fkorotkov.kubernetes.kafka.Authentication"
+    },
+    "brokerEndpoints": {
+      "type": "ref",
+      "$ref": "#/definitions/BrokerEndpoints",
+      "javaType": "com.fkorotkov.kubernetes.kafka.BrokerEndpoints"
+    },
+    "configOverrides": {
+      "type": "ref",
+      "$ref": "#/definitions/ConfigOverrides",
+      "javaType": "com.fkorotkov.kubernetes.kafka.ConfigOverrides"
+    },
+    "envVar": {
+      "type": "ref",
+      "$ref": "#/definitions/EnvVar",
+      "javaType": "com.fkorotkov.kubernetes.kafka.EnvVar"
+    },
+    "initContainer": {
+      "type": "ref",
+      "$ref": "#/definitions/InitContainer",
+      "javaType": "com.fkorotkov.kubernetes.kafka.InitContainer"
+    },
+    "jvmConfig": {
+      "type": "ref",
+      "$ref": "#/definitions/JvmConfig",
+      "javaType": "com.fkorotkov.kubernetes.kafka.JvmConfig"
+    },
+    "kafkaCluster": {
+      "type": "ref",
+      "$ref": "#/definitions/KafkaCluster",
+      "javaType": "com.fkorotkov.kubernetes.kafka.KafkaCluster"
+    },
+    "limits": {
+      "type": "ref",
+      "$ref": "#/definitions/Limits",
+      "javaType": "com.fkorotkov.kubernetes.kafka.Limits"
+    },
+    "metadata": {
+      "type": "ref",
+      "$ref": "#/definitions/Metadata",
+      "javaType": "com.fkorotkov.kubernetes.kafka.Metadata"
+    },
+    "metricReporter": {
+      "type": "ref",
+      "$ref": "#/definitions/MetricReporter",
+      "javaType": "com.fkorotkov.kubernetes.kafka.MetricReporter"
+    },
+    "network": {
+      "type": "ref",
+      "$ref": "#/definitions/Network",
+      "javaType": "com.fkorotkov.kubernetes.kafka.Network"
+    },
+    "nodeAffinity": {
+      "type": "ref",
+      "$ref": "#/definitions/NodeAffinity",
+      "javaType": "com.fkorotkov.kubernetes.kafka.NodeAffinity"
+    },
+    "options": {
+      "type": "ref",
+      "$ref": "#/definitions/Options",
+      "javaType": "com.fkorotkov.kubernetes.kafka.Options"
+    },
+    "placement": {
+      "type": "ref",
+      "$ref": "#/definitions/Placement",
+      "javaType": "com.fkorotkov.kubernetes.kafka.Placement"
+    },
+    "podSecurityContext": {
+      "type": "ref",
+      "$ref": "#/definitions/PodSecurityContext",
+      "javaType": "com.fkorotkov.kubernetes.kafka.PodSecurityContext"
+    },
+    "rack": {
+      "type": "ref",
+      "$ref": "#/definitions/Rack",
+      "javaType": "com.fkorotkov.kubernetes.kafka.Rack"
+    },
+    "requests": {
+      "type": "ref",
+      "$ref": "#/definitions/Requests",
+      "javaType": "com.fkorotkov.kubernetes.kafka.Requests"
+    },
+    "resources": {
+      "type": "ref",
+      "$ref": "#/definitions/Resources",
+      "javaType": "com.fkorotkov.kubernetes.kafka.Resources"
+    },
+    "seLinuxOptions": {
+      "type": "ref",
+      "$ref": "#/definitions/SeLinuxOptions",
+      "javaType": "com.fkorotkov.kubernetes.kafka.SeLinuxOptions"
+    },
+    "spec": {
+      "type": "ref",
+      "$ref": "#/definitions/Spec",
+      "javaType": "com.fkorotkov.kubernetes.kafka.Spec"
+    },
+    "status": {
+      "type": "ref",
+      "$ref": "#/definitions/Status",
+      "javaType": "com.fkorotkov.kubernetes.kafka.Status"
+    },
+    "storage": {
+      "type": "ref",
+      "$ref": "#/definitions/Storage",
+      "javaType": "com.fkorotkov.kubernetes.kafka.Storage"
+    },
+    "sysctl": {
+      "type": "ref",
+      "$ref": "#/definitions/Sysctl",
+      "javaType": "com.fkorotkov.kubernetes.kafka.Sysctl"
+    },
+    "tls": {
+      "type": "ref",
+      "$ref": "#/definitions/Tls",
+      "javaType": "com.fkorotkov.kubernetes.kafka.Tls"
+    },
+    "zookeeper": {
+      "type": "ref",
+      "$ref": "#/definitions/Zookeeper",
+      "javaType": "com.fkorotkov.kubernetes.kafka.Zookeeper"
+    }
+  }
 }
