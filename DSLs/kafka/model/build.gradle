@@ -1,7 +1,28 @@
 apply plugin: "application"
 apply plugin: "kotlin"
+apply plugin: "jsonschema2pojo"
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath libraries['org.jsonschema2pojo:jsonschema2pojo-gradle-plugin']
+    }
+}
 
 mainClassName = "ExampleKt"
+
+jsonSchema2Pojo {
+    source = files("${projectDir}/src/main/resources/schema.json")
+    targetDirectory = file("${projectDir}/src/main/java/")
+    targetPackage = "com.fkorotkov.kubernetes.kafka"
+    includeConstructors = true
+    includeJsr303Annotations = false
+    includeToString = false
+    includeHashcodeAndEquals = false
+}
 
 dependencies {
     compile project(":DSLs:kafka:dsl")

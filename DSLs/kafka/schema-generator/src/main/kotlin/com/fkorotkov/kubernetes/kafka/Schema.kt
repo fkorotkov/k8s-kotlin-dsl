@@ -52,16 +52,10 @@ class PrimitiveIntegerPropertyDefinition : PropertyDefinition() {
 class ArrayPropertyDefinition : PropertyDefinition() {
   var description: String = ""
   var required: Boolean = false
-  var items: ArrayPropertyDefinitionItems? = null
+  var items: PropertyDefinition? = null
 }
 
 class RefPropertyDefinition : PropertyDefinition() {
-  @SerializedName("\$ref")
-  var ref: String = ""
-  var javaType: String = ""
-}
-
-class ArrayPropertyDefinitionItems {
   @SerializedName("\$ref")
   var ref: String = ""
   var javaType: String = ""

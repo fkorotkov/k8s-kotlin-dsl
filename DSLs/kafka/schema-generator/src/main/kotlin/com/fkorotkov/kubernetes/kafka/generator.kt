@@ -36,6 +36,12 @@ fun createSchema(kafkaCRD: CRDDefinition): Schema {
   val typeDefinitionRegistry = mutableMapOf<String, TypeDefinition>()
   generateTypes(typeDefinitionRegistry, "com.fkorotkov.kubernetes.kafka", kafkaCRD.spec.names.kind, kafkaCRD.spec.validation.openAPIV3Schema)
   result.definitions = TreeMap(typeDefinitionRegistry)
+  result.properties = TreeMap(typeDefinitionRegistry.map { (name, definition) ->
+    name.decapitalize() to RefPropertyDefinition().apply {
+      ref = "#/definitions/$name"
+      javaType = "com.fkorotkov.kubernetes.kafka.$name"
+    }
+  }.toMap())
   return result
 }
 
@@ -65,10 +71,16 @@ fun generateTypes(registry: MutableMap<String, TypeDefinition>, packagePrefix: S
       "array" -> {
         generateTypes(registry, packagePrefix, typeName.removeSuffix("s"), openAPISchema.items
             ?: throw IllegalStateException("Array for $typeName should have items!!"))
+
         ArrayPropertyDefinition().apply {
-          items = ArrayPropertyDefinitionItems().apply {
-            ref = "#/definitions/${typeName.removeSuffix("s")}"
-            javaType = "$packagePrefix.${typeName.removeSuffix("s")}"
+          items = when (openAPISchema.items?.type) {
+            "string" -> PrimitiveStringPropertyDefinition()
+            "boolean" -> PrimitiveBooleanPropertyDefinition()
+            "integer" -> PrimitiveIntegerPropertyDefinition()
+            else -> RefPropertyDefinition().apply {
+              ref = "#/definitions/${typeName.removeSuffix("s")}"
+              javaType = "$packagePrefix.${typeName.removeSuffix("s")}"
+            }
           }
         }
       }
