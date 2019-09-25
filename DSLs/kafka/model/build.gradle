@@ -1,4 +1,3 @@
-apply plugin: "application"
 apply plugin: "kotlin"
 apply plugin: "jsonschema2pojo"
 
@@ -12,11 +11,17 @@ buildscript {
     }
 }
 
-mainClassName = "ExampleKt"
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main/java-gen'
+        }
+    }
+}
 
 jsonSchema2Pojo {
     source = files("${projectDir}/src/main/resources/schema.json")
-    targetDirectory = file("${projectDir}/src/main/java/")
+    targetDirectory = file("${projectDir}/src/main/java-gen/")
     targetPackage = "com.fkorotkov.kubernetes.kafka"
     includeConstructors = true
     includeJsr303Annotations = false
@@ -25,8 +30,5 @@ jsonSchema2Pojo {
 }
 
 dependencies {
-    compile libraries['org.jetbrains.kotlin:kotlin-stdlib']
-    compile libraries['org.jetbrains.kotlin:kotlin-reflect']
-
     compile libraries['io.fabric8:kubernetes-client']
 }
