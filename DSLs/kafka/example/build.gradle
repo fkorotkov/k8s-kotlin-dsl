@@ -4,8 +4,6 @@ apply plugin: "kotlin"
 mainClassName = "ExampleKt"
 
 dependencies {
-    compile project(":DSLs:kafka:dsl")
-
     compile libraries['org.jetbrains.kotlin:kotlin-stdlib']
     compile libraries['org.jetbrains.kotlin:kotlin-reflect']
 
