@@ -35,6 +35,15 @@ fun createSchema(kafkaCRD: CRDDefinition): Schema {
   val result = Schema()
   val typeDefinitionRegistry = mutableMapOf<String, TypeDefinition>()
   generateTypes(typeDefinitionRegistry, "com.fkorotkov.kubernetes.kafka", kafkaCRD.spec.names.kind, kafkaCRD.spec.validation.openAPIV3Schema)
+
+  typeDefinitionRegistry.remove("Metadata")
+  typeDefinitionRegistry.forEach { _, definition ->
+    if (definition.properties.containsKey("metadata")) {
+      definition.javaInterfaces = definition.javaInterfaces + "io.fabric8.kubernetes.api.model.HasMetadata"
+      definition.properties = definition.properties.toMutableMap().apply { remove("metadata") }
+    }
+  }
+
   result.definitions = TreeMap(typeDefinitionRegistry)
   result.properties = TreeMap(typeDefinitionRegistry.map { (name, definition) ->
     name.decapitalize() to RefPropertyDefinition().apply {
