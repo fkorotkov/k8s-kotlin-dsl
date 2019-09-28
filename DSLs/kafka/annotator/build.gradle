@@ -28,7 +28,6 @@ bintray {
     }
 }
 
-
 publishing {
     publications {
         maven(MavenPublication) {
