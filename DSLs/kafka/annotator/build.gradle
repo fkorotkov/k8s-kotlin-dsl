@@ -1,11 +1,40 @@
 apply plugin: "maven-publish"
+apply plugin: "com.jfrog.bintray"
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath libraries['com.jfrog.bintray.gradle:gradle-bintray-plugin']
+    }
+}
+
+bintray {
+    user = "fkorotkov"
+    key  = project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : System.getenv('BINTRAY_API_KEY')
+    publications = ['maven']
+    pkg {
+        repo = 'maven'
+        name = 'k8s-kafka-annotator'
+        userOrg = 'fkorotkov'
+        licenses = ['MIT']
+        vcsUrl = 'git@github.com:fkorotkov/k8s-kotlin-dsl.git'
+        version {
+            name = '1.0'
+            desc = 'Kafka Annotator for Generation'
+            released  = new Date()
+        }
+    }
+}
+
 
 publishing {
     publications {
         maven(MavenPublication) {
             groupId 'com.fkorotkov'
-            artifactId 'kubernetes-kafka-annotator'
-            version current_k8s_dsl_version
+            artifactId 'k8s-kafka-annotator'
+            version '1.0'
             from components.java
         }
     }
