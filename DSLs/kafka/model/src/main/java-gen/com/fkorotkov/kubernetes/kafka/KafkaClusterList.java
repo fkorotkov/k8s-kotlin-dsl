@@ -46,8 +46,8 @@ import lombok.ToString;
 }, refs = {
     @BuildableReference(ObjectMeta.class)
 })
-@ApiVersion("v1beta1")
-@ApiGroup("apiextensions.k8s.io")
+@ApiVersion("v1alpha1")
+@ApiGroup("cluster.confluent.com")
 public class KafkaClusterList implements KubernetesResource, KubernetesResourceList
 {
 
@@ -57,7 +57,7 @@ public class KafkaClusterList implements KubernetesResource, KubernetesResourceL
      */
     @JsonProperty("apiVersion")
     @JsonPropertyDescription("")
-    private String apiVersion = "apiextensions.k8s.io/v1beta1";
+    private String apiVersion = "cluster.confluent.com/v1alpha1";
     /**
      * 
      * 

@@ -23,6 +23,7 @@ class CRDDefinition {
 
 class CRDDefinitionSpec {
   lateinit var group: String
+  lateinit var version: String
   lateinit var names: CRDDefinitionNames
   lateinit var validation: CRDDefinitionValidation
 }
