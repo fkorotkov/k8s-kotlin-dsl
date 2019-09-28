@@ -8,6 +8,7 @@ task:
         image: gradle:jdk11
   gradle_cache:
     folder: ~/.gradle/caches
+  publish_local_script: gradle publishToMavenLocal
   check_script: gradle check
   cleanup_before_cache_script:
     - rm -rf ~/.gradle/caches/$GRADLE_VERSION/
@@ -28,4 +29,5 @@ deploy_task:
     - Test (JDK 11)
   environment:
     BINTRAY_API_KEY: ENCRYPTED[d86059880472037e15bb3ab28eb47726b84ff6d0dd5a0a8a40476dfc3aaa3e11ff34644a9df6c77c3036cca63d82ac54]
+  publish_local_script: gradle publishToMavenLocal
   deploy_script: gradle :kubernetes:dsl:bintrayUpload --info
