@@ -14,7 +14,7 @@ buildscript {
     dependencies {
         classpath libraries['com.jfrog.bintray.gradle:gradle-bintray-plugin']
         classpath libraries['org.jsonschema2pojo:jsonschema2pojo-gradle-plugin']
-        classpath "com.fkorotkov:k8s-kafka-annotator:1.0"
+        classpath "com.fkorotkov:k8s-kafka-annotator:1.1"
     }
 }
 

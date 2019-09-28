@@ -21,7 +21,7 @@ bintray {
         licenses = ['MIT']
         vcsUrl = 'git@github.com:fkorotkov/k8s-kotlin-dsl.git'
         version {
-            name = '1.0'
+            name = '1.1'
             desc = 'Kafka Annotator for Generation'
             released  = new Date()
         }
@@ -33,7 +33,7 @@ publishing {
         maven(MavenPublication) {
             groupId 'com.fkorotkov'
             artifactId 'k8s-kafka-annotator'
-            version '1.0'
+            version '1.1'
             from components.java
         }
     }
