@@ -1,14 +1,18 @@
 apply plugin: "maven-publish"
 apply plugin: "kotlin"
 apply plugin: "jsonschema2pojo"
+apply plugin: "com.jfrog.bintray"
 
 buildscript {
     repositories {
         mavenLocal()
         mavenCentral()
+        jcenter()
+        maven { setUrl("https://dl.bintray.com/fkorotkov/maven") }
     }
 
     dependencies {
+        classpath libraries['com.jfrog.bintray.gradle:gradle-bintray-plugin']
         classpath libraries['org.jsonschema2pojo:jsonschema2pojo-gradle-plugin']
         classpath "com.fkorotkov:k8s-kafka-annotator:1.0"
     }
@@ -22,11 +26,29 @@ sourceSets {
     }
 }
 
+bintray {
+    user = "fkorotkov"
+    key  = project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : System.getenv('BINTRAY_API_KEY')
+    publications = ['maven']
+    pkg {
+        repo = 'maven'
+        name = 'k8s-kafka-model'
+        userOrg = 'fkorotkov'
+        licenses = ['MIT']
+        vcsUrl = 'git@github.com:fkorotkov/k8s-kotlin-dsl.git'
+        version {
+            name = current_k8s_dsl_version
+            desc = 'Kafka Kubernetes Model'
+            released  = new Date()
+        }
+    }
+}
+
 publishing {
     publications {
         maven(MavenPublication) {
             groupId 'com.fkorotkov'
-            artifactId 'kubernetes-kafka-model'
+            artifactId 'k8s-kafka-model'
             version current_k8s_dsl_version
             from components.java
         }

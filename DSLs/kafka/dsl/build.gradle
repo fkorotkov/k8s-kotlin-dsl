@@ -1,6 +1,6 @@
-apply plugin: "com.jfrog.bintray"
 apply plugin: "kotlin"
 apply plugin: "maven-publish"
+apply plugin: "com.jfrog.bintray"
 
 buildscript {
     repositories {
@@ -17,14 +17,25 @@ bintray {
     publications = ['maven']
     pkg {
         repo = 'maven'
-        name = 'k8s-kafka-kotlin-dsl'
+        name = 'k8s-kafka-dsl'
         userOrg = 'fkorotkov'
         licenses = ['MIT']
         vcsUrl = 'git@github.com:fkorotkov/k8s-kotlin-dsl.git'
         version {
             name = current_k8s_dsl_version
-            desc = 'Kotlin DSL for Kubernetes'
+            desc = 'Kafka Kubernetes DSL'
             released  = new Date()
+        }
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId 'com.fkorotkov'
+            artifactId 'k8s-kafka-dsl'
+            version current_k8s_dsl_version
+            from components.java
         }
     }
 }
@@ -32,18 +43,6 @@ bintray {
 task sourcesJar(type: Jar) {
     from sourceSets.main.kotlin
     archiveClassifier = 'sources'
-}
-
-publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId 'com.fkorotkov'
-            artifactId 'kubernetes-kafka-dsl'
-            version current_k8s_dsl_version
-            from components.java
-            artifact sourcesJar
-        }
-    }
 }
 
 sourceSets {
