@@ -2,10 +2,6 @@ apply plugin: "com.jfrog.bintray"
 apply plugin: "kotlin"
 apply plugin: "maven-publish"
 
-ext {
-    current_k8s_dsl_version = System.getenv().getOrDefault("CIRRUS_TAG", "2.0.0-SNAPSHOT")
-}
-
 buildscript {
     repositories {
         jcenter()

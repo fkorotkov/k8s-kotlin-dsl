@@ -1,0 +1,3 @@
+#foreach ($m in ${model.values()})
+e.snowdrop.tekton.client.handlers.${m.name}Handler
+#end

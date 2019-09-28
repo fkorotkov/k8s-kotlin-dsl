@@ -1,0 +1,11 @@
+apply plugin: "java"
+
+dependencies {
+    compile project(":DSLs:kafka:model")
+
+    compile libraries['io.sundr:builder-annotations']
+    compile libraries['io.sundr:transform-annotations']
+
+    annotationProcessor libraries['io.sundr:builder-annotations']
+    annotationProcessor libraries['io.sundr:transform-annotations']
+}

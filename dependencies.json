@@ -1,6 +1,11 @@
 {
   "libraries": [
     {
+      "group": "com.fasterxml.jackson.module",
+      "name": "jackson-module-jaxb-annotations",
+      "version": "2.10.0"
+    },
+    {
       "group": "com.fkorotkov",
       "name": "gradle-libraries-plugin",
       "version": "0.1"
@@ -36,6 +41,16 @@
       "version": "4.4.2"
     },
     {
+      "group": "io.sundr",
+      "name": "builder-annotations",
+      "version": "0.19.1"
+    },
+    {
+      "group": "io.sundr",
+      "name": "transform-annotations",
+      "version": "0.19.1"
+    },
+    {
       "group": "junit",
       "name": "junit",
       "version": "4.13-beta-3"
@@ -69,6 +84,16 @@
       "group": "org.jsonschema2pojo",
       "name": "jsonschema2pojo-gradle-plugin",
       "version": "1.0.1"
+    },
+    {
+      "group": "org.jsonschema2pojo",
+      "name": "jsonschema2pojo-core",
+      "version": "1.0.1"
+    },
+    {
+      "group": "org.projectlombok",
+      "name": "lombok",
+      "version": "1.18.10"
     }
   ]
 }

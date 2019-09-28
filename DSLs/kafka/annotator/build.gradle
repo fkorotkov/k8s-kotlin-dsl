@@ -1,0 +1,21 @@
+apply plugin: "maven-publish"
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId 'com.fkorotkov'
+            artifactId 'kubernetes-kafka-annotator'
+            version current_k8s_dsl_version
+            from components.java
+        }
+    }
+}
+
+dependencies {
+    compile libraries['com.fasterxml.jackson.module:jackson-module-jaxb-annotations']
+    compile libraries['org.jsonschema2pojo:jsonschema2pojo-core']
+    compile libraries['org.projectlombok:lombok']
+    compile libraries['io.fabric8:kubernetes-model']
+    compile libraries['io.sundr:builder-annotations']
+    compile libraries['io.sundr:transform-annotations']
+}

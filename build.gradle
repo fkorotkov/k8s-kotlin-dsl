@@ -24,6 +24,10 @@ updateLibraries.resolutionStrategy = {
 }
 
 subprojects {
+    ext {
+        current_k8s_dsl_version = System.getenv().getOrDefault("CIRRUS_TAG", "2.0.0-SNAPSHOT")
+    }
+
     buildscript {
         repositories {
             maven { setUrl("https://repo.gradle.org/gradle/repo") }
