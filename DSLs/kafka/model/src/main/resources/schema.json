@@ -140,11 +140,13 @@
         "apiVersion": {
           "type": "string",
           "description": "",
+          "default": "cluster.confluent.com/v1alpha1",
           "required": false
         },
         "kind": {
           "type": "string",
           "description": "",
+          "default": "KafkaCluster",
           "required": false
         },
         "metadata": {

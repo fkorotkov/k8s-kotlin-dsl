@@ -70,6 +70,9 @@ fun createSchema(kafkaCRD: CRDDefinition): Schema {
     ))
   }
 
+  (typeDefinitionRegistry[kafkaCRD.spec.names.kind]?.properties?.get("apiVersion") as? PrimitiveStringPropertyDefinition)?.default = "${kafkaCRD.spec.group}/${kafkaCRD.spec.version}"
+  (typeDefinitionRegistry[kafkaCRD.spec.names.kind]?.properties?.get("kind") as? PrimitiveStringPropertyDefinition)?.default = kafkaCRD.spec.names.kind
+
   result.definitions = TreeMap(typeDefinitionRegistry)
   result.properties = TreeMap(typeDefinitionRegistry.map { (name, definition) ->
     name.decapitalize() to RefPropertyDefinition().apply {
