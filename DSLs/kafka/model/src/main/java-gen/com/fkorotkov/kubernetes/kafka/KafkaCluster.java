@@ -58,14 +58,14 @@ public class KafkaCluster implements HasMetadata
      */
     @JsonProperty("apiVersion")
     @JsonPropertyDescription("")
-    private String apiVersion;
+    private String apiVersion = "cluster.confluent.com/v1alpha1";
     /**
      * 
      * 
      */
     @JsonProperty("kind")
     @JsonPropertyDescription("")
-    private String kind;
+    private String kind = "KafkaCluster";
     /**
      * 
      * 
