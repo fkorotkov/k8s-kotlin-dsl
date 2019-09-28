@@ -44,8 +44,8 @@ import lombok.ToString;
 }, refs = {
     @BuildableReference(io.fabric8.kubernetes.api.model.ObjectMeta.class)
 })
-@ApiVersion("v1beta1")
-@ApiGroup("apiextensions.k8s.io")
+@ApiVersion("v1alpha1")
+@ApiGroup("cluster.confluent.com")
 @VelocityTransformations({
     @VelocityTransformation(value = "/manifest.vm", outputPath = "kafka.properties", gather = true)
 })

@@ -56,7 +56,7 @@ fun createSchema(kafkaCRD: CRDDefinition): Schema {
         "io.fabric8.kubernetes.api.model.KubernetesResourceList"
     )
     properties = TreeMap(mapOf(
-        "apiVersion" to PrimitiveStringPropertyDefinition().apply { default = kafkaCRD.apiVersion },
+        "apiVersion" to PrimitiveStringPropertyDefinition().apply { default = "${kafkaCRD.spec.group}/${kafkaCRD.spec.version}" },
         "kind" to PrimitiveStringPropertyDefinition().apply { default = "${kafkaCRD.spec.names.kind}List" },
         "items" to ArrayPropertyDefinition().apply {
           items = RefPropertyDefinition().apply {
