@@ -19,7 +19,7 @@ task:
 deploy_task:
   only_if: $CIRRUS_TAG != ''
   container:
-    image: gradle:jdk8
+    image: gradle:jdk11
   depends_on:
     - Test (JDK 11)
   environment:
