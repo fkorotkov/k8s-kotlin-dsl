@@ -1,7 +1,7 @@
-import io.fabric8.kubernetes.client.DefaultKubernetesClient
+import com.fkorotkov.kubernetes.kafka.client.DefaultKafkaClient
 
 
 fun main() {
-  val client = DefaultKubernetesClient().inNamespace("default")
-  client.services()
+  val client = DefaultKafkaClient().inNamespace("default")
+  client.kafkaClusters().list()
 }

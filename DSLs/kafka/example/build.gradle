@@ -4,8 +4,9 @@ apply plugin: "kotlin"
 mainClassName = "ExampleKt"
 
 dependencies {
+    compile project(":DSLs:kafka:client")
+    compile project(":DSLs:kafka:model")
+
     compile libraries['org.jetbrains.kotlin:kotlin-stdlib']
     compile libraries['org.jetbrains.kotlin:kotlin-reflect']
-
-    compile libraries['io.fabric8:kubernetes-client']
 }
