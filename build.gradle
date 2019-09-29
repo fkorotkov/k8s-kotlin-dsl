@@ -5,10 +5,12 @@ buildscript {
     }
     dependencies {
         classpath 'com.fkorotkov:gradle-libraries-plugin:0.1'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
     }
 }
 
 apply plugin: 'com.fkorotkov.libraries'
+apply plugin: "com.jfrog.bintray" // workaround for https://stackoverflow.com/a/48712362
 
 updateLibraries.resolutionStrategy = {
     componentSelection { rules ->
