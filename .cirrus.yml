@@ -25,8 +25,9 @@ deploy_task:
   environment:
     BINTRAY_API_KEY: ENCRYPTED[d86059880472037e15bb3ab28eb47726b84ff6d0dd5a0a8a40476dfc3aaa3e11ff34644a9df6c77c3036cca63d82ac54]
   build_script: gradle build
-  deploy_script:
-    - gradle :DSLs:kubernetes:dsl:bintrayUpload --info
-    - gradle :DSLs:kafka:model:bintrayUpload --info
-    - gradle :DSLs:kafka:client:bintrayUpload --info
-    - gradle :DSLs:kafka:dsl:bintrayUpload --info
+  deploy_script: |
+    gradle :DSLs:kubernetes:dsl:bintrayUpload \
+           :DSLs:kafka:model:bintrayUpload \
+           :DSLs:kafka:client:bintrayUpload \
+           :DSLs:kafka:dsl:bintrayUpload \
+           --info
