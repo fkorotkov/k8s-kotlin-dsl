@@ -33,12 +33,12 @@
     {
       "group": "io.fabric8",
       "name": "kubernetes-client",
-      "version": "4.4.2"
+      "version": "4.6.1"
     },
     {
       "group": "io.fabric8",
       "name": "kubernetes-model",
-      "version": "4.4.2"
+      "version": "4.6.1"
     },
     {
       "group": "io.sundr",

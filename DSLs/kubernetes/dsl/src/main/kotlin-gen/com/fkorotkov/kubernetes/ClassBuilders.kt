@@ -65,6 +65,7 @@ import io.fabric8.kubernetes.api.model.ExecAction as model_ExecAction
 import io.fabric8.kubernetes.api.model.ExecConfig as model_ExecConfig
 import io.fabric8.kubernetes.api.model.ExecEnvVar as model_ExecEnvVar
 import io.fabric8.kubernetes.api.model.FCVolumeSource as model_FCVolumeSource
+import io.fabric8.kubernetes.api.model.FieldsV1 as model_FieldsV1
 import io.fabric8.kubernetes.api.model.FlexPersistentVolumeSource as model_FlexPersistentVolumeSource
 import io.fabric8.kubernetes.api.model.FlexVolumeSource as model_FlexVolumeSource
 import io.fabric8.kubernetes.api.model.FlockerVolumeSource as model_FlockerVolumeSource
@@ -86,8 +87,6 @@ import io.fabric8.kubernetes.api.model.HostAlias as model_HostAlias
 import io.fabric8.kubernetes.api.model.HostPathVolumeSource as model_HostPathVolumeSource
 import io.fabric8.kubernetes.api.model.ISCSIPersistentVolumeSource as model_ISCSIPersistentVolumeSource
 import io.fabric8.kubernetes.api.model.ISCSIVolumeSource as model_ISCSIVolumeSource
-import io.fabric8.kubernetes.api.model.Initializer as model_Initializer
-import io.fabric8.kubernetes.api.model.Initializers as model_Initializers
 import io.fabric8.kubernetes.api.model.KeyToPath as model_KeyToPath
 import io.fabric8.kubernetes.api.model.KubernetesList as model_KubernetesList
 import io.fabric8.kubernetes.api.model.LabelSelector as model_LabelSelector
@@ -98,10 +97,12 @@ import io.fabric8.kubernetes.api.model.LimitRangeItem as model_LimitRangeItem
 import io.fabric8.kubernetes.api.model.LimitRangeList as model_LimitRangeList
 import io.fabric8.kubernetes.api.model.LimitRangeSpec as model_LimitRangeSpec
 import io.fabric8.kubernetes.api.model.ListMeta as model_ListMeta
+import io.fabric8.kubernetes.api.model.ListOptions as model_ListOptions
 import io.fabric8.kubernetes.api.model.LoadBalancerIngress as model_LoadBalancerIngress
 import io.fabric8.kubernetes.api.model.LoadBalancerStatus as model_LoadBalancerStatus
 import io.fabric8.kubernetes.api.model.LocalObjectReference as model_LocalObjectReference
 import io.fabric8.kubernetes.api.model.LocalVolumeSource as model_LocalVolumeSource
+import io.fabric8.kubernetes.api.model.ManagedFieldsEntry as model_ManagedFieldsEntry
 import io.fabric8.kubernetes.api.model.MicroTime as model_MicroTime
 import io.fabric8.kubernetes.api.model.NFSVolumeSource as model_NFSVolumeSource
 import io.fabric8.kubernetes.api.model.NamedAuthInfo as model_NamedAuthInfo
@@ -222,6 +223,7 @@ import io.fabric8.kubernetes.api.model.VolumeProjection as model_VolumeProjectio
 import io.fabric8.kubernetes.api.model.VsphereVirtualDiskVolumeSource as model_VsphereVirtualDiskVolumeSource
 import io.fabric8.kubernetes.api.model.WatchEvent as model_WatchEvent
 import io.fabric8.kubernetes.api.model.WeightedPodAffinityTerm as model_WeightedPodAffinityTerm
+import io.fabric8.kubernetes.api.model.WindowsSecurityContextOptions as model_WindowsSecurityContextOptions
 
 
 fun newAPIGroup(block : model_APIGroup.() -> Unit = {}): model_APIGroup {
@@ -672,6 +674,13 @@ fun newFCVolumeSource(block : model_FCVolumeSource.() -> Unit = {}): model_FCVol
 }
 
 
+fun newFieldsV1(block : model_FieldsV1.() -> Unit = {}): model_FieldsV1 {
+  val instance = model_FieldsV1()
+  instance.block()
+  return instance
+}
+
+
 fun newFlexPersistentVolumeSource(block : model_FlexPersistentVolumeSource.() -> Unit = {}): model_FlexPersistentVolumeSource {
   val instance = model_FlexPersistentVolumeSource()
   instance.block()
@@ -819,20 +828,6 @@ fun newISCSIVolumeSource(block : model_ISCSIVolumeSource.() -> Unit = {}): model
 }
 
 
-fun newInitializer(block : model_Initializer.() -> Unit = {}): model_Initializer {
-  val instance = model_Initializer()
-  instance.block()
-  return instance
-}
-
-
-fun newInitializers(block : model_Initializers.() -> Unit = {}): model_Initializers {
-  val instance = model_Initializers()
-  instance.block()
-  return instance
-}
-
-
 fun newKeyToPath(block : model_KeyToPath.() -> Unit = {}): model_KeyToPath {
   val instance = model_KeyToPath()
   instance.block()
@@ -903,6 +898,13 @@ fun newListMeta(block : model_ListMeta.() -> Unit = {}): model_ListMeta {
 }
 
 
+fun newListOptions(block : model_ListOptions.() -> Unit = {}): model_ListOptions {
+  val instance = model_ListOptions()
+  instance.block()
+  return instance
+}
+
+
 fun newLoadBalancerIngress(block : model_LoadBalancerIngress.() -> Unit = {}): model_LoadBalancerIngress {
   val instance = model_LoadBalancerIngress()
   instance.block()
@@ -926,6 +928,13 @@ fun newLocalObjectReference(block : model_LocalObjectReference.() -> Unit = {}):
 
 fun newLocalVolumeSource(block : model_LocalVolumeSource.() -> Unit = {}): model_LocalVolumeSource {
   val instance = model_LocalVolumeSource()
+  instance.block()
+  return instance
+}
+
+
+fun newManagedFieldsEntry(block : model_ManagedFieldsEntry.() -> Unit = {}): model_ManagedFieldsEntry {
+  val instance = model_ManagedFieldsEntry()
   instance.block()
   return instance
 }
@@ -1766,6 +1775,13 @@ fun newWatchEvent(block : model_WatchEvent.() -> Unit = {}): model_WatchEvent {
 
 fun newWeightedPodAffinityTerm(block : model_WeightedPodAffinityTerm.() -> Unit = {}): model_WeightedPodAffinityTerm {
   val instance = model_WeightedPodAffinityTerm()
+  instance.block()
+  return instance
+}
+
+
+fun newWindowsSecurityContextOptions(block : model_WindowsSecurityContextOptions.() -> Unit = {}): model_WindowsSecurityContextOptions {
+  val instance = model_WindowsSecurityContextOptions()
   instance.block()
   return instance
 }

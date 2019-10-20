@@ -1,15 +1,23 @@
 // GENERATE
 package com.fkorotkov.kubernetes.admissionregistration
 
+import io.fabric8.kubernetes.api.model.admissionregistration.MutatingWebhook as admissionregistration_MutatingWebhook
 import io.fabric8.kubernetes.api.model.admissionregistration.MutatingWebhookConfiguration as admissionregistration_MutatingWebhookConfiguration
 import io.fabric8.kubernetes.api.model.admissionregistration.MutatingWebhookConfigurationList as admissionregistration_MutatingWebhookConfigurationList
 import io.fabric8.kubernetes.api.model.admissionregistration.Rule as admissionregistration_Rule
 import io.fabric8.kubernetes.api.model.admissionregistration.RuleWithOperations as admissionregistration_RuleWithOperations
 import io.fabric8.kubernetes.api.model.admissionregistration.ServiceReference as admissionregistration_ServiceReference
+import io.fabric8.kubernetes.api.model.admissionregistration.ValidatingWebhook as admissionregistration_ValidatingWebhook
 import io.fabric8.kubernetes.api.model.admissionregistration.ValidatingWebhookConfiguration as admissionregistration_ValidatingWebhookConfiguration
 import io.fabric8.kubernetes.api.model.admissionregistration.ValidatingWebhookConfigurationList as admissionregistration_ValidatingWebhookConfigurationList
-import io.fabric8.kubernetes.api.model.admissionregistration.Webhook as admissionregistration_Webhook
 import io.fabric8.kubernetes.api.model.admissionregistration.WebhookClientConfig as admissionregistration_WebhookClientConfig
+
+
+fun newMutatingWebhook(block : admissionregistration_MutatingWebhook.() -> Unit = {}): admissionregistration_MutatingWebhook {
+  val instance = admissionregistration_MutatingWebhook()
+  instance.block()
+  return instance
+}
 
 
 fun newMutatingWebhookConfiguration(block : admissionregistration_MutatingWebhookConfiguration.() -> Unit = {}): admissionregistration_MutatingWebhookConfiguration {
@@ -47,6 +55,13 @@ fun newServiceReference(block : admissionregistration_ServiceReference.() -> Uni
 }
 
 
+fun newValidatingWebhook(block : admissionregistration_ValidatingWebhook.() -> Unit = {}): admissionregistration_ValidatingWebhook {
+  val instance = admissionregistration_ValidatingWebhook()
+  instance.block()
+  return instance
+}
+
+
 fun newValidatingWebhookConfiguration(block : admissionregistration_ValidatingWebhookConfiguration.() -> Unit = {}): admissionregistration_ValidatingWebhookConfiguration {
   val instance = admissionregistration_ValidatingWebhookConfiguration()
   instance.block()
@@ -56,13 +71,6 @@ fun newValidatingWebhookConfiguration(block : admissionregistration_ValidatingWe
 
 fun newValidatingWebhookConfigurationList(block : admissionregistration_ValidatingWebhookConfigurationList.() -> Unit = {}): admissionregistration_ValidatingWebhookConfigurationList {
   val instance = admissionregistration_ValidatingWebhookConfigurationList()
-  instance.block()
-  return instance
-}
-
-
-fun newWebhook(block : admissionregistration_Webhook.() -> Unit = {}): admissionregistration_Webhook {
-  val instance = admissionregistration_Webhook()
   instance.block()
   return instance
 }

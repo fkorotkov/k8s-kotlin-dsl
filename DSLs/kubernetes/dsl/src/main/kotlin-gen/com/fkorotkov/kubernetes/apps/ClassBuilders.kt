@@ -1,6 +1,8 @@
 // GENERATE
 package com.fkorotkov.kubernetes.apps
 
+import io.fabric8.kubernetes.api.model.apps.ControllerRevision as apps_ControllerRevision
+import io.fabric8.kubernetes.api.model.apps.ControllerRevisionList as apps_ControllerRevisionList
 import io.fabric8.kubernetes.api.model.apps.DaemonSet as apps_DaemonSet
 import io.fabric8.kubernetes.api.model.apps.DaemonSetCondition as apps_DaemonSetCondition
 import io.fabric8.kubernetes.api.model.apps.DaemonSetList as apps_DaemonSetList
@@ -27,6 +29,20 @@ import io.fabric8.kubernetes.api.model.apps.StatefulSetList as apps_StatefulSetL
 import io.fabric8.kubernetes.api.model.apps.StatefulSetSpec as apps_StatefulSetSpec
 import io.fabric8.kubernetes.api.model.apps.StatefulSetStatus as apps_StatefulSetStatus
 import io.fabric8.kubernetes.api.model.apps.StatefulSetUpdateStrategy as apps_StatefulSetUpdateStrategy
+
+
+fun newControllerRevision(block : apps_ControllerRevision.() -> Unit = {}): apps_ControllerRevision {
+  val instance = apps_ControllerRevision()
+  instance.block()
+  return instance
+}
+
+
+fun newControllerRevisionList(block : apps_ControllerRevisionList.() -> Unit = {}): apps_ControllerRevisionList {
+  val instance = apps_ControllerRevisionList()
+  instance.block()
+  return instance
+}
 
 
 fun newDaemonSet(block : apps_DaemonSet.() -> Unit = {}): apps_DaemonSet {

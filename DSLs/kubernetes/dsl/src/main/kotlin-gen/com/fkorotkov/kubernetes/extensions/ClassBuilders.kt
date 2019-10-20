@@ -23,6 +23,7 @@ import io.fabric8.kubernetes.api.model.extensions.PodSecurityPolicyList as exten
 import io.fabric8.kubernetes.api.model.extensions.PodSecurityPolicySpec as extensions_PodSecurityPolicySpec
 import io.fabric8.kubernetes.api.model.extensions.RollbackConfig as extensions_RollbackConfig
 import io.fabric8.kubernetes.api.model.extensions.RunAsGroupStrategyOptions as extensions_RunAsGroupStrategyOptions
+import io.fabric8.kubernetes.api.model.extensions.RuntimeClassStrategyOptions as extensions_RuntimeClassStrategyOptions
 import io.fabric8.kubernetes.api.model.extensions.SELinuxStrategyOptions as extensions_SELinuxStrategyOptions
 import io.fabric8.kubernetes.api.model.extensions.Scale as extensions_Scale
 import io.fabric8.kubernetes.api.model.extensions.ScaleSpec as extensions_ScaleSpec
@@ -179,6 +180,13 @@ fun newRollbackConfig(block : extensions_RollbackConfig.() -> Unit = {}): extens
 
 fun newRunAsGroupStrategyOptions(block : extensions_RunAsGroupStrategyOptions.() -> Unit = {}): extensions_RunAsGroupStrategyOptions {
   val instance = extensions_RunAsGroupStrategyOptions()
+  instance.block()
+  return instance
+}
+
+
+fun newRuntimeClassStrategyOptions(block : extensions_RuntimeClassStrategyOptions.() -> Unit = {}): extensions_RuntimeClassStrategyOptions {
+  val instance = extensions_RuntimeClassStrategyOptions()
   instance.block()
   return instance
 }
