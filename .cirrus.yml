@@ -30,4 +30,7 @@ deploy_task:
            :DSLs:kafka:model:bintrayUpload \
            :DSLs:kafka:client:bintrayUpload \
            :DSLs:kafka:dsl:bintrayUpload \
+           :DSLs:zookeeper:model:bintrayUpload \
+           :DSLs:zookeeper:client:bintrayUpload \
+           :DSLs:zookeeper:dsl:bintrayUpload \
            --info
