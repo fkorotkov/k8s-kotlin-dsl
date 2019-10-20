@@ -33,4 +33,4 @@ deploy_task:
            :DSLs:zookeeper:model:bintrayUpload \
            :DSLs:zookeeper:client:bintrayUpload \
            :DSLs:zookeeper:dsl:bintrayUpload \
-           --info
+           --info --no-parallel
