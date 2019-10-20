@@ -1,7 +1,5 @@
-import com.fkorotkov.kubernetes.kafka.client.DefaultKafkaClient
-import com.fkorotkov.kubernetes.kafka.metadata
-import com.fkorotkov.kubernetes.kafka.newKafkaCluster
-import com.fkorotkov.kubernetes.kafka.spec
+import com.fkorotkov.kubernetes.client.DefaultKafkaClient
+import com.fkorotkov.kubernetes.kafka.*
 
 
 fun main() {

@@ -1,0 +1,18 @@
+apply plugin: "application"
+apply plugin: "kotlin"
+
+mainClassName = "com.fkorotkov.kubernetes.GeneratorKt"
+
+run {
+    args "${project(":DSLs:zookeeper:dsl").projectDir}/src/main/kotlin-gen/"
+}
+
+dependencies {
+    compile project(":DSLs:zookeeper:model")
+    compile project(":generator")
+
+    compile libraries['org.jetbrains.kotlin:kotlin-stdlib']
+    compile libraries['org.jetbrains.kotlin:kotlin-reflect']
+
+    compile libraries['io.fabric8:kubernetes-model']
+}
