@@ -8,14 +8,15 @@ import java.io.File
 import java.util.*
 
 fun main(args: Array<String>) {
-  val outputFile = File(args[0])
+  val schemeName = args[0]
+  val outputFile = File(args[1])
 
   if (outputFile.exists()) {
     outputFile.deleteRecursively()
   }
 
-  val kafkaCRD = CRDDefinition.parseFromResource("kafkaclusters-crd.json")
-  val createSchema = createSchema(kafkaCRD)
+  val crd = CRDDefinition.parseFromResource("${schemeName}clusters-crd.json")
+  val createSchema = createSchema(crd, schemeName)
 
   val gson = GsonBuilder()
       .registerTypeAdapterFactory(
@@ -32,10 +33,10 @@ fun main(args: Array<String>) {
   outputFile.writeText(gson.toJson(createSchema))
 }
 
-fun createSchema(kafkaCRD: CRDDefinition): Schema {
+fun createSchema(crd: CRDDefinition, schemeName: String): Schema {
   val result = Schema()
   val typeDefinitionRegistry = mutableMapOf<String, TypeDefinition>()
-  generateTypes(typeDefinitionRegistry, "com.fkorotkov.kubernetes.kafka", kafkaCRD.spec.names.kind, kafkaCRD.spec.validation.openAPIV3Schema)
+  generateTypes(typeDefinitionRegistry, "com.fkorotkov.kubernetes.$schemeName", crd.spec.names.kind, crd.spec.validation.openAPIV3Schema)
 
   typeDefinitionRegistry.remove("Metadata")
   typeDefinitionRegistry.forEach { _, definition ->
@@ -49,19 +50,19 @@ fun createSchema(kafkaCRD: CRDDefinition): Schema {
     }
   }
 
-  typeDefinitionRegistry["${kafkaCRD.spec.names.kind}List"] = TypeDefinition().apply {
-    javaType = "com.fkorotkov.kubernetes.kafka.${kafkaCRD.spec.names.kind}List"
+  typeDefinitionRegistry["${crd.spec.names.kind}List"] = TypeDefinition().apply {
+    javaType = "com.fkorotkov.kubernetes.$schemeName.${crd.spec.names.kind}List"
     javaInterfaces = listOf(
         "io.fabric8.kubernetes.api.model.KubernetesResource",
         "io.fabric8.kubernetes.api.model.KubernetesResourceList"
     )
     properties = TreeMap(mapOf(
-        "apiVersion" to PrimitiveStringPropertyDefinition().apply { default = "${kafkaCRD.spec.group}/${kafkaCRD.spec.version}" },
-        "kind" to PrimitiveStringPropertyDefinition().apply { default = "${kafkaCRD.spec.names.kind}List" },
+        "apiVersion" to PrimitiveStringPropertyDefinition().apply { default = "${crd.spec.group}/${crd.spec.version}" },
+        "kind" to PrimitiveStringPropertyDefinition().apply { default = "${crd.spec.names.kind}List" },
         "items" to ArrayPropertyDefinition().apply {
           items = RefPropertyDefinition().apply {
-            ref = "#/definitions/${kafkaCRD.spec.names.kind}"
-            javaType = "com.fkorotkov.kubernetes.kafka.${kafkaCRD.spec.names.kind}"
+            ref = "#/definitions/${crd.spec.names.kind}"
+            javaType = "com.fkorotkov.kubernetes.$schemeName.${crd.spec.names.kind}"
           }
         },
         "metadata" to ExistingTypePropertyDefinition().apply {
@@ -70,14 +71,14 @@ fun createSchema(kafkaCRD: CRDDefinition): Schema {
     ))
   }
 
-  (typeDefinitionRegistry[kafkaCRD.spec.names.kind]?.properties?.get("apiVersion") as? PrimitiveStringPropertyDefinition)?.default = "${kafkaCRD.spec.group}/${kafkaCRD.spec.version}"
-  (typeDefinitionRegistry[kafkaCRD.spec.names.kind]?.properties?.get("kind") as? PrimitiveStringPropertyDefinition)?.default = kafkaCRD.spec.names.kind
+  (typeDefinitionRegistry[crd.spec.names.kind]?.properties?.get("apiVersion") as? PrimitiveStringPropertyDefinition)?.default = "${crd.spec.group}/${crd.spec.version}"
+  (typeDefinitionRegistry[crd.spec.names.kind]?.properties?.get("kind") as? PrimitiveStringPropertyDefinition)?.default = crd.spec.names.kind
 
   result.definitions = TreeMap(typeDefinitionRegistry)
   result.properties = TreeMap(typeDefinitionRegistry.map { (name, definition) ->
     name.decapitalize() to RefPropertyDefinition().apply {
       ref = "#/definitions/$name"
-      javaType = "com.fkorotkov.kubernetes.kafka.$name"
+      javaType = "com.fkorotkov.kubernetes.$schemeName.$name"
     }
   }.toMap())
   return result

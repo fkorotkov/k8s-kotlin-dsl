@@ -1,10 +1,10 @@
 apply plugin: "application"
 apply plugin: "kotlin"
 
-mainClassName = "com.fkorotkov.kubernetes.kafka.GeneratorKt"
-
-run {
-    args "${project(":DSLs:kafka:model").projectDir}/src/main/resources/schema.json"
+task generateKafka(type: JavaExec, dependsOn: classes) {
+    main = "com.fkorotkov.kubernetes.kafka.GeneratorKt"
+    classpath = sourceSets.main.runtimeClasspath
+    args "kafka", "${project(":DSLs:kafka:model").projectDir}/src/main/resources/schema.json"
 }
 
 dependencies {
