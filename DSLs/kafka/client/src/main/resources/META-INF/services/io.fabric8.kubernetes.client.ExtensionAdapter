@@ -1,1 +1,1 @@
-io.fabric8.kafka.client.KafkaExtensionAdapter
+com.fkorotkov.kubernetes.client.KafkaExtensionAdapter
