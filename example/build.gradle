@@ -10,4 +10,9 @@ dependencies {
     compile libraries['org.jetbrains.kotlin:kotlin-reflect']
 
     compile libraries['io.fabric8:kubernetes-client']
+
+    testCompile libraries['com.google.code.gson:gson']
+    testCompile libraries['com.google.guava:guava']
+    testCompile libraries['junit:junit']
+    testCompile libraries['org.jetbrains.kotlin:kotlin-test-junit']
 }

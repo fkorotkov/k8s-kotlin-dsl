@@ -1,0 +1,113 @@
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": {
+    "finalizers": [],
+    "labels": {
+      "app": "foo",
+      "tier": "backend"
+    },
+    "managedFields": [],
+    "name": "foo-service-deployment",
+    "ownerReferences": [],
+    "additionalProperties": {}
+  },
+  "spec": {
+    "replicas": 1,
+    "template": {
+      "metadata": {
+        "finalizers": [],
+        "labels": {
+          "app": "foo",
+          "tier": "backend"
+        },
+        "managedFields": [],
+        "ownerReferences": [],
+        "additionalProperties": {}
+      },
+      "spec": {
+        "containers": [
+          {
+            "args": [],
+            "command": [],
+            "env": [
+              {
+                "name": "GOOGLE_APPLICATION_CREDENTIALS",
+                "value": "/etc/credentials/service-account-credentials.json",
+                "additionalProperties": {}
+              }
+            ],
+            "envFrom": [],
+            "image": "gcr.io/fkorotkov/foo-service:latest",
+            "livenessProbe": {
+              "httpGet": {
+                "httpHeaders": [],
+                "path": "/healthz",
+                "port": {
+                  "IntVal": 8080,
+                  "Kind": 0,
+                  "additionalProperties": {}
+                },
+                "additionalProperties": {}
+              },
+              "periodSeconds": 60,
+              "additionalProperties": {}
+            },
+            "name": "foo-service",
+            "ports": [
+              {
+                "containerPort": 8080,
+                "additionalProperties": {}
+              }
+            ],
+            "readinessProbe": {
+              "httpGet": {
+                "httpHeaders": [],
+                "path": "/healthz",
+                "port": {
+                  "IntVal": 8080,
+                  "Kind": 0,
+                  "additionalProperties": {}
+                },
+                "additionalProperties": {}
+              },
+              "initialDelaySeconds": 10,
+              "periodSeconds": 60,
+              "additionalProperties": {}
+            },
+            "volumeDevices": [],
+            "volumeMounts": [
+              {
+                "mountPath": "/etc/credentials",
+                "name": "gcp-credentials",
+                "readOnly": true,
+                "additionalProperties": {}
+              }
+            ],
+            "additionalProperties": {}
+          }
+        ],
+        "hostAliases": [],
+        "imagePullSecrets": [],
+        "initContainers": [],
+        "readinessGates": [],
+        "tolerations": [],
+        "volumes": [
+          {
+            "name": "gcp-credentials",
+            "secret": {
+              "items": [],
+              "secretName": "gcp-credentials",
+              "additionalProperties": {}
+            },
+            "additionalProperties": {}
+          }
+        ],
+        "additionalProperties": {}
+      },
+      "additionalProperties": {}
+    },
+    "additionalProperties": {}
+  },
+  "additionalProperties": {}
+}
