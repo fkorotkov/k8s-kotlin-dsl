@@ -15,7 +15,7 @@ repositories {
 } 
  
 dependencies {
-    compile("com.fkorotkov:k8s-kotlin-dsl:${kubernetes_dsl_version}")
+    compile("com.fkorotkov:kubernetes-dsl:${kubernetes_dsl_version}")
 }
 ```
 
