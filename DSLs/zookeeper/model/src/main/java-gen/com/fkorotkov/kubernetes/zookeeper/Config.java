@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import io.fabric8.kubernetes.api.model.Doneable;
+import io.fabric8.kubernetes.api.model.KubernetesResource;
 import io.fabric8.kubernetes.api.model.ObjectMeta;
 import io.sundr.builder.annotations.Buildable;
 import io.sundr.builder.annotations.BuildableReference;
@@ -34,7 +35,8 @@ import lombok.ToString;
 }, refs = {
     @BuildableReference(ObjectMeta.class)
 })
-public class Config {
+public class Config implements KubernetesResource
+{
 
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();

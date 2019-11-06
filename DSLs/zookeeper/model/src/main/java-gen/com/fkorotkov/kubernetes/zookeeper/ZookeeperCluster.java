@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import io.fabric8.kubernetes.api.model.Doneable;
 import io.fabric8.kubernetes.api.model.HasMetadata;
+import io.fabric8.kubernetes.api.model.KubernetesResource;
 import io.fabric8.kubernetes.model.annotation.ApiGroup;
 import io.fabric8.kubernetes.model.annotation.ApiVersion;
 import io.sundr.builder.annotations.Buildable;
@@ -49,7 +50,7 @@ import lombok.ToString;
 @VelocityTransformations({
     @VelocityTransformation(value = "/manifest.vm", outputPath = "zookeeper.properties", gather = true)
 })
-public class ZookeeperCluster implements HasMetadata
+public class ZookeeperCluster implements HasMetadata, KubernetesResource
 {
 
     /**

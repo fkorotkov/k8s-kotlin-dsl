@@ -97,6 +97,8 @@ fun generateTypes(registry: MutableMap<String, TypeDefinition>, packagePrefix: S
     javaType = fqn
   }
 
+  // object is always KubernetesResource
+  result.javaInterfaces = listOf("io.fabric8.kubernetes.api.model.KubernetesResource")
   result.properties = schema.properties.mapValues { (name, openAPISchema) ->
     val typeName = name.capitalize()
     when (openAPISchema.type) {

@@ -8,7 +8,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.kafka.Annotations",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {}
     },
     "Authentication": {
@@ -16,7 +18,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.kafka.Authentication",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "type": {
           "type": "string",
@@ -30,7 +34,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.kafka.BrokerEndpoints",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {}
     },
     "ConfigOverrides": {
@@ -38,7 +44,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.kafka.ConfigOverrides",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "jvm": {
           "type": "array",
@@ -67,7 +75,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.kafka.EnvVar",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {}
     },
     "InitContainer": {
@@ -75,7 +85,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.kafka.InitContainer",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "args": {
           "type": "array",
@@ -119,7 +131,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.kafka.JvmConfig",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "heapSize": {
           "type": "string",
@@ -134,6 +148,7 @@
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.kafka.KafkaCluster",
       "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource",
         "io.fabric8.kubernetes.api.model.HasMetadata"
       ],
       "properties": {
@@ -210,7 +225,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.kafka.Limits",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "cpu": {
           "type": "string",
@@ -229,7 +246,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.kafka.MetricReporter",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "bootstrapEndpoint": {
           "type": "string",
@@ -263,7 +282,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.kafka.Network",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "annotations": {
           "type": "ref",
@@ -297,7 +318,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.kafka.NodeAffinity",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "key": {
           "type": "string",
@@ -321,7 +344,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.kafka.Options",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "acl": {
           "type": "boolean",
@@ -345,7 +370,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.kafka.Placement",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "disableHostPort": {
           "type": "boolean",
@@ -369,7 +396,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.kafka.PodSecurityContext",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "fsGroup": {
           "type": "integer",
@@ -428,7 +457,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.kafka.Rack",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "topology": {
           "type": "string",
@@ -442,7 +473,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.kafka.Requests",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "cpu": {
           "type": "string",
@@ -461,7 +494,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.kafka.Resources",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "limits": {
           "type": "ref",
@@ -490,7 +525,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.kafka.SeLinuxOptions",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "level": {
           "type": "string",
@@ -519,7 +556,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.kafka.Spec",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "configOverrides": {
           "type": "ref",
@@ -618,7 +657,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.kafka.Status",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "authenticationType": {
           "type": "string",
@@ -737,7 +778,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.kafka.Storage",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "capacity": {
           "type": "string",
@@ -761,7 +804,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.kafka.Sysctl",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "name": {
           "type": "string",
@@ -780,7 +825,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.kafka.Tls",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "authentication": {
           "type": "ref",
@@ -799,7 +846,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.kafka.Zookeeper",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "endpoint": {
           "type": "string",

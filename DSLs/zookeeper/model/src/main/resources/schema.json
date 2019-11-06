@@ -8,7 +8,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.zookeeper.Config",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {}
     },
     "ConfigOverrides": {
@@ -16,7 +18,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.zookeeper.ConfigOverrides",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "jvm": {
           "type": "array",
@@ -45,7 +49,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.zookeeper.EnvVar",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {}
     },
     "InitContainer": {
@@ -53,7 +59,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.zookeeper.InitContainer",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "args": {
           "type": "array",
@@ -97,7 +105,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.zookeeper.JvmConfig",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "heapSize": {
           "type": "string",
@@ -111,7 +121,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.zookeeper.Limits",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "cpu": {
           "type": "string",
@@ -130,7 +142,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.zookeeper.NodeAffinity",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "key": {
           "type": "string",
@@ -154,7 +168,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.zookeeper.Placement",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "disableHostPort": {
           "type": "boolean",
@@ -178,7 +194,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.zookeeper.PodSecurityContext",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "fsGroup": {
           "type": "integer",
@@ -237,7 +255,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.zookeeper.Rack",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "topology": {
           "type": "string",
@@ -251,7 +271,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.zookeeper.Requests",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "cpu": {
           "type": "string",
@@ -270,7 +292,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.zookeeper.Resources",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "limits": {
           "type": "ref",
@@ -299,7 +323,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.zookeeper.SeLinuxOptions",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "level": {
           "type": "string",
@@ -328,7 +354,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.zookeeper.Spec",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "configOverrides": {
           "type": "ref",
@@ -402,7 +430,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.zookeeper.Status",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "alternateEndpoint": {
           "type": "string",
@@ -456,7 +486,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.zookeeper.Storage",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "capacity": {
           "type": "string",
@@ -480,7 +512,9 @@
       "description": "",
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.zookeeper.Sysctl",
-      "javaInterfaces": [],
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
       "properties": {
         "name": {
           "type": "string",
@@ -500,6 +534,7 @@
       "additionalProperties": true,
       "javaType": "com.fkorotkov.kubernetes.zookeeper.ZookeeperCluster",
       "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource",
         "io.fabric8.kubernetes.api.model.HasMetadata"
       ],
       "properties": {
