@@ -87,11 +87,13 @@
             "additionalProperties": {}
           }
         ],
+        "ephemeralContainers": [],
         "hostAliases": [],
         "imagePullSecrets": [],
         "initContainers": [],
         "readinessGates": [],
         "tolerations": [],
+        "topologySpreadConstraints": [],
         "volumes": [
           {
             "name": "gcp-credentials",

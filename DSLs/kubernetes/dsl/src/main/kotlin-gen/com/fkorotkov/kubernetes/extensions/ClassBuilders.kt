@@ -25,9 +25,6 @@ import io.fabric8.kubernetes.api.model.extensions.RollbackConfig as extensions_R
 import io.fabric8.kubernetes.api.model.extensions.RunAsGroupStrategyOptions as extensions_RunAsGroupStrategyOptions
 import io.fabric8.kubernetes.api.model.extensions.RuntimeClassStrategyOptions as extensions_RuntimeClassStrategyOptions
 import io.fabric8.kubernetes.api.model.extensions.SELinuxStrategyOptions as extensions_SELinuxStrategyOptions
-import io.fabric8.kubernetes.api.model.extensions.Scale as extensions_Scale
-import io.fabric8.kubernetes.api.model.extensions.ScaleSpec as extensions_ScaleSpec
-import io.fabric8.kubernetes.api.model.extensions.ScaleStatus as extensions_ScaleStatus
 import io.fabric8.kubernetes.api.model.extensions.SupplementalGroupsStrategyOptions as extensions_SupplementalGroupsStrategyOptions
 
 
@@ -194,27 +191,6 @@ fun newRuntimeClassStrategyOptions(block : extensions_RuntimeClassStrategyOption
 
 fun newSELinuxStrategyOptions(block : extensions_SELinuxStrategyOptions.() -> Unit = {}): extensions_SELinuxStrategyOptions {
   val instance = extensions_SELinuxStrategyOptions()
-  instance.block()
-  return instance
-}
-
-
-fun newScale(block : extensions_Scale.() -> Unit = {}): extensions_Scale {
-  val instance = extensions_Scale()
-  instance.block()
-  return instance
-}
-
-
-fun newScaleSpec(block : extensions_ScaleSpec.() -> Unit = {}): extensions_ScaleSpec {
-  val instance = extensions_ScaleSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newScaleStatus(block : extensions_ScaleStatus.() -> Unit = {}): extensions_ScaleStatus {
-  val instance = extensions_ScaleStatus()
   instance.block()
   return instance
 }

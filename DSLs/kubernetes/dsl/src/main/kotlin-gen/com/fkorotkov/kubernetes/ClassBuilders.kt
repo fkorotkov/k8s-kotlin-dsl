@@ -42,6 +42,7 @@ import io.fabric8.kubernetes.api.model.ContainerStateTerminated as model_Contain
 import io.fabric8.kubernetes.api.model.ContainerStateWaiting as model_ContainerStateWaiting
 import io.fabric8.kubernetes.api.model.ContainerStatus as model_ContainerStatus
 import io.fabric8.kubernetes.api.model.Context as model_Context
+import io.fabric8.kubernetes.api.model.CreateOptions as model_CreateOptions
 import io.fabric8.kubernetes.api.model.CrossVersionObjectReference as model_CrossVersionObjectReference
 import io.fabric8.kubernetes.api.model.DaemonEndpoint as model_DaemonEndpoint
 import io.fabric8.kubernetes.api.model.DeleteOptions as model_DeleteOptions
@@ -57,6 +58,7 @@ import io.fabric8.kubernetes.api.model.EndpointsList as model_EndpointsList
 import io.fabric8.kubernetes.api.model.EnvFromSource as model_EnvFromSource
 import io.fabric8.kubernetes.api.model.EnvVar as model_EnvVar
 import io.fabric8.kubernetes.api.model.EnvVarSource as model_EnvVarSource
+import io.fabric8.kubernetes.api.model.EphemeralContainer as model_EphemeralContainer
 import io.fabric8.kubernetes.api.model.Event as model_Event
 import io.fabric8.kubernetes.api.model.EventList as model_EventList
 import io.fabric8.kubernetes.api.model.EventSeries as model_EventSeries
@@ -64,12 +66,15 @@ import io.fabric8.kubernetes.api.model.EventSource as model_EventSource
 import io.fabric8.kubernetes.api.model.ExecAction as model_ExecAction
 import io.fabric8.kubernetes.api.model.ExecConfig as model_ExecConfig
 import io.fabric8.kubernetes.api.model.ExecEnvVar as model_ExecEnvVar
+import io.fabric8.kubernetes.api.model.ExternalMetricSource as model_ExternalMetricSource
+import io.fabric8.kubernetes.api.model.ExternalMetricStatus as model_ExternalMetricStatus
 import io.fabric8.kubernetes.api.model.FCVolumeSource as model_FCVolumeSource
 import io.fabric8.kubernetes.api.model.FieldsV1 as model_FieldsV1
 import io.fabric8.kubernetes.api.model.FlexPersistentVolumeSource as model_FlexPersistentVolumeSource
 import io.fabric8.kubernetes.api.model.FlexVolumeSource as model_FlexVolumeSource
 import io.fabric8.kubernetes.api.model.FlockerVolumeSource as model_FlockerVolumeSource
 import io.fabric8.kubernetes.api.model.GCEPersistentDiskVolumeSource as model_GCEPersistentDiskVolumeSource
+import io.fabric8.kubernetes.api.model.GetOptions as model_GetOptions
 import io.fabric8.kubernetes.api.model.GitRepoVolumeSource as model_GitRepoVolumeSource
 import io.fabric8.kubernetes.api.model.GlusterfsPersistentVolumeSource as model_GlusterfsPersistentVolumeSource
 import io.fabric8.kubernetes.api.model.GlusterfsVolumeSource as model_GlusterfsVolumeSource
@@ -80,6 +85,7 @@ import io.fabric8.kubernetes.api.model.HTTPGetAction as model_HTTPGetAction
 import io.fabric8.kubernetes.api.model.HTTPHeader as model_HTTPHeader
 import io.fabric8.kubernetes.api.model.Handler as model_Handler
 import io.fabric8.kubernetes.api.model.HorizontalPodAutoscaler as model_HorizontalPodAutoscaler
+import io.fabric8.kubernetes.api.model.HorizontalPodAutoscalerCondition as model_HorizontalPodAutoscalerCondition
 import io.fabric8.kubernetes.api.model.HorizontalPodAutoscalerList as model_HorizontalPodAutoscalerList
 import io.fabric8.kubernetes.api.model.HorizontalPodAutoscalerSpec as model_HorizontalPodAutoscalerSpec
 import io.fabric8.kubernetes.api.model.HorizontalPodAutoscalerStatus as model_HorizontalPodAutoscalerStatus
@@ -103,6 +109,8 @@ import io.fabric8.kubernetes.api.model.LoadBalancerStatus as model_LoadBalancerS
 import io.fabric8.kubernetes.api.model.LocalObjectReference as model_LocalObjectReference
 import io.fabric8.kubernetes.api.model.LocalVolumeSource as model_LocalVolumeSource
 import io.fabric8.kubernetes.api.model.ManagedFieldsEntry as model_ManagedFieldsEntry
+import io.fabric8.kubernetes.api.model.MetricSpec as model_MetricSpec
+import io.fabric8.kubernetes.api.model.MetricStatus as model_MetricStatus
 import io.fabric8.kubernetes.api.model.MicroTime as model_MicroTime
 import io.fabric8.kubernetes.api.model.NFSVolumeSource as model_NFSVolumeSource
 import io.fabric8.kubernetes.api.model.NamedAuthInfo as model_NamedAuthInfo
@@ -110,6 +118,7 @@ import io.fabric8.kubernetes.api.model.NamedCluster as model_NamedCluster
 import io.fabric8.kubernetes.api.model.NamedContext as model_NamedContext
 import io.fabric8.kubernetes.api.model.NamedExtension as model_NamedExtension
 import io.fabric8.kubernetes.api.model.Namespace as model_Namespace
+import io.fabric8.kubernetes.api.model.NamespaceCondition as model_NamespaceCondition
 import io.fabric8.kubernetes.api.model.NamespaceList as model_NamespaceList
 import io.fabric8.kubernetes.api.model.NamespaceSpec as model_NamespaceSpec
 import io.fabric8.kubernetes.api.model.NamespaceStatus as model_NamespaceStatus
@@ -129,9 +138,12 @@ import io.fabric8.kubernetes.api.model.NodeStatus as model_NodeStatus
 import io.fabric8.kubernetes.api.model.NodeSystemInfo as model_NodeSystemInfo
 import io.fabric8.kubernetes.api.model.ObjectFieldSelector as model_ObjectFieldSelector
 import io.fabric8.kubernetes.api.model.ObjectMeta as model_ObjectMeta
+import io.fabric8.kubernetes.api.model.ObjectMetricSource as model_ObjectMetricSource
+import io.fabric8.kubernetes.api.model.ObjectMetricStatus as model_ObjectMetricStatus
 import io.fabric8.kubernetes.api.model.ObjectReference as model_ObjectReference
 import io.fabric8.kubernetes.api.model.OwnerReference as model_OwnerReference
 import io.fabric8.kubernetes.api.model.Patch as model_Patch
+import io.fabric8.kubernetes.api.model.PatchOptions as model_PatchOptions
 import io.fabric8.kubernetes.api.model.PersistentVolume as model_PersistentVolume
 import io.fabric8.kubernetes.api.model.PersistentVolumeClaim as model_PersistentVolumeClaim
 import io.fabric8.kubernetes.api.model.PersistentVolumeClaimCondition as model_PersistentVolumeClaimCondition
@@ -150,6 +162,7 @@ import io.fabric8.kubernetes.api.model.PodAntiAffinity as model_PodAntiAffinity
 import io.fabric8.kubernetes.api.model.PodCondition as model_PodCondition
 import io.fabric8.kubernetes.api.model.PodDNSConfig as model_PodDNSConfig
 import io.fabric8.kubernetes.api.model.PodDNSConfigOption as model_PodDNSConfigOption
+import io.fabric8.kubernetes.api.model.PodIP as model_PodIP
 import io.fabric8.kubernetes.api.model.PodList as model_PodList
 import io.fabric8.kubernetes.api.model.PodReadinessGate as model_PodReadinessGate
 import io.fabric8.kubernetes.api.model.PodSecurityContext as model_PodSecurityContext
@@ -158,6 +171,8 @@ import io.fabric8.kubernetes.api.model.PodStatus as model_PodStatus
 import io.fabric8.kubernetes.api.model.PodTemplate as model_PodTemplate
 import io.fabric8.kubernetes.api.model.PodTemplateList as model_PodTemplateList
 import io.fabric8.kubernetes.api.model.PodTemplateSpec as model_PodTemplateSpec
+import io.fabric8.kubernetes.api.model.PodsMetricSource as model_PodsMetricSource
+import io.fabric8.kubernetes.api.model.PodsMetricStatus as model_PodsMetricStatus
 import io.fabric8.kubernetes.api.model.PortworxVolumeSource as model_PortworxVolumeSource
 import io.fabric8.kubernetes.api.model.Preconditions as model_Preconditions
 import io.fabric8.kubernetes.api.model.Preferences as model_Preferences
@@ -173,6 +188,8 @@ import io.fabric8.kubernetes.api.model.ReplicationControllerList as model_Replic
 import io.fabric8.kubernetes.api.model.ReplicationControllerSpec as model_ReplicationControllerSpec
 import io.fabric8.kubernetes.api.model.ReplicationControllerStatus as model_ReplicationControllerStatus
 import io.fabric8.kubernetes.api.model.ResourceFieldSelector as model_ResourceFieldSelector
+import io.fabric8.kubernetes.api.model.ResourceMetricSource as model_ResourceMetricSource
+import io.fabric8.kubernetes.api.model.ResourceMetricStatus as model_ResourceMetricStatus
 import io.fabric8.kubernetes.api.model.ResourceQuota as model_ResourceQuota
 import io.fabric8.kubernetes.api.model.ResourceQuotaList as model_ResourceQuotaList
 import io.fabric8.kubernetes.api.model.ResourceQuotaSpec as model_ResourceQuotaSpec
@@ -213,8 +230,10 @@ import io.fabric8.kubernetes.api.model.Taint as model_Taint
 import io.fabric8.kubernetes.api.model.Toleration as model_Toleration
 import io.fabric8.kubernetes.api.model.TopologySelectorLabelRequirement as model_TopologySelectorLabelRequirement
 import io.fabric8.kubernetes.api.model.TopologySelectorTerm as model_TopologySelectorTerm
+import io.fabric8.kubernetes.api.model.TopologySpreadConstraint as model_TopologySpreadConstraint
 import io.fabric8.kubernetes.api.model.TypeMeta as model_TypeMeta
 import io.fabric8.kubernetes.api.model.TypedLocalObjectReference as model_TypedLocalObjectReference
+import io.fabric8.kubernetes.api.model.UpdateOptions as model_UpdateOptions
 import io.fabric8.kubernetes.api.model.Volume as model_Volume
 import io.fabric8.kubernetes.api.model.VolumeDevice as model_VolumeDevice
 import io.fabric8.kubernetes.api.model.VolumeMount as model_VolumeMount
@@ -513,6 +532,13 @@ fun newContext(block : model_Context.() -> Unit = {}): model_Context {
 }
 
 
+fun newCreateOptions(block : model_CreateOptions.() -> Unit = {}): model_CreateOptions {
+  val instance = model_CreateOptions()
+  instance.block()
+  return instance
+}
+
+
 fun newCrossVersionObjectReference(block : model_CrossVersionObjectReference.() -> Unit = {}): model_CrossVersionObjectReference {
   val instance = model_CrossVersionObjectReference()
   instance.block()
@@ -618,6 +644,13 @@ fun newEnvVarSource(block : model_EnvVarSource.() -> Unit = {}): model_EnvVarSou
 }
 
 
+fun newEphemeralContainer(block : model_EphemeralContainer.() -> Unit = {}): model_EphemeralContainer {
+  val instance = model_EphemeralContainer()
+  instance.block()
+  return instance
+}
+
+
 fun newEvent(block : model_Event.() -> Unit = {}): model_Event {
   val instance = model_Event()
   instance.block()
@@ -667,6 +700,20 @@ fun newExecEnvVar(block : model_ExecEnvVar.() -> Unit = {}): model_ExecEnvVar {
 }
 
 
+fun newExternalMetricSource(block : model_ExternalMetricSource.() -> Unit = {}): model_ExternalMetricSource {
+  val instance = model_ExternalMetricSource()
+  instance.block()
+  return instance
+}
+
+
+fun newExternalMetricStatus(block : model_ExternalMetricStatus.() -> Unit = {}): model_ExternalMetricStatus {
+  val instance = model_ExternalMetricStatus()
+  instance.block()
+  return instance
+}
+
+
 fun newFCVolumeSource(block : model_FCVolumeSource.() -> Unit = {}): model_FCVolumeSource {
   val instance = model_FCVolumeSource()
   instance.block()
@@ -704,6 +751,13 @@ fun newFlockerVolumeSource(block : model_FlockerVolumeSource.() -> Unit = {}): m
 
 fun newGCEPersistentDiskVolumeSource(block : model_GCEPersistentDiskVolumeSource.() -> Unit = {}): model_GCEPersistentDiskVolumeSource {
   val instance = model_GCEPersistentDiskVolumeSource()
+  instance.block()
+  return instance
+}
+
+
+fun newGetOptions(block : model_GetOptions.() -> Unit = {}): model_GetOptions {
+  val instance = model_GetOptions()
   instance.block()
   return instance
 }
@@ -774,6 +828,13 @@ fun newHandler(block : model_Handler.() -> Unit = {}): model_Handler {
 
 fun newHorizontalPodAutoscaler(block : model_HorizontalPodAutoscaler.() -> Unit = {}): model_HorizontalPodAutoscaler {
   val instance = model_HorizontalPodAutoscaler()
+  instance.block()
+  return instance
+}
+
+
+fun newHorizontalPodAutoscalerCondition(block : model_HorizontalPodAutoscalerCondition.() -> Unit = {}): model_HorizontalPodAutoscalerCondition {
+  val instance = model_HorizontalPodAutoscalerCondition()
   instance.block()
   return instance
 }
@@ -940,6 +1001,20 @@ fun newManagedFieldsEntry(block : model_ManagedFieldsEntry.() -> Unit = {}): mod
 }
 
 
+fun newMetricSpec(block : model_MetricSpec.() -> Unit = {}): model_MetricSpec {
+  val instance = model_MetricSpec()
+  instance.block()
+  return instance
+}
+
+
+fun newMetricStatus(block : model_MetricStatus.() -> Unit = {}): model_MetricStatus {
+  val instance = model_MetricStatus()
+  instance.block()
+  return instance
+}
+
+
 fun newMicroTime(block : model_MicroTime.() -> Unit = {}): model_MicroTime {
   val instance = model_MicroTime()
   instance.block()
@@ -984,6 +1059,13 @@ fun newNamedExtension(block : model_NamedExtension.() -> Unit = {}): model_Named
 
 fun newNamespace(block : model_Namespace.() -> Unit = {}): model_Namespace {
   val instance = model_Namespace()
+  instance.block()
+  return instance
+}
+
+
+fun newNamespaceCondition(block : model_NamespaceCondition.() -> Unit = {}): model_NamespaceCondition {
+  val instance = model_NamespaceCondition()
   instance.block()
   return instance
 }
@@ -1122,6 +1204,20 @@ fun newObjectMeta(block : model_ObjectMeta.() -> Unit = {}): model_ObjectMeta {
 }
 
 
+fun newObjectMetricSource(block : model_ObjectMetricSource.() -> Unit = {}): model_ObjectMetricSource {
+  val instance = model_ObjectMetricSource()
+  instance.block()
+  return instance
+}
+
+
+fun newObjectMetricStatus(block : model_ObjectMetricStatus.() -> Unit = {}): model_ObjectMetricStatus {
+  val instance = model_ObjectMetricStatus()
+  instance.block()
+  return instance
+}
+
+
 fun newObjectReference(block : model_ObjectReference.() -> Unit = {}): model_ObjectReference {
   val instance = model_ObjectReference()
   instance.block()
@@ -1138,6 +1234,13 @@ fun newOwnerReference(block : model_OwnerReference.() -> Unit = {}): model_Owner
 
 fun newPatch(block : model_Patch.() -> Unit = {}): model_Patch {
   val instance = model_Patch()
+  instance.block()
+  return instance
+}
+
+
+fun newPatchOptions(block : model_PatchOptions.() -> Unit = {}): model_PatchOptions {
+  val instance = model_PatchOptions()
   instance.block()
   return instance
 }
@@ -1269,6 +1372,13 @@ fun newPodDNSConfigOption(block : model_PodDNSConfigOption.() -> Unit = {}): mod
 }
 
 
+fun newPodIP(block : model_PodIP.() -> Unit = {}): model_PodIP {
+  val instance = model_PodIP()
+  instance.block()
+  return instance
+}
+
+
 fun newPodList(block : model_PodList.() -> Unit = {}): model_PodList {
   val instance = model_PodList()
   instance.block()
@@ -1320,6 +1430,20 @@ fun newPodTemplateList(block : model_PodTemplateList.() -> Unit = {}): model_Pod
 
 fun newPodTemplateSpec(block : model_PodTemplateSpec.() -> Unit = {}): model_PodTemplateSpec {
   val instance = model_PodTemplateSpec()
+  instance.block()
+  return instance
+}
+
+
+fun newPodsMetricSource(block : model_PodsMetricSource.() -> Unit = {}): model_PodsMetricSource {
+  val instance = model_PodsMetricSource()
+  instance.block()
+  return instance
+}
+
+
+fun newPodsMetricStatus(block : model_PodsMetricStatus.() -> Unit = {}): model_PodsMetricStatus {
+  val instance = model_PodsMetricStatus()
   instance.block()
   return instance
 }
@@ -1425,6 +1549,20 @@ fun newReplicationControllerStatus(block : model_ReplicationControllerStatus.() 
 
 fun newResourceFieldSelector(block : model_ResourceFieldSelector.() -> Unit = {}): model_ResourceFieldSelector {
   val instance = model_ResourceFieldSelector()
+  instance.block()
+  return instance
+}
+
+
+fun newResourceMetricSource(block : model_ResourceMetricSource.() -> Unit = {}): model_ResourceMetricSource {
+  val instance = model_ResourceMetricSource()
+  instance.block()
+  return instance
+}
+
+
+fun newResourceMetricStatus(block : model_ResourceMetricStatus.() -> Unit = {}): model_ResourceMetricStatus {
+  val instance = model_ResourceMetricStatus()
   instance.block()
   return instance
 }
@@ -1710,6 +1848,13 @@ fun newTopologySelectorTerm(block : model_TopologySelectorTerm.() -> Unit = {}):
 }
 
 
+fun newTopologySpreadConstraint(block : model_TopologySpreadConstraint.() -> Unit = {}): model_TopologySpreadConstraint {
+  val instance = model_TopologySpreadConstraint()
+  instance.block()
+  return instance
+}
+
+
 fun newTypeMeta(block : model_TypeMeta.() -> Unit = {}): model_TypeMeta {
   val instance = model_TypeMeta()
   instance.block()
@@ -1719,6 +1864,13 @@ fun newTypeMeta(block : model_TypeMeta.() -> Unit = {}): model_TypeMeta {
 
 fun newTypedLocalObjectReference(block : model_TypedLocalObjectReference.() -> Unit = {}): model_TypedLocalObjectReference {
   val instance = model_TypedLocalObjectReference()
+  instance.block()
+  return instance
+}
+
+
+fun newUpdateOptions(block : model_UpdateOptions.() -> Unit = {}): model_UpdateOptions {
+  val instance = model_UpdateOptions()
   instance.block()
   return instance
 }

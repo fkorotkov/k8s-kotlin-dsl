@@ -4,7 +4,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.fkorotkov:gradle-libraries-plugin:0.1'
+        classpath 'com.fkorotkov:gradle-libraries-plugin:1.0'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
     }
 }
