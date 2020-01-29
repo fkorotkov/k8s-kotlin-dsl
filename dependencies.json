@@ -33,12 +33,12 @@
     {
       "group": "io.fabric8",
       "name": "kubernetes-client",
-      "version": "4.7.0"
+      "version": "4.7.1"
     },
     {
       "group": "io.fabric8",
       "name": "kubernetes-model",
-      "version": "4.7.0"
+      "version": "4.7.1"
     },
     {
       "group": "io.sundr",
@@ -83,12 +83,12 @@
     {
       "group": "org.jsonschema2pojo",
       "name": "jsonschema2pojo-gradle-plugin",
-      "version": "1.0.1"
+      "version": "1.0.2"
     },
     {
       "group": "org.jsonschema2pojo",
       "name": "jsonschema2pojo-core",
-      "version": "1.0.1"
+      "version": "1.0.2"
     },
     {
       "group": "org.projectlombok",
