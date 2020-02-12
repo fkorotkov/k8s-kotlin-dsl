@@ -93,7 +93,7 @@
     {
       "group": "org.projectlombok",
       "name": "lombok",
-      "version": "1.18.10"
+      "version": "1.18.12"
     }
   ]
 }
