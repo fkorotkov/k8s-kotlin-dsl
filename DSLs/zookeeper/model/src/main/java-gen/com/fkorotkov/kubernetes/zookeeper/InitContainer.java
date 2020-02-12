@@ -25,7 +25,6 @@ import lombok.ToString;
 
 /**
  * 
- * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -48,13 +47,11 @@ public class InitContainer implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("args")
     @JsonPropertyDescription("")
     private List<String> args = new ArrayList<String>();
     /**
-     * 
      * 
      */
     @JsonProperty("command")
@@ -62,20 +59,17 @@ public class InitContainer implements KubernetesResource
     private List<String> command = new ArrayList<String>();
     /**
      * 
-     * 
      */
     @JsonProperty("envVar")
     @JsonPropertyDescription("")
     private EnvVar envVar;
     /**
      * 
-     * 
      */
     @JsonProperty("image")
     @JsonPropertyDescription("")
     private String image;
     /**
-     * 
      * 
      */
     @JsonProperty("name")
@@ -110,7 +104,6 @@ public class InitContainer implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("args")
     public List<String> getArgs() {
@@ -118,7 +111,6 @@ public class InitContainer implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("args")
@@ -128,7 +120,6 @@ public class InitContainer implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("command")
     public List<String> getCommand() {
@@ -136,7 +127,6 @@ public class InitContainer implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("command")
@@ -146,7 +136,6 @@ public class InitContainer implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("envVar")
     public EnvVar getEnvVar() {
@@ -154,7 +143,6 @@ public class InitContainer implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("envVar")
@@ -164,7 +152,6 @@ public class InitContainer implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("image")
     public String getImage() {
@@ -172,7 +159,6 @@ public class InitContainer implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("image")
@@ -182,7 +168,6 @@ public class InitContainer implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("name")
     public String getName() {
@@ -190,7 +175,6 @@ public class InitContainer implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("name")

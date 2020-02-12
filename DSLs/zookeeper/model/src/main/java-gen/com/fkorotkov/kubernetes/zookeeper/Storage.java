@@ -23,7 +23,6 @@ import lombok.ToString;
 
 /**
  * 
- * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -44,20 +43,17 @@ public class Storage implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("capacity")
     @JsonPropertyDescription("")
     private String capacity;
     /**
      * 
-     * 
      */
     @JsonProperty("name")
     @JsonPropertyDescription("")
     private String name;
     /**
-     * 
      * 
      */
     @JsonProperty("type")
@@ -88,7 +84,6 @@ public class Storage implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("capacity")
     public String getCapacity() {
@@ -96,7 +91,6 @@ public class Storage implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("capacity")
@@ -106,7 +100,6 @@ public class Storage implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("name")
     public String getName() {
@@ -114,7 +107,6 @@ public class Storage implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("name")
@@ -124,7 +116,6 @@ public class Storage implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("type")
     public Integer getType() {
@@ -132,7 +123,6 @@ public class Storage implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("type")

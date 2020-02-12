@@ -23,7 +23,6 @@ import lombok.ToString;
 
 /**
  * 
- * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -46,13 +45,11 @@ public class MetricReporter implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("bootstrapEndpoint")
     @JsonPropertyDescription("")
     private String bootstrapEndpoint;
     /**
-     * 
      * 
      */
     @JsonProperty("internal")
@@ -60,20 +57,17 @@ public class MetricReporter implements KubernetesResource
     private Boolean internal;
     /**
      * 
-     * 
      */
     @JsonProperty("publishMs")
     @JsonPropertyDescription("")
     private Integer publishMs;
     /**
      * 
-     * 
      */
     @JsonProperty("replicationFactor")
     @JsonPropertyDescription("")
     private Integer replicationFactor;
     /**
-     * 
      * 
      */
     @JsonProperty("tls")
@@ -108,7 +102,6 @@ public class MetricReporter implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("bootstrapEndpoint")
     public String getBootstrapEndpoint() {
@@ -116,7 +109,6 @@ public class MetricReporter implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("bootstrapEndpoint")
@@ -126,7 +118,6 @@ public class MetricReporter implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("internal")
     public Boolean getInternal() {
@@ -134,7 +125,6 @@ public class MetricReporter implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("internal")
@@ -144,7 +134,6 @@ public class MetricReporter implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("publishMs")
     public Integer getPublishMs() {
@@ -152,7 +141,6 @@ public class MetricReporter implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("publishMs")
@@ -162,7 +150,6 @@ public class MetricReporter implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("replicationFactor")
     public Integer getReplicationFactor() {
@@ -170,7 +157,6 @@ public class MetricReporter implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("replicationFactor")
@@ -180,7 +166,6 @@ public class MetricReporter implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("tls")
     public Tls getTls() {
@@ -188,7 +173,6 @@ public class MetricReporter implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("tls")

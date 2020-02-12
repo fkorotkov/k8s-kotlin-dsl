@@ -23,7 +23,6 @@ import lombok.ToString;
 
 /**
  * 
- * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -43,13 +42,11 @@ public class Limits implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("cpu")
     @JsonPropertyDescription("")
     private String cpu;
     /**
-     * 
      * 
      */
     @JsonProperty("memory")
@@ -78,7 +75,6 @@ public class Limits implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("cpu")
     public String getCpu() {
@@ -86,7 +82,6 @@ public class Limits implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("cpu")
@@ -96,7 +91,6 @@ public class Limits implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("memory")
     public String getMemory() {
@@ -104,7 +98,6 @@ public class Limits implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("memory")

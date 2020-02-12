@@ -23,7 +23,6 @@ import lombok.ToString;
 
 /**
  * 
- * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -43,13 +42,11 @@ public class Sysctl implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("name")
     @JsonPropertyDescription("")
     private String name;
     /**
-     * 
      * 
      */
     @JsonProperty("value")
@@ -78,7 +75,6 @@ public class Sysctl implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("name")
     public String getName() {
@@ -86,7 +82,6 @@ public class Sysctl implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("name")
@@ -96,7 +91,6 @@ public class Sysctl implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("value")
     public String getValue() {
@@ -104,7 +98,6 @@ public class Sysctl implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("value")

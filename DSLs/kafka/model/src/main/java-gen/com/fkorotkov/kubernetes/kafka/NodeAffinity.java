@@ -25,7 +25,6 @@ import lombok.ToString;
 
 /**
  * 
- * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -45,13 +44,11 @@ public class NodeAffinity implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("key")
     @JsonPropertyDescription("")
     private String key;
     /**
-     * 
      * 
      */
     @JsonProperty("values")
@@ -80,7 +77,6 @@ public class NodeAffinity implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("key")
     public String getKey() {
@@ -88,7 +84,6 @@ public class NodeAffinity implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("key")
@@ -98,7 +93,6 @@ public class NodeAffinity implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("values")
     public List<String> getValues() {
@@ -106,7 +100,6 @@ public class NodeAffinity implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("values")

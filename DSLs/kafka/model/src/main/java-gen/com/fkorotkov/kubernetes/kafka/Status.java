@@ -23,7 +23,6 @@ import lombok.ToString;
 
 /**
  * 
- * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -63,13 +62,11 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("authenticationType")
     @JsonPropertyDescription("")
     private String authenticationType;
     /**
-     * 
      * 
      */
     @JsonProperty("bootstrapEndpoint")
@@ -77,13 +74,11 @@ public class Status implements KubernetesResource
     private String bootstrapEndpoint;
     /**
      * 
-     * 
      */
     @JsonProperty("brokerEndpoints")
     @JsonPropertyDescription("")
     private BrokerEndpoints brokerEndpoints;
     /**
-     * 
      * 
      */
     @JsonProperty("brokerExternalListener")
@@ -91,13 +86,11 @@ public class Status implements KubernetesResource
     private String brokerExternalListener;
     /**
      * 
-     * 
      */
     @JsonProperty("brokerInternalListener")
     @JsonPropertyDescription("")
     private String brokerInternalListener;
     /**
-     * 
      * 
      */
     @JsonProperty("clientAuthentication")
@@ -105,13 +98,11 @@ public class Status implements KubernetesResource
     private Boolean clientAuthentication;
     /**
      * 
-     * 
      */
     @JsonProperty("clusterName")
     @JsonPropertyDescription("")
     private String clusterName;
     /**
-     * 
      * 
      */
     @JsonProperty("currentReplicas")
@@ -119,13 +110,11 @@ public class Status implements KubernetesResource
     private Integer currentReplicas;
     /**
      * 
-     * 
      */
     @JsonProperty("externalClient")
     @JsonPropertyDescription("")
     private String externalClient;
     /**
-     * 
      * 
      */
     @JsonProperty("internalClient")
@@ -133,13 +122,11 @@ public class Status implements KubernetesResource
     private String internalClient;
     /**
      * 
-     * 
      */
     @JsonProperty("jmxPort")
     @JsonPropertyDescription("")
     private Integer jmxPort;
     /**
-     * 
      * 
      */
     @JsonProperty("jolokiaPort")
@@ -147,13 +134,11 @@ public class Status implements KubernetesResource
     private Integer jolokiaPort;
     /**
      * 
-     * 
      */
     @JsonProperty("minIsr")
     @JsonPropertyDescription("")
     private Integer minIsr;
     /**
-     * 
      * 
      */
     @JsonProperty("phase")
@@ -161,13 +146,11 @@ public class Status implements KubernetesResource
     private String phase;
     /**
      * 
-     * 
      */
     @JsonProperty("prometheusPort")
     @JsonPropertyDescription("")
     private Integer prometheusPort;
     /**
-     * 
      * 
      */
     @JsonProperty("pscVersion")
@@ -175,13 +158,11 @@ public class Status implements KubernetesResource
     private String pscVersion;
     /**
      * 
-     * 
      */
     @JsonProperty("readyReplicas")
     @JsonPropertyDescription("")
     private Integer readyReplicas;
     /**
-     * 
      * 
      */
     @JsonProperty("reason")
@@ -189,13 +170,11 @@ public class Status implements KubernetesResource
     private String reason;
     /**
      * 
-     * 
      */
     @JsonProperty("replicas")
     @JsonPropertyDescription("")
     private Integer replicas;
     /**
-     * 
      * 
      */
     @JsonProperty("replicationFactor")
@@ -203,13 +182,11 @@ public class Status implements KubernetesResource
     private Integer replicationFactor;
     /**
      * 
-     * 
      */
     @JsonProperty("securityProtocol")
     @JsonPropertyDescription("")
     private String securityProtocol;
     /**
-     * 
      * 
      */
     @JsonProperty("zookeeperConnect")
@@ -278,7 +255,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("authenticationType")
     public String getAuthenticationType() {
@@ -286,7 +262,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("authenticationType")
@@ -296,7 +271,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("bootstrapEndpoint")
     public String getBootstrapEndpoint() {
@@ -304,7 +278,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("bootstrapEndpoint")
@@ -314,7 +287,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("brokerEndpoints")
     public BrokerEndpoints getBrokerEndpoints() {
@@ -322,7 +294,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("brokerEndpoints")
@@ -332,7 +303,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("brokerExternalListener")
     public String getBrokerExternalListener() {
@@ -340,7 +310,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("brokerExternalListener")
@@ -350,7 +319,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("brokerInternalListener")
     public String getBrokerInternalListener() {
@@ -358,7 +326,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("brokerInternalListener")
@@ -368,7 +335,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("clientAuthentication")
     public Boolean getClientAuthentication() {
@@ -376,7 +342,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("clientAuthentication")
@@ -386,7 +351,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("clusterName")
     public String getClusterName() {
@@ -394,7 +358,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("clusterName")
@@ -404,7 +367,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("currentReplicas")
     public Integer getCurrentReplicas() {
@@ -412,7 +374,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("currentReplicas")
@@ -422,7 +383,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("externalClient")
     public String getExternalClient() {
@@ -430,7 +390,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("externalClient")
@@ -440,7 +399,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("internalClient")
     public String getInternalClient() {
@@ -448,7 +406,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("internalClient")
@@ -458,7 +415,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("jmxPort")
     public Integer getJmxPort() {
@@ -466,7 +422,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("jmxPort")
@@ -476,7 +431,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("jolokiaPort")
     public Integer getJolokiaPort() {
@@ -484,7 +438,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("jolokiaPort")
@@ -494,7 +447,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("minIsr")
     public Integer getMinIsr() {
@@ -502,7 +454,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("minIsr")
@@ -512,7 +463,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("phase")
     public String getPhase() {
@@ -520,7 +470,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("phase")
@@ -530,7 +479,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("prometheusPort")
     public Integer getPrometheusPort() {
@@ -538,7 +486,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("prometheusPort")
@@ -548,7 +495,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("pscVersion")
     public String getPscVersion() {
@@ -556,7 +502,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("pscVersion")
@@ -566,7 +511,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("readyReplicas")
     public Integer getReadyReplicas() {
@@ -574,7 +518,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("readyReplicas")
@@ -584,7 +527,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("reason")
     public String getReason() {
@@ -592,7 +534,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("reason")
@@ -602,7 +543,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("replicas")
     public Integer getReplicas() {
@@ -610,7 +550,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("replicas")
@@ -620,7 +559,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("replicationFactor")
     public Integer getReplicationFactor() {
@@ -628,7 +566,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("replicationFactor")
@@ -638,7 +575,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("securityProtocol")
     public String getSecurityProtocol() {
@@ -646,7 +582,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("securityProtocol")
@@ -656,7 +591,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("zookeeperConnect")
     public String getZookeeperConnect() {
@@ -664,7 +598,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("zookeeperConnect")

@@ -23,7 +23,6 @@ import lombok.ToString;
 
 /**
  * 
- * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -44,20 +43,17 @@ public class Options implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("acl")
     @JsonPropertyDescription("")
     private Boolean acl;
     /**
      * 
-     * 
      */
     @JsonProperty("enterprise")
     @JsonPropertyDescription("")
     private Boolean enterprise;
     /**
-     * 
      * 
      */
     @JsonProperty("supers")
@@ -88,7 +84,6 @@ public class Options implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("acl")
     public Boolean getAcl() {
@@ -96,7 +91,6 @@ public class Options implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("acl")
@@ -106,7 +100,6 @@ public class Options implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("enterprise")
     public Boolean getEnterprise() {
@@ -114,7 +107,6 @@ public class Options implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("enterprise")
@@ -124,7 +116,6 @@ public class Options implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("supers")
     public String getSupers() {
@@ -132,7 +123,6 @@ public class Options implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("supers")

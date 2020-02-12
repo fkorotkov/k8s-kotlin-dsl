@@ -23,7 +23,6 @@ import lombok.ToString;
 
 /**
  * 
- * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -43,13 +42,11 @@ public class Tls implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("authentication")
     @JsonPropertyDescription("")
     private Authentication authentication;
     /**
-     * 
      * 
      */
     @JsonProperty("enabled")
@@ -78,7 +75,6 @@ public class Tls implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("authentication")
     public Authentication getAuthentication() {
@@ -86,7 +82,6 @@ public class Tls implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("authentication")
@@ -96,7 +91,6 @@ public class Tls implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("enabled")
     public Boolean getEnabled() {
@@ -104,7 +98,6 @@ public class Tls implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("enabled")

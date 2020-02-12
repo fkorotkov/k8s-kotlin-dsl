@@ -23,7 +23,6 @@ import lombok.ToString;
 
 /**
  * 
- * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -44,20 +43,17 @@ public class Placement implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("disableHostPort")
     @JsonPropertyDescription("")
     private Boolean disableHostPort;
     /**
      * 
-     * 
      */
     @JsonProperty("nodeAffinity")
     @JsonPropertyDescription("")
     private NodeAffinity nodeAffinity;
     /**
-     * 
      * 
      */
     @JsonProperty("rack")
@@ -88,7 +84,6 @@ public class Placement implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("disableHostPort")
     public Boolean getDisableHostPort() {
@@ -96,7 +91,6 @@ public class Placement implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("disableHostPort")
@@ -106,7 +100,6 @@ public class Placement implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("nodeAffinity")
     public NodeAffinity getNodeAffinity() {
@@ -114,7 +107,6 @@ public class Placement implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("nodeAffinity")
@@ -124,7 +116,6 @@ public class Placement implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("rack")
     public Rack getRack() {
@@ -132,7 +123,6 @@ public class Placement implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("rack")

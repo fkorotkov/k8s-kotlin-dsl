@@ -25,7 +25,6 @@ import lombok.ToString;
 
 /**
  * 
- * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -46,20 +45,17 @@ public class Resources implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("limits")
     @JsonPropertyDescription("")
     private Limits limits;
     /**
      * 
-     * 
      */
     @JsonProperty("requests")
     @JsonPropertyDescription("")
     private Requests requests;
     /**
-     * 
      * 
      */
     @JsonProperty("storage")
@@ -90,7 +86,6 @@ public class Resources implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("limits")
     public Limits getLimits() {
@@ -98,7 +93,6 @@ public class Resources implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("limits")
@@ -108,7 +102,6 @@ public class Resources implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("requests")
     public Requests getRequests() {
@@ -116,7 +109,6 @@ public class Resources implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("requests")
@@ -126,7 +118,6 @@ public class Resources implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("storage")
     public List<Storage> getStorage() {
@@ -134,7 +125,6 @@ public class Resources implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("storage")

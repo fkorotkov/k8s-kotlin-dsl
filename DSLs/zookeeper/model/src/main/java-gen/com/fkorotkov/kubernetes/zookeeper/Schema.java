@@ -53,13 +53,11 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("config")
     @JsonPropertyDescription("")
     private Config config;
     /**
-     * 
      * 
      */
     @JsonProperty("configOverrides")
@@ -67,13 +65,11 @@ public class Schema {
     private ConfigOverrides configOverrides;
     /**
      * 
-     * 
      */
     @JsonProperty("envVar")
     @JsonPropertyDescription("")
     private EnvVar envVar;
     /**
-     * 
      * 
      */
     @JsonProperty("initContainer")
@@ -81,13 +77,11 @@ public class Schema {
     private InitContainer initContainer;
     /**
      * 
-     * 
      */
     @JsonProperty("jvmConfig")
     @JsonPropertyDescription("")
     private JvmConfig jvmConfig;
     /**
-     * 
      * 
      */
     @JsonProperty("limits")
@@ -95,13 +89,11 @@ public class Schema {
     private Limits limits;
     /**
      * 
-     * 
      */
     @JsonProperty("nodeAffinity")
     @JsonPropertyDescription("")
     private NodeAffinity nodeAffinity;
     /**
-     * 
      * 
      */
     @JsonProperty("placement")
@@ -109,13 +101,11 @@ public class Schema {
     private Placement placement;
     /**
      * 
-     * 
      */
     @JsonProperty("podSecurityContext")
     @JsonPropertyDescription("")
     private PodSecurityContext podSecurityContext;
     /**
-     * 
      * 
      */
     @JsonProperty("rack")
@@ -123,13 +113,11 @@ public class Schema {
     private Rack rack;
     /**
      * 
-     * 
      */
     @JsonProperty("requests")
     @JsonPropertyDescription("")
     private Requests requests;
     /**
-     * 
      * 
      */
     @JsonProperty("resources")
@@ -137,13 +125,11 @@ public class Schema {
     private Resources resources;
     /**
      * 
-     * 
      */
     @JsonProperty("seLinuxOptions")
     @JsonPropertyDescription("")
     private SeLinuxOptions seLinuxOptions;
     /**
-     * 
      * 
      */
     @JsonProperty("spec")
@@ -151,13 +137,11 @@ public class Schema {
     private Spec spec;
     /**
      * 
-     * 
      */
     @JsonProperty("status")
     @JsonPropertyDescription("")
     private Status status;
     /**
-     * 
      * 
      */
     @JsonProperty("storage")
@@ -165,20 +149,17 @@ public class Schema {
     private Storage storage;
     /**
      * 
-     * 
      */
     @JsonProperty("sysctl")
     @JsonPropertyDescription("")
     private Sysctl sysctl;
     /**
      * 
-     * 
      */
     @JsonProperty("zookeeperCluster")
     @JsonPropertyDescription("")
     private ZookeeperCluster zookeeperCluster;
     /**
-     * 
      * 
      */
     @JsonProperty("zookeeperClusterList")
@@ -241,7 +222,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("config")
     public Config getConfig() {
@@ -249,7 +229,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("config")
@@ -259,7 +238,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("configOverrides")
     public ConfigOverrides getConfigOverrides() {
@@ -267,7 +245,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("configOverrides")
@@ -277,7 +254,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("envVar")
     public EnvVar getEnvVar() {
@@ -285,7 +261,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("envVar")
@@ -295,7 +270,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("initContainer")
     public InitContainer getInitContainer() {
@@ -303,7 +277,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("initContainer")
@@ -313,7 +286,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("jvmConfig")
     public JvmConfig getJvmConfig() {
@@ -321,7 +293,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("jvmConfig")
@@ -331,7 +302,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("limits")
     public Limits getLimits() {
@@ -339,7 +309,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("limits")
@@ -349,7 +318,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("nodeAffinity")
     public NodeAffinity getNodeAffinity() {
@@ -357,7 +325,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("nodeAffinity")
@@ -367,7 +334,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("placement")
     public Placement getPlacement() {
@@ -375,7 +341,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("placement")
@@ -385,7 +350,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("podSecurityContext")
     public PodSecurityContext getPodSecurityContext() {
@@ -393,7 +357,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("podSecurityContext")
@@ -403,7 +366,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("rack")
     public Rack getRack() {
@@ -411,7 +373,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("rack")
@@ -421,7 +382,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("requests")
     public Requests getRequests() {
@@ -429,7 +389,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("requests")
@@ -439,7 +398,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("resources")
     public Resources getResources() {
@@ -447,7 +405,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("resources")
@@ -457,7 +414,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("seLinuxOptions")
     public SeLinuxOptions getSeLinuxOptions() {
@@ -465,7 +421,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("seLinuxOptions")
@@ -475,7 +430,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("spec")
     public Spec getSpec() {
@@ -483,7 +437,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("spec")
@@ -493,7 +446,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("status")
     public Status getStatus() {
@@ -501,7 +453,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("status")
@@ -511,7 +462,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("storage")
     public Storage getStorage() {
@@ -519,7 +469,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("storage")
@@ -529,7 +478,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("sysctl")
     public Sysctl getSysctl() {
@@ -537,7 +485,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("sysctl")
@@ -547,7 +494,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("zookeeperCluster")
     public ZookeeperCluster getZookeeperCluster() {
@@ -555,7 +501,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("zookeeperCluster")
@@ -565,7 +510,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("zookeeperClusterList")
     public ZookeeperClusterList getZookeeperClusterList() {
@@ -573,7 +517,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("zookeeperClusterList")

@@ -23,7 +23,6 @@ import lombok.ToString;
 
 /**
  * 
- * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -41,7 +40,6 @@ public class Authentication implements KubernetesResource
 {
 
     /**
-     * 
      * 
      */
     @JsonProperty("type")
@@ -68,7 +66,6 @@ public class Authentication implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("type")
     public String getType() {
@@ -76,7 +73,6 @@ public class Authentication implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("type")

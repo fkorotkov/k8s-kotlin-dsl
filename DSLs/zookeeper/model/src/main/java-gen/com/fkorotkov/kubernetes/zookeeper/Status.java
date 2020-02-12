@@ -23,7 +23,6 @@ import lombok.ToString;
 
 /**
  * 
- * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -50,13 +49,11 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("alternateEndpoint")
     @JsonPropertyDescription("")
     private String alternateEndpoint;
     /**
-     * 
      * 
      */
     @JsonProperty("clusterName")
@@ -64,13 +61,11 @@ public class Status implements KubernetesResource
     private String clusterName;
     /**
      * 
-     * 
      */
     @JsonProperty("config")
     @JsonPropertyDescription("")
     private Config config;
     /**
-     * 
      * 
      */
     @JsonProperty("currentReplicas")
@@ -78,13 +73,11 @@ public class Status implements KubernetesResource
     private Integer currentReplicas;
     /**
      * 
-     * 
      */
     @JsonProperty("endpoints")
     @JsonPropertyDescription("")
     private String endpoints;
     /**
-     * 
      * 
      */
     @JsonProperty("phase")
@@ -92,20 +85,17 @@ public class Status implements KubernetesResource
     private String phase;
     /**
      * 
-     * 
      */
     @JsonProperty("readyReplicas")
     @JsonPropertyDescription("")
     private Integer readyReplicas;
     /**
      * 
-     * 
      */
     @JsonProperty("reason")
     @JsonPropertyDescription("")
     private String reason;
     /**
-     * 
      * 
      */
     @JsonProperty("replicas")
@@ -148,7 +138,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("alternateEndpoint")
     public String getAlternateEndpoint() {
@@ -156,7 +145,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("alternateEndpoint")
@@ -166,7 +154,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("clusterName")
     public String getClusterName() {
@@ -174,7 +161,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("clusterName")
@@ -184,7 +170,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("config")
     public Config getConfig() {
@@ -192,7 +177,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("config")
@@ -202,7 +186,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("currentReplicas")
     public Integer getCurrentReplicas() {
@@ -210,7 +193,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("currentReplicas")
@@ -220,7 +202,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("endpoints")
     public String getEndpoints() {
@@ -228,7 +209,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("endpoints")
@@ -238,7 +218,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("phase")
     public String getPhase() {
@@ -246,7 +225,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("phase")
@@ -256,7 +234,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("readyReplicas")
     public Integer getReadyReplicas() {
@@ -264,7 +241,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("readyReplicas")
@@ -274,7 +250,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("reason")
     public String getReason() {
@@ -282,7 +257,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("reason")
@@ -292,7 +266,6 @@ public class Status implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("replicas")
     public Integer getReplicas() {
@@ -300,7 +273,6 @@ public class Status implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("replicas")

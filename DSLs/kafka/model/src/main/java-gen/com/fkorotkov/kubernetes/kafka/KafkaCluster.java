@@ -27,7 +27,6 @@ import lombok.ToString;
 
 /**
  * 
- * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -55,13 +54,11 @@ public class KafkaCluster implements HasMetadata, KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("apiVersion")
     @JsonPropertyDescription("")
     private String apiVersion = "cluster.confluent.com/v1alpha1";
     /**
-     * 
      * 
      */
     @JsonProperty("kind")
@@ -69,20 +66,17 @@ public class KafkaCluster implements HasMetadata, KubernetesResource
     private String kind = "KafkaCluster";
     /**
      * 
-     * 
      */
     @JsonProperty("metadata")
     @JsonPropertyDescription("")
     private io.fabric8.kubernetes.api.model.ObjectMeta metadata;
     /**
      * 
-     * 
      */
     @JsonProperty("spec")
     @JsonPropertyDescription("")
     private Spec spec;
     /**
-     * 
      * 
      */
     @JsonProperty("status")
@@ -117,7 +111,6 @@ public class KafkaCluster implements HasMetadata, KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("apiVersion")
     public String getApiVersion() {
@@ -125,7 +118,6 @@ public class KafkaCluster implements HasMetadata, KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("apiVersion")
@@ -135,7 +127,6 @@ public class KafkaCluster implements HasMetadata, KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("kind")
     public String getKind() {
@@ -143,7 +134,6 @@ public class KafkaCluster implements HasMetadata, KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("kind")
@@ -153,7 +143,6 @@ public class KafkaCluster implements HasMetadata, KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("metadata")
     public io.fabric8.kubernetes.api.model.ObjectMeta getMetadata() {
@@ -161,7 +150,6 @@ public class KafkaCluster implements HasMetadata, KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("metadata")
@@ -171,7 +159,6 @@ public class KafkaCluster implements HasMetadata, KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("spec")
     public Spec getSpec() {
@@ -179,7 +166,6 @@ public class KafkaCluster implements HasMetadata, KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("spec")
@@ -189,7 +175,6 @@ public class KafkaCluster implements HasMetadata, KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("status")
     public Status getStatus() {
@@ -197,7 +182,6 @@ public class KafkaCluster implements HasMetadata, KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("status")

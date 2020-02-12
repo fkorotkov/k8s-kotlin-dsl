@@ -60,13 +60,11 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("annotations")
     @JsonPropertyDescription("")
     private Annotations annotations;
     /**
-     * 
      * 
      */
     @JsonProperty("authentication")
@@ -74,13 +72,11 @@ public class Schema {
     private Authentication authentication;
     /**
      * 
-     * 
      */
     @JsonProperty("brokerEndpoints")
     @JsonPropertyDescription("")
     private BrokerEndpoints brokerEndpoints;
     /**
-     * 
      * 
      */
     @JsonProperty("configOverrides")
@@ -88,13 +84,11 @@ public class Schema {
     private ConfigOverrides configOverrides;
     /**
      * 
-     * 
      */
     @JsonProperty("envVar")
     @JsonPropertyDescription("")
     private EnvVar envVar;
     /**
-     * 
      * 
      */
     @JsonProperty("initContainer")
@@ -102,13 +96,11 @@ public class Schema {
     private InitContainer initContainer;
     /**
      * 
-     * 
      */
     @JsonProperty("jvmConfig")
     @JsonPropertyDescription("")
     private JvmConfig jvmConfig;
     /**
-     * 
      * 
      */
     @JsonProperty("kafkaCluster")
@@ -116,13 +108,11 @@ public class Schema {
     private KafkaCluster kafkaCluster;
     /**
      * 
-     * 
      */
     @JsonProperty("kafkaClusterList")
     @JsonPropertyDescription("")
     private KafkaClusterList kafkaClusterList;
     /**
-     * 
      * 
      */
     @JsonProperty("limits")
@@ -130,13 +120,11 @@ public class Schema {
     private Limits limits;
     /**
      * 
-     * 
      */
     @JsonProperty("metricReporter")
     @JsonPropertyDescription("")
     private MetricReporter metricReporter;
     /**
-     * 
      * 
      */
     @JsonProperty("network")
@@ -144,13 +132,11 @@ public class Schema {
     private Network network;
     /**
      * 
-     * 
      */
     @JsonProperty("nodeAffinity")
     @JsonPropertyDescription("")
     private NodeAffinity nodeAffinity;
     /**
-     * 
      * 
      */
     @JsonProperty("options")
@@ -158,13 +144,11 @@ public class Schema {
     private Options options;
     /**
      * 
-     * 
      */
     @JsonProperty("placement")
     @JsonPropertyDescription("")
     private Placement placement;
     /**
-     * 
      * 
      */
     @JsonProperty("podSecurityContext")
@@ -172,13 +156,11 @@ public class Schema {
     private PodSecurityContext podSecurityContext;
     /**
      * 
-     * 
      */
     @JsonProperty("rack")
     @JsonPropertyDescription("")
     private Rack rack;
     /**
-     * 
      * 
      */
     @JsonProperty("requests")
@@ -186,13 +168,11 @@ public class Schema {
     private Requests requests;
     /**
      * 
-     * 
      */
     @JsonProperty("resources")
     @JsonPropertyDescription("")
     private Resources resources;
     /**
-     * 
      * 
      */
     @JsonProperty("seLinuxOptions")
@@ -200,13 +180,11 @@ public class Schema {
     private SeLinuxOptions seLinuxOptions;
     /**
      * 
-     * 
      */
     @JsonProperty("spec")
     @JsonPropertyDescription("")
     private Spec spec;
     /**
-     * 
      * 
      */
     @JsonProperty("status")
@@ -214,13 +192,11 @@ public class Schema {
     private Status status;
     /**
      * 
-     * 
      */
     @JsonProperty("storage")
     @JsonPropertyDescription("")
     private Storage storage;
     /**
-     * 
      * 
      */
     @JsonProperty("sysctl")
@@ -228,13 +204,11 @@ public class Schema {
     private Sysctl sysctl;
     /**
      * 
-     * 
      */
     @JsonProperty("tls")
     @JsonPropertyDescription("")
     private Tls tls;
     /**
-     * 
      * 
      */
     @JsonProperty("zookeeper")
@@ -311,7 +285,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("annotations")
     public Annotations getAnnotations() {
@@ -319,7 +292,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("annotations")
@@ -329,7 +301,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("authentication")
     public Authentication getAuthentication() {
@@ -337,7 +308,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("authentication")
@@ -347,7 +317,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("brokerEndpoints")
     public BrokerEndpoints getBrokerEndpoints() {
@@ -355,7 +324,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("brokerEndpoints")
@@ -365,7 +333,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("configOverrides")
     public ConfigOverrides getConfigOverrides() {
@@ -373,7 +340,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("configOverrides")
@@ -383,7 +349,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("envVar")
     public EnvVar getEnvVar() {
@@ -391,7 +356,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("envVar")
@@ -401,7 +365,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("initContainer")
     public InitContainer getInitContainer() {
@@ -409,7 +372,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("initContainer")
@@ -419,7 +381,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("jvmConfig")
     public JvmConfig getJvmConfig() {
@@ -427,7 +388,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("jvmConfig")
@@ -437,7 +397,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("kafkaCluster")
     public KafkaCluster getKafkaCluster() {
@@ -445,7 +404,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("kafkaCluster")
@@ -455,7 +413,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("kafkaClusterList")
     public KafkaClusterList getKafkaClusterList() {
@@ -463,7 +420,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("kafkaClusterList")
@@ -473,7 +429,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("limits")
     public Limits getLimits() {
@@ -481,7 +436,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("limits")
@@ -491,7 +445,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("metricReporter")
     public MetricReporter getMetricReporter() {
@@ -499,7 +452,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("metricReporter")
@@ -509,7 +461,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("network")
     public Network getNetwork() {
@@ -517,7 +468,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("network")
@@ -527,7 +477,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("nodeAffinity")
     public NodeAffinity getNodeAffinity() {
@@ -535,7 +484,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("nodeAffinity")
@@ -545,7 +493,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("options")
     public Options getOptions() {
@@ -553,7 +500,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("options")
@@ -563,7 +509,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("placement")
     public Placement getPlacement() {
@@ -571,7 +516,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("placement")
@@ -581,7 +525,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("podSecurityContext")
     public PodSecurityContext getPodSecurityContext() {
@@ -589,7 +532,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("podSecurityContext")
@@ -599,7 +541,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("rack")
     public Rack getRack() {
@@ -607,7 +548,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("rack")
@@ -617,7 +557,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("requests")
     public Requests getRequests() {
@@ -625,7 +564,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("requests")
@@ -635,7 +573,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("resources")
     public Resources getResources() {
@@ -643,7 +580,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("resources")
@@ -653,7 +589,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("seLinuxOptions")
     public SeLinuxOptions getSeLinuxOptions() {
@@ -661,7 +596,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("seLinuxOptions")
@@ -671,7 +605,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("spec")
     public Spec getSpec() {
@@ -679,7 +612,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("spec")
@@ -689,7 +621,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("status")
     public Status getStatus() {
@@ -697,7 +628,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("status")
@@ -707,7 +637,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("storage")
     public Storage getStorage() {
@@ -715,7 +644,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("storage")
@@ -725,7 +653,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("sysctl")
     public Sysctl getSysctl() {
@@ -733,7 +660,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("sysctl")
@@ -743,7 +669,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("tls")
     public Tls getTls() {
@@ -751,7 +676,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("tls")
@@ -761,7 +685,6 @@ public class Schema {
 
     /**
      * 
-     * 
      */
     @JsonProperty("zookeeper")
     public Zookeeper getZookeeper() {
@@ -769,7 +692,6 @@ public class Schema {
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("zookeeper")

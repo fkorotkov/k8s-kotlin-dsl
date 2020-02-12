@@ -23,7 +23,6 @@ import lombok.ToString;
 
 /**
  * 
- * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -45,13 +44,11 @@ public class SeLinuxOptions implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("level")
     @JsonPropertyDescription("")
     private String level;
     /**
-     * 
      * 
      */
     @JsonProperty("role")
@@ -59,13 +56,11 @@ public class SeLinuxOptions implements KubernetesResource
     private String role;
     /**
      * 
-     * 
      */
     @JsonProperty("type")
     @JsonPropertyDescription("")
     private String type;
     /**
-     * 
      * 
      */
     @JsonProperty("user")
@@ -98,7 +93,6 @@ public class SeLinuxOptions implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("level")
     public String getLevel() {
@@ -106,7 +100,6 @@ public class SeLinuxOptions implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("level")
@@ -116,7 +109,6 @@ public class SeLinuxOptions implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("role")
     public String getRole() {
@@ -124,7 +116,6 @@ public class SeLinuxOptions implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("role")
@@ -134,7 +125,6 @@ public class SeLinuxOptions implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("type")
     public String getType() {
@@ -142,7 +132,6 @@ public class SeLinuxOptions implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("type")
@@ -152,7 +141,6 @@ public class SeLinuxOptions implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("user")
     public String getUser() {
@@ -160,7 +148,6 @@ public class SeLinuxOptions implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("user")

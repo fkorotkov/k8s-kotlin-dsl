@@ -23,7 +23,6 @@ import lombok.ToString;
 
 /**
  * 
- * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -41,7 +40,6 @@ public class Zookeeper implements KubernetesResource
 {
 
     /**
-     * 
      * 
      */
     @JsonProperty("endpoint")
@@ -68,7 +66,6 @@ public class Zookeeper implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("endpoint")
     public String getEndpoint() {
@@ -76,7 +73,6 @@ public class Zookeeper implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("endpoint")

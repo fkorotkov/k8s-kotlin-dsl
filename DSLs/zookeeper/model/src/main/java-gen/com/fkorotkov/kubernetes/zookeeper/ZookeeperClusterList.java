@@ -29,7 +29,6 @@ import lombok.ToString;
 
 /**
  * 
- * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -53,13 +52,11 @@ public class ZookeeperClusterList implements KubernetesResource, KubernetesResou
 
     /**
      * 
-     * 
      */
     @JsonProperty("apiVersion")
     @JsonPropertyDescription("")
     private String apiVersion = "cluster.confluent.com/v1alpha1";
     /**
-     * 
      * 
      */
     @JsonProperty("items")
@@ -67,13 +64,11 @@ public class ZookeeperClusterList implements KubernetesResource, KubernetesResou
     private List<ZookeeperCluster> items = new ArrayList<ZookeeperCluster>();
     /**
      * 
-     * 
      */
     @JsonProperty("kind")
     @JsonPropertyDescription("")
     private String kind = "ZookeeperClusterList";
     /**
-     * 
      * 
      */
     @JsonProperty("metadata")
@@ -106,7 +101,6 @@ public class ZookeeperClusterList implements KubernetesResource, KubernetesResou
 
     /**
      * 
-     * 
      */
     @JsonProperty("apiVersion")
     public String getApiVersion() {
@@ -114,7 +108,6 @@ public class ZookeeperClusterList implements KubernetesResource, KubernetesResou
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("apiVersion")
@@ -124,7 +117,6 @@ public class ZookeeperClusterList implements KubernetesResource, KubernetesResou
 
     /**
      * 
-     * 
      */
     @JsonProperty("items")
     public List<ZookeeperCluster> getItems() {
@@ -132,7 +124,6 @@ public class ZookeeperClusterList implements KubernetesResource, KubernetesResou
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("items")
@@ -142,7 +133,6 @@ public class ZookeeperClusterList implements KubernetesResource, KubernetesResou
 
     /**
      * 
-     * 
      */
     @JsonProperty("kind")
     public String getKind() {
@@ -150,7 +140,6 @@ public class ZookeeperClusterList implements KubernetesResource, KubernetesResou
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("kind")
@@ -160,7 +149,6 @@ public class ZookeeperClusterList implements KubernetesResource, KubernetesResou
 
     /**
      * 
-     * 
      */
     @JsonProperty("metadata")
     public ListMeta getMetadata() {
@@ -168,7 +156,6 @@ public class ZookeeperClusterList implements KubernetesResource, KubernetesResou
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("metadata")

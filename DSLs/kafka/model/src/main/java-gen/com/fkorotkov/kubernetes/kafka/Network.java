@@ -23,7 +23,6 @@ import lombok.ToString;
 
 /**
  * 
- * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -46,13 +45,11 @@ public class Network implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("annotations")
     @JsonPropertyDescription("")
     private Annotations annotations;
     /**
-     * 
      * 
      */
     @JsonProperty("bootstrapPrefix")
@@ -60,20 +57,17 @@ public class Network implements KubernetesResource
     private String bootstrapPrefix;
     /**
      * 
-     * 
      */
     @JsonProperty("brokerPrefix")
     @JsonPropertyDescription("")
     private String brokerPrefix;
     /**
      * 
-     * 
      */
     @JsonProperty("domain")
     @JsonPropertyDescription("")
     private String domain;
     /**
-     * 
      * 
      */
     @JsonProperty("type")
@@ -108,7 +102,6 @@ public class Network implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("annotations")
     public Annotations getAnnotations() {
@@ -116,7 +109,6 @@ public class Network implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("annotations")
@@ -126,7 +118,6 @@ public class Network implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("bootstrapPrefix")
     public String getBootstrapPrefix() {
@@ -134,7 +125,6 @@ public class Network implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("bootstrapPrefix")
@@ -144,7 +134,6 @@ public class Network implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("brokerPrefix")
     public String getBrokerPrefix() {
@@ -152,7 +141,6 @@ public class Network implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("brokerPrefix")
@@ -162,7 +150,6 @@ public class Network implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("domain")
     public String getDomain() {
@@ -170,7 +157,6 @@ public class Network implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("domain")
@@ -180,7 +166,6 @@ public class Network implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("type")
     public String getType() {
@@ -188,7 +173,6 @@ public class Network implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("type")

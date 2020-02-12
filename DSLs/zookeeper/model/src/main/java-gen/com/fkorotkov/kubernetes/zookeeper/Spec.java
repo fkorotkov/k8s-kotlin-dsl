@@ -25,7 +25,6 @@ import lombok.ToString;
 
 /**
  * 
- * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -54,13 +53,11 @@ public class Spec implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("configOverrides")
     @JsonPropertyDescription("")
     private ConfigOverrides configOverrides;
     /**
-     * 
      * 
      */
     @JsonProperty("image")
@@ -68,13 +65,11 @@ public class Spec implements KubernetesResource
     private String image;
     /**
      * 
-     * 
      */
     @JsonProperty("initContainers")
     @JsonPropertyDescription("")
     private List<InitContainer> initContainers = new ArrayList<InitContainer>();
     /**
-     * 
      * 
      */
     @JsonProperty("internalKubDomain")
@@ -82,13 +77,11 @@ public class Spec implements KubernetesResource
     private String internalKubDomain;
     /**
      * 
-     * 
      */
     @JsonProperty("jvmConfig")
     @JsonPropertyDescription("")
     private JvmConfig jvmConfig;
     /**
-     * 
      * 
      */
     @JsonProperty("placement")
@@ -96,13 +89,11 @@ public class Spec implements KubernetesResource
     private Placement placement;
     /**
      * 
-     * 
      */
     @JsonProperty("podSecurityContext")
     @JsonPropertyDescription("")
     private PodSecurityContext podSecurityContext;
     /**
-     * 
      * 
      */
     @JsonProperty("replicas")
@@ -110,20 +101,17 @@ public class Spec implements KubernetesResource
     private Integer replicas;
     /**
      * 
-     * 
      */
     @JsonProperty("resources")
     @JsonPropertyDescription("")
     private Resources resources;
     /**
      * 
-     * 
      */
     @JsonProperty("terminationGracePeriodInSecond")
     @JsonPropertyDescription("")
     private Integer terminationGracePeriodInSecond;
     /**
-     * 
      * 
      */
     @JsonProperty("zones")
@@ -170,7 +158,6 @@ public class Spec implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("configOverrides")
     public ConfigOverrides getConfigOverrides() {
@@ -178,7 +165,6 @@ public class Spec implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("configOverrides")
@@ -188,7 +174,6 @@ public class Spec implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("image")
     public String getImage() {
@@ -196,7 +181,6 @@ public class Spec implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("image")
@@ -206,7 +190,6 @@ public class Spec implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("initContainers")
     public List<InitContainer> getInitContainers() {
@@ -214,7 +197,6 @@ public class Spec implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("initContainers")
@@ -224,7 +206,6 @@ public class Spec implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("internalKubDomain")
     public String getInternalKubDomain() {
@@ -232,7 +213,6 @@ public class Spec implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("internalKubDomain")
@@ -242,7 +222,6 @@ public class Spec implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("jvmConfig")
     public JvmConfig getJvmConfig() {
@@ -250,7 +229,6 @@ public class Spec implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("jvmConfig")
@@ -260,7 +238,6 @@ public class Spec implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("placement")
     public Placement getPlacement() {
@@ -268,7 +245,6 @@ public class Spec implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("placement")
@@ -278,7 +254,6 @@ public class Spec implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("podSecurityContext")
     public PodSecurityContext getPodSecurityContext() {
@@ -286,7 +261,6 @@ public class Spec implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("podSecurityContext")
@@ -296,7 +270,6 @@ public class Spec implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("replicas")
     public Integer getReplicas() {
@@ -304,7 +277,6 @@ public class Spec implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("replicas")
@@ -314,7 +286,6 @@ public class Spec implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("resources")
     public Resources getResources() {
@@ -322,7 +293,6 @@ public class Spec implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("resources")
@@ -332,7 +302,6 @@ public class Spec implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("terminationGracePeriodInSecond")
     public Integer getTerminationGracePeriodInSecond() {
@@ -340,7 +309,6 @@ public class Spec implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("terminationGracePeriodInSecond")
@@ -350,7 +318,6 @@ public class Spec implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("zones")
     public List<String> getZones() {
@@ -358,7 +325,6 @@ public class Spec implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("zones")

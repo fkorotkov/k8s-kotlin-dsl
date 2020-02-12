@@ -25,7 +25,6 @@ import lombok.ToString;
 
 /**
  * 
- * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -51,13 +50,11 @@ public class PodSecurityContext implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("fsGroup")
     @JsonPropertyDescription("")
     private Integer fsGroup;
     /**
-     * 
      * 
      */
     @JsonProperty("randomUID")
@@ -65,13 +62,11 @@ public class PodSecurityContext implements KubernetesResource
     private Boolean randomUID;
     /**
      * 
-     * 
      */
     @JsonProperty("runAsGroup")
     @JsonPropertyDescription("")
     private Integer runAsGroup;
     /**
-     * 
      * 
      */
     @JsonProperty("runAsNonRoot")
@@ -79,13 +74,11 @@ public class PodSecurityContext implements KubernetesResource
     private Boolean runAsNonRoot;
     /**
      * 
-     * 
      */
     @JsonProperty("runAsUser")
     @JsonPropertyDescription("")
     private Integer runAsUser;
     /**
-     * 
      * 
      */
     @JsonProperty("seLinuxOptions")
@@ -93,13 +86,11 @@ public class PodSecurityContext implements KubernetesResource
     private SeLinuxOptions seLinuxOptions;
     /**
      * 
-     * 
      */
     @JsonProperty("supplementalGroups")
     @JsonPropertyDescription("")
     private List<Integer> supplementalGroups = new ArrayList<Integer>();
     /**
-     * 
      * 
      */
     @JsonProperty("sysctls")
@@ -140,7 +131,6 @@ public class PodSecurityContext implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("fsGroup")
     public Integer getFsGroup() {
@@ -148,7 +138,6 @@ public class PodSecurityContext implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("fsGroup")
@@ -158,7 +147,6 @@ public class PodSecurityContext implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("randomUID")
     public Boolean getRandomUID() {
@@ -166,7 +154,6 @@ public class PodSecurityContext implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("randomUID")
@@ -176,7 +163,6 @@ public class PodSecurityContext implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("runAsGroup")
     public Integer getRunAsGroup() {
@@ -184,7 +170,6 @@ public class PodSecurityContext implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("runAsGroup")
@@ -194,7 +179,6 @@ public class PodSecurityContext implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("runAsNonRoot")
     public Boolean getRunAsNonRoot() {
@@ -202,7 +186,6 @@ public class PodSecurityContext implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("runAsNonRoot")
@@ -212,7 +195,6 @@ public class PodSecurityContext implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("runAsUser")
     public Integer getRunAsUser() {
@@ -220,7 +202,6 @@ public class PodSecurityContext implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("runAsUser")
@@ -230,7 +211,6 @@ public class PodSecurityContext implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("seLinuxOptions")
     public SeLinuxOptions getSeLinuxOptions() {
@@ -238,7 +218,6 @@ public class PodSecurityContext implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("seLinuxOptions")
@@ -248,7 +227,6 @@ public class PodSecurityContext implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("supplementalGroups")
     public List<Integer> getSupplementalGroups() {
@@ -256,7 +234,6 @@ public class PodSecurityContext implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("supplementalGroups")
@@ -266,7 +243,6 @@ public class PodSecurityContext implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("sysctls")
     public List<Sysctl> getSysctls() {
@@ -274,7 +250,6 @@ public class PodSecurityContext implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("sysctls")

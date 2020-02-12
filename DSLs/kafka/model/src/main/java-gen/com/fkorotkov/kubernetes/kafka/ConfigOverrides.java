@@ -25,7 +25,6 @@ import lombok.ToString;
 
 /**
  * 
- * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -45,13 +44,11 @@ public class ConfigOverrides implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("jvm")
     @JsonPropertyDescription("")
     private List<String> jvm = new ArrayList<String>();
     /**
-     * 
      * 
      */
     @JsonProperty("server")
@@ -80,7 +77,6 @@ public class ConfigOverrides implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("jvm")
     public List<String> getJvm() {
@@ -88,7 +84,6 @@ public class ConfigOverrides implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("jvm")
@@ -98,7 +93,6 @@ public class ConfigOverrides implements KubernetesResource
 
     /**
      * 
-     * 
      */
     @JsonProperty("server")
     public List<String> getServer() {
@@ -106,7 +100,6 @@ public class ConfigOverrides implements KubernetesResource
     }
 
     /**
-     * 
      * 
      */
     @JsonProperty("server")
