@@ -7,19 +7,13 @@ class BaseDeployment : Deployment {
   constructor(serviceName: String) {
     metadata {
       name = "$serviceName-service-deployment"
-      labels = mapOf(
-        "app" to serviceName,
-        "tier" to "backend"
-      )
+      labels = Defaults.labels(serviceName)
     }
     spec {
       replicas = 1
       template {
         metadata {
-          labels = mapOf(
-            "app" to serviceName,
-            "tier" to "backend"
-          )
+          labels = Defaults.labels(serviceName)
         }
         spec {
           containers = listOf(
@@ -40,21 +34,28 @@ class BaseDeployment : Deployment {
                 }
               )
               ports = listOf(
-                newContainerPort {
-                  containerPort = 8080
-                }
+                  newContainerPort {
+                    name = "http"
+                    containerPort = BaseService.HTTP_PORT
+                    protocol = "TCP"
+                  },
+                  newContainerPort {
+                    name = "grpc"
+                    containerPort = BaseService.GRPC_PORT
+                    protocol = "TCP"
+                  }
               )
               livenessProbe {
                 httpGet {
                   path = "/healthz"
-                  port = IntOrString(8080)
+                  port = IntOrString(BaseService.HTTP_PORT)
                 }
                 periodSeconds = 60
               }
               readinessProbe {
                 httpGet {
                   path = "/healthz"
-                  port = IntOrString(8080)
+                  port = IntOrString(BaseService.HTTP_PORT)
                 }
                 initialDelaySeconds = 10
                 periodSeconds = 60

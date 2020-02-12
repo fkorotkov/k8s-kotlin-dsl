@@ -57,6 +57,14 @@
             "ports": [
               {
                 "containerPort": 8080,
+                "name": "http",
+                "protocol": "TCP",
+                "additionalProperties": {}
+              },
+              {
+                "containerPort": 8239,
+                "name": "grpc",
+                "protocol": "TCP",
                 "additionalProperties": {}
               }
             ],
