@@ -63,22 +63,22 @@
     {
       "group": "org.jetbrains.kotlin",
       "name": "kotlin-gradle-plugin",
-      "version": "1.3.61"
+      "version": "1.3.70"
     },
     {
       "group": "org.jetbrains.kotlin",
       "name": "kotlin-reflect",
-      "version": "1.3.61"
+      "version": "1.3.70"
     },
     {
       "group": "org.jetbrains.kotlin",
       "name": "kotlin-stdlib",
-      "version": "1.3.61"
+      "version": "1.3.70"
     },
     {
       "group": "org.jetbrains.kotlin",
       "name": "kotlin-test-junit",
-      "version": "1.3.61"
+      "version": "1.3.70"
     },
     {
       "group": "org.jsonschema2pojo",
