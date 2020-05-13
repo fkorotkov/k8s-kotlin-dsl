@@ -1,12 +1,12 @@
 package com.fkorotkov.kubernetes.client;
 
 import com.fkorotkov.kubernetes.kafka.*;
+import io.fabric8.kafka.client.internal.KafkaClusterOperationsImpl;
 import io.fabric8.kubernetes.client.*;
 import io.fabric8.kubernetes.client.dsl.FunctionCallable;
 import io.fabric8.kubernetes.client.dsl.MixedOperation;
 import io.fabric8.kubernetes.client.dsl.NonNamespaceOperation;
 import io.fabric8.kubernetes.client.dsl.Resource;
-import io.fabric8.kubernetes.client.dsl.internal.KafkaClusterOperationsImpl;
 import okhttp3.OkHttpClient;
 
 public class DefaultKafkaClient extends BaseClient implements NamespacedKafkaClient {

@@ -5,7 +5,7 @@ import io.fabric8.kubernetes.client.*;
 import io.fabric8.kubernetes.client.dsl.FunctionCallable;
 import io.fabric8.kubernetes.client.dsl.MixedOperation;
 import io.fabric8.kubernetes.client.dsl.Resource;
-import io.fabric8.kubernetes.client.dsl.internal.ZookeeperClusterOperationsImpl;
+import io.fabric8.zookeeper.client.internal.ZookeeperClusterOperationsImpl;
 import okhttp3.OkHttpClient;
 
 public class DefaultZookeeperClient extends BaseClient implements NamespacedZookeeperClient {

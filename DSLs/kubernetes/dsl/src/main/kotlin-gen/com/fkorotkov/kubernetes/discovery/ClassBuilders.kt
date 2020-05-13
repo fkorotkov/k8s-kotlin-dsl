@@ -1,11 +1,18 @@
 // GENERATE
 package com.fkorotkov.kubernetes.discovery
 
+import io.fabric8.kubernetes.api.model.discovery.DiscoveryEndpointPort as discovery_DiscoveryEndpointPort
 import io.fabric8.kubernetes.api.model.discovery.Endpoint as discovery_Endpoint
 import io.fabric8.kubernetes.api.model.discovery.EndpointConditions as discovery_EndpointConditions
-import io.fabric8.kubernetes.api.model.discovery.EndpointPort as discovery_EndpointPort
 import io.fabric8.kubernetes.api.model.discovery.EndpointSlice as discovery_EndpointSlice
 import io.fabric8.kubernetes.api.model.discovery.EndpointSliceList as discovery_EndpointSliceList
+
+
+fun newDiscoveryEndpointPort(block : discovery_DiscoveryEndpointPort.() -> Unit = {}): discovery_DiscoveryEndpointPort {
+  val instance = discovery_DiscoveryEndpointPort()
+  instance.block()
+  return instance
+}
 
 
 fun newEndpoint(block : discovery_Endpoint.() -> Unit = {}): discovery_Endpoint {
@@ -17,13 +24,6 @@ fun newEndpoint(block : discovery_Endpoint.() -> Unit = {}): discovery_Endpoint 
 
 fun newEndpointConditions(block : discovery_EndpointConditions.() -> Unit = {}): discovery_EndpointConditions {
   val instance = discovery_EndpointConditions()
-  instance.block()
-  return instance
-}
-
-
-fun newEndpointPort(block : discovery_EndpointPort.() -> Unit = {}): discovery_EndpointPort {
-  val instance = discovery_EndpointPort()
   instance.block()
   return instance
 }

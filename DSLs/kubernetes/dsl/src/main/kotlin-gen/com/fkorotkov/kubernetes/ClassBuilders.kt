@@ -49,6 +49,7 @@ import io.fabric8.kubernetes.api.model.DeleteOptions as model_DeleteOptions
 import io.fabric8.kubernetes.api.model.DownwardAPIProjection as model_DownwardAPIProjection
 import io.fabric8.kubernetes.api.model.DownwardAPIVolumeFile as model_DownwardAPIVolumeFile
 import io.fabric8.kubernetes.api.model.DownwardAPIVolumeSource as model_DownwardAPIVolumeSource
+import io.fabric8.kubernetes.api.model.Duration as model_Duration
 import io.fabric8.kubernetes.api.model.EmptyDirVolumeSource as model_EmptyDirVolumeSource
 import io.fabric8.kubernetes.api.model.EndpointAddress as model_EndpointAddress
 import io.fabric8.kubernetes.api.model.EndpointPort as model_EndpointPort
@@ -109,8 +110,11 @@ import io.fabric8.kubernetes.api.model.LoadBalancerStatus as model_LoadBalancerS
 import io.fabric8.kubernetes.api.model.LocalObjectReference as model_LocalObjectReference
 import io.fabric8.kubernetes.api.model.LocalVolumeSource as model_LocalVolumeSource
 import io.fabric8.kubernetes.api.model.ManagedFieldsEntry as model_ManagedFieldsEntry
+import io.fabric8.kubernetes.api.model.MetricIdentifier as model_MetricIdentifier
 import io.fabric8.kubernetes.api.model.MetricSpec as model_MetricSpec
 import io.fabric8.kubernetes.api.model.MetricStatus as model_MetricStatus
+import io.fabric8.kubernetes.api.model.MetricTarget as model_MetricTarget
+import io.fabric8.kubernetes.api.model.MetricValueStatus as model_MetricValueStatus
 import io.fabric8.kubernetes.api.model.MicroTime as model_MicroTime
 import io.fabric8.kubernetes.api.model.NFSVolumeSource as model_NFSVolumeSource
 import io.fabric8.kubernetes.api.model.NamedAuthInfo as model_NamedAuthInfo
@@ -581,6 +585,13 @@ fun newDownwardAPIVolumeSource(block : model_DownwardAPIVolumeSource.() -> Unit 
 }
 
 
+fun newDuration(block : model_Duration.() -> Unit = {}): model_Duration {
+  val instance = model_Duration()
+  instance.block()
+  return instance
+}
+
+
 fun newEmptyDirVolumeSource(block : model_EmptyDirVolumeSource.() -> Unit = {}): model_EmptyDirVolumeSource {
   val instance = model_EmptyDirVolumeSource()
   instance.block()
@@ -1001,6 +1012,13 @@ fun newManagedFieldsEntry(block : model_ManagedFieldsEntry.() -> Unit = {}): mod
 }
 
 
+fun newMetricIdentifier(block : model_MetricIdentifier.() -> Unit = {}): model_MetricIdentifier {
+  val instance = model_MetricIdentifier()
+  instance.block()
+  return instance
+}
+
+
 fun newMetricSpec(block : model_MetricSpec.() -> Unit = {}): model_MetricSpec {
   val instance = model_MetricSpec()
   instance.block()
@@ -1010,6 +1028,20 @@ fun newMetricSpec(block : model_MetricSpec.() -> Unit = {}): model_MetricSpec {
 
 fun newMetricStatus(block : model_MetricStatus.() -> Unit = {}): model_MetricStatus {
   val instance = model_MetricStatus()
+  instance.block()
+  return instance
+}
+
+
+fun newMetricTarget(block : model_MetricTarget.() -> Unit = {}): model_MetricTarget {
+  val instance = model_MetricTarget()
+  instance.block()
+  return instance
+}
+
+
+fun newMetricValueStatus(block : model_MetricValueStatus.() -> Unit = {}): model_MetricValueStatus {
+  val instance = model_MetricValueStatus()
   instance.block()
   return instance
 }

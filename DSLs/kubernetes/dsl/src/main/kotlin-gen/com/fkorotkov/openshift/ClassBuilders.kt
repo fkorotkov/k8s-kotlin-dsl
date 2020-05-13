@@ -5,6 +5,7 @@ import io.fabric8.openshift.api.model.AllowedFlexVolume as model_AllowedFlexVolu
 import io.fabric8.openshift.api.model.BinaryBuildSource as model_BinaryBuildSource
 import io.fabric8.openshift.api.model.BitbucketWebHookCause as model_BitbucketWebHookCause
 import io.fabric8.openshift.api.model.Build as model_Build
+import io.fabric8.openshift.api.model.BuildCondition as model_BuildCondition
 import io.fabric8.openshift.api.model.BuildConfig as model_BuildConfig
 import io.fabric8.openshift.api.model.BuildConfigList as model_BuildConfigList
 import io.fabric8.openshift.api.model.BuildConfigSpec as model_BuildConfigSpec
@@ -174,6 +175,13 @@ fun newBitbucketWebHookCause(block : model_BitbucketWebHookCause.() -> Unit = {}
 
 fun newBuild(block : model_Build.() -> Unit = {}): model_Build {
   val instance = model_Build()
+  instance.block()
+  return instance
+}
+
+
+fun newBuildCondition(block : model_BuildCondition.() -> Unit = {}): model_BuildCondition {
+  val instance = model_BuildCondition()
   instance.block()
   return instance
 }
