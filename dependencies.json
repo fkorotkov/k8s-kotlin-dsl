@@ -3,7 +3,7 @@
     {
       "group": "com.fasterxml.jackson.module",
       "name": "jackson-module-jaxb-annotations",
-      "version": "2.10.2"
+      "version": "2.11.0"
     },
     {
       "group": "com.fkorotkov",
@@ -23,7 +23,7 @@
     {
       "group": "com.google.guava",
       "name": "guava",
-      "version": "28.2-jre"
+      "version": "29.0-jre"
     },
     {
       "group": "com.jfrog.bintray.gradle",
@@ -33,12 +33,12 @@
     {
       "group": "io.fabric8",
       "name": "kubernetes-client",
-      "version": "4.8.0"
+      "version": "4.10.1"
     },
     {
       "group": "io.fabric8",
       "name": "kubernetes-model",
-      "version": "4.8.0"
+      "version": "4.10.1"
     },
     {
       "group": "io.sundr",

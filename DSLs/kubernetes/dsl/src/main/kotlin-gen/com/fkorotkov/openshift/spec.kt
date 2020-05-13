@@ -5,16 +5,18 @@ import io.fabric8.openshift.api.model.Build as model_Build
 import io.fabric8.openshift.api.model.BuildConfig as model_BuildConfig
 import io.fabric8.openshift.api.model.BuildConfigSpec as model_BuildConfigSpec
 import io.fabric8.openshift.api.model.BuildSpec as model_BuildSpec
+import io.fabric8.openshift.api.model.ClusterVersion as model_ClusterVersion
+import io.fabric8.openshift.api.model.ClusterVersionSpec as model_ClusterVersionSpec
 import io.fabric8.openshift.api.model.DeploymentConfig as model_DeploymentConfig
 import io.fabric8.openshift.api.model.DeploymentConfigSpec as model_DeploymentConfigSpec
 import io.fabric8.openshift.api.model.ImageStream as model_ImageStream
 import io.fabric8.openshift.api.model.ImageStreamImport as model_ImageStreamImport
 import io.fabric8.openshift.api.model.ImageStreamImportSpec as model_ImageStreamImportSpec
 import io.fabric8.openshift.api.model.ImageStreamSpec as model_ImageStreamSpec
-import io.fabric8.openshift.api.model.OpenshiftRoleBindingRestriction as model_OpenshiftRoleBindingRestriction
-import io.fabric8.openshift.api.model.OpenshiftRoleBindingRestrictionSpec as model_OpenshiftRoleBindingRestrictionSpec
 import io.fabric8.openshift.api.model.Project as model_Project
 import io.fabric8.openshift.api.model.ProjectSpec as model_ProjectSpec
+import io.fabric8.openshift.api.model.RoleBindingRestriction as model_RoleBindingRestriction
+import io.fabric8.openshift.api.model.RoleBindingRestrictionSpec as model_RoleBindingRestrictionSpec
 import io.fabric8.openshift.api.model.Route as model_Route
 import io.fabric8.openshift.api.model.RouteSpec as model_RouteSpec
 
@@ -31,6 +33,15 @@ fun  model_Build.`spec`(block: model_BuildSpec.() -> Unit = {}) {
 fun  model_BuildConfig.`spec`(block: model_BuildConfigSpec.() -> Unit = {}) {
   if(this.`spec` == null) {
     this.`spec` = model_BuildConfigSpec()
+  }
+
+  this.`spec`.block()
+}
+
+
+fun  model_ClusterVersion.`spec`(block: model_ClusterVersionSpec.() -> Unit = {}) {
+  if(this.`spec` == null) {
+    this.`spec` = model_ClusterVersionSpec()
   }
 
   this.`spec`.block()
@@ -64,18 +75,18 @@ fun  model_ImageStreamImport.`spec`(block: model_ImageStreamImportSpec.() -> Uni
 }
 
 
-fun  model_OpenshiftRoleBindingRestriction.`spec`(block: model_OpenshiftRoleBindingRestrictionSpec.() -> Unit = {}) {
+fun  model_Project.`spec`(block: model_ProjectSpec.() -> Unit = {}) {
   if(this.`spec` == null) {
-    this.`spec` = model_OpenshiftRoleBindingRestrictionSpec()
+    this.`spec` = model_ProjectSpec()
   }
 
   this.`spec`.block()
 }
 
 
-fun  model_Project.`spec`(block: model_ProjectSpec.() -> Unit = {}) {
+fun  model_RoleBindingRestriction.`spec`(block: model_RoleBindingRestrictionSpec.() -> Unit = {}) {
   if(this.`spec` == null) {
-    this.`spec` = model_ProjectSpec()
+    this.`spec` = model_RoleBindingRestrictionSpec()
   }
 
   this.`spec`.block()

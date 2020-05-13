@@ -7,7 +7,6 @@ import io.fabric8.kubernetes.api.model.policy.AllowedHostPath as policy_AllowedH
 import io.fabric8.kubernetes.api.model.policy.FSGroupStrategyOptions as policy_FSGroupStrategyOptions
 import io.fabric8.kubernetes.api.model.policy.HostPortRange as policy_HostPortRange
 import io.fabric8.kubernetes.api.model.policy.IDRange as policy_IDRange
-import io.fabric8.kubernetes.api.model.policy.KubernetesRunAsUserStrategyOptions as policy_KubernetesRunAsUserStrategyOptions
 import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudget as policy_PodDisruptionBudget
 import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetList as policy_PodDisruptionBudgetList
 import io.fabric8.kubernetes.api.model.policy.PodDisruptionBudgetSpec as policy_PodDisruptionBudgetSpec
@@ -16,6 +15,7 @@ import io.fabric8.kubernetes.api.model.policy.PodSecurityPolicy as policy_PodSec
 import io.fabric8.kubernetes.api.model.policy.PodSecurityPolicyList as policy_PodSecurityPolicyList
 import io.fabric8.kubernetes.api.model.policy.PodSecurityPolicySpec as policy_PodSecurityPolicySpec
 import io.fabric8.kubernetes.api.model.policy.RunAsGroupStrategyOptions as policy_RunAsGroupStrategyOptions
+import io.fabric8.kubernetes.api.model.policy.RunAsUserStrategyOptions as policy_RunAsUserStrategyOptions
 import io.fabric8.kubernetes.api.model.policy.RuntimeClassStrategyOptions as policy_RuntimeClassStrategyOptions
 import io.fabric8.kubernetes.api.model.policy.SELinuxStrategyOptions as policy_SELinuxStrategyOptions
 import io.fabric8.kubernetes.api.model.policy.SupplementalGroupsStrategyOptions as policy_SupplementalGroupsStrategyOptions
@@ -58,13 +58,6 @@ fun newHostPortRange(block : policy_HostPortRange.() -> Unit = {}): policy_HostP
 
 fun newIDRange(block : policy_IDRange.() -> Unit = {}): policy_IDRange {
   val instance = policy_IDRange()
-  instance.block()
-  return instance
-}
-
-
-fun newKubernetesRunAsUserStrategyOptions(block : policy_KubernetesRunAsUserStrategyOptions.() -> Unit = {}): policy_KubernetesRunAsUserStrategyOptions {
-  val instance = policy_KubernetesRunAsUserStrategyOptions()
   instance.block()
   return instance
 }
@@ -121,6 +114,13 @@ fun newPodSecurityPolicySpec(block : policy_PodSecurityPolicySpec.() -> Unit = {
 
 fun newRunAsGroupStrategyOptions(block : policy_RunAsGroupStrategyOptions.() -> Unit = {}): policy_RunAsGroupStrategyOptions {
   val instance = policy_RunAsGroupStrategyOptions()
+  instance.block()
+  return instance
+}
+
+
+fun newRunAsUserStrategyOptions(block : policy_RunAsUserStrategyOptions.() -> Unit = {}): policy_RunAsUserStrategyOptions {
+  val instance = policy_RunAsUserStrategyOptions()
   instance.block()
   return instance
 }

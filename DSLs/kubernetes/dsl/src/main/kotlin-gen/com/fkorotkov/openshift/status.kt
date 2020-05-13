@@ -6,6 +6,8 @@ import io.fabric8.openshift.api.model.Build as model_Build
 import io.fabric8.openshift.api.model.BuildConfig as model_BuildConfig
 import io.fabric8.openshift.api.model.BuildConfigStatus as model_BuildConfigStatus
 import io.fabric8.openshift.api.model.BuildStatus as model_BuildStatus
+import io.fabric8.openshift.api.model.ClusterVersion as model_ClusterVersion
+import io.fabric8.openshift.api.model.ClusterVersionStatus as model_ClusterVersionStatus
 import io.fabric8.openshift.api.model.DeploymentConfig as model_DeploymentConfig
 import io.fabric8.openshift.api.model.DeploymentConfigStatus as model_DeploymentConfigStatus
 import io.fabric8.openshift.api.model.ImageImportStatus as model_ImageImportStatus
@@ -32,6 +34,15 @@ fun  model_Build.`status`(block: model_BuildStatus.() -> Unit = {}) {
 fun  model_BuildConfig.`status`(block: model_BuildConfigStatus.() -> Unit = {}) {
   if(this.`status` == null) {
     this.`status` = model_BuildConfigStatus()
+  }
+
+  this.`status`.block()
+}
+
+
+fun  model_ClusterVersion.`status`(block: model_ClusterVersionStatus.() -> Unit = {}) {
+  if(this.`status` == null) {
+    this.`status` = model_ClusterVersionStatus()
   }
 
   this.`status`.block()

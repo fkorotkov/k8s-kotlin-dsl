@@ -15,7 +15,6 @@ import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceSubresourceSt
 import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceSubresources as apiextensions_CustomResourceSubresources
 import io.fabric8.kubernetes.api.model.apiextensions.CustomResourceValidation as apiextensions_CustomResourceValidation
 import io.fabric8.kubernetes.api.model.apiextensions.ExternalDocumentation as apiextensions_ExternalDocumentation
-import io.fabric8.kubernetes.api.model.apiextensions.JSON as apiextensions_JSON
 import io.fabric8.kubernetes.api.model.apiextensions.JSONSchemaProps as apiextensions_JSONSchemaProps
 import io.fabric8.kubernetes.api.model.apiextensions.JSONSchemaPropsOrArray as apiextensions_JSONSchemaPropsOrArray
 import io.fabric8.kubernetes.api.model.apiextensions.JSONSchemaPropsOrBool as apiextensions_JSONSchemaPropsOrBool
@@ -117,13 +116,6 @@ fun newCustomResourceValidation(block : apiextensions_CustomResourceValidation.(
 
 fun newExternalDocumentation(block : apiextensions_ExternalDocumentation.() -> Unit = {}): apiextensions_ExternalDocumentation {
   val instance = apiextensions_ExternalDocumentation()
-  instance.block()
-  return instance
-}
-
-
-fun newJSON(block : apiextensions_JSON.() -> Unit = {}): apiextensions_JSON {
-  val instance = apiextensions_JSON()
   instance.block()
   return instance
 }

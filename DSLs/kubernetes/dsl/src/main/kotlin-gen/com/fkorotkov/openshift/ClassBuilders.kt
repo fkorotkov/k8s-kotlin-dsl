@@ -22,6 +22,17 @@ import io.fabric8.openshift.api.model.BuildStatusOutputTo as model_BuildStatusOu
 import io.fabric8.openshift.api.model.BuildStrategy as model_BuildStrategy
 import io.fabric8.openshift.api.model.BuildTriggerCause as model_BuildTriggerCause
 import io.fabric8.openshift.api.model.BuildTriggerPolicy as model_BuildTriggerPolicy
+import io.fabric8.openshift.api.model.ClusterOperatorStatusCondition as model_ClusterOperatorStatusCondition
+import io.fabric8.openshift.api.model.ClusterRole as model_ClusterRole
+import io.fabric8.openshift.api.model.ClusterRoleBinding as model_ClusterRoleBinding
+import io.fabric8.openshift.api.model.ClusterRoleBindingList as model_ClusterRoleBindingList
+import io.fabric8.openshift.api.model.ClusterRoleList as model_ClusterRoleList
+import io.fabric8.openshift.api.model.ClusterRoleScopeRestriction as model_ClusterRoleScopeRestriction
+import io.fabric8.openshift.api.model.ClusterVersion as model_ClusterVersion
+import io.fabric8.openshift.api.model.ClusterVersionList as model_ClusterVersionList
+import io.fabric8.openshift.api.model.ClusterVersionSpec as model_ClusterVersionSpec
+import io.fabric8.openshift.api.model.ClusterVersionStatus as model_ClusterVersionStatus
+import io.fabric8.openshift.api.model.ComponentOverride as model_ComponentOverride
 import io.fabric8.openshift.api.model.ConfigMapBuildSource as model_ConfigMapBuildSource
 import io.fabric8.openshift.api.model.CustomBuildStrategy as model_CustomBuildStrategy
 import io.fabric8.openshift.api.model.CustomDeploymentStrategyParams as model_CustomDeploymentStrategyParams
@@ -86,16 +97,6 @@ import io.fabric8.openshift.api.model.OAuthClient as model_OAuthClient
 import io.fabric8.openshift.api.model.OAuthClientAuthorization as model_OAuthClientAuthorization
 import io.fabric8.openshift.api.model.OAuthClientAuthorizationList as model_OAuthClientAuthorizationList
 import io.fabric8.openshift.api.model.OAuthClientList as model_OAuthClientList
-import io.fabric8.openshift.api.model.OpenshiftClusterRole as model_OpenshiftClusterRole
-import io.fabric8.openshift.api.model.OpenshiftClusterRoleBinding as model_OpenshiftClusterRoleBinding
-import io.fabric8.openshift.api.model.OpenshiftClusterRoleBindingList as model_OpenshiftClusterRoleBindingList
-import io.fabric8.openshift.api.model.OpenshiftClusterRoleScopeRestriction as model_OpenshiftClusterRoleScopeRestriction
-import io.fabric8.openshift.api.model.OpenshiftRole as model_OpenshiftRole
-import io.fabric8.openshift.api.model.OpenshiftRoleBinding as model_OpenshiftRoleBinding
-import io.fabric8.openshift.api.model.OpenshiftRoleBindingList as model_OpenshiftRoleBindingList
-import io.fabric8.openshift.api.model.OpenshiftRoleBindingRestriction as model_OpenshiftRoleBindingRestriction
-import io.fabric8.openshift.api.model.OpenshiftRoleBindingRestrictionSpec as model_OpenshiftRoleBindingRestrictionSpec
-import io.fabric8.openshift.api.model.OpenshiftRoleList as model_OpenshiftRoleList
 import io.fabric8.openshift.api.model.Parameter as model_Parameter
 import io.fabric8.openshift.api.model.PolicyRule as model_PolicyRule
 import io.fabric8.openshift.api.model.Project as model_Project
@@ -106,6 +107,12 @@ import io.fabric8.openshift.api.model.ProjectStatus as model_ProjectStatus
 import io.fabric8.openshift.api.model.RecreateDeploymentStrategyParams as model_RecreateDeploymentStrategyParams
 import io.fabric8.openshift.api.model.RepositoryImportSpec as model_RepositoryImportSpec
 import io.fabric8.openshift.api.model.RepositoryImportStatus as model_RepositoryImportStatus
+import io.fabric8.openshift.api.model.Role as model_Role
+import io.fabric8.openshift.api.model.RoleBinding as model_RoleBinding
+import io.fabric8.openshift.api.model.RoleBindingList as model_RoleBindingList
+import io.fabric8.openshift.api.model.RoleBindingRestriction as model_RoleBindingRestriction
+import io.fabric8.openshift.api.model.RoleBindingRestrictionSpec as model_RoleBindingRestrictionSpec
+import io.fabric8.openshift.api.model.RoleList as model_RoleList
 import io.fabric8.openshift.api.model.RollingDeploymentStrategyParams as model_RollingDeploymentStrategyParams
 import io.fabric8.openshift.api.model.Route as model_Route
 import io.fabric8.openshift.api.model.RouteIngress as model_RouteIngress
@@ -146,6 +153,8 @@ import io.fabric8.openshift.api.model.TagReference as model_TagReference
 import io.fabric8.openshift.api.model.TagReferencePolicy as model_TagReferencePolicy
 import io.fabric8.openshift.api.model.Template as model_Template
 import io.fabric8.openshift.api.model.TemplateList as model_TemplateList
+import io.fabric8.openshift.api.model.Update as model_Update
+import io.fabric8.openshift.api.model.UpdateHistory as model_UpdateHistory
 import io.fabric8.openshift.api.model.User as model_User
 import io.fabric8.openshift.api.model.UserList as model_UserList
 import io.fabric8.openshift.api.model.UserRestriction as model_UserRestriction
@@ -294,6 +303,83 @@ fun newBuildTriggerCause(block : model_BuildTriggerCause.() -> Unit = {}): model
 
 fun newBuildTriggerPolicy(block : model_BuildTriggerPolicy.() -> Unit = {}): model_BuildTriggerPolicy {
   val instance = model_BuildTriggerPolicy()
+  instance.block()
+  return instance
+}
+
+
+fun newClusterOperatorStatusCondition(block : model_ClusterOperatorStatusCondition.() -> Unit = {}): model_ClusterOperatorStatusCondition {
+  val instance = model_ClusterOperatorStatusCondition()
+  instance.block()
+  return instance
+}
+
+
+fun newClusterRole(block : model_ClusterRole.() -> Unit = {}): model_ClusterRole {
+  val instance = model_ClusterRole()
+  instance.block()
+  return instance
+}
+
+
+fun newClusterRoleBinding(block : model_ClusterRoleBinding.() -> Unit = {}): model_ClusterRoleBinding {
+  val instance = model_ClusterRoleBinding()
+  instance.block()
+  return instance
+}
+
+
+fun newClusterRoleBindingList(block : model_ClusterRoleBindingList.() -> Unit = {}): model_ClusterRoleBindingList {
+  val instance = model_ClusterRoleBindingList()
+  instance.block()
+  return instance
+}
+
+
+fun newClusterRoleList(block : model_ClusterRoleList.() -> Unit = {}): model_ClusterRoleList {
+  val instance = model_ClusterRoleList()
+  instance.block()
+  return instance
+}
+
+
+fun newClusterRoleScopeRestriction(block : model_ClusterRoleScopeRestriction.() -> Unit = {}): model_ClusterRoleScopeRestriction {
+  val instance = model_ClusterRoleScopeRestriction()
+  instance.block()
+  return instance
+}
+
+
+fun newClusterVersion(block : model_ClusterVersion.() -> Unit = {}): model_ClusterVersion {
+  val instance = model_ClusterVersion()
+  instance.block()
+  return instance
+}
+
+
+fun newClusterVersionList(block : model_ClusterVersionList.() -> Unit = {}): model_ClusterVersionList {
+  val instance = model_ClusterVersionList()
+  instance.block()
+  return instance
+}
+
+
+fun newClusterVersionSpec(block : model_ClusterVersionSpec.() -> Unit = {}): model_ClusterVersionSpec {
+  val instance = model_ClusterVersionSpec()
+  instance.block()
+  return instance
+}
+
+
+fun newClusterVersionStatus(block : model_ClusterVersionStatus.() -> Unit = {}): model_ClusterVersionStatus {
+  val instance = model_ClusterVersionStatus()
+  instance.block()
+  return instance
+}
+
+
+fun newComponentOverride(block : model_ComponentOverride.() -> Unit = {}): model_ComponentOverride {
+  val instance = model_ComponentOverride()
   instance.block()
   return instance
 }
@@ -747,76 +833,6 @@ fun newOAuthClientList(block : model_OAuthClientList.() -> Unit = {}): model_OAu
 }
 
 
-fun newOpenshiftClusterRole(block : model_OpenshiftClusterRole.() -> Unit = {}): model_OpenshiftClusterRole {
-  val instance = model_OpenshiftClusterRole()
-  instance.block()
-  return instance
-}
-
-
-fun newOpenshiftClusterRoleBinding(block : model_OpenshiftClusterRoleBinding.() -> Unit = {}): model_OpenshiftClusterRoleBinding {
-  val instance = model_OpenshiftClusterRoleBinding()
-  instance.block()
-  return instance
-}
-
-
-fun newOpenshiftClusterRoleBindingList(block : model_OpenshiftClusterRoleBindingList.() -> Unit = {}): model_OpenshiftClusterRoleBindingList {
-  val instance = model_OpenshiftClusterRoleBindingList()
-  instance.block()
-  return instance
-}
-
-
-fun newOpenshiftClusterRoleScopeRestriction(block : model_OpenshiftClusterRoleScopeRestriction.() -> Unit = {}): model_OpenshiftClusterRoleScopeRestriction {
-  val instance = model_OpenshiftClusterRoleScopeRestriction()
-  instance.block()
-  return instance
-}
-
-
-fun newOpenshiftRole(block : model_OpenshiftRole.() -> Unit = {}): model_OpenshiftRole {
-  val instance = model_OpenshiftRole()
-  instance.block()
-  return instance
-}
-
-
-fun newOpenshiftRoleBinding(block : model_OpenshiftRoleBinding.() -> Unit = {}): model_OpenshiftRoleBinding {
-  val instance = model_OpenshiftRoleBinding()
-  instance.block()
-  return instance
-}
-
-
-fun newOpenshiftRoleBindingList(block : model_OpenshiftRoleBindingList.() -> Unit = {}): model_OpenshiftRoleBindingList {
-  val instance = model_OpenshiftRoleBindingList()
-  instance.block()
-  return instance
-}
-
-
-fun newOpenshiftRoleBindingRestriction(block : model_OpenshiftRoleBindingRestriction.() -> Unit = {}): model_OpenshiftRoleBindingRestriction {
-  val instance = model_OpenshiftRoleBindingRestriction()
-  instance.block()
-  return instance
-}
-
-
-fun newOpenshiftRoleBindingRestrictionSpec(block : model_OpenshiftRoleBindingRestrictionSpec.() -> Unit = {}): model_OpenshiftRoleBindingRestrictionSpec {
-  val instance = model_OpenshiftRoleBindingRestrictionSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newOpenshiftRoleList(block : model_OpenshiftRoleList.() -> Unit = {}): model_OpenshiftRoleList {
-  val instance = model_OpenshiftRoleList()
-  instance.block()
-  return instance
-}
-
-
 fun newParameter(block : model_Parameter.() -> Unit = {}): model_Parameter {
   val instance = model_Parameter()
   instance.block()
@@ -882,6 +898,48 @@ fun newRepositoryImportSpec(block : model_RepositoryImportSpec.() -> Unit = {}):
 
 fun newRepositoryImportStatus(block : model_RepositoryImportStatus.() -> Unit = {}): model_RepositoryImportStatus {
   val instance = model_RepositoryImportStatus()
+  instance.block()
+  return instance
+}
+
+
+fun newRole(block : model_Role.() -> Unit = {}): model_Role {
+  val instance = model_Role()
+  instance.block()
+  return instance
+}
+
+
+fun newRoleBinding(block : model_RoleBinding.() -> Unit = {}): model_RoleBinding {
+  val instance = model_RoleBinding()
+  instance.block()
+  return instance
+}
+
+
+fun newRoleBindingList(block : model_RoleBindingList.() -> Unit = {}): model_RoleBindingList {
+  val instance = model_RoleBindingList()
+  instance.block()
+  return instance
+}
+
+
+fun newRoleBindingRestriction(block : model_RoleBindingRestriction.() -> Unit = {}): model_RoleBindingRestriction {
+  val instance = model_RoleBindingRestriction()
+  instance.block()
+  return instance
+}
+
+
+fun newRoleBindingRestrictionSpec(block : model_RoleBindingRestrictionSpec.() -> Unit = {}): model_RoleBindingRestrictionSpec {
+  val instance = model_RoleBindingRestrictionSpec()
+  instance.block()
+  return instance
+}
+
+
+fun newRoleList(block : model_RoleList.() -> Unit = {}): model_RoleList {
+  val instance = model_RoleList()
   instance.block()
   return instance
 }
@@ -1162,6 +1220,20 @@ fun newTemplate(block : model_Template.() -> Unit = {}): model_Template {
 
 fun newTemplateList(block : model_TemplateList.() -> Unit = {}): model_TemplateList {
   val instance = model_TemplateList()
+  instance.block()
+  return instance
+}
+
+
+fun newUpdate(block : model_Update.() -> Unit = {}): model_Update {
+  val instance = model_Update()
+  instance.block()
+  return instance
+}
+
+
+fun newUpdateHistory(block : model_UpdateHistory.() -> Unit = {}): model_UpdateHistory {
+  val instance = model_UpdateHistory()
   instance.block()
   return instance
 }

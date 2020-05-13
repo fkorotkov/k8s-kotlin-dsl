@@ -9,10 +9,6 @@ import io.fabric8.kubernetes.api.model.ConfigMap as model_ConfigMap
 import io.fabric8.kubernetes.api.model.ConfigMapList as model_ConfigMapList
 import io.fabric8.kubernetes.api.model.Endpoints as model_Endpoints
 import io.fabric8.kubernetes.api.model.EndpointsList as model_EndpointsList
-import io.fabric8.kubernetes.api.model.Event as model_Event
-import io.fabric8.kubernetes.api.model.EventList as model_EventList
-import io.fabric8.kubernetes.api.model.HorizontalPodAutoscaler as model_HorizontalPodAutoscaler
-import io.fabric8.kubernetes.api.model.HorizontalPodAutoscalerList as model_HorizontalPodAutoscalerList
 import io.fabric8.kubernetes.api.model.LimitRange as model_LimitRange
 import io.fabric8.kubernetes.api.model.LimitRangeList as model_LimitRangeList
 import io.fabric8.kubernetes.api.model.ListMeta as model_ListMeta
@@ -107,42 +103,6 @@ fun  model_Endpoints.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
 
 
 fun  model_EndpointsList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_Event.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_EventList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_HorizontalPodAutoscaler.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_HorizontalPodAutoscalerList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = model_ListMeta()
   }
