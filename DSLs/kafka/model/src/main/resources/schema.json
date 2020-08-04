@@ -188,7 +188,7 @@
       "javaType": "com.fkorotkov.kubernetes.kafka.KafkaClusterList",
       "javaInterfaces": [
         "io.fabric8.kubernetes.api.model.KubernetesResource",
-        "io.fabric8.kubernetes.api.model.KubernetesResourceList"
+        "io.fabric8.kubernetes.api.model.KubernetesResourceList\u003cKafkaCluster\u003e"
       ],
       "properties": {
         "apiVersion": {

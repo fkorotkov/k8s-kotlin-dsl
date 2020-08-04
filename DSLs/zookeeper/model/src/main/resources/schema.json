@@ -574,7 +574,7 @@
       "javaType": "com.fkorotkov.kubernetes.zookeeper.ZookeeperClusterList",
       "javaInterfaces": [
         "io.fabric8.kubernetes.api.model.KubernetesResource",
-        "io.fabric8.kubernetes.api.model.KubernetesResourceList"
+        "io.fabric8.kubernetes.api.model.KubernetesResourceList\u003cZookeeperCluster\u003e"
       ],
       "properties": {
         "apiVersion": {

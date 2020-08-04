@@ -1,6 +1,8 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
+import io.fabric8.kubernetes.api.model.APIService as model_APIService
+import io.fabric8.kubernetes.api.model.APIServiceSpec as model_APIServiceSpec
 import io.fabric8.kubernetes.api.model.LimitRange as model_LimitRange
 import io.fabric8.kubernetes.api.model.LimitRangeSpec as model_LimitRangeSpec
 import io.fabric8.kubernetes.api.model.Namespace as model_Namespace
@@ -20,6 +22,15 @@ import io.fabric8.kubernetes.api.model.ResourceQuota as model_ResourceQuota
 import io.fabric8.kubernetes.api.model.ResourceQuotaSpec as model_ResourceQuotaSpec
 import io.fabric8.kubernetes.api.model.Service as model_Service
 import io.fabric8.kubernetes.api.model.ServiceSpec as model_ServiceSpec
+
+
+fun  model_APIService.`spec`(block: model_APIServiceSpec.() -> Unit = {}) {
+  if(this.`spec` == null) {
+    this.`spec` = model_APIServiceSpec()
+  }
+
+  this.`spec`.block()
+}
 
 
 fun  model_LimitRange.`spec`(block: model_LimitRangeSpec.() -> Unit = {}) {

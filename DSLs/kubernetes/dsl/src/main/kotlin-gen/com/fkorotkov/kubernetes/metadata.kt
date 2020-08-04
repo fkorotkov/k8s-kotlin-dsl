@@ -1,6 +1,8 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
+import io.fabric8.kubernetes.api.model.APIService as model_APIService
+import io.fabric8.kubernetes.api.model.APIServiceList as model_APIServiceList
 import io.fabric8.kubernetes.api.model.BaseKubernetesList as model_BaseKubernetesList
 import io.fabric8.kubernetes.api.model.Binding as model_Binding
 import io.fabric8.kubernetes.api.model.ComponentStatus as model_ComponentStatus
@@ -9,6 +11,8 @@ import io.fabric8.kubernetes.api.model.ConfigMap as model_ConfigMap
 import io.fabric8.kubernetes.api.model.ConfigMapList as model_ConfigMapList
 import io.fabric8.kubernetes.api.model.Endpoints as model_Endpoints
 import io.fabric8.kubernetes.api.model.EndpointsList as model_EndpointsList
+import io.fabric8.kubernetes.api.model.Event as model_Event
+import io.fabric8.kubernetes.api.model.EventList as model_EventList
 import io.fabric8.kubernetes.api.model.LimitRange as model_LimitRange
 import io.fabric8.kubernetes.api.model.LimitRangeList as model_LimitRangeList
 import io.fabric8.kubernetes.api.model.ListMeta as model_ListMeta
@@ -37,6 +41,24 @@ import io.fabric8.kubernetes.api.model.ServiceAccount as model_ServiceAccount
 import io.fabric8.kubernetes.api.model.ServiceAccountList as model_ServiceAccountList
 import io.fabric8.kubernetes.api.model.ServiceList as model_ServiceList
 import io.fabric8.kubernetes.api.model.Status as model_Status
+
+
+fun  model_APIService.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = model_ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  model_APIServiceList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = model_ListMeta()
+  }
+
+  this.`metadata`.block()
+}
 
 
 fun  model_BaseKubernetesList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
@@ -103,6 +125,24 @@ fun  model_Endpoints.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
 
 
 fun  model_EndpointsList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = model_ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  model_Event.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = model_ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  model_EventList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = model_ListMeta()
   }

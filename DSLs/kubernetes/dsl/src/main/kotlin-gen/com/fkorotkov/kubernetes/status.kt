@@ -1,6 +1,8 @@
 // GENERATED
 package com.fkorotkov.kubernetes
 
+import io.fabric8.kubernetes.api.model.APIService as model_APIService
+import io.fabric8.kubernetes.api.model.APIServiceStatus as model_APIServiceStatus
 import io.fabric8.kubernetes.api.model.Namespace as model_Namespace
 import io.fabric8.kubernetes.api.model.NamespaceStatus as model_NamespaceStatus
 import io.fabric8.kubernetes.api.model.Node as model_Node
@@ -17,6 +19,15 @@ import io.fabric8.kubernetes.api.model.ResourceQuota as model_ResourceQuota
 import io.fabric8.kubernetes.api.model.ResourceQuotaStatus as model_ResourceQuotaStatus
 import io.fabric8.kubernetes.api.model.Service as model_Service
 import io.fabric8.kubernetes.api.model.ServiceStatus as model_ServiceStatus
+
+
+fun  model_APIService.`status`(block: model_APIServiceStatus.() -> Unit = {}) {
+  if(this.`status` == null) {
+    this.`status` = model_APIServiceStatus()
+  }
+
+  this.`status`.block()
+}
 
 
 fun  model_Namespace.`status`(block: model_NamespaceStatus.() -> Unit = {}) {

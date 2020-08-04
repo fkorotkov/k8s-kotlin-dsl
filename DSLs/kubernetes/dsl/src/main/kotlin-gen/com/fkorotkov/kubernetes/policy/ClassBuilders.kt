@@ -4,6 +4,7 @@ package com.fkorotkov.kubernetes.policy
 import io.fabric8.kubernetes.api.model.policy.AllowedCSIDriver as policy_AllowedCSIDriver
 import io.fabric8.kubernetes.api.model.policy.AllowedFlexVolume as policy_AllowedFlexVolume
 import io.fabric8.kubernetes.api.model.policy.AllowedHostPath as policy_AllowedHostPath
+import io.fabric8.kubernetes.api.model.policy.Eviction as policy_Eviction
 import io.fabric8.kubernetes.api.model.policy.FSGroupStrategyOptions as policy_FSGroupStrategyOptions
 import io.fabric8.kubernetes.api.model.policy.HostPortRange as policy_HostPortRange
 import io.fabric8.kubernetes.api.model.policy.IDRange as policy_IDRange
@@ -37,6 +38,13 @@ fun newAllowedFlexVolume(block : policy_AllowedFlexVolume.() -> Unit = {}): poli
 
 fun newAllowedHostPath(block : policy_AllowedHostPath.() -> Unit = {}): policy_AllowedHostPath {
   val instance = policy_AllowedHostPath()
+  instance.block()
+  return instance
+}
+
+
+fun newEviction(block : policy_Eviction.() -> Unit = {}): policy_Eviction {
+  val instance = policy_Eviction()
   instance.block()
   return instance
 }

@@ -3,6 +3,11 @@ package com.fkorotkov.kubernetes
 
 import io.fabric8.kubernetes.api.model.APIGroup as model_APIGroup
 import io.fabric8.kubernetes.api.model.APIGroupList as model_APIGroupList
+import io.fabric8.kubernetes.api.model.APIService as model_APIService
+import io.fabric8.kubernetes.api.model.APIServiceCondition as model_APIServiceCondition
+import io.fabric8.kubernetes.api.model.APIServiceList as model_APIServiceList
+import io.fabric8.kubernetes.api.model.APIServiceSpec as model_APIServiceSpec
+import io.fabric8.kubernetes.api.model.APIServiceStatus as model_APIServiceStatus
 import io.fabric8.kubernetes.api.model.AWSElasticBlockStoreVolumeSource as model_AWSElasticBlockStoreVolumeSource
 import io.fabric8.kubernetes.api.model.Affinity as model_Affinity
 import io.fabric8.kubernetes.api.model.AttachedVolume as model_AttachedVolume
@@ -59,6 +64,9 @@ import io.fabric8.kubernetes.api.model.EnvFromSource as model_EnvFromSource
 import io.fabric8.kubernetes.api.model.EnvVar as model_EnvVar
 import io.fabric8.kubernetes.api.model.EnvVarSource as model_EnvVarSource
 import io.fabric8.kubernetes.api.model.EphemeralContainer as model_EphemeralContainer
+import io.fabric8.kubernetes.api.model.Event as model_Event
+import io.fabric8.kubernetes.api.model.EventList as model_EventList
+import io.fabric8.kubernetes.api.model.EventSeries as model_EventSeries
 import io.fabric8.kubernetes.api.model.EventSource as model_EventSource
 import io.fabric8.kubernetes.api.model.ExecAction as model_ExecAction
 import io.fabric8.kubernetes.api.model.ExecConfig as model_ExecConfig
@@ -148,6 +156,7 @@ import io.fabric8.kubernetes.api.model.PodAntiAffinity as model_PodAntiAffinity
 import io.fabric8.kubernetes.api.model.PodCondition as model_PodCondition
 import io.fabric8.kubernetes.api.model.PodDNSConfig as model_PodDNSConfig
 import io.fabric8.kubernetes.api.model.PodDNSConfigOption as model_PodDNSConfigOption
+import io.fabric8.kubernetes.api.model.PodExecOptions as model_PodExecOptions
 import io.fabric8.kubernetes.api.model.PodIP as model_PodIP
 import io.fabric8.kubernetes.api.model.PodList as model_PodList
 import io.fabric8.kubernetes.api.model.PodReadinessGate as model_PodReadinessGate
@@ -198,6 +207,7 @@ import io.fabric8.kubernetes.api.model.ServiceAccountList as model_ServiceAccoun
 import io.fabric8.kubernetes.api.model.ServiceAccountTokenProjection as model_ServiceAccountTokenProjection
 import io.fabric8.kubernetes.api.model.ServiceList as model_ServiceList
 import io.fabric8.kubernetes.api.model.ServicePort as model_ServicePort
+import io.fabric8.kubernetes.api.model.ServiceReference as model_ServiceReference
 import io.fabric8.kubernetes.api.model.ServiceSpec as model_ServiceSpec
 import io.fabric8.kubernetes.api.model.ServiceStatus as model_ServiceStatus
 import io.fabric8.kubernetes.api.model.SessionAffinityConfig as model_SessionAffinityConfig
@@ -236,6 +246,41 @@ fun newAPIGroup(block : model_APIGroup.() -> Unit = {}): model_APIGroup {
 
 fun newAPIGroupList(block : model_APIGroupList.() -> Unit = {}): model_APIGroupList {
   val instance = model_APIGroupList()
+  instance.block()
+  return instance
+}
+
+
+fun newAPIService(block : model_APIService.() -> Unit = {}): model_APIService {
+  val instance = model_APIService()
+  instance.block()
+  return instance
+}
+
+
+fun newAPIServiceCondition(block : model_APIServiceCondition.() -> Unit = {}): model_APIServiceCondition {
+  val instance = model_APIServiceCondition()
+  instance.block()
+  return instance
+}
+
+
+fun newAPIServiceList(block : model_APIServiceList.() -> Unit = {}): model_APIServiceList {
+  val instance = model_APIServiceList()
+  instance.block()
+  return instance
+}
+
+
+fun newAPIServiceSpec(block : model_APIServiceSpec.() -> Unit = {}): model_APIServiceSpec {
+  val instance = model_APIServiceSpec()
+  instance.block()
+  return instance
+}
+
+
+fun newAPIServiceStatus(block : model_APIServiceStatus.() -> Unit = {}): model_APIServiceStatus {
+  val instance = model_APIServiceStatus()
   instance.block()
   return instance
 }
@@ -628,6 +673,27 @@ fun newEnvVarSource(block : model_EnvVarSource.() -> Unit = {}): model_EnvVarSou
 
 fun newEphemeralContainer(block : model_EphemeralContainer.() -> Unit = {}): model_EphemeralContainer {
   val instance = model_EphemeralContainer()
+  instance.block()
+  return instance
+}
+
+
+fun newEvent(block : model_Event.() -> Unit = {}): model_Event {
+  val instance = model_Event()
+  instance.block()
+  return instance
+}
+
+
+fun newEventList(block : model_EventList.() -> Unit = {}): model_EventList {
+  val instance = model_EventList()
+  instance.block()
+  return instance
+}
+
+
+fun newEventSeries(block : model_EventSeries.() -> Unit = {}): model_EventSeries {
+  val instance = model_EventSeries()
   instance.block()
   return instance
 }
@@ -1256,6 +1322,13 @@ fun newPodDNSConfigOption(block : model_PodDNSConfigOption.() -> Unit = {}): mod
 }
 
 
+fun newPodExecOptions(block : model_PodExecOptions.() -> Unit = {}): model_PodExecOptions {
+  val instance = model_PodExecOptions()
+  instance.block()
+  return instance
+}
+
+
 fun newPodIP(block : model_PodIP.() -> Unit = {}): model_PodIP {
   val instance = model_PodIP()
   instance.block()
@@ -1601,6 +1674,13 @@ fun newServiceList(block : model_ServiceList.() -> Unit = {}): model_ServiceList
 
 fun newServicePort(block : model_ServicePort.() -> Unit = {}): model_ServicePort {
   val instance = model_ServicePort()
+  instance.block()
+  return instance
+}
+
+
+fun newServiceReference(block : model_ServiceReference.() -> Unit = {}): model_ServiceReference {
+  val instance = model_ServiceReference()
   instance.block()
   return instance
 }

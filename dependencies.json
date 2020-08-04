@@ -3,7 +3,7 @@
     {
       "group": "com.fasterxml.jackson.module",
       "name": "jackson-module-jaxb-annotations",
-      "version": "2.11.0"
+      "version": "2.11.2"
     },
     {
       "group": "com.fkorotkov",
@@ -33,12 +33,12 @@
     {
       "group": "io.fabric8",
       "name": "kubernetes-client",
-      "version": "4.10.1"
+      "version": "4.10.3"
     },
     {
       "group": "io.fabric8",
       "name": "kubernetes-model",
-      "version": "4.10.1"
+      "version": "4.10.3"
     },
     {
       "group": "io.sundr",

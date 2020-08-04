@@ -47,7 +47,7 @@ import lombok.ToString;
 })
 @ApiVersion("v1alpha1")
 @ApiGroup("cluster.confluent.com")
-public class KafkaClusterList implements KubernetesResource, KubernetesResourceList
+public class KafkaClusterList implements KubernetesResource, KubernetesResourceList<KafkaCluster>
 {
 
     /**
@@ -61,7 +61,7 @@ public class KafkaClusterList implements KubernetesResource, KubernetesResourceL
      */
     @JsonProperty("items")
     @JsonPropertyDescription("")
-    private List<KafkaCluster> items = new ArrayList<KafkaCluster>();
+    private List<com.fkorotkov.kubernetes.kafka.KafkaCluster> items = new ArrayList<com.fkorotkov.kubernetes.kafka.KafkaCluster>();
     /**
      * 
      */
@@ -91,7 +91,7 @@ public class KafkaClusterList implements KubernetesResource, KubernetesResourceL
      * @param kind
      * @param items
      */
-    public KafkaClusterList(String apiVersion, List<KafkaCluster> items, String kind, ListMeta metadata) {
+    public KafkaClusterList(String apiVersion, List<com.fkorotkov.kubernetes.kafka.KafkaCluster> items, String kind, ListMeta metadata) {
         super();
         this.apiVersion = apiVersion;
         this.items = items;
@@ -119,7 +119,7 @@ public class KafkaClusterList implements KubernetesResource, KubernetesResourceL
      * 
      */
     @JsonProperty("items")
-    public List<KafkaCluster> getItems() {
+    public List<com.fkorotkov.kubernetes.kafka.KafkaCluster> getItems() {
         return items;
     }
 
@@ -127,7 +127,7 @@ public class KafkaClusterList implements KubernetesResource, KubernetesResourceL
      * 
      */
     @JsonProperty("items")
-    public void setItems(List<KafkaCluster> items) {
+    public void setItems(List<com.fkorotkov.kubernetes.kafka.KafkaCluster> items) {
         this.items = items;
     }
 

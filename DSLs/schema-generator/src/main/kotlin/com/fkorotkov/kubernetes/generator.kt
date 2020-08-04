@@ -54,7 +54,7 @@ fun createSchema(crd: CRDDefinition, schemeName: String): Schema {
     javaType = "com.fkorotkov.kubernetes.$schemeName.${crd.spec.names.kind}List"
     javaInterfaces = listOf(
         "io.fabric8.kubernetes.api.model.KubernetesResource",
-        "io.fabric8.kubernetes.api.model.KubernetesResourceList"
+        "io.fabric8.kubernetes.api.model.KubernetesResourceList<${crd.spec.names.kind}>"
     )
     properties = TreeMap(mapOf(
         "apiVersion" to PrimitiveStringPropertyDefinition().apply { default = "${crd.spec.group}/${crd.spec.version}" },

@@ -47,7 +47,7 @@ import lombok.ToString;
 })
 @ApiVersion("v1alpha1")
 @ApiGroup("cluster.confluent.com")
-public class ZookeeperClusterList implements KubernetesResource, KubernetesResourceList
+public class ZookeeperClusterList implements KubernetesResource, KubernetesResourceList<ZookeeperCluster>
 {
 
     /**
@@ -61,7 +61,7 @@ public class ZookeeperClusterList implements KubernetesResource, KubernetesResou
      */
     @JsonProperty("items")
     @JsonPropertyDescription("")
-    private List<ZookeeperCluster> items = new ArrayList<ZookeeperCluster>();
+    private List<com.fkorotkov.kubernetes.zookeeper.ZookeeperCluster> items = new ArrayList<com.fkorotkov.kubernetes.zookeeper.ZookeeperCluster>();
     /**
      * 
      */
@@ -91,7 +91,7 @@ public class ZookeeperClusterList implements KubernetesResource, KubernetesResou
      * @param kind
      * @param items
      */
-    public ZookeeperClusterList(String apiVersion, List<ZookeeperCluster> items, String kind, ListMeta metadata) {
+    public ZookeeperClusterList(String apiVersion, List<com.fkorotkov.kubernetes.zookeeper.ZookeeperCluster> items, String kind, ListMeta metadata) {
         super();
         this.apiVersion = apiVersion;
         this.items = items;
@@ -119,7 +119,7 @@ public class ZookeeperClusterList implements KubernetesResource, KubernetesResou
      * 
      */
     @JsonProperty("items")
-    public List<ZookeeperCluster> getItems() {
+    public List<com.fkorotkov.kubernetes.zookeeper.ZookeeperCluster> getItems() {
         return items;
     }
 
@@ -127,7 +127,7 @@ public class ZookeeperClusterList implements KubernetesResource, KubernetesResou
      * 
      */
     @JsonProperty("items")
-    public void setItems(List<ZookeeperCluster> items) {
+    public void setItems(List<com.fkorotkov.kubernetes.zookeeper.ZookeeperCluster> items) {
         this.items = items;
     }
 
