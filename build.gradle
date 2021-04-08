@@ -1,16 +1,9 @@
-buildscript {
-    repositories {
-        mavenLocal()
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.fkorotkov:gradle-libraries-plugin:1.0'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
-    }
-}
+plugins {
+    id("java")
+    id("jacoco")
 
-apply plugin: 'com.fkorotkov.libraries'
-apply plugin: "com.jfrog.bintray" // workaround for https://stackoverflow.com/a/48712362
+    id "com.github.fkorotkov.libraries" version "1.1"
+}
 
 updateLibraries.resolutionStrategy = {
     componentSelection { rules ->
@@ -27,7 +20,10 @@ updateLibraries.resolutionStrategy = {
 
 subprojects {
     ext {
-        current_k8s_dsl_version = System.getenv().getOrDefault("CIRRUS_TAG", "2.0.0-SNAPSHOT")
+        current_k8s_dsl_version = System.getenv().getOrDefault(
+          "VERSION",
+          System.getenv().getOrDefault("CIRRUS_TAG", "2.0.0-SNAPSHOT")
+        )
     }
 
     buildscript {
@@ -42,13 +38,12 @@ subprojects {
 
     repositories {
         mavenLocal()
-        jcenter()
         mavenCentral()
         maven { setUrl("https://repo.gradle.org/gradle/repo") }
         maven { setUrl("https://artifactory.cronapp.io/public-release") }
     }
 
-    apply plugin: 'com.fkorotkov.libraries'
+    apply plugin: "com.fkorotkov.libraries"
     apply plugin: "java"
     apply plugin: "jacoco"
 

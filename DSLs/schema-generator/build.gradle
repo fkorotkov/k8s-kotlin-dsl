@@ -3,18 +3,6 @@ apply plugin: "kotlin"
 
 mainClassName = "com.fkorotkov.kubernetes.GeneratorKt"
 
-task generateKafka(type: JavaExec, dependsOn: classes) {
-    main = "com.fkorotkov.kubernetes.GeneratorKt"
-    classpath = sourceSets.main.runtimeClasspath
-    args "kafka", "${project(":DSLs:kafka:model").projectDir}/src/main/resources/schema.json"
-}
-
-task generateZookeeper(type: JavaExec, dependsOn: classes) {
-    main = "com.fkorotkov.kubernetes.GeneratorKt"
-    classpath = sourceSets.main.runtimeClasspath
-    args "zookeeper", "${project(":DSLs:zookeeper:model").projectDir}/src/main/resources/schema.json"
-}
-
 dependencies {
     compile project(":generator")
 
