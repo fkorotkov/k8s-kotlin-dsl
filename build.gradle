@@ -8,7 +8,7 @@ plugins {
 updateLibraries.resolutionStrategy = {
     componentSelection { rules ->
         rules.all { ComponentSelection selection ->
-            boolean rejected = ['dev', 'eap', 'M1'].any { qualifier ->
+            boolean rejected = ['dev', 'eap', 'M1', 'M2', 'M3'].any { qualifier ->
                 selection.candidate.version ==~ /(?i).*[.-]${qualifier}[.\d-]*/
             }
             if (rejected) {

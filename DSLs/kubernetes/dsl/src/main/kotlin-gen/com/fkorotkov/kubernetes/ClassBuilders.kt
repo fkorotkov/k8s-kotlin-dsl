@@ -30,6 +30,7 @@ import io.fabric8.kubernetes.api.model.Cluster as model_Cluster
 import io.fabric8.kubernetes.api.model.ComponentCondition as model_ComponentCondition
 import io.fabric8.kubernetes.api.model.ComponentStatus as model_ComponentStatus
 import io.fabric8.kubernetes.api.model.ComponentStatusList as model_ComponentStatusList
+import io.fabric8.kubernetes.api.model.Condition as model_Condition
 import io.fabric8.kubernetes.api.model.Config as model_Config
 import io.fabric8.kubernetes.api.model.ConfigMap as model_ConfigMap
 import io.fabric8.kubernetes.api.model.ConfigMapEnvSource as model_ConfigMapEnvSource
@@ -64,6 +65,7 @@ import io.fabric8.kubernetes.api.model.EnvFromSource as model_EnvFromSource
 import io.fabric8.kubernetes.api.model.EnvVar as model_EnvVar
 import io.fabric8.kubernetes.api.model.EnvVarSource as model_EnvVarSource
 import io.fabric8.kubernetes.api.model.EphemeralContainer as model_EphemeralContainer
+import io.fabric8.kubernetes.api.model.EphemeralVolumeSource as model_EphemeralVolumeSource
 import io.fabric8.kubernetes.api.model.Event as model_Event
 import io.fabric8.kubernetes.api.model.EventList as model_EventList
 import io.fabric8.kubernetes.api.model.EventSeries as model_EventSeries
@@ -144,6 +146,7 @@ import io.fabric8.kubernetes.api.model.PersistentVolumeClaimCondition as model_P
 import io.fabric8.kubernetes.api.model.PersistentVolumeClaimList as model_PersistentVolumeClaimList
 import io.fabric8.kubernetes.api.model.PersistentVolumeClaimSpec as model_PersistentVolumeClaimSpec
 import io.fabric8.kubernetes.api.model.PersistentVolumeClaimStatus as model_PersistentVolumeClaimStatus
+import io.fabric8.kubernetes.api.model.PersistentVolumeClaimTemplate as model_PersistentVolumeClaimTemplate
 import io.fabric8.kubernetes.api.model.PersistentVolumeClaimVolumeSource as model_PersistentVolumeClaimVolumeSource
 import io.fabric8.kubernetes.api.model.PersistentVolumeList as model_PersistentVolumeList
 import io.fabric8.kubernetes.api.model.PersistentVolumeSpec as model_PersistentVolumeSpec
@@ -166,6 +169,7 @@ import io.fabric8.kubernetes.api.model.PodStatus as model_PodStatus
 import io.fabric8.kubernetes.api.model.PodTemplate as model_PodTemplate
 import io.fabric8.kubernetes.api.model.PodTemplateList as model_PodTemplateList
 import io.fabric8.kubernetes.api.model.PodTemplateSpec as model_PodTemplateSpec
+import io.fabric8.kubernetes.api.model.PortStatus as model_PortStatus
 import io.fabric8.kubernetes.api.model.PortworxVolumeSource as model_PortworxVolumeSource
 import io.fabric8.kubernetes.api.model.Preconditions as model_Preconditions
 import io.fabric8.kubernetes.api.model.Preferences as model_Preferences
@@ -192,6 +196,7 @@ import io.fabric8.kubernetes.api.model.ScaleIOPersistentVolumeSource as model_Sc
 import io.fabric8.kubernetes.api.model.ScaleIOVolumeSource as model_ScaleIOVolumeSource
 import io.fabric8.kubernetes.api.model.ScopeSelector as model_ScopeSelector
 import io.fabric8.kubernetes.api.model.ScopedResourceSelectorRequirement as model_ScopedResourceSelectorRequirement
+import io.fabric8.kubernetes.api.model.SeccompProfile as model_SeccompProfile
 import io.fabric8.kubernetes.api.model.Secret as model_Secret
 import io.fabric8.kubernetes.api.model.SecretEnvSource as model_SecretEnvSource
 import io.fabric8.kubernetes.api.model.SecretKeySelector as model_SecretKeySelector
@@ -440,6 +445,13 @@ fun newComponentStatusList(block : model_ComponentStatusList.() -> Unit = {}): m
 }
 
 
+fun newCondition(block : model_Condition.() -> Unit = {}): model_Condition {
+  val instance = model_Condition()
+  instance.block()
+  return instance
+}
+
+
 fun newConfig(block : model_Config.() -> Unit = {}): model_Config {
   val instance = model_Config()
   instance.block()
@@ -673,6 +685,13 @@ fun newEnvVarSource(block : model_EnvVarSource.() -> Unit = {}): model_EnvVarSou
 
 fun newEphemeralContainer(block : model_EphemeralContainer.() -> Unit = {}): model_EphemeralContainer {
   val instance = model_EphemeralContainer()
+  instance.block()
+  return instance
+}
+
+
+fun newEphemeralVolumeSource(block : model_EphemeralVolumeSource.() -> Unit = {}): model_EphemeralVolumeSource {
+  val instance = model_EphemeralVolumeSource()
   instance.block()
   return instance
 }
@@ -1238,6 +1257,13 @@ fun newPersistentVolumeClaimStatus(block : model_PersistentVolumeClaimStatus.() 
 }
 
 
+fun newPersistentVolumeClaimTemplate(block : model_PersistentVolumeClaimTemplate.() -> Unit = {}): model_PersistentVolumeClaimTemplate {
+  val instance = model_PersistentVolumeClaimTemplate()
+  instance.block()
+  return instance
+}
+
+
 fun newPersistentVolumeClaimVolumeSource(block : model_PersistentVolumeClaimVolumeSource.() -> Unit = {}): model_PersistentVolumeClaimVolumeSource {
   val instance = model_PersistentVolumeClaimVolumeSource()
   instance.block()
@@ -1387,6 +1413,13 @@ fun newPodTemplateList(block : model_PodTemplateList.() -> Unit = {}): model_Pod
 
 fun newPodTemplateSpec(block : model_PodTemplateSpec.() -> Unit = {}): model_PodTemplateSpec {
   val instance = model_PodTemplateSpec()
+  instance.block()
+  return instance
+}
+
+
+fun newPortStatus(block : model_PortStatus.() -> Unit = {}): model_PortStatus {
+  val instance = model_PortStatus()
   instance.block()
   return instance
 }
@@ -1569,6 +1602,13 @@ fun newScopeSelector(block : model_ScopeSelector.() -> Unit = {}): model_ScopeSe
 
 fun newScopedResourceSelectorRequirement(block : model_ScopedResourceSelectorRequirement.() -> Unit = {}): model_ScopedResourceSelectorRequirement {
   val instance = model_ScopedResourceSelectorRequirement()
+  instance.block()
+  return instance
+}
+
+
+fun newSeccompProfile(block : model_SeccompProfile.() -> Unit = {}): model_SeccompProfile {
+  val instance = model_SeccompProfile()
   instance.block()
   return instance
 }

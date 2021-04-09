@@ -8,6 +8,7 @@ import io.fabric8.kubernetes.api.model.storage.v1beta1.CSINode as v1beta1_CSINod
 import io.fabric8.kubernetes.api.model.storage.v1beta1.CSINodeDriver as v1beta1_CSINodeDriver
 import io.fabric8.kubernetes.api.model.storage.v1beta1.CSINodeList as v1beta1_CSINodeList
 import io.fabric8.kubernetes.api.model.storage.v1beta1.CSINodeSpec as v1beta1_CSINodeSpec
+import io.fabric8.kubernetes.api.model.storage.v1beta1.TokenRequest as v1beta1_TokenRequest
 import io.fabric8.kubernetes.api.model.storage.v1beta1.VolumeNodeResources as v1beta1_VolumeNodeResources
 
 
@@ -55,6 +56,13 @@ fun newCSINodeList(block : v1beta1_CSINodeList.() -> Unit = {}): v1beta1_CSINode
 
 fun newCSINodeSpec(block : v1beta1_CSINodeSpec.() -> Unit = {}): v1beta1_CSINodeSpec {
   val instance = v1beta1_CSINodeSpec()
+  instance.block()
+  return instance
+}
+
+
+fun newTokenRequest(block : v1beta1_TokenRequest.() -> Unit = {}): v1beta1_TokenRequest {
+  val instance = v1beta1_TokenRequest()
   instance.block()
   return instance
 }

@@ -24,6 +24,7 @@ import io.fabric8.kubernetes.api.model.ObjectMeta as model_ObjectMeta
 import io.fabric8.kubernetes.api.model.PersistentVolume as model_PersistentVolume
 import io.fabric8.kubernetes.api.model.PersistentVolumeClaim as model_PersistentVolumeClaim
 import io.fabric8.kubernetes.api.model.PersistentVolumeClaimList as model_PersistentVolumeClaimList
+import io.fabric8.kubernetes.api.model.PersistentVolumeClaimTemplate as model_PersistentVolumeClaimTemplate
 import io.fabric8.kubernetes.api.model.PersistentVolumeList as model_PersistentVolumeList
 import io.fabric8.kubernetes.api.model.Pod as model_Pod
 import io.fabric8.kubernetes.api.model.PodList as model_PodList
@@ -226,6 +227,15 @@ fun  model_PersistentVolumeClaim.`metadata`(block: model_ObjectMeta.() -> Unit =
 fun  model_PersistentVolumeClaimList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = model_ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  model_PersistentVolumeClaimTemplate.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()

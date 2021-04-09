@@ -1,6 +1,8 @@
 // GENERATE
 package com.fkorotkov.kubernetes.autoscaling.v2beta2
 
+import io.fabric8.kubernetes.api.model.autoscaling.v2beta2.ContainerResourceMetricSource as v2beta2_ContainerResourceMetricSource
+import io.fabric8.kubernetes.api.model.autoscaling.v2beta2.ContainerResourceMetricStatus as v2beta2_ContainerResourceMetricStatus
 import io.fabric8.kubernetes.api.model.autoscaling.v2beta2.CrossVersionObjectReference as v2beta2_CrossVersionObjectReference
 import io.fabric8.kubernetes.api.model.autoscaling.v2beta2.ExternalMetricSource as v2beta2_ExternalMetricSource
 import io.fabric8.kubernetes.api.model.autoscaling.v2beta2.ExternalMetricStatus as v2beta2_ExternalMetricStatus
@@ -23,6 +25,20 @@ import io.fabric8.kubernetes.api.model.autoscaling.v2beta2.PodsMetricSource as v
 import io.fabric8.kubernetes.api.model.autoscaling.v2beta2.PodsMetricStatus as v2beta2_PodsMetricStatus
 import io.fabric8.kubernetes.api.model.autoscaling.v2beta2.ResourceMetricSource as v2beta2_ResourceMetricSource
 import io.fabric8.kubernetes.api.model.autoscaling.v2beta2.ResourceMetricStatus as v2beta2_ResourceMetricStatus
+
+
+fun newContainerResourceMetricSource(block : v2beta2_ContainerResourceMetricSource.() -> Unit = {}): v2beta2_ContainerResourceMetricSource {
+  val instance = v2beta2_ContainerResourceMetricSource()
+  instance.block()
+  return instance
+}
+
+
+fun newContainerResourceMetricStatus(block : v2beta2_ContainerResourceMetricStatus.() -> Unit = {}): v2beta2_ContainerResourceMetricStatus {
+  val instance = v2beta2_ContainerResourceMetricStatus()
+  instance.block()
+  return instance
+}
 
 
 fun newCrossVersionObjectReference(block : v2beta2_CrossVersionObjectReference.() -> Unit = {}): v2beta2_CrossVersionObjectReference {

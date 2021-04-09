@@ -12,6 +12,7 @@ import io.fabric8.kubernetes.api.model.NodeSpec as model_NodeSpec
 import io.fabric8.kubernetes.api.model.PersistentVolume as model_PersistentVolume
 import io.fabric8.kubernetes.api.model.PersistentVolumeClaim as model_PersistentVolumeClaim
 import io.fabric8.kubernetes.api.model.PersistentVolumeClaimSpec as model_PersistentVolumeClaimSpec
+import io.fabric8.kubernetes.api.model.PersistentVolumeClaimTemplate as model_PersistentVolumeClaimTemplate
 import io.fabric8.kubernetes.api.model.PersistentVolumeSpec as model_PersistentVolumeSpec
 import io.fabric8.kubernetes.api.model.Pod as model_Pod
 import io.fabric8.kubernetes.api.model.PodSpec as model_PodSpec
@@ -70,6 +71,15 @@ fun  model_PersistentVolume.`spec`(block: model_PersistentVolumeSpec.() -> Unit 
 
 
 fun  model_PersistentVolumeClaim.`spec`(block: model_PersistentVolumeClaimSpec.() -> Unit = {}) {
+  if(this.`spec` == null) {
+    this.`spec` = model_PersistentVolumeClaimSpec()
+  }
+
+  this.`spec`.block()
+}
+
+
+fun  model_PersistentVolumeClaimTemplate.`spec`(block: model_PersistentVolumeClaimSpec.() -> Unit = {}) {
   if(this.`spec` == null) {
     this.`spec` = model_PersistentVolumeClaimSpec()
   }
