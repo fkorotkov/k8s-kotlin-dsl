@@ -4,7 +4,7 @@ apply plugin: "kotlin"
 mainClassName = "com.fkorotkov.kubernetes.GeneratorKt"
 
 dependencies {
-    compile project(":generator")
+    compile project(":generator-base")
 
     compile libraries['com.google.code.gson:gson']
     compile libraries['com.google.code.gson:gson-extras']

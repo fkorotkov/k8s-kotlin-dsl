@@ -8,7 +8,7 @@ run {
 }
 
 dependencies {
-    compile project(":generator")
+    compile project(":generator-base")
 
     compile libraries['org.jetbrains.kotlin:kotlin-stdlib']
     compile libraries['org.jetbrains.kotlin:kotlin-reflect']
