@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/fkorotkov/k8s-kotlin-dsl.svg?branch=master)](https://travis-ci.org/fkorotkov/k8s-kotlin-dsl)
-[![Download](https://api.bintray.com/packages/fkorotkov/maven/k8s-kotlin-dsl/images/download.svg) ](https://bintray.com/fkorotkov/maven/k8s-kotlin-dsl/_latestVersion)
+[![Build Status](https://api.cirrus-ci.com/github/fkorotkov/k8s-kotlin-dsl.svg)](https://cirrus-ci.com/github/fkorotkov/k8s-kotlin-dsl)
+[![](https://jitpack.io/v/fkorotkov/k8s-kotlin-dsl.svg)](https://jitpack.io/#fkorotkov/k8s-kotlin-dsl)
 
 [Kotlin](https://kotlinlang.org) DSL for [Kubernetes](https://kubernetes.io/) and [Openshift Container Platform](https://www.openshift.com/container-platform/) on top of [fabric8 client](https://github.com/fabric8io/kubernetes-client).
 
@@ -7,15 +7,17 @@
 
 ## Usage
 
-`k8s-kotlin-dsl` package can be found on [jcenter](https://bintray.com/bintray/jcenter?filterByPkgName=k8s-kotlin-dsl). Simply add following lines to your `build.gradle`:
+`k8s-kotlin-dsl` package can be found on [jitpack](https://jitpack.io/#fkorotkov/k8s-kotlin-dsl). Simply add following lines to your `build.gradle`:
  
  ```groovy
-repositories {
-    jcenter()
-} 
- 
+allprojects {
+		repositories {
+			 maven { url 'https://jitpack.io' }
+		}
+}
+
 dependencies {
-    compile("com.fkorotkov:kubernetes-dsl:${kubernetes_dsl_version}")
+  implementation 'com.github.fkorotkov:k8s-kotlin-dsl:Tag'
 }
 ```
 
