@@ -1,6 +1,9 @@
 // GENERATE
 package com.fkorotkov.kubernetes.apiextensions.v1
 
+import io.fabric8.kubernetes.api.model.apiextensions.v1.ConversionRequest as v1_ConversionRequest
+import io.fabric8.kubernetes.api.model.apiextensions.v1.ConversionResponse as v1_ConversionResponse
+import io.fabric8.kubernetes.api.model.apiextensions.v1.ConversionReview as v1_ConversionReview
 import io.fabric8.kubernetes.api.model.apiextensions.v1.CustomResourceColumnDefinition as v1_CustomResourceColumnDefinition
 import io.fabric8.kubernetes.api.model.apiextensions.v1.CustomResourceConversion as v1_CustomResourceConversion
 import io.fabric8.kubernetes.api.model.apiextensions.v1.CustomResourceDefinition as v1_CustomResourceDefinition
@@ -22,6 +25,27 @@ import io.fabric8.kubernetes.api.model.apiextensions.v1.JSONSchemaPropsOrStringA
 import io.fabric8.kubernetes.api.model.apiextensions.v1.ServiceReference as v1_ServiceReference
 import io.fabric8.kubernetes.api.model.apiextensions.v1.WebhookClientConfig as v1_WebhookClientConfig
 import io.fabric8.kubernetes.api.model.apiextensions.v1.WebhookConversion as v1_WebhookConversion
+
+
+fun newConversionRequest(block : v1_ConversionRequest.() -> Unit = {}): v1_ConversionRequest {
+  val instance = v1_ConversionRequest()
+  instance.block()
+  return instance
+}
+
+
+fun newConversionResponse(block : v1_ConversionResponse.() -> Unit = {}): v1_ConversionResponse {
+  val instance = v1_ConversionResponse()
+  instance.block()
+  return instance
+}
+
+
+fun newConversionReview(block : v1_ConversionReview.() -> Unit = {}): v1_ConversionReview {
+  val instance = v1_ConversionReview()
+  instance.block()
+  return instance
+}
 
 
 fun newCustomResourceColumnDefinition(block : v1_CustomResourceColumnDefinition.() -> Unit = {}): v1_CustomResourceColumnDefinition {

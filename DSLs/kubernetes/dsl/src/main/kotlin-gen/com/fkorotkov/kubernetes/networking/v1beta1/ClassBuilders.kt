@@ -7,6 +7,7 @@ import io.fabric8.kubernetes.api.model.networking.v1beta1.Ingress as v1beta1_Ing
 import io.fabric8.kubernetes.api.model.networking.v1beta1.IngressBackend as v1beta1_IngressBackend
 import io.fabric8.kubernetes.api.model.networking.v1beta1.IngressClass as v1beta1_IngressClass
 import io.fabric8.kubernetes.api.model.networking.v1beta1.IngressClassList as v1beta1_IngressClassList
+import io.fabric8.kubernetes.api.model.networking.v1beta1.IngressClassParametersReference as v1beta1_IngressClassParametersReference
 import io.fabric8.kubernetes.api.model.networking.v1beta1.IngressClassSpec as v1beta1_IngressClassSpec
 import io.fabric8.kubernetes.api.model.networking.v1beta1.IngressList as v1beta1_IngressList
 import io.fabric8.kubernetes.api.model.networking.v1beta1.IngressRule as v1beta1_IngressRule
@@ -52,6 +53,13 @@ fun newIngressClass(block : v1beta1_IngressClass.() -> Unit = {}): v1beta1_Ingre
 
 fun newIngressClassList(block : v1beta1_IngressClassList.() -> Unit = {}): v1beta1_IngressClassList {
   val instance = v1beta1_IngressClassList()
+  instance.block()
+  return instance
+}
+
+
+fun newIngressClassParametersReference(block : v1beta1_IngressClassParametersReference.() -> Unit = {}): v1beta1_IngressClassParametersReference {
+  val instance = v1beta1_IngressClassParametersReference()
   instance.block()
   return instance
 }

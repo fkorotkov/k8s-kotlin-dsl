@@ -1,12 +1,12 @@
 apply plugin: "kotlin"
 
 dependencies {
-    compile libraries['org.jetbrains.kotlin:kotlin-stdlib']
-    compile libraries['org.jetbrains.kotlin:kotlin-reflect']
+    implementation libraries['org.jetbrains.kotlin:kotlin-stdlib']
+    implementation libraries['org.jetbrains.kotlin:kotlin-reflect']
 
-    compile libraries['com.google.code.gson:gson']
-    compile libraries['com.google.guava:guava']
+    implementation libraries['com.google.code.gson:gson']
+    implementation libraries['com.google.guava:guava']
 
-    testCompile libraries['junit:junit']
-    testCompile libraries['org.jetbrains.kotlin:kotlin-test-junit']
+    testImplementation libraries['junit:junit']
+    testImplementation libraries['org.jetbrains.kotlin:kotlin-test-junit']
 }

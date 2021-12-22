@@ -3,6 +3,8 @@ package com.fkorotkov.kubernetes
 
 import io.fabric8.kubernetes.api.model.APIGroup as model_APIGroup
 import io.fabric8.kubernetes.api.model.APIGroupList as model_APIGroupList
+import io.fabric8.kubernetes.api.model.APIResource as model_APIResource
+import io.fabric8.kubernetes.api.model.APIResourceList as model_APIResourceList
 import io.fabric8.kubernetes.api.model.APIService as model_APIService
 import io.fabric8.kubernetes.api.model.APIServiceCondition as model_APIServiceCondition
 import io.fabric8.kubernetes.api.model.APIServiceList as model_APIServiceList
@@ -50,6 +52,7 @@ import io.fabric8.kubernetes.api.model.ContainerStatus as model_ContainerStatus
 import io.fabric8.kubernetes.api.model.Context as model_Context
 import io.fabric8.kubernetes.api.model.CreateOptions as model_CreateOptions
 import io.fabric8.kubernetes.api.model.DaemonEndpoint as model_DaemonEndpoint
+import io.fabric8.kubernetes.api.model.DefaultKubernetesResourceList as model_DefaultKubernetesResourceList
 import io.fabric8.kubernetes.api.model.DeleteOptions as model_DeleteOptions
 import io.fabric8.kubernetes.api.model.DownwardAPIProjection as model_DownwardAPIProjection
 import io.fabric8.kubernetes.api.model.DownwardAPIVolumeFile as model_DownwardAPIVolumeFile
@@ -79,6 +82,8 @@ import io.fabric8.kubernetes.api.model.FlexPersistentVolumeSource as model_FlexP
 import io.fabric8.kubernetes.api.model.FlexVolumeSource as model_FlexVolumeSource
 import io.fabric8.kubernetes.api.model.FlockerVolumeSource as model_FlockerVolumeSource
 import io.fabric8.kubernetes.api.model.GCEPersistentDiskVolumeSource as model_GCEPersistentDiskVolumeSource
+import io.fabric8.kubernetes.api.model.GenericKubernetesResource as model_GenericKubernetesResource
+import io.fabric8.kubernetes.api.model.GenericKubernetesResourceList as model_GenericKubernetesResourceList
 import io.fabric8.kubernetes.api.model.GetOptions as model_GetOptions
 import io.fabric8.kubernetes.api.model.GitRepoVolumeSource as model_GitRepoVolumeSource
 import io.fabric8.kubernetes.api.model.GlusterfsPersistentVolumeSource as model_GlusterfsPersistentVolumeSource
@@ -251,6 +256,20 @@ fun newAPIGroup(block : model_APIGroup.() -> Unit = {}): model_APIGroup {
 
 fun newAPIGroupList(block : model_APIGroupList.() -> Unit = {}): model_APIGroupList {
   val instance = model_APIGroupList()
+  instance.block()
+  return instance
+}
+
+
+fun newAPIResource(block : model_APIResource.() -> Unit = {}): model_APIResource {
+  val instance = model_APIResource()
+  instance.block()
+  return instance
+}
+
+
+fun newAPIResourceList(block : model_APIResourceList.() -> Unit = {}): model_APIResourceList {
+  val instance = model_APIResourceList()
   instance.block()
   return instance
 }
@@ -585,6 +604,13 @@ fun newDaemonEndpoint(block : model_DaemonEndpoint.() -> Unit = {}): model_Daemo
 }
 
 
+fun newDefaultKubernetesResourceList(block : model_DefaultKubernetesResourceList.() -> Unit = {}): model_DefaultKubernetesResourceList {
+  val instance = model_DefaultKubernetesResourceList()
+  instance.block()
+  return instance
+}
+
+
 fun newDeleteOptions(block : model_DeleteOptions.() -> Unit = {}): model_DeleteOptions {
   val instance = model_DeleteOptions()
   instance.block()
@@ -783,6 +809,20 @@ fun newFlockerVolumeSource(block : model_FlockerVolumeSource.() -> Unit = {}): m
 
 fun newGCEPersistentDiskVolumeSource(block : model_GCEPersistentDiskVolumeSource.() -> Unit = {}): model_GCEPersistentDiskVolumeSource {
   val instance = model_GCEPersistentDiskVolumeSource()
+  instance.block()
+  return instance
+}
+
+
+fun newGenericKubernetesResource(block : model_GenericKubernetesResource.() -> Unit = {}): model_GenericKubernetesResource {
+  val instance = model_GenericKubernetesResource()
+  instance.block()
+  return instance
+}
+
+
+fun newGenericKubernetesResourceList(block : model_GenericKubernetesResourceList.() -> Unit = {}): model_GenericKubernetesResourceList {
+  val instance = model_GenericKubernetesResourceList()
   instance.block()
   return instance
 }

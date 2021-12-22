@@ -8,6 +8,8 @@ import io.fabric8.kubernetes.api.model.storage.v1beta1.CSINode as v1beta1_CSINod
 import io.fabric8.kubernetes.api.model.storage.v1beta1.CSINodeDriver as v1beta1_CSINodeDriver
 import io.fabric8.kubernetes.api.model.storage.v1beta1.CSINodeList as v1beta1_CSINodeList
 import io.fabric8.kubernetes.api.model.storage.v1beta1.CSINodeSpec as v1beta1_CSINodeSpec
+import io.fabric8.kubernetes.api.model.storage.v1beta1.CSIStorageCapacity as v1beta1_CSIStorageCapacity
+import io.fabric8.kubernetes.api.model.storage.v1beta1.CSIStorageCapacityList as v1beta1_CSIStorageCapacityList
 import io.fabric8.kubernetes.api.model.storage.v1beta1.TokenRequest as v1beta1_TokenRequest
 import io.fabric8.kubernetes.api.model.storage.v1beta1.VolumeNodeResources as v1beta1_VolumeNodeResources
 
@@ -56,6 +58,20 @@ fun newCSINodeList(block : v1beta1_CSINodeList.() -> Unit = {}): v1beta1_CSINode
 
 fun newCSINodeSpec(block : v1beta1_CSINodeSpec.() -> Unit = {}): v1beta1_CSINodeSpec {
   val instance = v1beta1_CSINodeSpec()
+  instance.block()
+  return instance
+}
+
+
+fun newCSIStorageCapacity(block : v1beta1_CSIStorageCapacity.() -> Unit = {}): v1beta1_CSIStorageCapacity {
+  val instance = v1beta1_CSIStorageCapacity()
+  instance.block()
+  return instance
+}
+
+
+fun newCSIStorageCapacityList(block : v1beta1_CSIStorageCapacityList.() -> Unit = {}): v1beta1_CSIStorageCapacityList {
+  val instance = v1beta1_CSIStorageCapacityList()
   instance.block()
   return instance
 }

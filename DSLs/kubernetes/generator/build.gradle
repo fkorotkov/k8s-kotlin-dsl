@@ -8,10 +8,10 @@ run {
 }
 
 dependencies {
-    compile project(":generator-base")
+    implementation project(":generator-base")
 
-    compile libraries['org.jetbrains.kotlin:kotlin-stdlib']
-    compile libraries['org.jetbrains.kotlin:kotlin-reflect']
+    implementation libraries['org.jetbrains.kotlin:kotlin-stdlib']
+    implementation libraries['org.jetbrains.kotlin:kotlin-reflect']
 
-    compile libraries['io.fabric8:kubernetes-model']
+    implementation libraries['io.fabric8:kubernetes-model']
 }
