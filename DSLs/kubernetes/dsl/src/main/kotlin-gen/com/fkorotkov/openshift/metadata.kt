@@ -7,6 +7,10 @@ import io.fabric8.openshift.api.model.APIServer as model_APIServer
 import io.fabric8.openshift.api.model.APIServerList as model_APIServerList
 import io.fabric8.openshift.api.model.AppliedClusterResourceQuota as model_AppliedClusterResourceQuota
 import io.fabric8.openshift.api.model.AppliedClusterResourceQuotaList as model_AppliedClusterResourceQuotaList
+import io.fabric8.openshift.api.model.Authentication as model_Authentication
+import io.fabric8.openshift.api.model.AuthenticationList as model_AuthenticationList
+import io.fabric8.openshift.api.model.BrokerTemplateInstance as model_BrokerTemplateInstance
+import io.fabric8.openshift.api.model.BrokerTemplateInstanceList as model_BrokerTemplateInstanceList
 import io.fabric8.openshift.api.model.Build as model_Build
 import io.fabric8.openshift.api.model.BuildConfig as model_BuildConfig
 import io.fabric8.openshift.api.model.BuildConfigList as model_BuildConfigList
@@ -24,6 +28,10 @@ import io.fabric8.openshift.api.model.ClusterRoleBindingList as model_ClusterRol
 import io.fabric8.openshift.api.model.ClusterRoleList as model_ClusterRoleList
 import io.fabric8.openshift.api.model.ClusterVersion as model_ClusterVersion
 import io.fabric8.openshift.api.model.ClusterVersionList as model_ClusterVersionList
+import io.fabric8.openshift.api.model.Console as model_Console
+import io.fabric8.openshift.api.model.ConsoleList as model_ConsoleList
+import io.fabric8.openshift.api.model.DNS as model_DNS
+import io.fabric8.openshift.api.model.DNSList as model_DNSList
 import io.fabric8.openshift.api.model.DeploymentConfig as model_DeploymentConfig
 import io.fabric8.openshift.api.model.DeploymentConfigList as model_DeploymentConfigList
 import io.fabric8.openshift.api.model.EgressNetworkPolicy as model_EgressNetworkPolicy
@@ -32,6 +40,10 @@ import io.fabric8.openshift.api.model.FeatureGate as model_FeatureGate
 import io.fabric8.openshift.api.model.FeatureGateList as model_FeatureGateList
 import io.fabric8.openshift.api.model.Group as model_Group
 import io.fabric8.openshift.api.model.GroupList as model_GroupList
+import io.fabric8.openshift.api.model.HelmChartRepository as model_HelmChartRepository
+import io.fabric8.openshift.api.model.HelmChartRepositoryList as model_HelmChartRepositoryList
+import io.fabric8.openshift.api.model.HostSubnet as model_HostSubnet
+import io.fabric8.openshift.api.model.HostSubnetList as model_HostSubnetList
 import io.fabric8.openshift.api.model.Identity as model_Identity
 import io.fabric8.openshift.api.model.IdentityList as model_IdentityList
 import io.fabric8.openshift.api.model.Image as model_Image
@@ -52,6 +64,8 @@ import io.fabric8.openshift.api.model.Ingress as model_Ingress
 import io.fabric8.openshift.api.model.IngressList as model_IngressList
 import io.fabric8.openshift.api.model.NetNamespace as model_NetNamespace
 import io.fabric8.openshift.api.model.NetNamespaceList as model_NetNamespaceList
+import io.fabric8.openshift.api.model.Network as model_Network
+import io.fabric8.openshift.api.model.NetworkList as model_NetworkList
 import io.fabric8.openshift.api.model.OAuth as model_OAuth
 import io.fabric8.openshift.api.model.OAuthAccessToken as model_OAuthAccessToken
 import io.fabric8.openshift.api.model.OAuthAccessTokenList as model_OAuthAccessTokenList
@@ -75,6 +89,7 @@ import io.fabric8.openshift.api.model.Role as model_Role
 import io.fabric8.openshift.api.model.RoleBinding as model_RoleBinding
 import io.fabric8.openshift.api.model.RoleBindingList as model_RoleBindingList
 import io.fabric8.openshift.api.model.RoleBindingRestriction as model_RoleBindingRestriction
+import io.fabric8.openshift.api.model.RoleBindingRestrictionList as model_RoleBindingRestrictionList
 import io.fabric8.openshift.api.model.RoleList as model_RoleList
 import io.fabric8.openshift.api.model.Route as model_Route
 import io.fabric8.openshift.api.model.RouteList as model_RouteList
@@ -83,9 +98,14 @@ import io.fabric8.openshift.api.model.SchedulerList as model_SchedulerList
 import io.fabric8.openshift.api.model.SecurityContextConstraints as model_SecurityContextConstraints
 import io.fabric8.openshift.api.model.SecurityContextConstraintsList as model_SecurityContextConstraintsList
 import io.fabric8.openshift.api.model.Template as model_Template
+import io.fabric8.openshift.api.model.TemplateInstance as model_TemplateInstance
+import io.fabric8.openshift.api.model.TemplateInstanceList as model_TemplateInstanceList
 import io.fabric8.openshift.api.model.TemplateList as model_TemplateList
 import io.fabric8.openshift.api.model.User as model_User
+import io.fabric8.openshift.api.model.UserIdentityMapping as model_UserIdentityMapping
 import io.fabric8.openshift.api.model.UserList as model_UserList
+import io.fabric8.openshift.api.model.UserOAuthAccessToken as model_UserOAuthAccessToken
+import io.fabric8.openshift.api.model.UserOAuthAccessTokenList as model_UserOAuthAccessTokenList
 
 
 fun  model_APIServer.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
@@ -116,6 +136,42 @@ fun  model_AppliedClusterResourceQuota.`metadata`(block: model_ObjectMeta.() -> 
 
 
 fun  model_AppliedClusterResourceQuotaList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = model_ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  model_Authentication.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = model_ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  model_AuthenticationList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = model_ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  model_BrokerTemplateInstance.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = model_ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  model_BrokerTemplateInstanceList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = model_ListMeta()
   }
@@ -277,6 +333,42 @@ fun  model_ClusterVersionList.`metadata`(block: model_ListMeta.() -> Unit = {}) 
 }
 
 
+fun  model_Console.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = model_ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  model_ConsoleList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = model_ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  model_DNS.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = model_ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  model_DNSList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = model_ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
 fun  model_DeploymentConfig.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = model_ObjectMeta()
@@ -341,6 +433,42 @@ fun  model_Group.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
 
 
 fun  model_GroupList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = model_ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  model_HelmChartRepository.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = model_ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  model_HelmChartRepositoryList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = model_ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  model_HostSubnet.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = model_ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  model_HostSubnetList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = model_ListMeta()
   }
@@ -521,6 +649,24 @@ fun  model_NetNamespace.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
 
 
 fun  model_NetNamespaceList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = model_ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  model_Network.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = model_ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  model_NetworkList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = model_ListMeta()
   }
@@ -736,6 +882,15 @@ fun  model_RoleBindingRestriction.`metadata`(block: model_ObjectMeta.() -> Unit 
 }
 
 
+fun  model_RoleBindingRestrictionList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = model_ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
 fun  model_RoleList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = model_ListMeta()
@@ -808,6 +963,24 @@ fun  model_Template.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
 }
 
 
+fun  model_TemplateInstance.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = model_ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  model_TemplateInstanceList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = model_ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
 fun  model_TemplateList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = model_ListMeta()
@@ -826,7 +999,34 @@ fun  model_User.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
 }
 
 
+fun  model_UserIdentityMapping.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = model_ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
 fun  model_UserList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = model_ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  model_UserOAuthAccessToken.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = model_ObjectMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  model_UserOAuthAccessTokenList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = model_ListMeta()
   }

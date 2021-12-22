@@ -8,6 +8,8 @@ import io.fabric8.openshift.api.model.PodSecurityPolicySelfSubjectReviewSpec as 
 import io.fabric8.openshift.api.model.PodSecurityPolicySubjectReviewSpec as model_PodSecurityPolicySubjectReviewSpec
 import io.fabric8.openshift.api.model.PodSecurityPolicySubjectReviewStatus as model_PodSecurityPolicySubjectReviewStatus
 import io.fabric8.openshift.api.model.ServiceAccountPodSecurityPolicyReviewStatus as model_ServiceAccountPodSecurityPolicyReviewStatus
+import io.fabric8.openshift.api.model.Template as model_Template
+import io.fabric8.openshift.api.model.TemplateInstanceSpec as model_TemplateInstanceSpec
 
 
 fun  model_DeploymentConfigSpec.`template`(block: model_PodTemplateSpec.() -> Unit = {}) {
@@ -58,6 +60,15 @@ fun  model_PodSecurityPolicySubjectReviewStatus.`template`(block: model_PodTempl
 fun  model_ServiceAccountPodSecurityPolicyReviewStatus.`template`(block: model_PodTemplateSpec.() -> Unit = {}) {
   if(this.`template` == null) {
     this.`template` = model_PodTemplateSpec()
+  }
+
+  this.`template`.block()
+}
+
+
+fun  model_TemplateInstanceSpec.`template`(block: model_Template.() -> Unit = {}) {
+  if(this.`template` == null) {
+    this.`template` = model_Template()
   }
 
   this.`template`.block()

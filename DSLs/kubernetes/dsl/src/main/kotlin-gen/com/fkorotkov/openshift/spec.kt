@@ -4,6 +4,10 @@ package com.fkorotkov.openshift
 import io.fabric8.openshift.api.model.APIServer as model_APIServer
 import io.fabric8.openshift.api.model.APIServerSpec as model_APIServerSpec
 import io.fabric8.openshift.api.model.AppliedClusterResourceQuota as model_AppliedClusterResourceQuota
+import io.fabric8.openshift.api.model.Authentication as model_Authentication
+import io.fabric8.openshift.api.model.AuthenticationSpec as model_AuthenticationSpec
+import io.fabric8.openshift.api.model.BrokerTemplateInstance as model_BrokerTemplateInstance
+import io.fabric8.openshift.api.model.BrokerTemplateInstanceSpec as model_BrokerTemplateInstanceSpec
 import io.fabric8.openshift.api.model.Build as model_Build
 import io.fabric8.openshift.api.model.BuildConfig as model_BuildConfig
 import io.fabric8.openshift.api.model.BuildConfigSpec as model_BuildConfigSpec
@@ -14,12 +18,18 @@ import io.fabric8.openshift.api.model.ClusterResourceQuota as model_ClusterResou
 import io.fabric8.openshift.api.model.ClusterResourceQuotaSpec as model_ClusterResourceQuotaSpec
 import io.fabric8.openshift.api.model.ClusterVersion as model_ClusterVersion
 import io.fabric8.openshift.api.model.ClusterVersionSpec as model_ClusterVersionSpec
+import io.fabric8.openshift.api.model.Console as model_Console
+import io.fabric8.openshift.api.model.ConsoleSpec as model_ConsoleSpec
+import io.fabric8.openshift.api.model.DNS as model_DNS
+import io.fabric8.openshift.api.model.DNSSpec as model_DNSSpec
 import io.fabric8.openshift.api.model.DeploymentConfig as model_DeploymentConfig
 import io.fabric8.openshift.api.model.DeploymentConfigSpec as model_DeploymentConfigSpec
 import io.fabric8.openshift.api.model.EgressNetworkPolicy as model_EgressNetworkPolicy
 import io.fabric8.openshift.api.model.EgressNetworkPolicySpec as model_EgressNetworkPolicySpec
 import io.fabric8.openshift.api.model.FeatureGate as model_FeatureGate
 import io.fabric8.openshift.api.model.FeatureGateSpec as model_FeatureGateSpec
+import io.fabric8.openshift.api.model.HelmChartRepository as model_HelmChartRepository
+import io.fabric8.openshift.api.model.HelmChartRepositorySpec as model_HelmChartRepositorySpec
 import io.fabric8.openshift.api.model.ImageStream as model_ImageStream
 import io.fabric8.openshift.api.model.ImageStreamImport as model_ImageStreamImport
 import io.fabric8.openshift.api.model.ImageStreamImportSpec as model_ImageStreamImportSpec
@@ -29,6 +39,8 @@ import io.fabric8.openshift.api.model.Infrastructure as model_Infrastructure
 import io.fabric8.openshift.api.model.InfrastructureSpec as model_InfrastructureSpec
 import io.fabric8.openshift.api.model.Ingress as model_Ingress
 import io.fabric8.openshift.api.model.IngressSpec as model_IngressSpec
+import io.fabric8.openshift.api.model.Network as model_Network
+import io.fabric8.openshift.api.model.NetworkSpec as model_NetworkSpec
 import io.fabric8.openshift.api.model.OAuth as model_OAuth
 import io.fabric8.openshift.api.model.OAuthSpec as model_OAuthSpec
 import io.fabric8.openshift.api.model.OperatorHub as model_OperatorHub
@@ -54,6 +66,8 @@ import io.fabric8.openshift.api.model.SelfSubjectRulesReviewSpec as model_SelfSu
 import io.fabric8.openshift.api.model.SubjectRulesReview as model_SubjectRulesReview
 import io.fabric8.openshift.api.model.SubjectRulesReviewSpec as model_SubjectRulesReviewSpec
 import io.fabric8.openshift.api.model.TagReference as model_TagReference
+import io.fabric8.openshift.api.model.TemplateInstance as model_TemplateInstance
+import io.fabric8.openshift.api.model.TemplateInstanceSpec as model_TemplateInstanceSpec
 
 
 fun  model_APIServer.`spec`(block: model_APIServerSpec.() -> Unit = {}) {
@@ -68,6 +82,24 @@ fun  model_APIServer.`spec`(block: model_APIServerSpec.() -> Unit = {}) {
 fun  model_AppliedClusterResourceQuota.`spec`(block: model_ClusterResourceQuotaSpec.() -> Unit = {}) {
   if(this.`spec` == null) {
     this.`spec` = model_ClusterResourceQuotaSpec()
+  }
+
+  this.`spec`.block()
+}
+
+
+fun  model_Authentication.`spec`(block: model_AuthenticationSpec.() -> Unit = {}) {
+  if(this.`spec` == null) {
+    this.`spec` = model_AuthenticationSpec()
+  }
+
+  this.`spec`.block()
+}
+
+
+fun  model_BrokerTemplateInstance.`spec`(block: model_BrokerTemplateInstanceSpec.() -> Unit = {}) {
+  if(this.`spec` == null) {
+    this.`spec` = model_BrokerTemplateInstanceSpec()
   }
 
   this.`spec`.block()
@@ -119,6 +151,24 @@ fun  model_ClusterVersion.`spec`(block: model_ClusterVersionSpec.() -> Unit = {}
 }
 
 
+fun  model_Console.`spec`(block: model_ConsoleSpec.() -> Unit = {}) {
+  if(this.`spec` == null) {
+    this.`spec` = model_ConsoleSpec()
+  }
+
+  this.`spec`.block()
+}
+
+
+fun  model_DNS.`spec`(block: model_DNSSpec.() -> Unit = {}) {
+  if(this.`spec` == null) {
+    this.`spec` = model_DNSSpec()
+  }
+
+  this.`spec`.block()
+}
+
+
 fun  model_DeploymentConfig.`spec`(block: model_DeploymentConfigSpec.() -> Unit = {}) {
   if(this.`spec` == null) {
     this.`spec` = model_DeploymentConfigSpec()
@@ -140,6 +190,15 @@ fun  model_EgressNetworkPolicy.`spec`(block: model_EgressNetworkPolicySpec.() ->
 fun  model_FeatureGate.`spec`(block: model_FeatureGateSpec.() -> Unit = {}) {
   if(this.`spec` == null) {
     this.`spec` = model_FeatureGateSpec()
+  }
+
+  this.`spec`.block()
+}
+
+
+fun  model_HelmChartRepository.`spec`(block: model_HelmChartRepositorySpec.() -> Unit = {}) {
+  if(this.`spec` == null) {
+    this.`spec` = model_HelmChartRepositorySpec()
   }
 
   this.`spec`.block()
@@ -185,6 +244,15 @@ fun  model_Infrastructure.`spec`(block: model_InfrastructureSpec.() -> Unit = {}
 fun  model_Ingress.`spec`(block: model_IngressSpec.() -> Unit = {}) {
   if(this.`spec` == null) {
     this.`spec` = model_IngressSpec()
+  }
+
+  this.`spec`.block()
+}
+
+
+fun  model_Network.`spec`(block: model_NetworkSpec.() -> Unit = {}) {
+  if(this.`spec` == null) {
+    this.`spec` = model_NetworkSpec()
   }
 
   this.`spec`.block()
@@ -293,6 +361,15 @@ fun  model_SelfSubjectRulesReview.`spec`(block: model_SelfSubjectRulesReviewSpec
 fun  model_SubjectRulesReview.`spec`(block: model_SubjectRulesReviewSpec.() -> Unit = {}) {
   if(this.`spec` == null) {
     this.`spec` = model_SubjectRulesReviewSpec()
+  }
+
+  this.`spec`.block()
+}
+
+
+fun  model_TemplateInstance.`spec`(block: model_TemplateInstanceSpec.() -> Unit = {}) {
+  if(this.`spec` == null) {
+    this.`spec` = model_TemplateInstanceSpec()
   }
 
   this.`spec`.block()

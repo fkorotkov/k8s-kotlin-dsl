@@ -18,7 +18,7 @@ object ClassBuilderGenerator {
     val destinationFile = File(destinationFolder, outputFileName)
     destinationFile.createNewFile()
 
-    destinationFile.writeText(generateBuilders(allClasses.filterNot { it.isAbstract }, outputPackage))
+    destinationFile.writeText(generateBuilders(allClasses, outputPackage))
   }
 
   private fun generateBuilders(allClasses: List<KClass<*>>, outputPackage: String): String {
@@ -30,7 +30,7 @@ ${
 }
 
 ${
-allClasses.map { classBuilderTemplate(it) }.joinToString("\n")
+    allClasses.joinToString("\n") { classBuilderTemplate(it) }
 }
 """
   }

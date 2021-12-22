@@ -6,6 +6,8 @@ import io.fabric8.kubernetes.api.model.Status as model_Status
 import io.fabric8.openshift.api.model.APIServer as model_APIServer
 import io.fabric8.openshift.api.model.APIServerStatus as model_APIServerStatus
 import io.fabric8.openshift.api.model.AppliedClusterResourceQuota as model_AppliedClusterResourceQuota
+import io.fabric8.openshift.api.model.Authentication as model_Authentication
+import io.fabric8.openshift.api.model.AuthenticationStatus as model_AuthenticationStatus
 import io.fabric8.openshift.api.model.Build as model_Build
 import io.fabric8.openshift.api.model.BuildConfig as model_BuildConfig
 import io.fabric8.openshift.api.model.BuildConfigStatus as model_BuildConfigStatus
@@ -16,10 +18,16 @@ import io.fabric8.openshift.api.model.ClusterResourceQuota as model_ClusterResou
 import io.fabric8.openshift.api.model.ClusterResourceQuotaStatus as model_ClusterResourceQuotaStatus
 import io.fabric8.openshift.api.model.ClusterVersion as model_ClusterVersion
 import io.fabric8.openshift.api.model.ClusterVersionStatus as model_ClusterVersionStatus
+import io.fabric8.openshift.api.model.Console as model_Console
+import io.fabric8.openshift.api.model.ConsoleStatus as model_ConsoleStatus
+import io.fabric8.openshift.api.model.DNS as model_DNS
+import io.fabric8.openshift.api.model.DNSStatus as model_DNSStatus
 import io.fabric8.openshift.api.model.DeploymentConfig as model_DeploymentConfig
 import io.fabric8.openshift.api.model.DeploymentConfigStatus as model_DeploymentConfigStatus
 import io.fabric8.openshift.api.model.FeatureGate as model_FeatureGate
 import io.fabric8.openshift.api.model.FeatureGateStatus as model_FeatureGateStatus
+import io.fabric8.openshift.api.model.HelmChartRepository as model_HelmChartRepository
+import io.fabric8.openshift.api.model.HelmChartRepositoryStatus as model_HelmChartRepositoryStatus
 import io.fabric8.openshift.api.model.ImageImportStatus as model_ImageImportStatus
 import io.fabric8.openshift.api.model.ImageStream as model_ImageStream
 import io.fabric8.openshift.api.model.ImageStreamImport as model_ImageStreamImport
@@ -31,6 +39,8 @@ import io.fabric8.openshift.api.model.InfrastructureStatus as model_Infrastructu
 import io.fabric8.openshift.api.model.Ingress as model_Ingress
 import io.fabric8.openshift.api.model.IngressStatus as model_IngressStatus
 import io.fabric8.openshift.api.model.NamedTagEventList as model_NamedTagEventList
+import io.fabric8.openshift.api.model.Network as model_Network
+import io.fabric8.openshift.api.model.NetworkStatus as model_NetworkStatus
 import io.fabric8.openshift.api.model.OAuth as model_OAuth
 import io.fabric8.openshift.api.model.OAuthStatus as model_OAuthStatus
 import io.fabric8.openshift.api.model.OperatorHub as model_OperatorHub
@@ -53,6 +63,8 @@ import io.fabric8.openshift.api.model.SchedulerStatus as model_SchedulerStatus
 import io.fabric8.openshift.api.model.SelfSubjectRulesReview as model_SelfSubjectRulesReview
 import io.fabric8.openshift.api.model.SubjectRulesReview as model_SubjectRulesReview
 import io.fabric8.openshift.api.model.SubjectRulesReviewStatus as model_SubjectRulesReviewStatus
+import io.fabric8.openshift.api.model.TemplateInstance as model_TemplateInstance
+import io.fabric8.openshift.api.model.TemplateInstanceStatus as model_TemplateInstanceStatus
 
 
 fun  model_APIServer.`status`(block: model_APIServerStatus.() -> Unit = {}) {
@@ -67,6 +79,15 @@ fun  model_APIServer.`status`(block: model_APIServerStatus.() -> Unit = {}) {
 fun  model_AppliedClusterResourceQuota.`status`(block: model_ClusterResourceQuotaStatus.() -> Unit = {}) {
   if(this.`status` == null) {
     this.`status` = model_ClusterResourceQuotaStatus()
+  }
+
+  this.`status`.block()
+}
+
+
+fun  model_Authentication.`status`(block: model_AuthenticationStatus.() -> Unit = {}) {
+  if(this.`status` == null) {
+    this.`status` = model_AuthenticationStatus()
   }
 
   this.`status`.block()
@@ -118,6 +139,24 @@ fun  model_ClusterVersion.`status`(block: model_ClusterVersionStatus.() -> Unit 
 }
 
 
+fun  model_Console.`status`(block: model_ConsoleStatus.() -> Unit = {}) {
+  if(this.`status` == null) {
+    this.`status` = model_ConsoleStatus()
+  }
+
+  this.`status`.block()
+}
+
+
+fun  model_DNS.`status`(block: model_DNSStatus.() -> Unit = {}) {
+  if(this.`status` == null) {
+    this.`status` = model_DNSStatus()
+  }
+
+  this.`status`.block()
+}
+
+
 fun  model_DeploymentConfig.`status`(block: model_DeploymentConfigStatus.() -> Unit = {}) {
   if(this.`status` == null) {
     this.`status` = model_DeploymentConfigStatus()
@@ -130,6 +169,15 @@ fun  model_DeploymentConfig.`status`(block: model_DeploymentConfigStatus.() -> U
 fun  model_FeatureGate.`status`(block: model_FeatureGateStatus.() -> Unit = {}) {
   if(this.`status` == null) {
     this.`status` = model_FeatureGateStatus()
+  }
+
+  this.`status`.block()
+}
+
+
+fun  model_HelmChartRepository.`status`(block: model_HelmChartRepositoryStatus.() -> Unit = {}) {
+  if(this.`status` == null) {
+    this.`status` = model_HelmChartRepositoryStatus()
   }
 
   this.`status`.block()
@@ -184,6 +232,15 @@ fun  model_Infrastructure.`status`(block: model_InfrastructureStatus.() -> Unit 
 fun  model_Ingress.`status`(block: model_IngressStatus.() -> Unit = {}) {
   if(this.`status` == null) {
     this.`status` = model_IngressStatus()
+  }
+
+  this.`status`.block()
+}
+
+
+fun  model_Network.`status`(block: model_NetworkStatus.() -> Unit = {}) {
+  if(this.`status` == null) {
+    this.`status` = model_NetworkStatus()
   }
 
   this.`status`.block()
@@ -301,6 +358,15 @@ fun  model_SelfSubjectRulesReview.`status`(block: model_SubjectRulesReviewStatus
 fun  model_SubjectRulesReview.`status`(block: model_SubjectRulesReviewStatus.() -> Unit = {}) {
   if(this.`status` == null) {
     this.`status` = model_SubjectRulesReviewStatus()
+  }
+
+  this.`status`.block()
+}
+
+
+fun  model_TemplateInstance.`status`(block: model_TemplateInstanceStatus.() -> Unit = {}) {
+  if(this.`status` == null) {
+    this.`status` = model_TemplateInstanceStatus()
   }
 
   this.`status`.block()

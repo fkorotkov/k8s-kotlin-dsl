@@ -4,15 +4,15 @@ apply plugin: "kotlin"
 mainClassName = "ExampleKt"
 
 dependencies {
-    compile project(":DSLs:kubernetes:dsl")
+    implementation project(":DSLs:kubernetes:dsl")
 
-    compile libraries['org.jetbrains.kotlin:kotlin-stdlib']
-    compile libraries['org.jetbrains.kotlin:kotlin-reflect']
+    implementation libraries['org.jetbrains.kotlin:kotlin-stdlib']
+    implementation libraries['org.jetbrains.kotlin:kotlin-reflect']
 
-    compile libraries['io.fabric8:kubernetes-client']
+    implementation libraries['io.fabric8:kubernetes-client']
 
-    testCompile libraries['com.google.code.gson:gson']
-    testCompile libraries['com.google.guava:guava']
-    testCompile libraries['junit:junit']
-    testCompile libraries['org.jetbrains.kotlin:kotlin-test-junit']
+    testImplementation libraries['com.google.code.gson:gson']
+    testImplementation libraries['com.google.guava:guava']
+    testImplementation libraries['junit:junit']
+    testImplementation libraries['org.jetbrains.kotlin:kotlin-test-junit']
 }

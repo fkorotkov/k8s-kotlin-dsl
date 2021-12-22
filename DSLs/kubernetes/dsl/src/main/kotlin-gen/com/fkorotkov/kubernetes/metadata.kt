@@ -13,6 +13,7 @@ import io.fabric8.kubernetes.api.model.Endpoints as model_Endpoints
 import io.fabric8.kubernetes.api.model.EndpointsList as model_EndpointsList
 import io.fabric8.kubernetes.api.model.Event as model_Event
 import io.fabric8.kubernetes.api.model.EventList as model_EventList
+import io.fabric8.kubernetes.api.model.GenericKubernetesResource as model_GenericKubernetesResource
 import io.fabric8.kubernetes.api.model.LimitRange as model_LimitRange
 import io.fabric8.kubernetes.api.model.LimitRangeList as model_LimitRangeList
 import io.fabric8.kubernetes.api.model.ListMeta as model_ListMeta
@@ -146,6 +147,15 @@ fun  model_Event.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
 fun  model_EventList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = model_ListMeta()
+  }
+
+  this.`metadata`.block()
+}
+
+
+fun  model_GenericKubernetesResource.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
+  if(this.`metadata` == null) {
+    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()

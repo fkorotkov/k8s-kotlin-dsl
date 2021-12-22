@@ -8,8 +8,10 @@ import io.fabric8.openshift.api.model.DeploymentCauseImageTrigger as model_Deplo
 import io.fabric8.openshift.api.model.DeploymentTriggerImageChangeParams as model_DeploymentTriggerImageChangeParams
 import io.fabric8.openshift.api.model.DockerBuildStrategy as model_DockerBuildStrategy
 import io.fabric8.openshift.api.model.ImageChangeTrigger as model_ImageChangeTrigger
+import io.fabric8.openshift.api.model.ImageChangeTriggerStatus as model_ImageChangeTriggerStatus
 import io.fabric8.openshift.api.model.ImageImportSpec as model_ImageImportSpec
 import io.fabric8.openshift.api.model.ImageSource as model_ImageSource
+import io.fabric8.openshift.api.model.ImageStreamTagReference as model_ImageStreamTagReference
 import io.fabric8.openshift.api.model.RepositoryImportSpec as model_RepositoryImportSpec
 import io.fabric8.openshift.api.model.SourceBuildStrategy as model_SourceBuildStrategy
 import io.fabric8.openshift.api.model.TagReference as model_TagReference
@@ -63,6 +65,15 @@ fun  model_DockerBuildStrategy.`from`(block: model_ObjectReference.() -> Unit = 
 fun  model_ImageChangeTrigger.`from`(block: model_ObjectReference.() -> Unit = {}) {
   if(this.`from` == null) {
     this.`from` = model_ObjectReference()
+  }
+
+  this.`from`.block()
+}
+
+
+fun  model_ImageChangeTriggerStatus.`from`(block: model_ImageStreamTagReference.() -> Unit = {}) {
+  if(this.`from` == null) {
+    this.`from` = model_ImageStreamTagReference()
   }
 
   this.`from`.block()
