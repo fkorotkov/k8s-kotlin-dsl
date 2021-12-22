@@ -36,7 +36,7 @@ dependencies {
     implementation libraries['org.jetbrains.kotlin:kotlin-stdlib']
     implementation libraries['org.jetbrains.kotlin:kotlin-reflect']
 
-    implementation libraries['io.fabric8:kubernetes-model']
+    api libraries['io.fabric8:kubernetes-model']
 
     testImplementation libraries['junit:junit']
     testImplementation libraries['org.jetbrains.kotlin:kotlin-test-junit']
