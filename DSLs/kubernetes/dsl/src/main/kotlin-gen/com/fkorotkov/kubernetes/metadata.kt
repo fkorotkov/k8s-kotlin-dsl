@@ -9,7 +9,6 @@ import io.fabric8.kubernetes.api.model.ComponentStatus as model_ComponentStatus
 import io.fabric8.kubernetes.api.model.ComponentStatusList as model_ComponentStatusList
 import io.fabric8.kubernetes.api.model.ConfigMap as model_ConfigMap
 import io.fabric8.kubernetes.api.model.ConfigMapList as model_ConfigMapList
-import io.fabric8.kubernetes.api.model.DefaultKubernetesResourceList as model_DefaultKubernetesResourceList
 import io.fabric8.kubernetes.api.model.Endpoints as model_Endpoints
 import io.fabric8.kubernetes.api.model.EndpointsList as model_EndpointsList
 import io.fabric8.kubernetes.api.model.Event as model_Event
@@ -110,15 +109,6 @@ fun  model_ConfigMap.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
 
 
 fun  model_ConfigMapList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun <T1> model_DefaultKubernetesResourceList<T1>.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = model_ListMeta()
   }
