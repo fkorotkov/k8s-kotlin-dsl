@@ -52,7 +52,6 @@ import io.fabric8.kubernetes.api.model.ContainerStatus as model_ContainerStatus
 import io.fabric8.kubernetes.api.model.Context as model_Context
 import io.fabric8.kubernetes.api.model.CreateOptions as model_CreateOptions
 import io.fabric8.kubernetes.api.model.DaemonEndpoint as model_DaemonEndpoint
-import io.fabric8.kubernetes.api.model.DefaultKubernetesResourceList as model_DefaultKubernetesResourceList
 import io.fabric8.kubernetes.api.model.DeleteOptions as model_DeleteOptions
 import io.fabric8.kubernetes.api.model.DownwardAPIProjection as model_DownwardAPIProjection
 import io.fabric8.kubernetes.api.model.DownwardAPIVolumeFile as model_DownwardAPIVolumeFile
@@ -599,13 +598,6 @@ fun newCreateOptions(block : model_CreateOptions.() -> Unit = {}): model_CreateO
 
 fun newDaemonEndpoint(block : model_DaemonEndpoint.() -> Unit = {}): model_DaemonEndpoint {
   val instance = model_DaemonEndpoint()
-  instance.block()
-  return instance
-}
-
-
-fun newDefaultKubernetesResourceList(block : model_DefaultKubernetesResourceList.() -> Unit = {}): model_DefaultKubernetesResourceList {
-  val instance = model_DefaultKubernetesResourceList()
   instance.block()
   return instance
 }
