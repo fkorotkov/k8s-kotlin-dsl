@@ -17,7 +17,7 @@ allprojects {
 }
 
 dependencies {
-    compile("com.fkorotkov:kubernetes-dsl:${kubernetes_dsl_version}")
+    implementation("com.github.fkorotkov:k8s-kotlin-dsl:${kubernetes_dsl_version}")
 }
 ```
 
