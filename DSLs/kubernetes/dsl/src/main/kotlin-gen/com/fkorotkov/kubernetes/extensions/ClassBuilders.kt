@@ -31,6 +31,7 @@ import io.fabric8.kubernetes.api.model.extensions.NetworkPolicyList as extension
 import io.fabric8.kubernetes.api.model.extensions.NetworkPolicyPeer as extensions_NetworkPolicyPeer
 import io.fabric8.kubernetes.api.model.extensions.NetworkPolicyPort as extensions_NetworkPolicyPort
 import io.fabric8.kubernetes.api.model.extensions.NetworkPolicySpec as extensions_NetworkPolicySpec
+import io.fabric8.kubernetes.api.model.extensions.NetworkPolicyStatus as extensions_NetworkPolicyStatus
 import io.fabric8.kubernetes.api.model.extensions.ReplicaSet as extensions_ReplicaSet
 import io.fabric8.kubernetes.api.model.extensions.ReplicaSetCondition as extensions_ReplicaSetCondition
 import io.fabric8.kubernetes.api.model.extensions.ReplicaSetList as extensions_ReplicaSetList
@@ -246,6 +247,13 @@ fun newNetworkPolicyPort(block : extensions_NetworkPolicyPort.() -> Unit = {}): 
 
 fun newNetworkPolicySpec(block : extensions_NetworkPolicySpec.() -> Unit = {}): extensions_NetworkPolicySpec {
   val instance = extensions_NetworkPolicySpec()
+  instance.block()
+  return instance
+}
+
+
+fun newNetworkPolicyStatus(block : extensions_NetworkPolicyStatus.() -> Unit = {}): extensions_NetworkPolicyStatus {
+  val instance = extensions_NetworkPolicyStatus()
   instance.block()
   return instance
 }

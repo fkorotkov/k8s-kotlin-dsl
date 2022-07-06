@@ -26,6 +26,7 @@ import io.fabric8.kubernetes.api.model.apps.RollingUpdateStatefulSetStrategy as 
 import io.fabric8.kubernetes.api.model.apps.StatefulSet as apps_StatefulSet
 import io.fabric8.kubernetes.api.model.apps.StatefulSetCondition as apps_StatefulSetCondition
 import io.fabric8.kubernetes.api.model.apps.StatefulSetList as apps_StatefulSetList
+import io.fabric8.kubernetes.api.model.apps.StatefulSetPersistentVolumeClaimRetentionPolicy as apps_StatefulSetPersistentVolumeClaimRetentionPolicy
 import io.fabric8.kubernetes.api.model.apps.StatefulSetSpec as apps_StatefulSetSpec
 import io.fabric8.kubernetes.api.model.apps.StatefulSetStatus as apps_StatefulSetStatus
 import io.fabric8.kubernetes.api.model.apps.StatefulSetUpdateStrategy as apps_StatefulSetUpdateStrategy
@@ -201,6 +202,13 @@ fun newStatefulSetCondition(block : apps_StatefulSetCondition.() -> Unit = {}): 
 
 fun newStatefulSetList(block : apps_StatefulSetList.() -> Unit = {}): apps_StatefulSetList {
   val instance = apps_StatefulSetList()
+  instance.block()
+  return instance
+}
+
+
+fun newStatefulSetPersistentVolumeClaimRetentionPolicy(block : apps_StatefulSetPersistentVolumeClaimRetentionPolicy.() -> Unit = {}): apps_StatefulSetPersistentVolumeClaimRetentionPolicy {
+  val instance = apps_StatefulSetPersistentVolumeClaimRetentionPolicy()
   instance.block()
   return instance
 }

@@ -2,6 +2,7 @@
   "apiVersion": "apps/v1",
   "kind": "Deployment",
   "metadata": {
+    "annotations": {},
     "finalizers": [],
     "labels": {
       "app": "foo",
@@ -16,6 +17,7 @@
     "replicas": 1,
     "template": {
       "metadata": {
+        "annotations": {},
         "finalizers": [],
         "labels": {
           "app": "foo",
@@ -44,9 +46,7 @@
                 "httpHeaders": [],
                 "path": "/healthz",
                 "port": {
-                  "IntVal": 8080,
-                  "Kind": 0,
-                  "additionalProperties": {}
+                  "value": 8080
                 },
                 "additionalProperties": {}
               },
@@ -73,9 +73,7 @@
                 "httpHeaders": [],
                 "path": "/healthz",
                 "port": {
-                  "IntVal": 8080,
-                  "Kind": 0,
-                  "additionalProperties": {}
+                  "value": 8080
                 },
                 "additionalProperties": {}
               },
@@ -99,6 +97,8 @@
         "hostAliases": [],
         "imagePullSecrets": [],
         "initContainers": [],
+        "nodeSelector": {},
+        "overhead": {},
         "readinessGates": [],
         "tolerations": [],
         "topologySpreadConstraints": [],

@@ -6,7 +6,7 @@ import kotlin.test.assertEquals
 
 class BaseDeploymentTest {
   @Test
-  fun testSimpleContainerTemplate() {
+  fun testDeployment() {
     val gson = GsonBuilder()
         .setPrettyPrinting()
         .setDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX")

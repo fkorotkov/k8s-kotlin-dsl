@@ -23,6 +23,7 @@ import io.fabric8.kubernetes.api.model.apiextensions.v1.JSONSchemaPropsOrArray a
 import io.fabric8.kubernetes.api.model.apiextensions.v1.JSONSchemaPropsOrBool as v1_JSONSchemaPropsOrBool
 import io.fabric8.kubernetes.api.model.apiextensions.v1.JSONSchemaPropsOrStringArray as v1_JSONSchemaPropsOrStringArray
 import io.fabric8.kubernetes.api.model.apiextensions.v1.ServiceReference as v1_ServiceReference
+import io.fabric8.kubernetes.api.model.apiextensions.v1.ValidationRule as v1_ValidationRule
 import io.fabric8.kubernetes.api.model.apiextensions.v1.WebhookClientConfig as v1_WebhookClientConfig
 import io.fabric8.kubernetes.api.model.apiextensions.v1.WebhookConversion as v1_WebhookConversion
 
@@ -176,6 +177,13 @@ fun newJSONSchemaPropsOrStringArray(block : v1_JSONSchemaPropsOrStringArray.() -
 
 fun newServiceReference(block : v1_ServiceReference.() -> Unit = {}): v1_ServiceReference {
   val instance = v1_ServiceReference()
+  instance.block()
+  return instance
+}
+
+
+fun newValidationRule(block : v1_ValidationRule.() -> Unit = {}): v1_ValidationRule {
+  val instance = v1_ValidationRule()
   instance.block()
   return instance
 }

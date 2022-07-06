@@ -81,18 +81,19 @@ import io.fabric8.kubernetes.api.model.FlexPersistentVolumeSource as model_FlexP
 import io.fabric8.kubernetes.api.model.FlexVolumeSource as model_FlexVolumeSource
 import io.fabric8.kubernetes.api.model.FlockerVolumeSource as model_FlockerVolumeSource
 import io.fabric8.kubernetes.api.model.GCEPersistentDiskVolumeSource as model_GCEPersistentDiskVolumeSource
+import io.fabric8.kubernetes.api.model.GRPCAction as model_GRPCAction
 import io.fabric8.kubernetes.api.model.GenericKubernetesResource as model_GenericKubernetesResource
 import io.fabric8.kubernetes.api.model.GenericKubernetesResourceList as model_GenericKubernetesResourceList
 import io.fabric8.kubernetes.api.model.GetOptions as model_GetOptions
 import io.fabric8.kubernetes.api.model.GitRepoVolumeSource as model_GitRepoVolumeSource
 import io.fabric8.kubernetes.api.model.GlusterfsPersistentVolumeSource as model_GlusterfsPersistentVolumeSource
 import io.fabric8.kubernetes.api.model.GlusterfsVolumeSource as model_GlusterfsVolumeSource
+import io.fabric8.kubernetes.api.model.GroupKind as model_GroupKind
 import io.fabric8.kubernetes.api.model.GroupVersionForDiscovery as model_GroupVersionForDiscovery
 import io.fabric8.kubernetes.api.model.GroupVersionKind as model_GroupVersionKind
 import io.fabric8.kubernetes.api.model.GroupVersionResource as model_GroupVersionResource
 import io.fabric8.kubernetes.api.model.HTTPGetAction as model_HTTPGetAction
 import io.fabric8.kubernetes.api.model.HTTPHeader as model_HTTPHeader
-import io.fabric8.kubernetes.api.model.Handler as model_Handler
 import io.fabric8.kubernetes.api.model.HostAlias as model_HostAlias
 import io.fabric8.kubernetes.api.model.HostPathVolumeSource as model_HostPathVolumeSource
 import io.fabric8.kubernetes.api.model.ISCSIPersistentVolumeSource as model_ISCSIPersistentVolumeSource
@@ -102,6 +103,7 @@ import io.fabric8.kubernetes.api.model.KubernetesList as model_KubernetesList
 import io.fabric8.kubernetes.api.model.LabelSelector as model_LabelSelector
 import io.fabric8.kubernetes.api.model.LabelSelectorRequirement as model_LabelSelectorRequirement
 import io.fabric8.kubernetes.api.model.Lifecycle as model_Lifecycle
+import io.fabric8.kubernetes.api.model.LifecycleHandler as model_LifecycleHandler
 import io.fabric8.kubernetes.api.model.LimitRange as model_LimitRange
 import io.fabric8.kubernetes.api.model.LimitRangeItem as model_LimitRangeItem
 import io.fabric8.kubernetes.api.model.LimitRangeList as model_LimitRangeList
@@ -166,6 +168,7 @@ import io.fabric8.kubernetes.api.model.PodDNSConfigOption as model_PodDNSConfigO
 import io.fabric8.kubernetes.api.model.PodExecOptions as model_PodExecOptions
 import io.fabric8.kubernetes.api.model.PodIP as model_PodIP
 import io.fabric8.kubernetes.api.model.PodList as model_PodList
+import io.fabric8.kubernetes.api.model.PodOS as model_PodOS
 import io.fabric8.kubernetes.api.model.PodReadinessGate as model_PodReadinessGate
 import io.fabric8.kubernetes.api.model.PodSecurityContext as model_PodSecurityContext
 import io.fabric8.kubernetes.api.model.PodSpec as model_PodSpec
@@ -806,6 +809,13 @@ fun newGCEPersistentDiskVolumeSource(block : model_GCEPersistentDiskVolumeSource
 }
 
 
+fun newGRPCAction(block : model_GRPCAction.() -> Unit = {}): model_GRPCAction {
+  val instance = model_GRPCAction()
+  instance.block()
+  return instance
+}
+
+
 fun newGenericKubernetesResource(block : model_GenericKubernetesResource.() -> Unit = {}): model_GenericKubernetesResource {
   val instance = model_GenericKubernetesResource()
   instance.block()
@@ -848,6 +858,13 @@ fun newGlusterfsVolumeSource(block : model_GlusterfsVolumeSource.() -> Unit = {}
 }
 
 
+fun newGroupKind(block : model_GroupKind.() -> Unit = {}): model_GroupKind {
+  val instance = model_GroupKind()
+  instance.block()
+  return instance
+}
+
+
 fun newGroupVersionForDiscovery(block : model_GroupVersionForDiscovery.() -> Unit = {}): model_GroupVersionForDiscovery {
   val instance = model_GroupVersionForDiscovery()
   instance.block()
@@ -878,13 +895,6 @@ fun newHTTPGetAction(block : model_HTTPGetAction.() -> Unit = {}): model_HTTPGet
 
 fun newHTTPHeader(block : model_HTTPHeader.() -> Unit = {}): model_HTTPHeader {
   val instance = model_HTTPHeader()
-  instance.block()
-  return instance
-}
-
-
-fun newHandler(block : model_Handler.() -> Unit = {}): model_Handler {
-  val instance = model_Handler()
   instance.block()
   return instance
 }
@@ -948,6 +958,13 @@ fun newLabelSelectorRequirement(block : model_LabelSelectorRequirement.() -> Uni
 
 fun newLifecycle(block : model_Lifecycle.() -> Unit = {}): model_Lifecycle {
   val instance = model_Lifecycle()
+  instance.block()
+  return instance
+}
+
+
+fun newLifecycleHandler(block : model_LifecycleHandler.() -> Unit = {}): model_LifecycleHandler {
+  val instance = model_LifecycleHandler()
   instance.block()
   return instance
 }
@@ -1396,6 +1413,13 @@ fun newPodIP(block : model_PodIP.() -> Unit = {}): model_PodIP {
 
 fun newPodList(block : model_PodList.() -> Unit = {}): model_PodList {
   val instance = model_PodList()
+  instance.block()
+  return instance
+}
+
+
+fun newPodOS(block : model_PodOS.() -> Unit = {}): model_PodOS {
+  val instance = model_PodOS()
   instance.block()
   return instance
 }

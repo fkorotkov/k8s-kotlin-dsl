@@ -23,6 +23,7 @@ import io.fabric8.kubernetes.api.model.networking.v1.NetworkPolicyList as v1_Net
 import io.fabric8.kubernetes.api.model.networking.v1.NetworkPolicyPeer as v1_NetworkPolicyPeer
 import io.fabric8.kubernetes.api.model.networking.v1.NetworkPolicyPort as v1_NetworkPolicyPort
 import io.fabric8.kubernetes.api.model.networking.v1.NetworkPolicySpec as v1_NetworkPolicySpec
+import io.fabric8.kubernetes.api.model.networking.v1.NetworkPolicyStatus as v1_NetworkPolicyStatus
 import io.fabric8.kubernetes.api.model.networking.v1.ServiceBackendPort as v1_ServiceBackendPort
 
 
@@ -175,6 +176,13 @@ fun newNetworkPolicyPort(block : v1_NetworkPolicyPort.() -> Unit = {}): v1_Netwo
 
 fun newNetworkPolicySpec(block : v1_NetworkPolicySpec.() -> Unit = {}): v1_NetworkPolicySpec {
   val instance = v1_NetworkPolicySpec()
+  instance.block()
+  return instance
+}
+
+
+fun newNetworkPolicyStatus(block : v1_NetworkPolicyStatus.() -> Unit = {}): v1_NetworkPolicyStatus {
+  val instance = v1_NetworkPolicyStatus()
   instance.block()
   return instance
 }
