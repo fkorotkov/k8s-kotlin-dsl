@@ -3,12 +3,8 @@ package com.fkorotkov.openshift
 
 import io.fabric8.kubernetes.api.model.ListMeta as model_ListMeta
 import io.fabric8.kubernetes.api.model.ObjectMeta as model_ObjectMeta
-import io.fabric8.openshift.api.model.APIServer as model_APIServer
-import io.fabric8.openshift.api.model.APIServerList as model_APIServerList
 import io.fabric8.openshift.api.model.AppliedClusterResourceQuota as model_AppliedClusterResourceQuota
 import io.fabric8.openshift.api.model.AppliedClusterResourceQuotaList as model_AppliedClusterResourceQuotaList
-import io.fabric8.openshift.api.model.Authentication as model_Authentication
-import io.fabric8.openshift.api.model.AuthenticationList as model_AuthenticationList
 import io.fabric8.openshift.api.model.BrokerTemplateInstance as model_BrokerTemplateInstance
 import io.fabric8.openshift.api.model.BrokerTemplateInstanceList as model_BrokerTemplateInstanceList
 import io.fabric8.openshift.api.model.Build as model_Build
@@ -18,26 +14,16 @@ import io.fabric8.openshift.api.model.BuildList as model_BuildList
 import io.fabric8.openshift.api.model.BuildRequest as model_BuildRequest
 import io.fabric8.openshift.api.model.ClusterNetwork as model_ClusterNetwork
 import io.fabric8.openshift.api.model.ClusterNetworkList as model_ClusterNetworkList
-import io.fabric8.openshift.api.model.ClusterOperator as model_ClusterOperator
-import io.fabric8.openshift.api.model.ClusterOperatorList as model_ClusterOperatorList
 import io.fabric8.openshift.api.model.ClusterResourceQuota as model_ClusterResourceQuota
 import io.fabric8.openshift.api.model.ClusterResourceQuotaList as model_ClusterResourceQuotaList
 import io.fabric8.openshift.api.model.ClusterRole as model_ClusterRole
 import io.fabric8.openshift.api.model.ClusterRoleBinding as model_ClusterRoleBinding
 import io.fabric8.openshift.api.model.ClusterRoleBindingList as model_ClusterRoleBindingList
 import io.fabric8.openshift.api.model.ClusterRoleList as model_ClusterRoleList
-import io.fabric8.openshift.api.model.ClusterVersion as model_ClusterVersion
-import io.fabric8.openshift.api.model.ClusterVersionList as model_ClusterVersionList
-import io.fabric8.openshift.api.model.Console as model_Console
-import io.fabric8.openshift.api.model.ConsoleList as model_ConsoleList
-import io.fabric8.openshift.api.model.DNS as model_DNS
-import io.fabric8.openshift.api.model.DNSList as model_DNSList
 import io.fabric8.openshift.api.model.DeploymentConfig as model_DeploymentConfig
 import io.fabric8.openshift.api.model.DeploymentConfigList as model_DeploymentConfigList
 import io.fabric8.openshift.api.model.EgressNetworkPolicy as model_EgressNetworkPolicy
 import io.fabric8.openshift.api.model.EgressNetworkPolicyList as model_EgressNetworkPolicyList
-import io.fabric8.openshift.api.model.FeatureGate as model_FeatureGate
-import io.fabric8.openshift.api.model.FeatureGateList as model_FeatureGateList
 import io.fabric8.openshift.api.model.Group as model_Group
 import io.fabric8.openshift.api.model.GroupList as model_GroupList
 import io.fabric8.openshift.api.model.HelmChartRepository as model_HelmChartRepository
@@ -58,15 +44,8 @@ import io.fabric8.openshift.api.model.ImageStreamTag as model_ImageStreamTag
 import io.fabric8.openshift.api.model.ImageStreamTagList as model_ImageStreamTagList
 import io.fabric8.openshift.api.model.ImageTag as model_ImageTag
 import io.fabric8.openshift.api.model.ImageTagList as model_ImageTagList
-import io.fabric8.openshift.api.model.Infrastructure as model_Infrastructure
-import io.fabric8.openshift.api.model.InfrastructureList as model_InfrastructureList
-import io.fabric8.openshift.api.model.Ingress as model_Ingress
-import io.fabric8.openshift.api.model.IngressList as model_IngressList
 import io.fabric8.openshift.api.model.NetNamespace as model_NetNamespace
 import io.fabric8.openshift.api.model.NetNamespaceList as model_NetNamespaceList
-import io.fabric8.openshift.api.model.Network as model_Network
-import io.fabric8.openshift.api.model.NetworkList as model_NetworkList
-import io.fabric8.openshift.api.model.OAuth as model_OAuth
 import io.fabric8.openshift.api.model.OAuthAccessToken as model_OAuthAccessToken
 import io.fabric8.openshift.api.model.OAuthAccessTokenList as model_OAuthAccessTokenList
 import io.fabric8.openshift.api.model.OAuthAuthorizeToken as model_OAuthAuthorizeToken
@@ -75,14 +54,9 @@ import io.fabric8.openshift.api.model.OAuthClient as model_OAuthClient
 import io.fabric8.openshift.api.model.OAuthClientAuthorization as model_OAuthClientAuthorization
 import io.fabric8.openshift.api.model.OAuthClientAuthorizationList as model_OAuthClientAuthorizationList
 import io.fabric8.openshift.api.model.OAuthClientList as model_OAuthClientList
-import io.fabric8.openshift.api.model.OAuthList as model_OAuthList
-import io.fabric8.openshift.api.model.OperatorHub as model_OperatorHub
-import io.fabric8.openshift.api.model.OperatorHubList as model_OperatorHubList
 import io.fabric8.openshift.api.model.Project as model_Project
 import io.fabric8.openshift.api.model.ProjectList as model_ProjectList
 import io.fabric8.openshift.api.model.ProjectRequest as model_ProjectRequest
-import io.fabric8.openshift.api.model.Proxy as model_Proxy
-import io.fabric8.openshift.api.model.ProxyList as model_ProxyList
 import io.fabric8.openshift.api.model.RangeAllocation as model_RangeAllocation
 import io.fabric8.openshift.api.model.RangeAllocationList as model_RangeAllocationList
 import io.fabric8.openshift.api.model.Role as model_Role
@@ -93,8 +67,6 @@ import io.fabric8.openshift.api.model.RoleBindingRestrictionList as model_RoleBi
 import io.fabric8.openshift.api.model.RoleList as model_RoleList
 import io.fabric8.openshift.api.model.Route as model_Route
 import io.fabric8.openshift.api.model.RouteList as model_RouteList
-import io.fabric8.openshift.api.model.Scheduler as model_Scheduler
-import io.fabric8.openshift.api.model.SchedulerList as model_SchedulerList
 import io.fabric8.openshift.api.model.SecurityContextConstraints as model_SecurityContextConstraints
 import io.fabric8.openshift.api.model.SecurityContextConstraintsList as model_SecurityContextConstraintsList
 import io.fabric8.openshift.api.model.Template as model_Template
@@ -108,24 +80,6 @@ import io.fabric8.openshift.api.model.UserOAuthAccessToken as model_UserOAuthAcc
 import io.fabric8.openshift.api.model.UserOAuthAccessTokenList as model_UserOAuthAccessTokenList
 
 
-fun  model_APIServer.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_APIServerList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
 fun  model_AppliedClusterResourceQuota.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = model_ObjectMeta()
@@ -136,24 +90,6 @@ fun  model_AppliedClusterResourceQuota.`metadata`(block: model_ObjectMeta.() -> 
 
 
 fun  model_AppliedClusterResourceQuotaList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_Authentication.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_AuthenticationList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = model_ListMeta()
   }
@@ -243,24 +179,6 @@ fun  model_ClusterNetworkList.`metadata`(block: model_ListMeta.() -> Unit = {}) 
 }
 
 
-fun  model_ClusterOperator.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_ClusterOperatorList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
 fun  model_ClusterResourceQuota.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = model_ObjectMeta()
@@ -315,60 +233,6 @@ fun  model_ClusterRoleList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
 }
 
 
-fun  model_ClusterVersion.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_ClusterVersionList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_Console.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_ConsoleList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_DNS.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_DNSList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
 fun  model_DeploymentConfig.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = model_ObjectMeta()
@@ -397,24 +261,6 @@ fun  model_EgressNetworkPolicy.`metadata`(block: model_ObjectMeta.() -> Unit = {
 
 
 fun  model_EgressNetworkPolicyList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_FeatureGate.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_FeatureGateList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = model_ListMeta()
   }
@@ -603,42 +449,6 @@ fun  model_ImageTagList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
 }
 
 
-fun  model_Infrastructure.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_InfrastructureList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_Ingress.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_IngressList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
 fun  model_NetNamespace.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = model_ObjectMeta()
@@ -651,33 +461,6 @@ fun  model_NetNamespace.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
 fun  model_NetNamespaceList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = model_ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_Network.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_NetworkList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_OAuth.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ObjectMeta()
   }
 
   this.`metadata`.block()
@@ -756,33 +539,6 @@ fun  model_OAuthClientList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
 }
 
 
-fun  model_OAuthList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_OperatorHub.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_OperatorHubList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
 fun  model_Project.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = model_ObjectMeta()
@@ -804,24 +560,6 @@ fun  model_ProjectList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
 fun  model_ProjectRequest.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = model_ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_Proxy.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_ProxyList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ListMeta()
   }
 
   this.`metadata`.block()
@@ -910,24 +648,6 @@ fun  model_Route.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
 
 
 fun  model_RouteList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_Scheduler.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ObjectMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_SchedulerList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = model_ListMeta()
   }

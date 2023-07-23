@@ -20,6 +20,9 @@ import io.fabric8.kubernetes.api.model.extensions.IPBlock as extensions_IPBlock
 import io.fabric8.kubernetes.api.model.extensions.Ingress as extensions_Ingress
 import io.fabric8.kubernetes.api.model.extensions.IngressBackend as extensions_IngressBackend
 import io.fabric8.kubernetes.api.model.extensions.IngressList as extensions_IngressList
+import io.fabric8.kubernetes.api.model.extensions.IngressLoadBalancerIngress as extensions_IngressLoadBalancerIngress
+import io.fabric8.kubernetes.api.model.extensions.IngressLoadBalancerStatus as extensions_IngressLoadBalancerStatus
+import io.fabric8.kubernetes.api.model.extensions.IngressPortStatus as extensions_IngressPortStatus
 import io.fabric8.kubernetes.api.model.extensions.IngressRule as extensions_IngressRule
 import io.fabric8.kubernetes.api.model.extensions.IngressSpec as extensions_IngressSpec
 import io.fabric8.kubernetes.api.model.extensions.IngressStatus as extensions_IngressStatus
@@ -170,6 +173,27 @@ fun newIngressBackend(block : extensions_IngressBackend.() -> Unit = {}): extens
 
 fun newIngressList(block : extensions_IngressList.() -> Unit = {}): extensions_IngressList {
   val instance = extensions_IngressList()
+  instance.block()
+  return instance
+}
+
+
+fun newIngressLoadBalancerIngress(block : extensions_IngressLoadBalancerIngress.() -> Unit = {}): extensions_IngressLoadBalancerIngress {
+  val instance = extensions_IngressLoadBalancerIngress()
+  instance.block()
+  return instance
+}
+
+
+fun newIngressLoadBalancerStatus(block : extensions_IngressLoadBalancerStatus.() -> Unit = {}): extensions_IngressLoadBalancerStatus {
+  val instance = extensions_IngressLoadBalancerStatus()
+  instance.block()
+  return instance
+}
+
+
+fun newIngressPortStatus(block : extensions_IngressPortStatus.() -> Unit = {}): extensions_IngressPortStatus {
+  val instance = extensions_IngressPortStatus()
   instance.block()
   return instance
 }

@@ -3,7 +3,6 @@ package com.fkorotkov.kubernetes
 
 import io.fabric8.kubernetes.api.model.APIService as model_APIService
 import io.fabric8.kubernetes.api.model.APIServiceList as model_APIServiceList
-import io.fabric8.kubernetes.api.model.BaseKubernetesList as model_BaseKubernetesList
 import io.fabric8.kubernetes.api.model.Binding as model_Binding
 import io.fabric8.kubernetes.api.model.ComponentStatus as model_ComponentStatus
 import io.fabric8.kubernetes.api.model.ComponentStatusList as model_ComponentStatusList
@@ -55,15 +54,6 @@ fun  model_APIService.`metadata`(block: model_ObjectMeta.() -> Unit = {}) {
 
 
 fun  model_APIServiceList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
-  if(this.`metadata` == null) {
-    this.`metadata` = model_ListMeta()
-  }
-
-  this.`metadata`.block()
-}
-
-
-fun  model_BaseKubernetesList.`metadata`(block: model_ListMeta.() -> Unit = {}) {
   if(this.`metadata` == null) {
     this.`metadata` = model_ListMeta()
   }

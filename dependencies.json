@@ -13,7 +13,7 @@
     {
       "group": "com.google.code.gson",
       "name": "gson",
-      "version": "2.9.0"
+      "version": "2.10.1"
     },
     {
       "group": "com.google.code.gson",
@@ -28,12 +28,12 @@
     {
       "group": "io.fabric8",
       "name": "kubernetes-client",
-      "version": "6.0.0-RC1"
+      "version": "6.7.2"
     },
     {
       "group": "io.fabric8",
       "name": "kubernetes-model",
-      "version": "6.0.0-RC1"
+      "version": "6.7.2"
     },
     {
       "group": "io.sundr",
@@ -58,22 +58,22 @@
     {
       "group": "org.jetbrains.kotlin",
       "name": "kotlin-gradle-plugin",
-      "version": "1.7.0"
+      "version": "1.8.0"
     },
     {
       "group": "org.jetbrains.kotlin",
       "name": "kotlin-reflect",
-      "version": "1.7.0"
+      "version": "1.8.0"
     },
     {
       "group": "org.jetbrains.kotlin",
       "name": "kotlin-stdlib",
-      "version": "1.7.0"
+      "version": "1.8.0"
     },
     {
       "group": "org.jetbrains.kotlin",
       "name": "kotlin-test-junit",
-      "version": "1.7.0"
+      "version": "1.8.0"
     },
     {
       "group": "org.jsonschema2pojo",

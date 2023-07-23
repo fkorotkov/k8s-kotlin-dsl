@@ -100,6 +100,8 @@
         "nodeSelector": {},
         "overhead": {},
         "readinessGates": [],
+        "resourceClaims": [],
+        "schedulingGates": [],
         "tolerations": [],
         "topologySpreadConstraints": [],
         "volumes": [

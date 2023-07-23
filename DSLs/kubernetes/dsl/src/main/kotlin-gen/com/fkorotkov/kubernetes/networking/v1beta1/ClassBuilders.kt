@@ -10,6 +10,9 @@ import io.fabric8.kubernetes.api.model.networking.v1beta1.IngressClassList as v1
 import io.fabric8.kubernetes.api.model.networking.v1beta1.IngressClassParametersReference as v1beta1_IngressClassParametersReference
 import io.fabric8.kubernetes.api.model.networking.v1beta1.IngressClassSpec as v1beta1_IngressClassSpec
 import io.fabric8.kubernetes.api.model.networking.v1beta1.IngressList as v1beta1_IngressList
+import io.fabric8.kubernetes.api.model.networking.v1beta1.IngressLoadBalancerIngress as v1beta1_IngressLoadBalancerIngress
+import io.fabric8.kubernetes.api.model.networking.v1beta1.IngressLoadBalancerStatus as v1beta1_IngressLoadBalancerStatus
+import io.fabric8.kubernetes.api.model.networking.v1beta1.IngressPortStatus as v1beta1_IngressPortStatus
 import io.fabric8.kubernetes.api.model.networking.v1beta1.IngressRule as v1beta1_IngressRule
 import io.fabric8.kubernetes.api.model.networking.v1beta1.IngressSpec as v1beta1_IngressSpec
 import io.fabric8.kubernetes.api.model.networking.v1beta1.IngressStatus as v1beta1_IngressStatus
@@ -74,6 +77,27 @@ fun newIngressClassSpec(block : v1beta1_IngressClassSpec.() -> Unit = {}): v1bet
 
 fun newIngressList(block : v1beta1_IngressList.() -> Unit = {}): v1beta1_IngressList {
   val instance = v1beta1_IngressList()
+  instance.block()
+  return instance
+}
+
+
+fun newIngressLoadBalancerIngress(block : v1beta1_IngressLoadBalancerIngress.() -> Unit = {}): v1beta1_IngressLoadBalancerIngress {
+  val instance = v1beta1_IngressLoadBalancerIngress()
+  instance.block()
+  return instance
+}
+
+
+fun newIngressLoadBalancerStatus(block : v1beta1_IngressLoadBalancerStatus.() -> Unit = {}): v1beta1_IngressLoadBalancerStatus {
+  val instance = v1beta1_IngressLoadBalancerStatus()
+  instance.block()
+  return instance
+}
+
+
+fun newIngressPortStatus(block : v1beta1_IngressPortStatus.() -> Unit = {}): v1beta1_IngressPortStatus {
+  val instance = v1beta1_IngressPortStatus()
   instance.block()
   return instance
 }

@@ -1,34 +1,9 @@
 // GENERATE
 package com.fkorotkov.openshift
 
-import io.fabric8.openshift.api.model.APIServer as model_APIServer
-import io.fabric8.openshift.api.model.APIServerEncryption as model_APIServerEncryption
-import io.fabric8.openshift.api.model.APIServerList as model_APIServerList
-import io.fabric8.openshift.api.model.APIServerNamedServingCert as model_APIServerNamedServingCert
-import io.fabric8.openshift.api.model.APIServerServingCerts as model_APIServerServingCerts
-import io.fabric8.openshift.api.model.APIServerSpec as model_APIServerSpec
-import io.fabric8.openshift.api.model.APIServerStatus as model_APIServerStatus
-import io.fabric8.openshift.api.model.AWSPlatformSpec as model_AWSPlatformSpec
-import io.fabric8.openshift.api.model.AWSPlatformStatus as model_AWSPlatformStatus
-import io.fabric8.openshift.api.model.AWSResourceTag as model_AWSResourceTag
-import io.fabric8.openshift.api.model.AWSServiceEndpoint as model_AWSServiceEndpoint
-import io.fabric8.openshift.api.model.AlibabaCloudPlatformSpec as model_AlibabaCloudPlatformSpec
-import io.fabric8.openshift.api.model.AlibabaCloudPlatformStatus as model_AlibabaCloudPlatformStatus
-import io.fabric8.openshift.api.model.AlibabaCloudResourceTag as model_AlibabaCloudResourceTag
 import io.fabric8.openshift.api.model.AllowedFlexVolume as model_AllowedFlexVolume
 import io.fabric8.openshift.api.model.AppliedClusterResourceQuota as model_AppliedClusterResourceQuota
 import io.fabric8.openshift.api.model.AppliedClusterResourceQuotaList as model_AppliedClusterResourceQuotaList
-import io.fabric8.openshift.api.model.Audit as model_Audit
-import io.fabric8.openshift.api.model.AuditCustomRule as model_AuditCustomRule
-import io.fabric8.openshift.api.model.Authentication as model_Authentication
-import io.fabric8.openshift.api.model.AuthenticationList as model_AuthenticationList
-import io.fabric8.openshift.api.model.AuthenticationSpec as model_AuthenticationSpec
-import io.fabric8.openshift.api.model.AuthenticationStatus as model_AuthenticationStatus
-import io.fabric8.openshift.api.model.AzurePlatformSpec as model_AzurePlatformSpec
-import io.fabric8.openshift.api.model.AzurePlatformStatus as model_AzurePlatformStatus
-import io.fabric8.openshift.api.model.BareMetalPlatformSpec as model_BareMetalPlatformSpec
-import io.fabric8.openshift.api.model.BareMetalPlatformStatus as model_BareMetalPlatformStatus
-import io.fabric8.openshift.api.model.BasicAuthIdentityProvider as model_BasicAuthIdentityProvider
 import io.fabric8.openshift.api.model.BinaryBuildSource as model_BinaryBuildSource
 import io.fabric8.openshift.api.model.BitbucketWebHookCause as model_BitbucketWebHookCause
 import io.fabric8.openshift.api.model.BrokerTemplateInstance as model_BrokerTemplateInstance
@@ -55,15 +30,9 @@ import io.fabric8.openshift.api.model.BuildTriggerPolicy as model_BuildTriggerPo
 import io.fabric8.openshift.api.model.BuildVolume as model_BuildVolume
 import io.fabric8.openshift.api.model.BuildVolumeMount as model_BuildVolumeMount
 import io.fabric8.openshift.api.model.BuildVolumeSource as model_BuildVolumeSource
-import io.fabric8.openshift.api.model.ClusterCondition as model_ClusterCondition
 import io.fabric8.openshift.api.model.ClusterNetwork as model_ClusterNetwork
 import io.fabric8.openshift.api.model.ClusterNetworkEntry as model_ClusterNetworkEntry
 import io.fabric8.openshift.api.model.ClusterNetworkList as model_ClusterNetworkList
-import io.fabric8.openshift.api.model.ClusterOperator as model_ClusterOperator
-import io.fabric8.openshift.api.model.ClusterOperatorList as model_ClusterOperatorList
-import io.fabric8.openshift.api.model.ClusterOperatorSpec as model_ClusterOperatorSpec
-import io.fabric8.openshift.api.model.ClusterOperatorStatus as model_ClusterOperatorStatus
-import io.fabric8.openshift.api.model.ClusterOperatorStatusCondition as model_ClusterOperatorStatusCondition
 import io.fabric8.openshift.api.model.ClusterResourceQuota as model_ClusterResourceQuota
 import io.fabric8.openshift.api.model.ClusterResourceQuotaList as model_ClusterResourceQuotaList
 import io.fabric8.openshift.api.model.ClusterResourceQuotaSelector as model_ClusterResourceQuotaSelector
@@ -74,33 +43,10 @@ import io.fabric8.openshift.api.model.ClusterRoleBinding as model_ClusterRoleBin
 import io.fabric8.openshift.api.model.ClusterRoleBindingList as model_ClusterRoleBindingList
 import io.fabric8.openshift.api.model.ClusterRoleList as model_ClusterRoleList
 import io.fabric8.openshift.api.model.ClusterRoleScopeRestriction as model_ClusterRoleScopeRestriction
-import io.fabric8.openshift.api.model.ClusterVersion as model_ClusterVersion
-import io.fabric8.openshift.api.model.ClusterVersionList as model_ClusterVersionList
-import io.fabric8.openshift.api.model.ClusterVersionSpec as model_ClusterVersionSpec
-import io.fabric8.openshift.api.model.ClusterVersionStatus as model_ClusterVersionStatus
-import io.fabric8.openshift.api.model.ComponentOverride as model_ComponentOverride
-import io.fabric8.openshift.api.model.ComponentRouteSpec as model_ComponentRouteSpec
-import io.fabric8.openshift.api.model.ComponentRouteStatus as model_ComponentRouteStatus
-import io.fabric8.openshift.api.model.ConditionalUpdate as model_ConditionalUpdate
-import io.fabric8.openshift.api.model.ConditionalUpdateRisk as model_ConditionalUpdateRisk
 import io.fabric8.openshift.api.model.ConfigMapBuildSource as model_ConfigMapBuildSource
-import io.fabric8.openshift.api.model.ConfigMapFileReference as model_ConfigMapFileReference
-import io.fabric8.openshift.api.model.ConfigMapNameReference as model_ConfigMapNameReference
 import io.fabric8.openshift.api.model.ConnectionConfig as model_ConnectionConfig
-import io.fabric8.openshift.api.model.Console as model_Console
-import io.fabric8.openshift.api.model.ConsoleAuthentication as model_ConsoleAuthentication
-import io.fabric8.openshift.api.model.ConsoleList as model_ConsoleList
-import io.fabric8.openshift.api.model.ConsoleSpec as model_ConsoleSpec
-import io.fabric8.openshift.api.model.ConsoleStatus as model_ConsoleStatus
 import io.fabric8.openshift.api.model.CustomBuildStrategy as model_CustomBuildStrategy
 import io.fabric8.openshift.api.model.CustomDeploymentStrategyParams as model_CustomDeploymentStrategyParams
-import io.fabric8.openshift.api.model.CustomFeatureGates as model_CustomFeatureGates
-import io.fabric8.openshift.api.model.CustomTLSProfile as model_CustomTLSProfile
-import io.fabric8.openshift.api.model.DNS as model_DNS
-import io.fabric8.openshift.api.model.DNSList as model_DNSList
-import io.fabric8.openshift.api.model.DNSSpec as model_DNSSpec
-import io.fabric8.openshift.api.model.DNSStatus as model_DNSStatus
-import io.fabric8.openshift.api.model.DNSZone as model_DNSZone
 import io.fabric8.openshift.api.model.DeploymentCause as model_DeploymentCause
 import io.fabric8.openshift.api.model.DeploymentCauseImageTrigger as model_DeploymentCauseImageTrigger
 import io.fabric8.openshift.api.model.DeploymentCondition as model_DeploymentCondition
@@ -112,7 +58,6 @@ import io.fabric8.openshift.api.model.DeploymentDetails as model_DeploymentDetai
 import io.fabric8.openshift.api.model.DeploymentStrategy as model_DeploymentStrategy
 import io.fabric8.openshift.api.model.DeploymentTriggerImageChangeParams as model_DeploymentTriggerImageChangeParams
 import io.fabric8.openshift.api.model.DeploymentTriggerPolicy as model_DeploymentTriggerPolicy
-import io.fabric8.openshift.api.model.DeprecatedWebhookTokenAuthenticator as model_DeprecatedWebhookTokenAuthenticator
 import io.fabric8.openshift.api.model.DockerBuildStrategy as model_DockerBuildStrategy
 import io.fabric8.openshift.api.model.DockerStrategyOptions as model_DockerStrategyOptions
 import io.fabric8.openshift.api.model.EgressNetworkPolicy as model_EgressNetworkPolicy
@@ -120,44 +65,25 @@ import io.fabric8.openshift.api.model.EgressNetworkPolicyList as model_EgressNet
 import io.fabric8.openshift.api.model.EgressNetworkPolicyPeer as model_EgressNetworkPolicyPeer
 import io.fabric8.openshift.api.model.EgressNetworkPolicyRule as model_EgressNetworkPolicyRule
 import io.fabric8.openshift.api.model.EgressNetworkPolicySpec as model_EgressNetworkPolicySpec
-import io.fabric8.openshift.api.model.EquinixMetalPlatformSpec as model_EquinixMetalPlatformSpec
-import io.fabric8.openshift.api.model.EquinixMetalPlatformStatus as model_EquinixMetalPlatformStatus
 import io.fabric8.openshift.api.model.ExecNewPodHook as model_ExecNewPodHook
-import io.fabric8.openshift.api.model.ExternalIPConfig as model_ExternalIPConfig
-import io.fabric8.openshift.api.model.ExternalIPPolicy as model_ExternalIPPolicy
 import io.fabric8.openshift.api.model.FSGroupStrategyOptions as model_FSGroupStrategyOptions
-import io.fabric8.openshift.api.model.FeatureGate as model_FeatureGate
-import io.fabric8.openshift.api.model.FeatureGateList as model_FeatureGateList
-import io.fabric8.openshift.api.model.FeatureGateSpec as model_FeatureGateSpec
-import io.fabric8.openshift.api.model.FeatureGateStatus as model_FeatureGateStatus
-import io.fabric8.openshift.api.model.GCPPlatformSpec as model_GCPPlatformSpec
-import io.fabric8.openshift.api.model.GCPPlatformStatus as model_GCPPlatformStatus
 import io.fabric8.openshift.api.model.GenericWebHookCause as model_GenericWebHookCause
 import io.fabric8.openshift.api.model.GitBuildSource as model_GitBuildSource
-import io.fabric8.openshift.api.model.GitHubIdentityProvider as model_GitHubIdentityProvider
 import io.fabric8.openshift.api.model.GitHubWebHookCause as model_GitHubWebHookCause
-import io.fabric8.openshift.api.model.GitLabIdentityProvider as model_GitLabIdentityProvider
 import io.fabric8.openshift.api.model.GitLabWebHookCause as model_GitLabWebHookCause
 import io.fabric8.openshift.api.model.GitSourceRevision as model_GitSourceRevision
-import io.fabric8.openshift.api.model.GoogleIdentityProvider as model_GoogleIdentityProvider
 import io.fabric8.openshift.api.model.Group as model_Group
 import io.fabric8.openshift.api.model.GroupList as model_GroupList
 import io.fabric8.openshift.api.model.GroupRestriction as model_GroupRestriction
-import io.fabric8.openshift.api.model.HTPasswdIdentityProvider as model_HTPasswdIdentityProvider
 import io.fabric8.openshift.api.model.HelmChartRepository as model_HelmChartRepository
 import io.fabric8.openshift.api.model.HelmChartRepositoryList as model_HelmChartRepositoryList
 import io.fabric8.openshift.api.model.HelmChartRepositorySpec as model_HelmChartRepositorySpec
 import io.fabric8.openshift.api.model.HelmChartRepositoryStatus as model_HelmChartRepositoryStatus
 import io.fabric8.openshift.api.model.HostSubnet as model_HostSubnet
 import io.fabric8.openshift.api.model.HostSubnetList as model_HostSubnetList
-import io.fabric8.openshift.api.model.HubSource as model_HubSource
-import io.fabric8.openshift.api.model.HubSourceStatus as model_HubSourceStatus
-import io.fabric8.openshift.api.model.IBMCloudPlatformSpec as model_IBMCloudPlatformSpec
-import io.fabric8.openshift.api.model.IBMCloudPlatformStatus as model_IBMCloudPlatformStatus
 import io.fabric8.openshift.api.model.IDRange as model_IDRange
 import io.fabric8.openshift.api.model.Identity as model_Identity
 import io.fabric8.openshift.api.model.IdentityList as model_IdentityList
-import io.fabric8.openshift.api.model.IdentityProvider as model_IdentityProvider
 import io.fabric8.openshift.api.model.Image as model_Image
 import io.fabric8.openshift.api.model.ImageChangeCause as model_ImageChangeCause
 import io.fabric8.openshift.api.model.ImageChangeTrigger as model_ImageChangeTrigger
@@ -185,35 +111,13 @@ import io.fabric8.openshift.api.model.ImageStreamTagList as model_ImageStreamTag
 import io.fabric8.openshift.api.model.ImageStreamTagReference as model_ImageStreamTagReference
 import io.fabric8.openshift.api.model.ImageTag as model_ImageTag
 import io.fabric8.openshift.api.model.ImageTagList as model_ImageTagList
-import io.fabric8.openshift.api.model.Infrastructure as model_Infrastructure
-import io.fabric8.openshift.api.model.InfrastructureList as model_InfrastructureList
-import io.fabric8.openshift.api.model.InfrastructureSpec as model_InfrastructureSpec
-import io.fabric8.openshift.api.model.InfrastructureStatus as model_InfrastructureStatus
-import io.fabric8.openshift.api.model.Ingress as model_Ingress
-import io.fabric8.openshift.api.model.IngressList as model_IngressList
-import io.fabric8.openshift.api.model.IngressSpec as model_IngressSpec
-import io.fabric8.openshift.api.model.IngressStatus as model_IngressStatus
-import io.fabric8.openshift.api.model.IntermediateTLSProfile as model_IntermediateTLSProfile
 import io.fabric8.openshift.api.model.JenkinsPipelineBuildStrategy as model_JenkinsPipelineBuildStrategy
-import io.fabric8.openshift.api.model.KeystoneIdentityProvider as model_KeystoneIdentityProvider
-import io.fabric8.openshift.api.model.KubevirtPlatformSpec as model_KubevirtPlatformSpec
-import io.fabric8.openshift.api.model.KubevirtPlatformStatus as model_KubevirtPlatformStatus
-import io.fabric8.openshift.api.model.LDAPAttributeMapping as model_LDAPAttributeMapping
-import io.fabric8.openshift.api.model.LDAPIdentityProvider as model_LDAPIdentityProvider
 import io.fabric8.openshift.api.model.LifecycleHook as model_LifecycleHook
 import io.fabric8.openshift.api.model.LocalResourceAccessReview as model_LocalResourceAccessReview
 import io.fabric8.openshift.api.model.LocalSubjectAccessReview as model_LocalSubjectAccessReview
-import io.fabric8.openshift.api.model.MaxAgePolicy as model_MaxAgePolicy
-import io.fabric8.openshift.api.model.ModernTLSProfile as model_ModernTLSProfile
 import io.fabric8.openshift.api.model.NamedTagEventList as model_NamedTagEventList
 import io.fabric8.openshift.api.model.NetNamespace as model_NetNamespace
 import io.fabric8.openshift.api.model.NetNamespaceList as model_NetNamespaceList
-import io.fabric8.openshift.api.model.Network as model_Network
-import io.fabric8.openshift.api.model.NetworkList as model_NetworkList
-import io.fabric8.openshift.api.model.NetworkMigration as model_NetworkMigration
-import io.fabric8.openshift.api.model.NetworkSpec as model_NetworkSpec
-import io.fabric8.openshift.api.model.NetworkStatus as model_NetworkStatus
-import io.fabric8.openshift.api.model.OAuth as model_OAuth
 import io.fabric8.openshift.api.model.OAuthAccessToken as model_OAuthAccessToken
 import io.fabric8.openshift.api.model.OAuthAccessTokenList as model_OAuthAccessTokenList
 import io.fabric8.openshift.api.model.OAuthAuthorizeToken as model_OAuthAuthorizeToken
@@ -222,26 +126,7 @@ import io.fabric8.openshift.api.model.OAuthClient as model_OAuthClient
 import io.fabric8.openshift.api.model.OAuthClientAuthorization as model_OAuthClientAuthorization
 import io.fabric8.openshift.api.model.OAuthClientAuthorizationList as model_OAuthClientAuthorizationList
 import io.fabric8.openshift.api.model.OAuthClientList as model_OAuthClientList
-import io.fabric8.openshift.api.model.OAuthList as model_OAuthList
-import io.fabric8.openshift.api.model.OAuthSpec as model_OAuthSpec
-import io.fabric8.openshift.api.model.OAuthStatus as model_OAuthStatus
-import io.fabric8.openshift.api.model.OAuthTemplates as model_OAuthTemplates
-import io.fabric8.openshift.api.model.ObjectReference as model_ObjectReference
-import io.fabric8.openshift.api.model.OldTLSProfile as model_OldTLSProfile
-import io.fabric8.openshift.api.model.OpenIDClaims as model_OpenIDClaims
-import io.fabric8.openshift.api.model.OpenIDIdentityProvider as model_OpenIDIdentityProvider
-import io.fabric8.openshift.api.model.OpenStackPlatformSpec as model_OpenStackPlatformSpec
-import io.fabric8.openshift.api.model.OpenStackPlatformStatus as model_OpenStackPlatformStatus
-import io.fabric8.openshift.api.model.OperandVersion as model_OperandVersion
-import io.fabric8.openshift.api.model.OperatorHub as model_OperatorHub
-import io.fabric8.openshift.api.model.OperatorHubList as model_OperatorHubList
-import io.fabric8.openshift.api.model.OperatorHubSpec as model_OperatorHubSpec
-import io.fabric8.openshift.api.model.OperatorHubStatus as model_OperatorHubStatus
-import io.fabric8.openshift.api.model.OvirtPlatformSpec as model_OvirtPlatformSpec
-import io.fabric8.openshift.api.model.OvirtPlatformStatus as model_OvirtPlatformStatus
 import io.fabric8.openshift.api.model.Parameter as model_Parameter
-import io.fabric8.openshift.api.model.PlatformSpec as model_PlatformSpec
-import io.fabric8.openshift.api.model.PlatformStatus as model_PlatformStatus
 import io.fabric8.openshift.api.model.PodSecurityPolicyReview as model_PodSecurityPolicyReview
 import io.fabric8.openshift.api.model.PodSecurityPolicyReviewSpec as model_PodSecurityPolicyReviewSpec
 import io.fabric8.openshift.api.model.PodSecurityPolicyReviewStatus as model_PodSecurityPolicyReviewStatus
@@ -251,27 +136,16 @@ import io.fabric8.openshift.api.model.PodSecurityPolicySubjectReview as model_Po
 import io.fabric8.openshift.api.model.PodSecurityPolicySubjectReviewSpec as model_PodSecurityPolicySubjectReviewSpec
 import io.fabric8.openshift.api.model.PodSecurityPolicySubjectReviewStatus as model_PodSecurityPolicySubjectReviewStatus
 import io.fabric8.openshift.api.model.PolicyRule as model_PolicyRule
-import io.fabric8.openshift.api.model.PowerVSPlatformSpec as model_PowerVSPlatformSpec
-import io.fabric8.openshift.api.model.PowerVSPlatformStatus as model_PowerVSPlatformStatus
-import io.fabric8.openshift.api.model.PowerVSServiceEndpoint as model_PowerVSServiceEndpoint
 import io.fabric8.openshift.api.model.Project as model_Project
 import io.fabric8.openshift.api.model.ProjectList as model_ProjectList
 import io.fabric8.openshift.api.model.ProjectRequest as model_ProjectRequest
 import io.fabric8.openshift.api.model.ProjectSpec as model_ProjectSpec
 import io.fabric8.openshift.api.model.ProjectStatus as model_ProjectStatus
-import io.fabric8.openshift.api.model.PromQLClusterCondition as model_PromQLClusterCondition
-import io.fabric8.openshift.api.model.Proxy as model_Proxy
-import io.fabric8.openshift.api.model.ProxyList as model_ProxyList
-import io.fabric8.openshift.api.model.ProxySpec as model_ProxySpec
-import io.fabric8.openshift.api.model.ProxyStatus as model_ProxyStatus
 import io.fabric8.openshift.api.model.RangeAllocation as model_RangeAllocation
 import io.fabric8.openshift.api.model.RangeAllocationList as model_RangeAllocationList
 import io.fabric8.openshift.api.model.RecreateDeploymentStrategyParams as model_RecreateDeploymentStrategyParams
-import io.fabric8.openshift.api.model.Release as model_Release
 import io.fabric8.openshift.api.model.RepositoryImportSpec as model_RepositoryImportSpec
 import io.fabric8.openshift.api.model.RepositoryImportStatus as model_RepositoryImportStatus
-import io.fabric8.openshift.api.model.RequestHeaderIdentityProvider as model_RequestHeaderIdentityProvider
-import io.fabric8.openshift.api.model.RequiredHSTSPolicy as model_RequiredHSTSPolicy
 import io.fabric8.openshift.api.model.ResourceAccessReview as model_ResourceAccessReview
 import io.fabric8.openshift.api.model.ResourceAccessReviewResponse as model_ResourceAccessReviewResponse
 import io.fabric8.openshift.api.model.ResourceQuotaStatusByNamespace as model_ResourceQuotaStatusByNamespace
@@ -293,14 +167,9 @@ import io.fabric8.openshift.api.model.RouteStatus as model_RouteStatus
 import io.fabric8.openshift.api.model.RouteTargetReference as model_RouteTargetReference
 import io.fabric8.openshift.api.model.RunAsUserStrategyOptions as model_RunAsUserStrategyOptions
 import io.fabric8.openshift.api.model.SELinuxContextStrategyOptions as model_SELinuxContextStrategyOptions
-import io.fabric8.openshift.api.model.Scheduler as model_Scheduler
-import io.fabric8.openshift.api.model.SchedulerList as model_SchedulerList
-import io.fabric8.openshift.api.model.SchedulerSpec as model_SchedulerSpec
-import io.fabric8.openshift.api.model.SchedulerStatus as model_SchedulerStatus
 import io.fabric8.openshift.api.model.ScopeRestriction as model_ScopeRestriction
 import io.fabric8.openshift.api.model.SecretBuildSource as model_SecretBuildSource
 import io.fabric8.openshift.api.model.SecretLocalReference as model_SecretLocalReference
-import io.fabric8.openshift.api.model.SecretNameReference as model_SecretNameReference
 import io.fabric8.openshift.api.model.SecretSpec as model_SecretSpec
 import io.fabric8.openshift.api.model.SecurityContextConstraints as model_SecurityContextConstraints
 import io.fabric8.openshift.api.model.SecurityContextConstraintsList as model_SecurityContextConstraintsList
@@ -325,8 +194,6 @@ import io.fabric8.openshift.api.model.SubjectRulesReviewSpec as model_SubjectRul
 import io.fabric8.openshift.api.model.SubjectRulesReviewStatus as model_SubjectRulesReviewStatus
 import io.fabric8.openshift.api.model.SupplementalGroupsStrategyOptions as model_SupplementalGroupsStrategyOptions
 import io.fabric8.openshift.api.model.TLSConfig as model_TLSConfig
-import io.fabric8.openshift.api.model.TLSProfileSpec as model_TLSProfileSpec
-import io.fabric8.openshift.api.model.TLSSecurityProfile as model_TLSSecurityProfile
 import io.fabric8.openshift.api.model.TagEvent as model_TagEvent
 import io.fabric8.openshift.api.model.TagEventCondition as model_TagEventCondition
 import io.fabric8.openshift.api.model.TagImageHook as model_TagImageHook
@@ -342,117 +209,13 @@ import io.fabric8.openshift.api.model.TemplateInstanceRequester as model_Templat
 import io.fabric8.openshift.api.model.TemplateInstanceSpec as model_TemplateInstanceSpec
 import io.fabric8.openshift.api.model.TemplateInstanceStatus as model_TemplateInstanceStatus
 import io.fabric8.openshift.api.model.TemplateList as model_TemplateList
-import io.fabric8.openshift.api.model.TokenConfig as model_TokenConfig
-import io.fabric8.openshift.api.model.Update as model_Update
-import io.fabric8.openshift.api.model.UpdateHistory as model_UpdateHistory
 import io.fabric8.openshift.api.model.User as model_User
 import io.fabric8.openshift.api.model.UserIdentityMapping as model_UserIdentityMapping
 import io.fabric8.openshift.api.model.UserList as model_UserList
 import io.fabric8.openshift.api.model.UserOAuthAccessToken as model_UserOAuthAccessToken
 import io.fabric8.openshift.api.model.UserOAuthAccessTokenList as model_UserOAuthAccessTokenList
 import io.fabric8.openshift.api.model.UserRestriction as model_UserRestriction
-import io.fabric8.openshift.api.model.VSpherePlatformSpec as model_VSpherePlatformSpec
-import io.fabric8.openshift.api.model.VSpherePlatformStatus as model_VSpherePlatformStatus
 import io.fabric8.openshift.api.model.WebHookTrigger as model_WebHookTrigger
-import io.fabric8.openshift.api.model.WebhookTokenAuthenticator as model_WebhookTokenAuthenticator
-
-
-fun newAPIServer(block : model_APIServer.() -> Unit = {}): model_APIServer {
-  val instance = model_APIServer()
-  instance.block()
-  return instance
-}
-
-
-fun newAPIServerEncryption(block : model_APIServerEncryption.() -> Unit = {}): model_APIServerEncryption {
-  val instance = model_APIServerEncryption()
-  instance.block()
-  return instance
-}
-
-
-fun newAPIServerList(block : model_APIServerList.() -> Unit = {}): model_APIServerList {
-  val instance = model_APIServerList()
-  instance.block()
-  return instance
-}
-
-
-fun newAPIServerNamedServingCert(block : model_APIServerNamedServingCert.() -> Unit = {}): model_APIServerNamedServingCert {
-  val instance = model_APIServerNamedServingCert()
-  instance.block()
-  return instance
-}
-
-
-fun newAPIServerServingCerts(block : model_APIServerServingCerts.() -> Unit = {}): model_APIServerServingCerts {
-  val instance = model_APIServerServingCerts()
-  instance.block()
-  return instance
-}
-
-
-fun newAPIServerSpec(block : model_APIServerSpec.() -> Unit = {}): model_APIServerSpec {
-  val instance = model_APIServerSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newAPIServerStatus(block : model_APIServerStatus.() -> Unit = {}): model_APIServerStatus {
-  val instance = model_APIServerStatus()
-  instance.block()
-  return instance
-}
-
-
-fun newAWSPlatformSpec(block : model_AWSPlatformSpec.() -> Unit = {}): model_AWSPlatformSpec {
-  val instance = model_AWSPlatformSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newAWSPlatformStatus(block : model_AWSPlatformStatus.() -> Unit = {}): model_AWSPlatformStatus {
-  val instance = model_AWSPlatformStatus()
-  instance.block()
-  return instance
-}
-
-
-fun newAWSResourceTag(block : model_AWSResourceTag.() -> Unit = {}): model_AWSResourceTag {
-  val instance = model_AWSResourceTag()
-  instance.block()
-  return instance
-}
-
-
-fun newAWSServiceEndpoint(block : model_AWSServiceEndpoint.() -> Unit = {}): model_AWSServiceEndpoint {
-  val instance = model_AWSServiceEndpoint()
-  instance.block()
-  return instance
-}
-
-
-fun newAlibabaCloudPlatformSpec(block : model_AlibabaCloudPlatformSpec.() -> Unit = {}): model_AlibabaCloudPlatformSpec {
-  val instance = model_AlibabaCloudPlatformSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newAlibabaCloudPlatformStatus(block : model_AlibabaCloudPlatformStatus.() -> Unit = {}): model_AlibabaCloudPlatformStatus {
-  val instance = model_AlibabaCloudPlatformStatus()
-  instance.block()
-  return instance
-}
-
-
-fun newAlibabaCloudResourceTag(block : model_AlibabaCloudResourceTag.() -> Unit = {}): model_AlibabaCloudResourceTag {
-  val instance = model_AlibabaCloudResourceTag()
-  instance.block()
-  return instance
-}
 
 
 fun newAllowedFlexVolume(block : model_AllowedFlexVolume.() -> Unit = {}): model_AllowedFlexVolume {
@@ -471,83 +234,6 @@ fun newAppliedClusterResourceQuota(block : model_AppliedClusterResourceQuota.() 
 
 fun newAppliedClusterResourceQuotaList(block : model_AppliedClusterResourceQuotaList.() -> Unit = {}): model_AppliedClusterResourceQuotaList {
   val instance = model_AppliedClusterResourceQuotaList()
-  instance.block()
-  return instance
-}
-
-
-fun newAudit(block : model_Audit.() -> Unit = {}): model_Audit {
-  val instance = model_Audit()
-  instance.block()
-  return instance
-}
-
-
-fun newAuditCustomRule(block : model_AuditCustomRule.() -> Unit = {}): model_AuditCustomRule {
-  val instance = model_AuditCustomRule()
-  instance.block()
-  return instance
-}
-
-
-fun newAuthentication(block : model_Authentication.() -> Unit = {}): model_Authentication {
-  val instance = model_Authentication()
-  instance.block()
-  return instance
-}
-
-
-fun newAuthenticationList(block : model_AuthenticationList.() -> Unit = {}): model_AuthenticationList {
-  val instance = model_AuthenticationList()
-  instance.block()
-  return instance
-}
-
-
-fun newAuthenticationSpec(block : model_AuthenticationSpec.() -> Unit = {}): model_AuthenticationSpec {
-  val instance = model_AuthenticationSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newAuthenticationStatus(block : model_AuthenticationStatus.() -> Unit = {}): model_AuthenticationStatus {
-  val instance = model_AuthenticationStatus()
-  instance.block()
-  return instance
-}
-
-
-fun newAzurePlatformSpec(block : model_AzurePlatformSpec.() -> Unit = {}): model_AzurePlatformSpec {
-  val instance = model_AzurePlatformSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newAzurePlatformStatus(block : model_AzurePlatformStatus.() -> Unit = {}): model_AzurePlatformStatus {
-  val instance = model_AzurePlatformStatus()
-  instance.block()
-  return instance
-}
-
-
-fun newBareMetalPlatformSpec(block : model_BareMetalPlatformSpec.() -> Unit = {}): model_BareMetalPlatformSpec {
-  val instance = model_BareMetalPlatformSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newBareMetalPlatformStatus(block : model_BareMetalPlatformStatus.() -> Unit = {}): model_BareMetalPlatformStatus {
-  val instance = model_BareMetalPlatformStatus()
-  instance.block()
-  return instance
-}
-
-
-fun newBasicAuthIdentityProvider(block : model_BasicAuthIdentityProvider.() -> Unit = {}): model_BasicAuthIdentityProvider {
-  val instance = model_BasicAuthIdentityProvider()
   instance.block()
   return instance
 }
@@ -735,13 +421,6 @@ fun newBuildVolumeSource(block : model_BuildVolumeSource.() -> Unit = {}): model
 }
 
 
-fun newClusterCondition(block : model_ClusterCondition.() -> Unit = {}): model_ClusterCondition {
-  val instance = model_ClusterCondition()
-  instance.block()
-  return instance
-}
-
-
 fun newClusterNetwork(block : model_ClusterNetwork.() -> Unit = {}): model_ClusterNetwork {
   val instance = model_ClusterNetwork()
   instance.block()
@@ -758,41 +437,6 @@ fun newClusterNetworkEntry(block : model_ClusterNetworkEntry.() -> Unit = {}): m
 
 fun newClusterNetworkList(block : model_ClusterNetworkList.() -> Unit = {}): model_ClusterNetworkList {
   val instance = model_ClusterNetworkList()
-  instance.block()
-  return instance
-}
-
-
-fun newClusterOperator(block : model_ClusterOperator.() -> Unit = {}): model_ClusterOperator {
-  val instance = model_ClusterOperator()
-  instance.block()
-  return instance
-}
-
-
-fun newClusterOperatorList(block : model_ClusterOperatorList.() -> Unit = {}): model_ClusterOperatorList {
-  val instance = model_ClusterOperatorList()
-  instance.block()
-  return instance
-}
-
-
-fun newClusterOperatorSpec(block : model_ClusterOperatorSpec.() -> Unit = {}): model_ClusterOperatorSpec {
-  val instance = model_ClusterOperatorSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newClusterOperatorStatus(block : model_ClusterOperatorStatus.() -> Unit = {}): model_ClusterOperatorStatus {
-  val instance = model_ClusterOperatorStatus()
-  instance.block()
-  return instance
-}
-
-
-fun newClusterOperatorStatusCondition(block : model_ClusterOperatorStatusCondition.() -> Unit = {}): model_ClusterOperatorStatusCondition {
-  val instance = model_ClusterOperatorStatusCondition()
   instance.block()
   return instance
 }
@@ -868,69 +512,6 @@ fun newClusterRoleScopeRestriction(block : model_ClusterRoleScopeRestriction.() 
 }
 
 
-fun newClusterVersion(block : model_ClusterVersion.() -> Unit = {}): model_ClusterVersion {
-  val instance = model_ClusterVersion()
-  instance.block()
-  return instance
-}
-
-
-fun newClusterVersionList(block : model_ClusterVersionList.() -> Unit = {}): model_ClusterVersionList {
-  val instance = model_ClusterVersionList()
-  instance.block()
-  return instance
-}
-
-
-fun newClusterVersionSpec(block : model_ClusterVersionSpec.() -> Unit = {}): model_ClusterVersionSpec {
-  val instance = model_ClusterVersionSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newClusterVersionStatus(block : model_ClusterVersionStatus.() -> Unit = {}): model_ClusterVersionStatus {
-  val instance = model_ClusterVersionStatus()
-  instance.block()
-  return instance
-}
-
-
-fun newComponentOverride(block : model_ComponentOverride.() -> Unit = {}): model_ComponentOverride {
-  val instance = model_ComponentOverride()
-  instance.block()
-  return instance
-}
-
-
-fun newComponentRouteSpec(block : model_ComponentRouteSpec.() -> Unit = {}): model_ComponentRouteSpec {
-  val instance = model_ComponentRouteSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newComponentRouteStatus(block : model_ComponentRouteStatus.() -> Unit = {}): model_ComponentRouteStatus {
-  val instance = model_ComponentRouteStatus()
-  instance.block()
-  return instance
-}
-
-
-fun newConditionalUpdate(block : model_ConditionalUpdate.() -> Unit = {}): model_ConditionalUpdate {
-  val instance = model_ConditionalUpdate()
-  instance.block()
-  return instance
-}
-
-
-fun newConditionalUpdateRisk(block : model_ConditionalUpdateRisk.() -> Unit = {}): model_ConditionalUpdateRisk {
-  val instance = model_ConditionalUpdateRisk()
-  instance.block()
-  return instance
-}
-
-
 fun newConfigMapBuildSource(block : model_ConfigMapBuildSource.() -> Unit = {}): model_ConfigMapBuildSource {
   val instance = model_ConfigMapBuildSource()
   instance.block()
@@ -938,57 +519,8 @@ fun newConfigMapBuildSource(block : model_ConfigMapBuildSource.() -> Unit = {}):
 }
 
 
-fun newConfigMapFileReference(block : model_ConfigMapFileReference.() -> Unit = {}): model_ConfigMapFileReference {
-  val instance = model_ConfigMapFileReference()
-  instance.block()
-  return instance
-}
-
-
-fun newConfigMapNameReference(block : model_ConfigMapNameReference.() -> Unit = {}): model_ConfigMapNameReference {
-  val instance = model_ConfigMapNameReference()
-  instance.block()
-  return instance
-}
-
-
 fun newConnectionConfig(block : model_ConnectionConfig.() -> Unit = {}): model_ConnectionConfig {
   val instance = model_ConnectionConfig()
-  instance.block()
-  return instance
-}
-
-
-fun newConsole(block : model_Console.() -> Unit = {}): model_Console {
-  val instance = model_Console()
-  instance.block()
-  return instance
-}
-
-
-fun newConsoleAuthentication(block : model_ConsoleAuthentication.() -> Unit = {}): model_ConsoleAuthentication {
-  val instance = model_ConsoleAuthentication()
-  instance.block()
-  return instance
-}
-
-
-fun newConsoleList(block : model_ConsoleList.() -> Unit = {}): model_ConsoleList {
-  val instance = model_ConsoleList()
-  instance.block()
-  return instance
-}
-
-
-fun newConsoleSpec(block : model_ConsoleSpec.() -> Unit = {}): model_ConsoleSpec {
-  val instance = model_ConsoleSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newConsoleStatus(block : model_ConsoleStatus.() -> Unit = {}): model_ConsoleStatus {
-  val instance = model_ConsoleStatus()
   instance.block()
   return instance
 }
@@ -1003,55 +535,6 @@ fun newCustomBuildStrategy(block : model_CustomBuildStrategy.() -> Unit = {}): m
 
 fun newCustomDeploymentStrategyParams(block : model_CustomDeploymentStrategyParams.() -> Unit = {}): model_CustomDeploymentStrategyParams {
   val instance = model_CustomDeploymentStrategyParams()
-  instance.block()
-  return instance
-}
-
-
-fun newCustomFeatureGates(block : model_CustomFeatureGates.() -> Unit = {}): model_CustomFeatureGates {
-  val instance = model_CustomFeatureGates()
-  instance.block()
-  return instance
-}
-
-
-fun newCustomTLSProfile(block : model_CustomTLSProfile.() -> Unit = {}): model_CustomTLSProfile {
-  val instance = model_CustomTLSProfile()
-  instance.block()
-  return instance
-}
-
-
-fun newDNS(block : model_DNS.() -> Unit = {}): model_DNS {
-  val instance = model_DNS()
-  instance.block()
-  return instance
-}
-
-
-fun newDNSList(block : model_DNSList.() -> Unit = {}): model_DNSList {
-  val instance = model_DNSList()
-  instance.block()
-  return instance
-}
-
-
-fun newDNSSpec(block : model_DNSSpec.() -> Unit = {}): model_DNSSpec {
-  val instance = model_DNSSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newDNSStatus(block : model_DNSStatus.() -> Unit = {}): model_DNSStatus {
-  val instance = model_DNSStatus()
-  instance.block()
-  return instance
-}
-
-
-fun newDNSZone(block : model_DNSZone.() -> Unit = {}): model_DNSZone {
-  val instance = model_DNSZone()
   instance.block()
   return instance
 }
@@ -1134,13 +617,6 @@ fun newDeploymentTriggerPolicy(block : model_DeploymentTriggerPolicy.() -> Unit 
 }
 
 
-fun newDeprecatedWebhookTokenAuthenticator(block : model_DeprecatedWebhookTokenAuthenticator.() -> Unit = {}): model_DeprecatedWebhookTokenAuthenticator {
-  val instance = model_DeprecatedWebhookTokenAuthenticator()
-  instance.block()
-  return instance
-}
-
-
 fun newDockerBuildStrategy(block : model_DockerBuildStrategy.() -> Unit = {}): model_DockerBuildStrategy {
   val instance = model_DockerBuildStrategy()
   instance.block()
@@ -1190,20 +666,6 @@ fun newEgressNetworkPolicySpec(block : model_EgressNetworkPolicySpec.() -> Unit 
 }
 
 
-fun newEquinixMetalPlatformSpec(block : model_EquinixMetalPlatformSpec.() -> Unit = {}): model_EquinixMetalPlatformSpec {
-  val instance = model_EquinixMetalPlatformSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newEquinixMetalPlatformStatus(block : model_EquinixMetalPlatformStatus.() -> Unit = {}): model_EquinixMetalPlatformStatus {
-  val instance = model_EquinixMetalPlatformStatus()
-  instance.block()
-  return instance
-}
-
-
 fun newExecNewPodHook(block : model_ExecNewPodHook.() -> Unit = {}): model_ExecNewPodHook {
   val instance = model_ExecNewPodHook()
   instance.block()
@@ -1211,64 +673,8 @@ fun newExecNewPodHook(block : model_ExecNewPodHook.() -> Unit = {}): model_ExecN
 }
 
 
-fun newExternalIPConfig(block : model_ExternalIPConfig.() -> Unit = {}): model_ExternalIPConfig {
-  val instance = model_ExternalIPConfig()
-  instance.block()
-  return instance
-}
-
-
-fun newExternalIPPolicy(block : model_ExternalIPPolicy.() -> Unit = {}): model_ExternalIPPolicy {
-  val instance = model_ExternalIPPolicy()
-  instance.block()
-  return instance
-}
-
-
 fun newFSGroupStrategyOptions(block : model_FSGroupStrategyOptions.() -> Unit = {}): model_FSGroupStrategyOptions {
   val instance = model_FSGroupStrategyOptions()
-  instance.block()
-  return instance
-}
-
-
-fun newFeatureGate(block : model_FeatureGate.() -> Unit = {}): model_FeatureGate {
-  val instance = model_FeatureGate()
-  instance.block()
-  return instance
-}
-
-
-fun newFeatureGateList(block : model_FeatureGateList.() -> Unit = {}): model_FeatureGateList {
-  val instance = model_FeatureGateList()
-  instance.block()
-  return instance
-}
-
-
-fun newFeatureGateSpec(block : model_FeatureGateSpec.() -> Unit = {}): model_FeatureGateSpec {
-  val instance = model_FeatureGateSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newFeatureGateStatus(block : model_FeatureGateStatus.() -> Unit = {}): model_FeatureGateStatus {
-  val instance = model_FeatureGateStatus()
-  instance.block()
-  return instance
-}
-
-
-fun newGCPPlatformSpec(block : model_GCPPlatformSpec.() -> Unit = {}): model_GCPPlatformSpec {
-  val instance = model_GCPPlatformSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newGCPPlatformStatus(block : model_GCPPlatformStatus.() -> Unit = {}): model_GCPPlatformStatus {
-  val instance = model_GCPPlatformStatus()
   instance.block()
   return instance
 }
@@ -1288,22 +694,8 @@ fun newGitBuildSource(block : model_GitBuildSource.() -> Unit = {}): model_GitBu
 }
 
 
-fun newGitHubIdentityProvider(block : model_GitHubIdentityProvider.() -> Unit = {}): model_GitHubIdentityProvider {
-  val instance = model_GitHubIdentityProvider()
-  instance.block()
-  return instance
-}
-
-
 fun newGitHubWebHookCause(block : model_GitHubWebHookCause.() -> Unit = {}): model_GitHubWebHookCause {
   val instance = model_GitHubWebHookCause()
-  instance.block()
-  return instance
-}
-
-
-fun newGitLabIdentityProvider(block : model_GitLabIdentityProvider.() -> Unit = {}): model_GitLabIdentityProvider {
-  val instance = model_GitLabIdentityProvider()
   instance.block()
   return instance
 }
@@ -1318,13 +710,6 @@ fun newGitLabWebHookCause(block : model_GitLabWebHookCause.() -> Unit = {}): mod
 
 fun newGitSourceRevision(block : model_GitSourceRevision.() -> Unit = {}): model_GitSourceRevision {
   val instance = model_GitSourceRevision()
-  instance.block()
-  return instance
-}
-
-
-fun newGoogleIdentityProvider(block : model_GoogleIdentityProvider.() -> Unit = {}): model_GoogleIdentityProvider {
-  val instance = model_GoogleIdentityProvider()
   instance.block()
   return instance
 }
@@ -1346,13 +731,6 @@ fun newGroupList(block : model_GroupList.() -> Unit = {}): model_GroupList {
 
 fun newGroupRestriction(block : model_GroupRestriction.() -> Unit = {}): model_GroupRestriction {
   val instance = model_GroupRestriction()
-  instance.block()
-  return instance
-}
-
-
-fun newHTPasswdIdentityProvider(block : model_HTPasswdIdentityProvider.() -> Unit = {}): model_HTPasswdIdentityProvider {
-  val instance = model_HTPasswdIdentityProvider()
   instance.block()
   return instance
 }
@@ -1400,34 +778,6 @@ fun newHostSubnetList(block : model_HostSubnetList.() -> Unit = {}): model_HostS
 }
 
 
-fun newHubSource(block : model_HubSource.() -> Unit = {}): model_HubSource {
-  val instance = model_HubSource()
-  instance.block()
-  return instance
-}
-
-
-fun newHubSourceStatus(block : model_HubSourceStatus.() -> Unit = {}): model_HubSourceStatus {
-  val instance = model_HubSourceStatus()
-  instance.block()
-  return instance
-}
-
-
-fun newIBMCloudPlatformSpec(block : model_IBMCloudPlatformSpec.() -> Unit = {}): model_IBMCloudPlatformSpec {
-  val instance = model_IBMCloudPlatformSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newIBMCloudPlatformStatus(block : model_IBMCloudPlatformStatus.() -> Unit = {}): model_IBMCloudPlatformStatus {
-  val instance = model_IBMCloudPlatformStatus()
-  instance.block()
-  return instance
-}
-
-
 fun newIDRange(block : model_IDRange.() -> Unit = {}): model_IDRange {
   val instance = model_IDRange()
   instance.block()
@@ -1444,13 +794,6 @@ fun newIdentity(block : model_Identity.() -> Unit = {}): model_Identity {
 
 fun newIdentityList(block : model_IdentityList.() -> Unit = {}): model_IdentityList {
   val instance = model_IdentityList()
-  instance.block()
-  return instance
-}
-
-
-fun newIdentityProvider(block : model_IdentityProvider.() -> Unit = {}): model_IdentityProvider {
-  val instance = model_IdentityProvider()
   instance.block()
   return instance
 }
@@ -1645,106 +988,8 @@ fun newImageTagList(block : model_ImageTagList.() -> Unit = {}): model_ImageTagL
 }
 
 
-fun newInfrastructure(block : model_Infrastructure.() -> Unit = {}): model_Infrastructure {
-  val instance = model_Infrastructure()
-  instance.block()
-  return instance
-}
-
-
-fun newInfrastructureList(block : model_InfrastructureList.() -> Unit = {}): model_InfrastructureList {
-  val instance = model_InfrastructureList()
-  instance.block()
-  return instance
-}
-
-
-fun newInfrastructureSpec(block : model_InfrastructureSpec.() -> Unit = {}): model_InfrastructureSpec {
-  val instance = model_InfrastructureSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newInfrastructureStatus(block : model_InfrastructureStatus.() -> Unit = {}): model_InfrastructureStatus {
-  val instance = model_InfrastructureStatus()
-  instance.block()
-  return instance
-}
-
-
-fun newIngress(block : model_Ingress.() -> Unit = {}): model_Ingress {
-  val instance = model_Ingress()
-  instance.block()
-  return instance
-}
-
-
-fun newIngressList(block : model_IngressList.() -> Unit = {}): model_IngressList {
-  val instance = model_IngressList()
-  instance.block()
-  return instance
-}
-
-
-fun newIngressSpec(block : model_IngressSpec.() -> Unit = {}): model_IngressSpec {
-  val instance = model_IngressSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newIngressStatus(block : model_IngressStatus.() -> Unit = {}): model_IngressStatus {
-  val instance = model_IngressStatus()
-  instance.block()
-  return instance
-}
-
-
-fun newIntermediateTLSProfile(block : model_IntermediateTLSProfile.() -> Unit = {}): model_IntermediateTLSProfile {
-  val instance = model_IntermediateTLSProfile()
-  instance.block()
-  return instance
-}
-
-
 fun newJenkinsPipelineBuildStrategy(block : model_JenkinsPipelineBuildStrategy.() -> Unit = {}): model_JenkinsPipelineBuildStrategy {
   val instance = model_JenkinsPipelineBuildStrategy()
-  instance.block()
-  return instance
-}
-
-
-fun newKeystoneIdentityProvider(block : model_KeystoneIdentityProvider.() -> Unit = {}): model_KeystoneIdentityProvider {
-  val instance = model_KeystoneIdentityProvider()
-  instance.block()
-  return instance
-}
-
-
-fun newKubevirtPlatformSpec(block : model_KubevirtPlatformSpec.() -> Unit = {}): model_KubevirtPlatformSpec {
-  val instance = model_KubevirtPlatformSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newKubevirtPlatformStatus(block : model_KubevirtPlatformStatus.() -> Unit = {}): model_KubevirtPlatformStatus {
-  val instance = model_KubevirtPlatformStatus()
-  instance.block()
-  return instance
-}
-
-
-fun newLDAPAttributeMapping(block : model_LDAPAttributeMapping.() -> Unit = {}): model_LDAPAttributeMapping {
-  val instance = model_LDAPAttributeMapping()
-  instance.block()
-  return instance
-}
-
-
-fun newLDAPIdentityProvider(block : model_LDAPIdentityProvider.() -> Unit = {}): model_LDAPIdentityProvider {
-  val instance = model_LDAPIdentityProvider()
   instance.block()
   return instance
 }
@@ -1771,20 +1016,6 @@ fun newLocalSubjectAccessReview(block : model_LocalSubjectAccessReview.() -> Uni
 }
 
 
-fun newMaxAgePolicy(block : model_MaxAgePolicy.() -> Unit = {}): model_MaxAgePolicy {
-  val instance = model_MaxAgePolicy()
-  instance.block()
-  return instance
-}
-
-
-fun newModernTLSProfile(block : model_ModernTLSProfile.() -> Unit = {}): model_ModernTLSProfile {
-  val instance = model_ModernTLSProfile()
-  instance.block()
-  return instance
-}
-
-
 fun newNamedTagEventList(block : model_NamedTagEventList.() -> Unit = {}): model_NamedTagEventList {
   val instance = model_NamedTagEventList()
   instance.block()
@@ -1801,48 +1032,6 @@ fun newNetNamespace(block : model_NetNamespace.() -> Unit = {}): model_NetNamesp
 
 fun newNetNamespaceList(block : model_NetNamespaceList.() -> Unit = {}): model_NetNamespaceList {
   val instance = model_NetNamespaceList()
-  instance.block()
-  return instance
-}
-
-
-fun newNetwork(block : model_Network.() -> Unit = {}): model_Network {
-  val instance = model_Network()
-  instance.block()
-  return instance
-}
-
-
-fun newNetworkList(block : model_NetworkList.() -> Unit = {}): model_NetworkList {
-  val instance = model_NetworkList()
-  instance.block()
-  return instance
-}
-
-
-fun newNetworkMigration(block : model_NetworkMigration.() -> Unit = {}): model_NetworkMigration {
-  val instance = model_NetworkMigration()
-  instance.block()
-  return instance
-}
-
-
-fun newNetworkSpec(block : model_NetworkSpec.() -> Unit = {}): model_NetworkSpec {
-  val instance = model_NetworkSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newNetworkStatus(block : model_NetworkStatus.() -> Unit = {}): model_NetworkStatus {
-  val instance = model_NetworkStatus()
-  instance.block()
-  return instance
-}
-
-
-fun newOAuth(block : model_OAuth.() -> Unit = {}): model_OAuth {
-  val instance = model_OAuth()
   instance.block()
   return instance
 }
@@ -1904,141 +1093,8 @@ fun newOAuthClientList(block : model_OAuthClientList.() -> Unit = {}): model_OAu
 }
 
 
-fun newOAuthList(block : model_OAuthList.() -> Unit = {}): model_OAuthList {
-  val instance = model_OAuthList()
-  instance.block()
-  return instance
-}
-
-
-fun newOAuthSpec(block : model_OAuthSpec.() -> Unit = {}): model_OAuthSpec {
-  val instance = model_OAuthSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newOAuthStatus(block : model_OAuthStatus.() -> Unit = {}): model_OAuthStatus {
-  val instance = model_OAuthStatus()
-  instance.block()
-  return instance
-}
-
-
-fun newOAuthTemplates(block : model_OAuthTemplates.() -> Unit = {}): model_OAuthTemplates {
-  val instance = model_OAuthTemplates()
-  instance.block()
-  return instance
-}
-
-
-fun newObjectReference(block : model_ObjectReference.() -> Unit = {}): model_ObjectReference {
-  val instance = model_ObjectReference()
-  instance.block()
-  return instance
-}
-
-
-fun newOldTLSProfile(block : model_OldTLSProfile.() -> Unit = {}): model_OldTLSProfile {
-  val instance = model_OldTLSProfile()
-  instance.block()
-  return instance
-}
-
-
-fun newOpenIDClaims(block : model_OpenIDClaims.() -> Unit = {}): model_OpenIDClaims {
-  val instance = model_OpenIDClaims()
-  instance.block()
-  return instance
-}
-
-
-fun newOpenIDIdentityProvider(block : model_OpenIDIdentityProvider.() -> Unit = {}): model_OpenIDIdentityProvider {
-  val instance = model_OpenIDIdentityProvider()
-  instance.block()
-  return instance
-}
-
-
-fun newOpenStackPlatformSpec(block : model_OpenStackPlatformSpec.() -> Unit = {}): model_OpenStackPlatformSpec {
-  val instance = model_OpenStackPlatformSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newOpenStackPlatformStatus(block : model_OpenStackPlatformStatus.() -> Unit = {}): model_OpenStackPlatformStatus {
-  val instance = model_OpenStackPlatformStatus()
-  instance.block()
-  return instance
-}
-
-
-fun newOperandVersion(block : model_OperandVersion.() -> Unit = {}): model_OperandVersion {
-  val instance = model_OperandVersion()
-  instance.block()
-  return instance
-}
-
-
-fun newOperatorHub(block : model_OperatorHub.() -> Unit = {}): model_OperatorHub {
-  val instance = model_OperatorHub()
-  instance.block()
-  return instance
-}
-
-
-fun newOperatorHubList(block : model_OperatorHubList.() -> Unit = {}): model_OperatorHubList {
-  val instance = model_OperatorHubList()
-  instance.block()
-  return instance
-}
-
-
-fun newOperatorHubSpec(block : model_OperatorHubSpec.() -> Unit = {}): model_OperatorHubSpec {
-  val instance = model_OperatorHubSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newOperatorHubStatus(block : model_OperatorHubStatus.() -> Unit = {}): model_OperatorHubStatus {
-  val instance = model_OperatorHubStatus()
-  instance.block()
-  return instance
-}
-
-
-fun newOvirtPlatformSpec(block : model_OvirtPlatformSpec.() -> Unit = {}): model_OvirtPlatformSpec {
-  val instance = model_OvirtPlatformSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newOvirtPlatformStatus(block : model_OvirtPlatformStatus.() -> Unit = {}): model_OvirtPlatformStatus {
-  val instance = model_OvirtPlatformStatus()
-  instance.block()
-  return instance
-}
-
-
 fun newParameter(block : model_Parameter.() -> Unit = {}): model_Parameter {
   val instance = model_Parameter()
-  instance.block()
-  return instance
-}
-
-
-fun newPlatformSpec(block : model_PlatformSpec.() -> Unit = {}): model_PlatformSpec {
-  val instance = model_PlatformSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newPlatformStatus(block : model_PlatformStatus.() -> Unit = {}): model_PlatformStatus {
-  val instance = model_PlatformStatus()
   instance.block()
   return instance
 }
@@ -2107,27 +1163,6 @@ fun newPolicyRule(block : model_PolicyRule.() -> Unit = {}): model_PolicyRule {
 }
 
 
-fun newPowerVSPlatformSpec(block : model_PowerVSPlatformSpec.() -> Unit = {}): model_PowerVSPlatformSpec {
-  val instance = model_PowerVSPlatformSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newPowerVSPlatformStatus(block : model_PowerVSPlatformStatus.() -> Unit = {}): model_PowerVSPlatformStatus {
-  val instance = model_PowerVSPlatformStatus()
-  instance.block()
-  return instance
-}
-
-
-fun newPowerVSServiceEndpoint(block : model_PowerVSServiceEndpoint.() -> Unit = {}): model_PowerVSServiceEndpoint {
-  val instance = model_PowerVSServiceEndpoint()
-  instance.block()
-  return instance
-}
-
-
 fun newProject(block : model_Project.() -> Unit = {}): model_Project {
   val instance = model_Project()
   instance.block()
@@ -2163,41 +1198,6 @@ fun newProjectStatus(block : model_ProjectStatus.() -> Unit = {}): model_Project
 }
 
 
-fun newPromQLClusterCondition(block : model_PromQLClusterCondition.() -> Unit = {}): model_PromQLClusterCondition {
-  val instance = model_PromQLClusterCondition()
-  instance.block()
-  return instance
-}
-
-
-fun newProxy(block : model_Proxy.() -> Unit = {}): model_Proxy {
-  val instance = model_Proxy()
-  instance.block()
-  return instance
-}
-
-
-fun newProxyList(block : model_ProxyList.() -> Unit = {}): model_ProxyList {
-  val instance = model_ProxyList()
-  instance.block()
-  return instance
-}
-
-
-fun newProxySpec(block : model_ProxySpec.() -> Unit = {}): model_ProxySpec {
-  val instance = model_ProxySpec()
-  instance.block()
-  return instance
-}
-
-
-fun newProxyStatus(block : model_ProxyStatus.() -> Unit = {}): model_ProxyStatus {
-  val instance = model_ProxyStatus()
-  instance.block()
-  return instance
-}
-
-
 fun newRangeAllocation(block : model_RangeAllocation.() -> Unit = {}): model_RangeAllocation {
   val instance = model_RangeAllocation()
   instance.block()
@@ -2219,13 +1219,6 @@ fun newRecreateDeploymentStrategyParams(block : model_RecreateDeploymentStrategy
 }
 
 
-fun newRelease(block : model_Release.() -> Unit = {}): model_Release {
-  val instance = model_Release()
-  instance.block()
-  return instance
-}
-
-
 fun newRepositoryImportSpec(block : model_RepositoryImportSpec.() -> Unit = {}): model_RepositoryImportSpec {
   val instance = model_RepositoryImportSpec()
   instance.block()
@@ -2235,20 +1228,6 @@ fun newRepositoryImportSpec(block : model_RepositoryImportSpec.() -> Unit = {}):
 
 fun newRepositoryImportStatus(block : model_RepositoryImportStatus.() -> Unit = {}): model_RepositoryImportStatus {
   val instance = model_RepositoryImportStatus()
-  instance.block()
-  return instance
-}
-
-
-fun newRequestHeaderIdentityProvider(block : model_RequestHeaderIdentityProvider.() -> Unit = {}): model_RequestHeaderIdentityProvider {
-  val instance = model_RequestHeaderIdentityProvider()
-  instance.block()
-  return instance
-}
-
-
-fun newRequiredHSTSPolicy(block : model_RequiredHSTSPolicy.() -> Unit = {}): model_RequiredHSTSPolicy {
-  val instance = model_RequiredHSTSPolicy()
   instance.block()
   return instance
 }
@@ -2401,34 +1380,6 @@ fun newSELinuxContextStrategyOptions(block : model_SELinuxContextStrategyOptions
 }
 
 
-fun newScheduler(block : model_Scheduler.() -> Unit = {}): model_Scheduler {
-  val instance = model_Scheduler()
-  instance.block()
-  return instance
-}
-
-
-fun newSchedulerList(block : model_SchedulerList.() -> Unit = {}): model_SchedulerList {
-  val instance = model_SchedulerList()
-  instance.block()
-  return instance
-}
-
-
-fun newSchedulerSpec(block : model_SchedulerSpec.() -> Unit = {}): model_SchedulerSpec {
-  val instance = model_SchedulerSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newSchedulerStatus(block : model_SchedulerStatus.() -> Unit = {}): model_SchedulerStatus {
-  val instance = model_SchedulerStatus()
-  instance.block()
-  return instance
-}
-
-
 fun newScopeRestriction(block : model_ScopeRestriction.() -> Unit = {}): model_ScopeRestriction {
   val instance = model_ScopeRestriction()
   instance.block()
@@ -2445,13 +1396,6 @@ fun newSecretBuildSource(block : model_SecretBuildSource.() -> Unit = {}): model
 
 fun newSecretLocalReference(block : model_SecretLocalReference.() -> Unit = {}): model_SecretLocalReference {
   val instance = model_SecretLocalReference()
-  instance.block()
-  return instance
-}
-
-
-fun newSecretNameReference(block : model_SecretNameReference.() -> Unit = {}): model_SecretNameReference {
-  val instance = model_SecretNameReference()
   instance.block()
   return instance
 }
@@ -2625,20 +1569,6 @@ fun newTLSConfig(block : model_TLSConfig.() -> Unit = {}): model_TLSConfig {
 }
 
 
-fun newTLSProfileSpec(block : model_TLSProfileSpec.() -> Unit = {}): model_TLSProfileSpec {
-  val instance = model_TLSProfileSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newTLSSecurityProfile(block : model_TLSSecurityProfile.() -> Unit = {}): model_TLSSecurityProfile {
-  val instance = model_TLSSecurityProfile()
-  instance.block()
-  return instance
-}
-
-
 fun newTagEvent(block : model_TagEvent.() -> Unit = {}): model_TagEvent {
   val instance = model_TagEvent()
   instance.block()
@@ -2744,27 +1674,6 @@ fun newTemplateList(block : model_TemplateList.() -> Unit = {}): model_TemplateL
 }
 
 
-fun newTokenConfig(block : model_TokenConfig.() -> Unit = {}): model_TokenConfig {
-  val instance = model_TokenConfig()
-  instance.block()
-  return instance
-}
-
-
-fun newUpdate(block : model_Update.() -> Unit = {}): model_Update {
-  val instance = model_Update()
-  instance.block()
-  return instance
-}
-
-
-fun newUpdateHistory(block : model_UpdateHistory.() -> Unit = {}): model_UpdateHistory {
-  val instance = model_UpdateHistory()
-  instance.block()
-  return instance
-}
-
-
 fun newUser(block : model_User.() -> Unit = {}): model_User {
   val instance = model_User()
   instance.block()
@@ -2807,29 +1716,8 @@ fun newUserRestriction(block : model_UserRestriction.() -> Unit = {}): model_Use
 }
 
 
-fun newVSpherePlatformSpec(block : model_VSpherePlatformSpec.() -> Unit = {}): model_VSpherePlatformSpec {
-  val instance = model_VSpherePlatformSpec()
-  instance.block()
-  return instance
-}
-
-
-fun newVSpherePlatformStatus(block : model_VSpherePlatformStatus.() -> Unit = {}): model_VSpherePlatformStatus {
-  val instance = model_VSpherePlatformStatus()
-  instance.block()
-  return instance
-}
-
-
 fun newWebHookTrigger(block : model_WebHookTrigger.() -> Unit = {}): model_WebHookTrigger {
   val instance = model_WebHookTrigger()
-  instance.block()
-  return instance
-}
-
-
-fun newWebhookTokenAuthenticator(block : model_WebhookTokenAuthenticator.() -> Unit = {}): model_WebhookTokenAuthenticator {
-  val instance = model_WebhookTokenAuthenticator()
   instance.block()
   return instance
 }

@@ -2,12 +2,12 @@
 package com.fkorotkov.openshift
 
 import io.fabric8.openshift.api.model.ConnectionConfig as model_ConnectionConfig
-import io.fabric8.openshift.api.model.SecretNameReference as model_SecretNameReference
+import io.fabric8.openshift.api.model.config.v1.SecretNameReference as v1_SecretNameReference
 
 
-fun  model_ConnectionConfig.`tlsClientConfig`(block: model_SecretNameReference.() -> Unit = {}) {
+fun  model_ConnectionConfig.`tlsClientConfig`(block: v1_SecretNameReference.() -> Unit = {}) {
   if(this.`tlsClientConfig` == null) {
-    this.`tlsClientConfig` = model_SecretNameReference()
+    this.`tlsClientConfig` = v1_SecretNameReference()
   }
 
   this.`tlsClientConfig`.block()

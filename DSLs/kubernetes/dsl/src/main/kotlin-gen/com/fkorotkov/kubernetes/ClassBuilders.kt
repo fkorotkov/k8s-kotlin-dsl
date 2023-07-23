@@ -18,7 +18,6 @@ import io.fabric8.kubernetes.api.model.AuthProviderConfig as model_AuthProviderC
 import io.fabric8.kubernetes.api.model.AzureDiskVolumeSource as model_AzureDiskVolumeSource
 import io.fabric8.kubernetes.api.model.AzureFilePersistentVolumeSource as model_AzureFilePersistentVolumeSource
 import io.fabric8.kubernetes.api.model.AzureFileVolumeSource as model_AzureFileVolumeSource
-import io.fabric8.kubernetes.api.model.BaseKubernetesList as model_BaseKubernetesList
 import io.fabric8.kubernetes.api.model.Binding as model_Binding
 import io.fabric8.kubernetes.api.model.CSIPersistentVolumeSource as model_CSIPersistentVolumeSource
 import io.fabric8.kubernetes.api.model.CSIVolumeSource as model_CSIVolumeSource
@@ -27,6 +26,7 @@ import io.fabric8.kubernetes.api.model.CephFSPersistentVolumeSource as model_Cep
 import io.fabric8.kubernetes.api.model.CephFSVolumeSource as model_CephFSVolumeSource
 import io.fabric8.kubernetes.api.model.CinderPersistentVolumeSource as model_CinderPersistentVolumeSource
 import io.fabric8.kubernetes.api.model.CinderVolumeSource as model_CinderVolumeSource
+import io.fabric8.kubernetes.api.model.ClaimSource as model_ClaimSource
 import io.fabric8.kubernetes.api.model.ClientIPConfig as model_ClientIPConfig
 import io.fabric8.kubernetes.api.model.Cluster as model_Cluster
 import io.fabric8.kubernetes.api.model.ComponentCondition as model_ComponentCondition
@@ -170,6 +170,8 @@ import io.fabric8.kubernetes.api.model.PodIP as model_PodIP
 import io.fabric8.kubernetes.api.model.PodList as model_PodList
 import io.fabric8.kubernetes.api.model.PodOS as model_PodOS
 import io.fabric8.kubernetes.api.model.PodReadinessGate as model_PodReadinessGate
+import io.fabric8.kubernetes.api.model.PodResourceClaim as model_PodResourceClaim
+import io.fabric8.kubernetes.api.model.PodSchedulingGate as model_PodSchedulingGate
 import io.fabric8.kubernetes.api.model.PodSecurityContext as model_PodSecurityContext
 import io.fabric8.kubernetes.api.model.PodSpec as model_PodSpec
 import io.fabric8.kubernetes.api.model.PodStatus as model_PodStatus
@@ -191,6 +193,7 @@ import io.fabric8.kubernetes.api.model.ReplicationControllerCondition as model_R
 import io.fabric8.kubernetes.api.model.ReplicationControllerList as model_ReplicationControllerList
 import io.fabric8.kubernetes.api.model.ReplicationControllerSpec as model_ReplicationControllerSpec
 import io.fabric8.kubernetes.api.model.ReplicationControllerStatus as model_ReplicationControllerStatus
+import io.fabric8.kubernetes.api.model.ResourceClaim as model_ResourceClaim
 import io.fabric8.kubernetes.api.model.ResourceFieldSelector as model_ResourceFieldSelector
 import io.fabric8.kubernetes.api.model.ResourceQuota as model_ResourceQuota
 import io.fabric8.kubernetes.api.model.ResourceQuotaList as model_ResourceQuotaList
@@ -237,6 +240,7 @@ import io.fabric8.kubernetes.api.model.TopologySelectorTerm as model_TopologySel
 import io.fabric8.kubernetes.api.model.TopologySpreadConstraint as model_TopologySpreadConstraint
 import io.fabric8.kubernetes.api.model.TypeMeta as model_TypeMeta
 import io.fabric8.kubernetes.api.model.TypedLocalObjectReference as model_TypedLocalObjectReference
+import io.fabric8.kubernetes.api.model.TypedObjectReference as model_TypedObjectReference
 import io.fabric8.kubernetes.api.model.UpdateOptions as model_UpdateOptions
 import io.fabric8.kubernetes.api.model.Volume as model_Volume
 import io.fabric8.kubernetes.api.model.VolumeDevice as model_VolumeDevice
@@ -368,13 +372,6 @@ fun newAzureFileVolumeSource(block : model_AzureFileVolumeSource.() -> Unit = {}
 }
 
 
-fun newBaseKubernetesList(block : model_BaseKubernetesList.() -> Unit = {}): model_BaseKubernetesList {
-  val instance = model_BaseKubernetesList()
-  instance.block()
-  return instance
-}
-
-
 fun newBinding(block : model_Binding.() -> Unit = {}): model_Binding {
   val instance = model_Binding()
   instance.block()
@@ -426,6 +423,13 @@ fun newCinderPersistentVolumeSource(block : model_CinderPersistentVolumeSource.(
 
 fun newCinderVolumeSource(block : model_CinderVolumeSource.() -> Unit = {}): model_CinderVolumeSource {
   val instance = model_CinderVolumeSource()
+  instance.block()
+  return instance
+}
+
+
+fun newClaimSource(block : model_ClaimSource.() -> Unit = {}): model_ClaimSource {
+  val instance = model_ClaimSource()
   instance.block()
   return instance
 }
@@ -1432,6 +1436,20 @@ fun newPodReadinessGate(block : model_PodReadinessGate.() -> Unit = {}): model_P
 }
 
 
+fun newPodResourceClaim(block : model_PodResourceClaim.() -> Unit = {}): model_PodResourceClaim {
+  val instance = model_PodResourceClaim()
+  instance.block()
+  return instance
+}
+
+
+fun newPodSchedulingGate(block : model_PodSchedulingGate.() -> Unit = {}): model_PodSchedulingGate {
+  val instance = model_PodSchedulingGate()
+  instance.block()
+  return instance
+}
+
+
 fun newPodSecurityContext(block : model_PodSecurityContext.() -> Unit = {}): model_PodSecurityContext {
   val instance = model_PodSecurityContext()
   instance.block()
@@ -1574,6 +1592,13 @@ fun newReplicationControllerSpec(block : model_ReplicationControllerSpec.() -> U
 
 fun newReplicationControllerStatus(block : model_ReplicationControllerStatus.() -> Unit = {}): model_ReplicationControllerStatus {
   val instance = model_ReplicationControllerStatus()
+  instance.block()
+  return instance
+}
+
+
+fun newResourceClaim(block : model_ResourceClaim.() -> Unit = {}): model_ResourceClaim {
+  val instance = model_ResourceClaim()
   instance.block()
   return instance
 }
@@ -1896,6 +1921,13 @@ fun newTypeMeta(block : model_TypeMeta.() -> Unit = {}): model_TypeMeta {
 
 fun newTypedLocalObjectReference(block : model_TypedLocalObjectReference.() -> Unit = {}): model_TypedLocalObjectReference {
   val instance = model_TypedLocalObjectReference()
+  instance.block()
+  return instance
+}
+
+
+fun newTypedObjectReference(block : model_TypedObjectReference.() -> Unit = {}): model_TypedObjectReference {
+  val instance = model_TypedObjectReference()
   instance.block()
   return instance
 }

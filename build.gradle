@@ -29,17 +29,20 @@ subprojects {
     buildscript {
         repositories {
             maven { setUrl("https://repo.gradle.org/gradle/repo") }
+            maven { setUrl("https://plugins.gradle.org/m2/") }
         }
 
+        // put on the classpath but do not apply it
         dependencies {
             classpath libraries['org.jetbrains.kotlin:kotlin-gradle-plugin']
         }
     }
-
     repositories {
         mavenLocal()
         mavenCentral()
+        google()
         maven { setUrl("https://repo.gradle.org/gradle/repo") }
+        maven { setUrl("https://jitpack.io") }
         maven { setUrl("https://artifactory.cronapp.io/public-release") }
     }
 
